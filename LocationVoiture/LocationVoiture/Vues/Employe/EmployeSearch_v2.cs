@@ -25,7 +25,9 @@ namespace LocationVoiture.Vues
 
         private enum findByParameter { employeID, nom, prenom, fonction, succursale, telephone };
 
-        public enum columnName
+        private enum employeFunctions { Caissier, Commis, Soutient, Administration, Administrateur }
+
+        private enum columnName
         {
             [Description("No. Employé")]
             employeID,
@@ -49,6 +51,7 @@ namespace LocationVoiture.Vues
 
             btnEmployeSearch_select.Enabled = false;
             panel_message.Hide();
+            cbEmployeSearch.Hide();
 
             // FadeIn FadeOut pour l'affichage des messages
             animationTimer.Tick += animationTimer_tick;
@@ -68,7 +71,17 @@ namespace LocationVoiture.Vues
         /// </summary>
         private void btnEmployeSearch_find_Click(object sender, EventArgs e)
         {
-            String searchValue = txtEmployeSearch_value.Text;
+            String searchValue;
+
+            if (txtEmployeSearch_value.Text != "")
+            {
+                searchValue = txtEmployeSearch_value.Text;
+            }
+            else
+            {
+                searchValue = cbEmployeSearch.SelectedItem.ToString();
+            }       
+
             String comboChoice = comboEmployeSearch_FindBy.SelectedItem.ToString();
             List<employe> employeFound = new List<employe>();
 
@@ -167,5 +180,38 @@ namespace LocationVoiture.Vues
         }
 
         #endregion UTILITAIRES
+
+        private void comboEmployeSearch_FindBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboEmployeSearch_FindBy.SelectedItem.ToString().Equals(findByParameter.succursale.ToString()))
+            {
+                cbEmployeSearch.Items.Clear();
+                txtEmployeSearch_value.Text = "";
+                List<succursale> succursales = locationController.SuccursalesServices.getAllSuccursale();
+                foreach (succursale succ in succursales)
+                {
+                    cbEmployeSearch.Items.Add(succ.nom);
+                }
+                cbEmployeSearch.SelectedIndex = 0;
+                cbEmployeSearch.Show();
+            }
+
+            else if (comboEmployeSearch_FindBy.SelectedItem.ToString().Equals(findByParameter.fonction.ToString()))
+            {
+                cbEmployeSearch.Items.Clear();
+                txtEmployeSearch_value.Text = "";
+                foreach (employeFunctions fonction in Enum.GetValues(typeof(employeFunctions)))
+                {
+                    cbEmployeSearch.Items.Add(fonction);
+                }
+                cbEmployeSearch.SelectedIndex = 0;
+                cbEmployeSearch.Show();
+            }
+            else
+            {
+                cbEmployeSearch.Hide();
+            }
+
+        }
     }
 }

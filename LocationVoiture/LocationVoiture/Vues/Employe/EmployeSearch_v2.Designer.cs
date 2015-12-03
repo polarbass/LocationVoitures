@@ -46,6 +46,7 @@ namespace LocationVoiture.Vues
             this.comboEmployeSearch_FindBy = new System.Windows.Forms.ComboBox();
             this.btnEmployeSearch_cancel = new System.Windows.Forms.Button();
             this.animationTimer = new System.Windows.Forms.Timer(this.components);
+            this.cbEmployeSearch = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel_message.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -107,6 +108,7 @@ namespace LocationVoiture.Vues
             // panel11
             // 
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel11.Controls.Add(this.cbEmployeSearch);
             this.panel11.Controls.Add(this.txtEmployeSearch_value);
             this.panel11.Location = new System.Drawing.Point(296, 93);
             this.panel11.Name = "panel11";
@@ -209,6 +211,7 @@ namespace LocationVoiture.Vues
             this.comboEmployeSearch_FindBy.Name = "comboEmployeSearch_FindBy";
             this.comboEmployeSearch_FindBy.Size = new System.Drawing.Size(254, 29);
             this.comboEmployeSearch_FindBy.TabIndex = 1;
+            this.comboEmployeSearch_FindBy.SelectedIndexChanged += new System.EventHandler(this.comboEmployeSearch_FindBy_SelectedIndexChanged);
             // 
             // btnEmployeSearch_cancel
             // 
@@ -227,6 +230,19 @@ namespace LocationVoiture.Vues
             // animationTimer
             // 
             this.animationTimer.Interval = 1000;
+            // 
+            // cbEmployeSearch
+            // 
+            this.cbEmployeSearch.BackColor = System.Drawing.Color.Teal;
+            this.cbEmployeSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEmployeSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbEmployeSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEmployeSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.cbEmployeSearch.FormattingEnabled = true;
+            this.cbEmployeSearch.Location = new System.Drawing.Point(0, 0);
+            this.cbEmployeSearch.Name = "cbEmployeSearch";
+            this.cbEmployeSearch.Size = new System.Drawing.Size(314, 29);
+            this.cbEmployeSearch.TabIndex = 117;
             // 
             // EmployeSearch_v2
             // 
@@ -266,5 +282,6 @@ namespace LocationVoiture.Vues
         private Panel panel_message;
         private Label label3;
         private Timer animationTimer;
+        private ComboBox cbEmployeSearch;
     }
 }

@@ -264,7 +264,6 @@ namespace LocationVoiture.Vues
                 }
                 else
                 {
-                    MessageBox.Show("Aucune réservation n'a pu etre trouvée");
                     emptyClientFormFields();
                 }
             }

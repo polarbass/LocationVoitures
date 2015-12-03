@@ -90,7 +90,6 @@ namespace LocationVoiture.Vues
         {
 
             String nom          = txtEmploye_nom.Text;
-            String prenom       = txtEmploye_prenom.Text;
             String tauxHoraire  = txtEmploye_tauxHoraire.Text;
             String telephone    = txtEmploye_phone.Text;
             String adresse      = txtEmploye_adresse.Text;
@@ -100,7 +99,7 @@ namespace LocationVoiture.Vues
             String succursaleString = cbEmploye_succursale.SelectedItem.ToString();
             int succursaleID = locationController.SuccursalesServices.FindBy(succursaleString, "nom").First().succursaleID;
 
-            if (!nom.Equals("") && !prenom.Equals("") && !telephone.Equals("") && !adresse.Equals("") && !username.Equals("") && !password.Equals(""))
+            if (!nom.Equals("") && !telephone.Equals("") && !adresse.Equals("") && !username.Equals("") && !password.Equals(""))
             {
 
                 // Fonction ADD 
@@ -108,7 +107,7 @@ namespace LocationVoiture.Vues
                 {
                     employe addEmploye = new employe();
 
-                    addEmploye.nom = prenom + " " + nom;
+                    addEmploye.nom = nom;
                     addEmploye.telephone = telephone;
                     addEmploye.adresse            = adresse;
                     addEmploye.fonction = fonction;
@@ -141,7 +140,7 @@ namespace LocationVoiture.Vues
 
                     if (employeToUpdate != null)
                     {
-                        employeToUpdate.nom = prenom + " " + nom;
+                        employeToUpdate.nom = nom;
                         employeToUpdate.telephone        = telephone;
                         employeToUpdate.adresse   = adresse;
                         employeToUpdate.fonction = fonction;
@@ -182,7 +181,6 @@ namespace LocationVoiture.Vues
         {
             String searchValue = "";
 
-
             if (txtEmploye_idSearch.Text == "")
             {
                 this.Opacity = 0.1;
@@ -212,11 +210,8 @@ namespace LocationVoiture.Vues
                 setFieldStatus(true);
                 txtEmploye_empID.Enabled = false;
 
-                String[] nameSplitter = employeFound.nom.Split(' ');
-
                 txtEmploye_empID.Text       = employeFound.employeID.ToString();
-                txtEmploye_prenom.Text      = nameSplitter[0];
-                txtEmploye_nom.Text         = nameSplitter[1];
+                txtEmploye_nom.Text         = employeFound.nom;
                 txtEmploye_tauxHoraire.Text = employeFound.salaire_horaire.ToString();
                 txtEmploye_phone.Text       = employeFound.telephone;
                 txtEmploye_adresse.Text     = employeFound.adresse;
@@ -296,7 +291,6 @@ namespace LocationVoiture.Vues
             txtEmploye_empID.Text           = "";
             txtEmploye_idSearch.Text        = "";
             txtEmploye_nom.Text             = "";
-            txtEmploye_prenom.Text          = "";
             txtEmploye_phone.Text           = "";
             txtEmploye_adresse.Text         = "";
             txtEmploye_tauxHoraire.Text     = "";
@@ -322,7 +316,6 @@ namespace LocationVoiture.Vues
         {
             txtEmploye_empID.Enabled        = enabledStatus;
             txtEmploye_nom.Enabled          = enabledStatus;
-            txtEmploye_prenom.Enabled       = enabledStatus;
             txtEmploye_phone.Enabled        = enabledStatus;
             txtEmploye_adresse.Enabled      = enabledStatus;
             txtEmploye_tauxHoraire.Enabled  = enabledStatus;

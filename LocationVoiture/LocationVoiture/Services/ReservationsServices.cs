@@ -129,16 +129,18 @@ namespace LocationVoiture.Services
         /// <summary>
         /// Enregistre les modification fait à la table reservation
         /// </summary>
-        public void Save()
+        public Boolean Save()
         {
             try
             {
                 reservationEntitie.SaveChanges();
                 reservationEntitie.Dispose();
+                return true;
             }
             catch
             {
                 Console.WriteLine("Erreur : Cannot Add reservation (Méthode AddReservation)");
+                return false;
             }
         }
     }

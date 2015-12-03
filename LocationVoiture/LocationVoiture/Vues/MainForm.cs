@@ -54,13 +54,14 @@
             if (dialogResult == DialogResult.OK)
             {
                 panel_DefaultOperations.Hide();
-                panel_Operations.Show();
+                panel_LeftRow.Show();
+                panel_operation.Show();
                 lblMainForm_activeUser.Text = loginForm.username;
             }
             else
             {
                 panel_DefaultOperations.Show();
-                panel_Operations.Hide();
+                panel_operation.Hide();
             }
         }
 
@@ -201,7 +202,7 @@
 
         }
 
-        private void toggleMessage(DialogResult dialogResult, String message)
+        public void toggleMessage(DialogResult dialogResult, String message)
         {
             panelSelector(true);
 
@@ -225,12 +226,12 @@
         {
             if (v)
             {
-                panel_Operations.Show();
+                panel_operation.Show();
                 lblOperation.Show();
             }
             else
             {
-                panel_Operations.Hide();
+                panel_operation.Hide();
                 lblOperation.Hide();
             }
 

@@ -2,13 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace LocationVoiture.Services
 {
-    class ClientsServices
+    public class ClientsServices
     {
         private locationvoitureEntities ClientsEntitie { get; set; }
 
@@ -39,12 +36,11 @@ namespace LocationVoiture.Services
             {
                 ClientsEntitie.clients.Add(client);
                 Save();
-                MessageBox.Show("client added");
                 isAdded = true;
             }
             catch
             {
-                MessageBox.Show("Le client n'a pas pu etre ajoute");
+                Console.WriteLine("Erreur dans le ADDCLIENT");
             }
 
             return isAdded;             

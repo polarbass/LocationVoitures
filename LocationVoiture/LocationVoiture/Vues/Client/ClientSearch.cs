@@ -1,6 +1,7 @@
 ﻿using LocationVoiture.Controller;
 using LocationVoiture.Model;
 using LocationVoiture.Services;
+using LocationVoiture.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +25,19 @@ namespace LocationVoiture.Vues
 
         private enum findByParameter { clientID, nom, prenom, courriel, telephone };
 
+        public enum columnName
+        {
+            [Description("No. Client")]
+            clientID,
+            Nom,
+            [Description("Téléphone")]
+            Phone,
+            Addresse,
+            Courriel
+        };
+
+        private int RightTimeOut = 0;
+
 
         // Constructeur
 
@@ -34,6 +48,10 @@ namespace LocationVoiture.Vues
             locationController = new LocationController();
 
             btnClientSearch_select.Enabled = false;
+            panel_message.Hide();
+
+            // FadeIn FadeOut pour l'affichage des messages
+            animationTimer.Tick += animationTimer_tick;
 
             // Paramètre de recherche disponible
             foreach (findByParameter parameter in Enum.GetValues(typeof(findByParameter)))
@@ -76,21 +94,34 @@ namespace LocationVoiture.Vues
             // Si un ou des client o
             if (clientFound.Count > 0)
             {
-                dataGridView1.DataSource = clientFound;
-                btnClientSearch_select.Enabled = true;
+                DataTable table = new DataTable();
 
-                // hiding columns (6:password | 7:assurance | 8:permis_conduire_num | 9:num_carte_credit)
-                dataGridView1.Columns[6].Visible = false;
-                dataGridView1.Columns[7].Visible = false;
-                dataGridView1.Columns[8].Visible = false;
-                dataGridView1.Columns[9].Visible = false;
+                foreach (columnName enumValue in Enum.GetValues(typeof(columnName)))
+                {
+                    table.Columns.Add(EnumDescriptor.GetEnumDescription(enumValue), typeof(string));
+                }
+
+                foreach (client client in clientFound)
+                {
+                    table.Rows.Add(
+                        client.clientID.ToString(),
+                        client.prenom + " " + client.nom,
+                        client.telephone,
+                        client.adresse_client,
+                        client.courriel
+                        );
+                }
+
+                dataGridView1.DataSource = table;
+                btnClientSearch_select.Enabled = true;
             }
             else
             {
-                MessageBox.Show("Aucun client trouvé");
+                Animations.Animate(panel_message, Animations.Effect.Roll, 300, 180);
+                animationTimer.Start();
                 dataGridView1.DataSource = null;
             }
-            
+
         }
 
         /// <summary>
@@ -114,6 +145,21 @@ namespace LocationVoiture.Vues
 
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void animationTimer_tick(object sender, EventArgs e)
+        {
+            if (RightTimeOut < 2)
+            {
+                RightTimeOut++;
+            }
+
+            if (RightTimeOut == 2)
+            {
+                Animations.Animate(panel_message, Animations.Effect.Roll, 300, 180);
+                RightTimeOut = 0;
+                animationTimer.Stop();
+            }
         }
     }
 }

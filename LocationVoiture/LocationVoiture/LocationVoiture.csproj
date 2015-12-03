@@ -129,6 +129,7 @@
     <Compile Include="Services\LoginServices.cs" />
     <Compile Include="Services\ClientsServices.cs" />
     <Compile Include="Utils\Animations.cs" />
+    <Compile Include="Utils\EnumDescriptor.cs" />
     <Compile Include="Vues\Employe\EmployeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,10 +142,10 @@
     <Compile Include="Vues\Employe\EmployeSearch.Designer.cs">
       <DependentUpon>EmployeSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vues\ReservationForm.cs">
+    <Compile Include="Vues\Reservation\ReservationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vues\ReservationForm.Designer.cs">
+    <Compile Include="Vues\Reservation\ReservationForm.Designer.cs">
       <DependentUpon>ReservationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Vues\Client\ClientForm.cs">
@@ -153,10 +154,10 @@
     <Compile Include="Vues\Client\ClientForm.Designer.cs">
       <DependentUpon>ClientForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vues\LoginForm.cs">
+    <Compile Include="Vues\Login\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vues\LoginForm.designer.cs">
+    <Compile Include="Vues\Login\LoginForm.designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Vues\MainForm.cs">
@@ -193,7 +194,7 @@
     <EmbeddedResource Include="Vues\Employe\EmployeSearch.resx">
       <DependentUpon>EmployeSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vues\ReservationForm.resx">
+    <EmbeddedResource Include="Vues\Reservation\ReservationForm.resx">
       <DependentUpon>ReservationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vues\Client\ClientForm.resx">
@@ -202,7 +203,7 @@
     <EmbeddedResource Include="Vues\Client\ClientSearch.resx">
       <DependentUpon>ClientSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vues\LoginForm.resx">
+    <EmbeddedResource Include="Vues\Login\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vues\MainForm.resx">

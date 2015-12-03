@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnReservationSearch_select = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.txtReservationSearch_value = new System.Windows.Forms.TextBox();
             this.btnReservationSearch_find = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,17 +42,18 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboReservationSearch_FindBy = new System.Windows.Forms.ComboBox();
             this.btnReservationSearch_cancel = new System.Windows.Forms.Button();
-            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.panel_message = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.animationTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel_message.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.panel_message);
             this.panel1.Controls.Add(this.btnReservationSearch_select);
             this.panel1.Controls.Add(this.panel11);
             this.panel1.Controls.Add(this.btnReservationSearch_find);
@@ -59,9 +62,10 @@
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.comboReservationSearch_FindBy);
             this.panel1.Controls.Add(this.btnReservationSearch_cancel);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1123, 501);
+            this.panel1.Size = new System.Drawing.Size(1147, 525);
             this.panel1.TabIndex = 0;
             // 
             // btnReservationSearch_select
@@ -88,6 +92,19 @@
             this.panel11.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.panel11.Size = new System.Drawing.Size(314, 32);
             this.panel11.TabIndex = 15;
+            // 
+            // dateTimePicker
+            // 
+            this.dateTimePicker.CalendarMonthBackground = System.Drawing.Color.Black;
+            this.dateTimePicker.CalendarTitleBackColor = System.Drawing.Color.Black;
+            this.dateTimePicker.CalendarTrailingForeColor = System.Drawing.SystemColors.Desktop;
+            this.dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker.Location = new System.Drawing.Point(13, 2);
+            this.dateTimePicker.MinDate = new System.DateTime(2015, 11, 17, 15, 9, 37, 0);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(286, 26);
+            this.dateTimePicker.TabIndex = 37;
+            this.dateTimePicker.Value = new System.DateTime(2015, 11, 17, 15, 9, 37, 0);
             // 
             // txtReservationSearch_value
             // 
@@ -140,7 +157,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Black;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -167,12 +184,13 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 35;
-            this.dataGridView1.Size = new System.Drawing.Size(1102, 276);
+            this.dataGridView1.Size = new System.Drawing.Size(1117, 276);
             this.dataGridView1.TabIndex = 3;
             // 
             // comboReservationSearch_FindBy
             // 
             this.comboReservationSearch_FindBy.BackColor = System.Drawing.SystemColors.MenuText;
+            this.comboReservationSearch_FindBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboReservationSearch_FindBy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboReservationSearch_FindBy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboReservationSearch_FindBy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -198,18 +216,30 @@
             this.btnReservationSearch_cancel.UseVisualStyleBackColor = false;
             this.btnReservationSearch_cancel.Click += new System.EventHandler(this.btnClientSearch_cancel_Click);
             // 
-            // dateTimePicker
+            // panel_message
             // 
-            this.dateTimePicker.CalendarMonthBackground = System.Drawing.Color.Black;
-            this.dateTimePicker.CalendarTitleBackColor = System.Drawing.Color.Black;
-            this.dateTimePicker.CalendarTrailingForeColor = System.Drawing.SystemColors.Desktop;
-            this.dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker.Location = new System.Drawing.Point(13, 2);
-            this.dateTimePicker.MinDate = new System.DateTime(2015, 11, 17, 15, 9, 37, 0);
-            this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(286, 26);
-            this.dateTimePicker.TabIndex = 37;
-            this.dateTimePicker.Value = new System.DateTime(2015, 11, 17, 15, 9, 37, 0);
+            this.panel_message.BackColor = System.Drawing.Color.Teal;
+            this.panel_message.Controls.Add(this.label3);
+            this.panel_message.Location = new System.Drawing.Point(296, 59);
+            this.panel_message.Name = "panel_message";
+            this.panel_message.Size = new System.Drawing.Size(314, 28);
+            this.panel_message.TabIndex = 18;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Teal;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label3.Location = new System.Drawing.Point(67, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(201, 21);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Aucune réservation trouvée";
+            // 
+            // animationTimer
+            // 
+            this.animationTimer.Interval = 1000;
             // 
             // ReservationSearch
             // 
@@ -221,13 +251,16 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReservationSearch";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form3";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel_message.ResumeLayout(false);
+            this.panel_message.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -245,5 +278,8 @@
         private System.Windows.Forms.TextBox txtReservationSearch_value;
         private System.Windows.Forms.Button btnReservationSearch_select;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.Panel panel_message;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Timer animationTimer;
     }
 }

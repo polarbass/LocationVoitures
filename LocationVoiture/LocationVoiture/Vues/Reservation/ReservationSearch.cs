@@ -1,5 +1,6 @@
 ﻿using LocationVoiture.Controller;
 using LocationVoiture.Model;
+using LocationVoiture.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,12 +13,12 @@ namespace LocationVoiture.Vues
     public partial class ReservationSearch : Form
     {
 
-        private LocationController locationController { get; set; }        
+        private LocationController locationController { get; set; }
         public String ReservationSearchID { get; private set; }
 
         private enum findByParameter { reservationID, clientID, employeID, succursaleID, dateReservation };
         public enum columnName
-        {           
+        {
             [Description("Reservation ID")]
             reservationID,
             [Description("ClientID")]
@@ -25,12 +26,14 @@ namespace LocationVoiture.Vues
             Client,
             Fabricant,
             Modele,
-            Succursale,           
+            Succursale,
             [Description("Date Début")]
             DateOUT,
             [Description("Date fin")]
             DateIN
         };
+
+        private int RightTimeOut = 0;
 
         public ReservationSearch()
         {
@@ -39,6 +42,10 @@ namespace LocationVoiture.Vues
             locationController = new LocationController();
 
             btnReservationSearch_select.Enabled = false;
+            panel_message.Hide();
+
+            // FadeIn FadeOut pour l'affichage des messages
+            animationTimer.Tick += animationTimer_tick;
 
             // Paramètre de recherche disponible
             foreach (findByParameter parameter in Enum.GetValues(typeof(findByParameter)))
@@ -86,20 +93,11 @@ namespace LocationVoiture.Vues
                 DataTable table = new DataTable();
 
                 foreach (columnName enumValue in Enum.GetValues(typeof(columnName)))
-                {                   
-                    table.Columns.Add(GetEnumDescription(enumValue), typeof(string));
+                {
+                    table.Columns.Add(EnumDescriptor.GetEnumDescription(enumValue), typeof(string));
                 }
 
-                    //table.Columns.Add("Reservation ID", typeof(int));
-                    //table.Columns.Add("Client ID", typeof(int));
-                    //table.Columns.Add("Client", typeof(string));
-                    //table.Columns.Add("Fabricant", typeof(string));
-                    //table.Columns.Add("Modele", typeof(string));
-                    //table.Columns.Add("Location", typeof(string));
-                    //table.Columns.Add("Date Début", typeof(DateTime));
-                    //table.Columns.Add("Date Fin", typeof(DateTime));
-
-                foreach(reservation res in reservationFound)
+                foreach (reservation res in reservationFound)
                 {
                     table.Rows.Add(
                         res.reservationID.ToString(),
@@ -113,16 +111,17 @@ namespace LocationVoiture.Vues
                         );
                 }
 
-                dataGridView1.DataSource = table;              
+                dataGridView1.DataSource = table;
                 btnReservationSearch_select.Enabled = true;
 
             }
             else
             {
-                MessageBox.Show("Aucune réservation n'a pu être trouvée");
+                Animations.Animate(panel_message, Animations.Effect.Roll, 300, 180);
+                animationTimer.Start();
                 dataGridView1.DataSource = null;
             }
-            
+
         }
 
         /// <summary>
@@ -148,6 +147,8 @@ namespace LocationVoiture.Vues
             this.Close();
         }
 
+        #region UTILITAIRES
+
         private void comboReservationSearch_FindBy_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboReservationSearch_FindBy.SelectedItem.Equals(findByParameter.dateReservation))
@@ -160,22 +161,23 @@ namespace LocationVoiture.Vues
             }
         }
 
-        #region UTILITAIRES
 
-        public static string GetEnumDescription(Enum value)
+        private void animationTimer_tick(object sender, EventArgs e)
         {
-            FieldInfo fi = value.GetType().GetField(value.ToString());
+            if (RightTimeOut < 2)
+            {
+                RightTimeOut++;
+            }
 
-            DescriptionAttribute[] attributes =
-                (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
+            if (RightTimeOut == 2)
+            {
+                Animations.Animate(panel_message, Animations.Effect.Roll, 300, 180);
+                RightTimeOut = 0;
+                animationTimer.Stop();
+            }
 
-            if (attributes != null && attributes.Length > 0)
-                return attributes[0].Description;
-            else
-                return value.ToString();
+            #endregion UTILITAIRES
         }
-
-        #endregion UTILITAIRES
-
     }
+        
 }

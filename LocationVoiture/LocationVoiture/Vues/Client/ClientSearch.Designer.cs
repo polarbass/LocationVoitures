@@ -1,4 +1,6 @@
-﻿namespace LocationVoiture.Vues
+﻿using System.Windows.Forms;
+
+namespace LocationVoiture.Vues
 {
     partial class ClientSearch
     {
@@ -28,6 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -40,16 +43,18 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboClientSearch_FindBy = new System.Windows.Forms.ComboBox();
             this.btnClientSearch_cancel = new System.Windows.Forms.Button();
+            this.panel_message = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.animationTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel_message.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.panel_message);
             this.panel1.Controls.Add(this.btnClientSearch_select);
             this.panel1.Controls.Add(this.panel11);
             this.panel1.Controls.Add(this.btnClientSearch_find);
@@ -58,9 +63,10 @@
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.comboClientSearch_FindBy);
             this.panel1.Controls.Add(this.btnClientSearch_cancel);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1123, 501);
+            this.panel1.Size = new System.Drawing.Size(1147, 525);
             this.panel1.TabIndex = 0;
             // 
             // btnClientSearch_select
@@ -137,6 +143,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Black;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -162,13 +170,15 @@
             this.dataGridView1.Location = new System.Drawing.Point(18, 136);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.Size = new System.Drawing.Size(1102, 276);
+            this.dataGridView1.RowTemplate.Height = 36;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1117, 276);
             this.dataGridView1.TabIndex = 3;
             // 
             // comboClientSearch_FindBy
             // 
             this.comboClientSearch_FindBy.BackColor = System.Drawing.SystemColors.MenuText;
+            this.comboClientSearch_FindBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboClientSearch_FindBy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboClientSearch_FindBy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboClientSearch_FindBy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -193,6 +203,31 @@
             this.btnClientSearch_cancel.UseVisualStyleBackColor = false;
             this.btnClientSearch_cancel.Click += new System.EventHandler(this.btnClientSearch_cancel_Click);
             // 
+            // panel_message
+            // 
+            this.panel_message.BackColor = System.Drawing.Color.Teal;
+            this.panel_message.Controls.Add(this.label3);
+            this.panel_message.Location = new System.Drawing.Point(296, 59);
+            this.panel_message.Name = "panel_message";
+            this.panel_message.Size = new System.Drawing.Size(314, 28);
+            this.panel_message.TabIndex = 17;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Teal;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label3.Location = new System.Drawing.Point(90, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(144, 21);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Aucun client trouvé";
+            // 
+            // animationTimer
+            // 
+            this.animationTimer.Interval = 1000;
+            // 
             // ClientSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,13 +238,15 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ClientSearch";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form3";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel_message.ResumeLayout(false);
+            this.panel_message.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -226,5 +263,8 @@
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.TextBox txtClientSearch_value;
         private System.Windows.Forms.Button btnClientSearch_select;
+        private Panel panel_message;
+        private Label label3;
+        private Timer animationTimer;
     }
 }

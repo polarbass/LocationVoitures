@@ -44,12 +44,11 @@ namespace LocationVoiture.Vues
 
             locationController = new LocationController();
 
-
             fillTheComboBoxOpenHours();
             fillTheComboBoxSuccursale();
             disableClientField();
             lblClientCreate_operation.Text = operation;
-
+            
             // Selection de l'affichage
             if (operation.Equals(OPERATION_RESERVATION_CREATION))
             {
@@ -62,50 +61,8 @@ namespace LocationVoiture.Vues
                 lblClientCreate_id.Text = "réservation :";
                 btnReservationCreate_creerClient.Visible = false;
                 btnClientCreate_add.Text = ReservationForm.OPERATION_RESERVATION_UPDATE;
-
-                loadReservationDetails();
             }           
 
-        }
-
-        private void loadReservationDetails()
-        {
-            /* TODO : Valeur de reservation rechercher HardCoder for now */
-            String searchValue = "6";
-
-            reservation reservationToUpdate = locationController.ReservationsServices.FindReservation(searchValue);
-
-            if(reservationToUpdate != null)
-            {
-                txtClientCreate_clientId.Text = reservationToUpdate.clientID.ToString();
-                txtClientCreate_nom.Text = reservationToUpdate.client.nom;
-                txtClientCreate_prenom.Text = reservationToUpdate.client.prenom;
-                txtClientCreate_phone.Text = reservationToUpdate.client.telephone;
-                txtClientCreate_adresse.Text = reservationToUpdate.client.adresse_client;
-                txtClientCreate_email.Text = reservationToUpdate.client.courriel;
-
-                string succursaleName = reservationToUpdate.vehicule.succursale.nom;
-                int succursaleIndex = cbReservationCreate_Succursale.FindString(succursaleName);
-                cbReservationCreate_Succursale.SelectedIndex = succursaleIndex;
-
-                string fabricantName = reservationToUpdate.vehicule.fabriquant.nom_fabriquant;
-                int fabricantIndex = cbReservationCreate_marque.FindString(fabricantName);
-                cbReservationCreate_marque.SelectedIndex = fabricantIndex;
-
-                string modeleName = reservationToUpdate.vehicule.modele.nom_modele;
-                int modeleIndex = cbReservationCreate_model.FindString(modeleName);
-                cbReservationCreate_model.SelectedIndex = modeleIndex;
-      
-                string nbPassager = reservationToUpdate.vehicule.modele.nb_place.ToString();
-                int nbPassagerIndex = cbReservationCreate_nbPassager.FindString(nbPassager);
-                cbReservationCreate_nbPassager.SelectedIndex = nbPassagerIndex;
-
-                string plateNo = reservationToUpdate.vehicule.plaque_num;
-                int plateNoIndex = cbReservationCreate_noPlaque.FindString(plateNo);
-                cbReservationCreate_noPlaque.SelectedIndex = plateNoIndex;
-
-            }
-        
         }
 
         // Méthodes
@@ -166,25 +123,33 @@ namespace LocationVoiture.Vues
             // Update d'une réservation
             else
             {
-                //string idToUpdate = txtClientCreate_clientId.Text;
+                string reservationIdToUpdate = txtClientCreate_idSearch.Text;
 
-                //client clientToUpdate = locationController.ClientsServices.Find(idToUpdate);
-                //if (clientToUpdate != null)
-                //{
+                reservation reservationToUpdate = locationController.ReservationsServices.FindReservation(reservationIdToUpdate);
+                if (reservationToUpdate != null)
+                {
+                    //reservationToUpdate.clientID                = clientID;
+                    reservationToUpdate.succursaleID            = succursaleID;
+                    reservationToUpdate.vehiculeID              = vehiculeID;
+                    reservationToUpdate.date_debut_reservation  = reservationOUT;
+                    reservationToUpdate.date_fin_reservation    = reservationIN;
+                    //reservationToUpdate.date_appel_reservation  = DateTime.Now;
+                    reservationToUpdate.employeID               = employeID;
+                }
 
-                //    clientToUpdate.nom = nom;
-                //    clientToUpdate.prenom = prenom;
-                //    clientToUpdate.telephone = telephone;
-                //    clientToUpdate.adresse_client = adresse;
-                //    clientToUpdate.courriel = courriel;
-                //}
-
-                //locationController.ClientsServices.Save();
-                //this.DialogResult = DialogResult.OK;
-                //messageToSend = "Le client a été modifé";
-                //this.Close();
+                if (locationController.ReservationsServices.Save())
+                {
+                    this.DialogResult = DialogResult.OK;
+                    messageToSend = "La réservation a été modifée";
+                    this.Close();
+                }
+                else
+                {
+                    this.DialogResult = DialogResult.No;
+                    messageToSend = "La réservation n'a pas pu être modifée, une erreur est survenue";
+                    this.Close();
+                }            
             }
-
         }
 
         /// <summary>
@@ -232,7 +197,7 @@ namespace LocationVoiture.Vues
                 }
                 else
                 {
-                    MessageBox.Show("Aucun client n'a pu etre trouvé");
+                    //MessageBox.Show("Aucun client n'a pu etre trouvé");
                     emptyClientFormFields();
                 }
             }
@@ -262,6 +227,7 @@ namespace LocationVoiture.Vues
 
                 if (reservationToUpdate != null)
                 {
+                    txtClientCreate_idSearch.Text = reservationToUpdate.reservationID.ToString();
 
                     // CLIENT TXTFIELDS
                     txtClientCreate_clientId.Text = reservationToUpdate.clientID.ToString();
@@ -311,6 +277,7 @@ namespace LocationVoiture.Vues
         {
             ClientForm clientForm = new ClientForm("Création");
             clientForm.Owner = this;
+            this.Opacity = 0.1;
 
             DialogResult resultat = clientForm.ShowDialog();
             if (resultat == DialogResult.OK)
@@ -326,6 +293,8 @@ namespace LocationVoiture.Vues
                 txtClientCreate_adresse.Text    = clientAdded.adresse_client;
                 txtClientCreate_email.Text      = clientAdded.courriel;
             }
+
+            this.Opacity = 1;
 
         }
 
@@ -546,11 +515,12 @@ namespace LocationVoiture.Vues
 
         private void disableClientField()
         {
-            txtClientCreate_nom.Enabled     = false;
-            txtClientCreate_prenom.Enabled  = false;
-            txtClientCreate_phone.Enabled   = false;
-            txtClientCreate_adresse.Enabled = false;
-            txtClientCreate_email.Enabled   = false;
+            txtClientCreate_clientId.Enabled = false;
+            txtClientCreate_nom.Enabled      = false;
+            txtClientCreate_prenom.Enabled   = false;
+            txtClientCreate_phone.Enabled    = false;
+            txtClientCreate_adresse.Enabled  = false;
+            txtClientCreate_email.Enabled    = false;
         }
 
         private void emptyClientFormFields()
@@ -568,7 +538,7 @@ namespace LocationVoiture.Vues
         {
             btnClientForm_Find.Visible          = visibilityChoice;
             txtClientCreate_idSearch.Visible    = visibilityChoice;
-            txtClientCreate_clientId.Enabled    = visibilityChoice;
+            txtClientCreate_clientId.Visible    = visibilityChoice;
             lblClientCreate_id.Visible          = visibilityChoice;
             panelClientForm_id.Visible          = visibilityChoice;
         }

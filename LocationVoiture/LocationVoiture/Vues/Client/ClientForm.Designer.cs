@@ -57,8 +57,8 @@
             this.txtClientCreate_cancel = new System.Windows.Forms.Button();
             this.btnClientCreate_add = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnOK = new System.Windows.Forms.Button();
             this.btnCANCEL = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelClientCreate_clientId.SuspendLayout();
             this.panelClientForm_id.SuspendLayout();
@@ -72,9 +72,8 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnClientCreate_Delete);
             this.panel1.Controls.Add(this.lblClientCreate_clientId);
             this.panel1.Controls.Add(this.panelClientCreate_clientId);
@@ -95,9 +94,10 @@
             this.panel1.Controls.Add(this.lblClientCreate_nom);
             this.panel1.Controls.Add(this.txtClientCreate_cancel);
             this.panel1.Controls.Add(this.btnClientCreate_add);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(582, 510);
+            this.panel1.Size = new System.Drawing.Size(460, 534);
             this.panel1.TabIndex = 0;
             // 
             // btnClientCreate_Delete
@@ -425,27 +425,10 @@
             this.panel2.BackColor = System.Drawing.Color.Maroon;
             this.panel2.Controls.Add(this.btnCANCEL);
             this.panel2.Controls.Add(this.btnOK);
-            this.panel2.Location = new System.Drawing.Point(458, 12);
+            this.panel2.Location = new System.Drawing.Point(319, 112);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(122, 510);
+            this.panel2.Size = new System.Drawing.Size(112, 93);
             this.panel2.TabIndex = 106;
-            // 
-            // btnOK
-            // 
-            this.btnOK.BackColor = System.Drawing.Color.Black;
-            this.btnOK.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.ForeColor = System.Drawing.Color.Maroon;
-            this.btnOK.Location = new System.Drawing.Point(13, 171);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(91, 35);
-            this.btnOK.TabIndex = 106;
-            this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = false;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
-            this.btnOK.MouseEnter += new System.EventHandler(this.mouseEnterEventHandlerRed);
-            this.btnOK.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandlerRed);
             // 
             // btnCANCEL
             // 
@@ -454,7 +437,7 @@
             this.btnCANCEL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCANCEL.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCANCEL.ForeColor = System.Drawing.Color.Maroon;
-            this.btnCANCEL.Location = new System.Drawing.Point(13, 212);
+            this.btnCANCEL.Location = new System.Drawing.Point(11, 51);
             this.btnCANCEL.Name = "btnCANCEL";
             this.btnCANCEL.Size = new System.Drawing.Size(91, 35);
             this.btnCANCEL.TabIndex = 107;
@@ -464,14 +447,30 @@
             this.btnCANCEL.MouseEnter += new System.EventHandler(this.mouseEnterEventHandlerRed);
             this.btnCANCEL.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandlerRed);
             // 
+            // btnOK
+            // 
+            this.btnOK.BackColor = System.Drawing.Color.Black;
+            this.btnOK.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOK.ForeColor = System.Drawing.Color.Maroon;
+            this.btnOK.Location = new System.Drawing.Point(11, 7);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(91, 35);
+            this.btnOK.TabIndex = 106;
+            this.btnOK.Text = "OK";
+            this.btnOK.UseVisualStyleBackColor = false;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            this.btnOK.MouseEnter += new System.EventHandler(this.mouseEnterEventHandlerRed);
+            this.btnOK.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandlerRed);
+            // 
             // ClientForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(574, 534);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(460, 534);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ClientForm";
@@ -495,6 +494,7 @@
             this.panel10.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

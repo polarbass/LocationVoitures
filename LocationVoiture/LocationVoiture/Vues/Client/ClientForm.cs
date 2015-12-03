@@ -20,9 +20,13 @@ namespace LocationVoiture.Vues
 
         private const string OPERATION_CLIENT_CREATION  = "Création";
         private const string OPERATION_CLIENT_UPDATE    = "Updater";
+        private const string MESSAGE_CLIENT_ADD         = "Le client a été ajouté";
+        private const string MESSAGE_ERREUR_ADD         = "Une erreur est survenue lors de la creation du client";
+        private const string MESSAGE_CLIENT_UPDATE      = "Le client a été modifé";
+        private const string MESSAGE_CLIENT_DELETE      = "Le client a été effacé";        
 
         // Propriétés
-        
+
         private LocationController locationController { get; set; }
         
         public client clientAdded { get; private set; }
@@ -89,13 +93,19 @@ namespace LocationVoiture.Vues
                         emptyClientFormFields();
                         clientAdded = addClient;
                         this.DialogResult = DialogResult.OK;
-                        messageToSend = "Le client a été ajouté";
+
+                        // ADD DU CLIENT RÉUSSI
+                        messageToSend = ClientForm.MESSAGE_CLIENT_ADD;
+
                         this.Close();
                     }
                     else
                     {
                         this.DialogResult = DialogResult.No;
-                        messageToSend = "Une erreur est survenue lors de la creation du client";
+
+                        // ERREUR DANS LE ADD CLIENT
+                        messageToSend = ClientForm.MESSAGE_ERREUR_ADD;
+
                         this.Close();
                     }
                 }
@@ -117,8 +127,10 @@ namespace LocationVoiture.Vues
                     }
 
                     locationController.ClientsServices.Save();
-                    this.DialogResult = DialogResult.OK;
-                    messageToSend = "Le client a été modifé";
+                    this.DialogResult = DialogResult.OK;   
+                             
+                    // CLIENT UPDATER        
+                    messageToSend = ClientForm.MESSAGE_CLIENT_UPDATE;
                     this.Close();
                 }
             }
@@ -135,7 +147,6 @@ namespace LocationVoiture.Vues
         /// </summary>        
         private void btnClientForm_Find_Click(object sender, EventArgs e)
         {
-
             String searchValue = "";
 
             if (txtClientCreate_idSearch.Text == "")
@@ -172,7 +183,6 @@ namespace LocationVoiture.Vues
             }
             else
             {
-                MessageBox.Show("Aucun client n'a pu etre trouvé");
                 btnClientCreate_Delete.Visible = false;
                 emptyClientFormFields();
             }
@@ -184,14 +194,14 @@ namespace LocationVoiture.Vues
         /// </summary>        
         private void btnClientCreate_Delete_Click(object sender, EventArgs e)
         {
-            String searchValue = txtClientCreate_idSearch.Text;
+            String searchValue = txtClientCreate_clientId.Text;
             client clientToDelete = locationController.ClientsServices.Find(searchValue);
 
             if (clientToDelete != null)
             {
-                Animations.Animate(panel2, Animations.Effect.Slide, 300, 180);   
+                btnClientCreate_Delete.Hide();
+                Animations.Animate(panel2, Animations.Effect.Slide, 300, 360);   
             }
-
         }
 
         /// <summary>
@@ -199,15 +209,18 @@ namespace LocationVoiture.Vues
         /// </summary>        
         private void btnOK_Click(object sender, EventArgs e)
         {
-            String searchValue = txtClientCreate_idSearch.Text;
+            String searchValue = txtClientCreate_clientId.Text;
             client clientToDelete = locationController.ClientsServices.Find(searchValue);
 
             if (clientToDelete != null)
             {
-                Animations.Animate(panel2, Animations.Effect.Slide, 300, 0);
+                Animations.Animate(panel2, Animations.Effect.Slide, 300, 360);
+                btnClientCreate_Delete.Show();
                 locationController.ClientsServices.DeleteClient(clientToDelete);
                 this.DialogResult = DialogResult.OK;
-                messageToSend = "Le client a été effacé";
+
+                // DELETE RÉUSSI
+                messageToSend = ClientForm.MESSAGE_CLIENT_DELETE;
                 this.Close();
             }
         }
@@ -217,7 +230,8 @@ namespace LocationVoiture.Vues
         /// </summary>        
         private void btnCANCEL_Click(object sender, EventArgs e)
         {
-            Animations.Animate(panel2, Animations.Effect.Slide, 300, 180);
+            Animations.Animate(panel2, Animations.Effect.Slide, 300, 360);
+            btnClientCreate_Delete.Show();
         }
 
         /// <summary>
@@ -225,7 +239,6 @@ namespace LocationVoiture.Vues
         /// </summary>       
         private void txtClientCreate_cancel_Click(object sender, EventArgs e)
         {
-            Animations.Animate(panel1, Animations.Effect.Slide, 800, 0);
             this.Close();
         }
 

@@ -94,6 +94,7 @@
     <EntitySetMapping Name="reservations">
       <EntityTypeMapping TypeName="locationvoitureModel.reservation">
         <MappingFragment StoreEntitySet="reservations">
+          <ScalarProperty Name="locationID" ColumnName="locationID" />
           <ScalarProperty Name="reservationID" ColumnName="reservationID" />
           <ScalarProperty Name="clientID" ColumnName="clientID" />
           <ScalarProperty Name="employeID" ColumnName="employeID" />
@@ -103,8 +104,6 @@
           <ScalarProperty Name="date_appel_reservation" ColumnName="date_appel_reservation" />
           <ScalarProperty Name="date_debut_reservation" ColumnName="date_debut_reservation" />
           <ScalarProperty Name="date_fin_reservation" ColumnName="date_fin_reservation" />
-          <ScalarProperty Name="date_prise_vehicule" ColumnName="date_prise_vehicule" />
-          <ScalarProperty Name="date_retour_vehicule" ColumnName="date_retour_vehicule" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

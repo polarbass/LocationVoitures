@@ -18,6 +18,7 @@ namespace LocationVoiture.Model
         {
             this.reservations = new HashSet<reservation>();
             this.locations = new HashSet<location>();
+            this.constats_dommages = new HashSet<constats_dommages>();
         }
     
         public int employeID { get; set; }
@@ -34,5 +35,6 @@ namespace LocationVoiture.Model
         public virtual ICollection<reservation> reservations { get; set; }
         public virtual ICollection<location> locations { get; set; }
         public virtual succursale succursale { get; set; }
+        public virtual ICollection<constats_dommages> constats_dommages { get; set; }
     }
 }

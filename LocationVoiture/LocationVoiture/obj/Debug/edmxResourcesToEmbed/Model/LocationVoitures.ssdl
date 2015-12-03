@@ -93,11 +93,10 @@
     <Property Name="vehiculeID" Type="int" Nullable="false" />
     <Property Name="succursaleID" Type="int" Nullable="false" />
     <Property Name="factureID" Type="int" />
+    <Property Name="locationID" Type="int" />
     <Property Name="date_appel_reservation" Type="timestamp" Precision="0" Nullable="false" />
     <Property Name="date_debut_reservation" Type="timestamp" Precision="0" />
     <Property Name="date_fin_reservation" Type="timestamp" Precision="0" />
-    <Property Name="date_prise_vehicule" Type="timestamp" Precision="0" />
-    <Property Name="date_retour_vehicule" Type="timestamp" Precision="0" />
   </EntityType>
   <EntityType Name="succursales">
     <Key>
@@ -142,6 +141,18 @@
       </Principal>
       <Dependent Role="reservations">
         <PropertyRef Name="clientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_constat_employe">
+    <End Role="employes" Type="Self.employes" Multiplicity="1" />
+    <End Role="constats_dommages" Type="Self.constats_dommages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employes">
+        <PropertyRef Name="employeID" />
+      </Principal>
+      <Dependent Role="constats_dommages">
+        <PropertyRef Name="employeID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -192,6 +203,20 @@
       </Principal>
       <Dependent Role="locations">
         <PropertyRef Name="vehiculeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_locationId">
+    <End Role="locations" Type="Self.locations" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="reservations" Type="Self.reservations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="locations">
+        <PropertyRef Name="locationID" />
+      </Principal>
+      <Dependent Role="reservations">
+        <PropertyRef Name="locationID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -311,6 +336,10 @@
       <End Role="clients" EntitySet="clients" />
       <End Role="reservations" EntitySet="reservations" />
     </AssociationSet>
+    <AssociationSet Name="fk_constat_employe" Association="Self.fk_constat_employe">
+      <End Role="employes" EntitySet="employes" />
+      <End Role="constats_dommages" EntitySet="constats_dommages" />
+    </AssociationSet>
     <AssociationSet Name="fk_EmployeID" Association="Self.fk_EmployeID">
       <End Role="employes" EntitySet="employes" />
       <End Role="reservations" EntitySet="reservations" />
@@ -326,6 +355,10 @@
     <AssociationSet Name="FK_location_vehicule" Association="Self.FK_location_vehicule">
       <End Role="vehicules" EntitySet="vehicules" />
       <End Role="locations" EntitySet="locations" />
+    </AssociationSet>
+    <AssociationSet Name="fk_locationId" Association="Self.fk_locationId">
+      <End Role="locations" EntitySet="locations" />
+      <End Role="reservations" EntitySet="reservations" />
     </AssociationSet>
     <AssociationSet Name="FK_model_type" Association="Self.FK_model_type">
       <End Role="types" EntitySet="types" />

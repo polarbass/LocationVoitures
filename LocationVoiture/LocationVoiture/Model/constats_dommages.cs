@@ -21,5 +21,6 @@ namespace LocationVoiture.Model
         public string description_dommages { get; set; }
     
         public virtual reservation reservation { get; set; }
+        public virtual employe employe { get; set; }
     }
 }

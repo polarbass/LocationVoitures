@@ -29,8 +29,7 @@ namespace LocationVoiture.Model
         public System.DateTime date_appel_reservation { get; set; }
         public Nullable<System.DateTime> date_debut_reservation { get; set; }
         public Nullable<System.DateTime> date_fin_reservation { get; set; }
-        public Nullable<System.DateTime> date_prise_vehicule { get; set; }
-        public Nullable<System.DateTime> date_retour_vehicule { get; set; }
+        public Nullable<int> locationID { get; set; }
     
         public virtual client client { get; set; }
         public virtual ICollection<constats_dommages> constats_dommages { get; set; }
@@ -38,5 +37,6 @@ namespace LocationVoiture.Model
         public virtual succursale succursale { get; set; }
         public virtual vehicule vehicule { get; set; }
         public virtual ICollection<location> locations { get; set; }
+        public virtual location location { get; set; }
     }
 }

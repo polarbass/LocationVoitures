@@ -38,6 +38,7 @@
     <Property Name="date_constat" Type="DateTime" Nullable="false" />
     <Property Name="description_dommages" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="reservation" Relationship="Self.fk_reservationID" FromRole="constats_dommages" ToRole="reservations" />
+    <NavigationProperty Name="employe" Relationship="locationvoitureModel.fk_constat_employe" FromRole="constats_dommages" ToRole="employe" />
   </EntityType>
   <EntityType Name="employe">
     <Key>
@@ -56,6 +57,7 @@
     <Property Name="adresse" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
     <Property Name="username" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="succursale" Relationship="locationvoitureModel.FK_succursale_employee" FromRole="employe" ToRole="succursale" />
+    <NavigationProperty Name="constats_dommages" Relationship="locationvoitureModel.fk_constat_employe" FromRole="employe" ToRole="constats_dommages" />
   </EntityType>
   <EntityType Name="fabriquant">
     <Key>
@@ -80,6 +82,7 @@
     <NavigationProperty Name="employe" Relationship="locationvoitureModel.FK_location_employe" FromRole="location" ToRole="employe" />
     <NavigationProperty Name="reservation" Relationship="locationvoitureModel.FK_location_reservation" FromRole="location" ToRole="reservation" />
     <NavigationProperty Name="vehicule" Relationship="locationvoitureModel.FK_location_vehicule" FromRole="location" ToRole="vehicule" />
+    <NavigationProperty Name="reservations" Relationship="locationvoitureModel.fk_locationId" FromRole="location" ToRole="reservation" />
   </EntityType>
   <EntityType Name="modele">
     <Key>
@@ -107,14 +110,14 @@
     <Property Name="date_appel_reservation" Type="DateTime" Nullable="false" />
     <Property Name="date_debut_reservation" Type="DateTime" />
     <Property Name="date_fin_reservation" Type="DateTime" />
-    <Property Name="date_prise_vehicule" Type="DateTime" />
-    <Property Name="date_retour_vehicule" Type="DateTime" />
     <NavigationProperty Name="client" Relationship="Self.fk_clientId" FromRole="reservations" ToRole="clients" />
     <NavigationProperty Name="constats_dommages" Relationship="Self.fk_reservationID" FromRole="reservations" ToRole="constats_dommages" />
     <NavigationProperty Name="employe" Relationship="Self.fk_EmployeID" FromRole="reservations" ToRole="employes" />
     <NavigationProperty Name="succursale" Relationship="Self.fk_succursaleId" FromRole="reservations" ToRole="succursales" />
     <NavigationProperty Name="vehicule" Relationship="Self.fk_vehiculeId" FromRole="reservations" ToRole="vehicules" />
     <NavigationProperty Name="locations" Relationship="locationvoitureModel.FK_location_reservation" FromRole="reservation" ToRole="location" />
+    <Property Name="locationID" Type="Int32" />
+    <NavigationProperty Name="location" Relationship="locationvoitureModel.fk_locationId" FromRole="reservation" ToRole="location" />
   </EntityType>
   <EntityType Name="succursale">
     <Key>
@@ -289,6 +292,14 @@
       <End Role="succursale" EntitySet="succursales" />
       <End Role="employe" EntitySet="employes" />
     </AssociationSet>
+    <AssociationSet Name="fk_constat_employe" Association="locationvoitureModel.fk_constat_employe">
+      <End Role="employe" EntitySet="employes" />
+      <End Role="constats_dommages" EntitySet="constats_dommages" />
+    </AssociationSet>
+    <AssociationSet Name="fk_locationId" Association="locationvoitureModel.fk_locationId">
+      <End Role="location" EntitySet="locations" />
+      <End Role="reservation" EntitySet="reservations" />
+    </AssociationSet>
   </EntityContainer>
   <Association Name="FK_location_employe">
     <End Type="locationvoitureModel.employe" Role="employe" Multiplicity="1" />
@@ -383,6 +394,32 @@
       </Principal>
       <Dependent Role="employe">
         <PropertyRef Name="succursaleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_constat_employe">
+    <End Type="locationvoitureModel.employe" Role="employe" Multiplicity="1" />
+    <End Type="locationvoitureModel.constats_dommages" Role="constats_dommages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employe">
+        <PropertyRef Name="employeID" />
+      </Principal>
+      <Dependent Role="constats_dommages">
+        <PropertyRef Name="employeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_locationId">
+    <End Type="locationvoitureModel.location" Role="location" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="locationvoitureModel.reservation" Role="reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="location">
+        <PropertyRef Name="locationID" />
+      </Principal>
+      <Dependent Role="reservation">
+        <PropertyRef Name="locationID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

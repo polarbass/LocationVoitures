@@ -14,6 +14,11 @@ namespace LocationVoiture.Model
     
     public partial class location
     {
+        public location()
+        {
+            this.reservations = new HashSet<reservation>();
+        }
+    
         public int locationID { get; set; }
         public System.DateTime date_debut { get; set; }
         public System.DateTime date_fin { get; set; }
@@ -24,5 +29,6 @@ namespace LocationVoiture.Model
         public virtual employe employe { get; set; }
         public virtual reservation reservation { get; set; }
         public virtual vehicule vehicule { get; set; }
+        public virtual ICollection<reservation> reservations { get; set; }
     }
 }

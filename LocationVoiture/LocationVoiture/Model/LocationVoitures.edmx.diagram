@@ -29,6 +29,8 @@
         <AssociationConnector Association="locationvoitureModel.FK_vehicule_model" />
         <AssociationConnector Association="locationvoitureModel.FK_vehicule_succursale" />
         <AssociationConnector Association="locationvoitureModel.FK_succursale_employee" />
+        <AssociationConnector Association="locationvoitureModel.fk_constat_employe" />
+        <AssociationConnector Association="locationvoitureModel.fk_locationId" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

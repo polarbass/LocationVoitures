@@ -18,9 +18,7 @@
     {
 
         // push test
-        int RightTimeOut = 0;
-
-        private VehiculeServices vehiculeServices { get; set; }
+        int RightTimeOut = 0; 
 
         private static string OPERATION_CLIENT_CREATION = "Création";
         private static string OPERATION_CLIENT_MODIFICATION = "Modification";
@@ -40,7 +38,33 @@
             // Loading du Form de Login
             loadLogin();
 
-            panel_Messages.Hide();    
+            // Test de connection
+            //
+            //using (var db = new locationvoitureEntities())
+            //{
+            //    try
+            //    {
+            //        db.Database.Connection.Open();
+            //        if (db.Database.Connection.State == ConnectionState.Open)
+            //        {
+            //            Console.WriteLine(@"INFO: ConnectionString: " + db.Database.Connection.ConnectionString
+            //                + "\n DataBase: " + db.Database.Connection.Database
+            //                + "\n DataSource: " + db.Database.Connection.DataSource
+            //                + "\n ServerVersion: " + db.Database.Connection.ServerVersion
+            //                + "\n TimeOut: " + db.Database.Connection.ConnectionTimeout);
+            //            MessageBox.Show("connected");
+            //
+            //            db.Database.Connection.Close();
+            //
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show("not connected");
+            //    }
+            //}
+
+            panel_Messages.Hide();
 
         }
 

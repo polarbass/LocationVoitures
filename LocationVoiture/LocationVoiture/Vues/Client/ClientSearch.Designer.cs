@@ -34,6 +34,8 @@ namespace LocationVoiture.Vues
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel_message = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnClientSearch_select = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
             this.txtClientSearch_value = new System.Windows.Forms.TextBox();
@@ -43,17 +45,17 @@ namespace LocationVoiture.Vues
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboClientSearch_FindBy = new System.Windows.Forms.ComboBox();
             this.btnClientSearch_cancel = new System.Windows.Forms.Button();
-            this.panel_message = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.animationTimer = new System.Windows.Forms.Timer(this.components);
+            this.lblLoading = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel_message.SuspendLayout();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel_message.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblLoading);
             this.panel1.Controls.Add(this.panel_message);
             this.panel1.Controls.Add(this.btnClientSearch_select);
             this.panel1.Controls.Add(this.panel11);
@@ -68,6 +70,27 @@ namespace LocationVoiture.Vues
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1147, 525);
             this.panel1.TabIndex = 0;
+            // 
+            // panel_message
+            // 
+            this.panel_message.BackColor = System.Drawing.Color.Teal;
+            this.panel_message.Controls.Add(this.label3);
+            this.panel_message.Location = new System.Drawing.Point(296, 59);
+            this.panel_message.Name = "panel_message";
+            this.panel_message.Size = new System.Drawing.Size(314, 28);
+            this.panel_message.TabIndex = 17;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Teal;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label3.Location = new System.Drawing.Point(90, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(144, 21);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Aucun client trouvé";
             // 
             // btnClientSearch_select
             // 
@@ -203,30 +226,20 @@ namespace LocationVoiture.Vues
             this.btnClientSearch_cancel.UseVisualStyleBackColor = false;
             this.btnClientSearch_cancel.Click += new System.EventHandler(this.btnClientSearch_cancel_Click);
             // 
-            // panel_message
-            // 
-            this.panel_message.BackColor = System.Drawing.Color.Teal;
-            this.panel_message.Controls.Add(this.label3);
-            this.panel_message.Location = new System.Drawing.Point(296, 59);
-            this.panel_message.Name = "panel_message";
-            this.panel_message.Size = new System.Drawing.Size(314, 28);
-            this.panel_message.TabIndex = 17;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Teal;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label3.Location = new System.Drawing.Point(90, 4);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(144, 21);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Aucun client trouvé";
-            // 
             // animationTimer
             // 
             this.animationTimer.Interval = 1000;
+            // 
+            // lblLoading
+            // 
+            this.lblLoading.AutoSize = true;
+            this.lblLoading.BackColor = System.Drawing.Color.Teal;
+            this.lblLoading.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoading.Location = new System.Drawing.Point(632, 70);
+            this.lblLoading.Name = "lblLoading";
+            this.lblLoading.Size = new System.Drawing.Size(135, 17);
+            this.lblLoading.TabIndex = 108;
+            this.lblLoading.Text = "Recherche en cours ...";
             // 
             // ClientSearch
             // 
@@ -242,11 +255,11 @@ namespace LocationVoiture.Vues
             this.Text = "Form3";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel_message.ResumeLayout(false);
+            this.panel_message.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel_message.ResumeLayout(false);
-            this.panel_message.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -266,5 +279,6 @@ namespace LocationVoiture.Vues
         private Panel panel_message;
         private Label label3;
         private Timer animationTimer;
+        private Label lblLoading;
     }
 }

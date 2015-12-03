@@ -159,7 +159,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(17, 363);
+            this.label4.Location = new System.Drawing.Point(17, 370);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 25);
             this.label4.TabIndex = 33;
@@ -170,7 +170,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Gray;
-            this.label12.Location = new System.Drawing.Point(17, 238);
+            this.label12.Location = new System.Drawing.Point(17, 257);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(78, 25);
             this.label12.TabIndex = 24;
@@ -183,7 +183,7 @@
             this.btnClientCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClientCreate.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClientCreate.ForeColor = System.Drawing.Color.Teal;
-            this.btnClientCreate.Location = new System.Drawing.Point(144, 124);
+            this.btnClientCreate.Location = new System.Drawing.Point(144, 137);
             this.btnClientCreate.Name = "btnClientCreate";
             this.btnClientCreate.Size = new System.Drawing.Size(113, 35);
             this.btnClientCreate.TabIndex = 23;
@@ -200,7 +200,7 @@
             this.btnLocationModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLocationModify.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLocationModify.ForeColor = System.Drawing.Color.Teal;
-            this.btnLocationModify.Location = new System.Drawing.Point(267, 359);
+            this.btnLocationModify.Location = new System.Drawing.Point(267, 365);
             this.btnLocationModify.Name = "btnLocationModify";
             this.btnLocationModify.Size = new System.Drawing.Size(113, 35);
             this.btnLocationModify.TabIndex = 34;
@@ -214,7 +214,7 @@
             this.btnCarModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCarModify.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCarModify.ForeColor = System.Drawing.Color.Teal;
-            this.btnCarModify.Location = new System.Drawing.Point(267, 234);
+            this.btnCarModify.Location = new System.Drawing.Point(267, 252);
             this.btnCarModify.Name = "btnCarModify";
             this.btnCarModify.Size = new System.Drawing.Size(113, 35);
             this.btnCarModify.TabIndex = 25;
@@ -229,7 +229,7 @@
             this.btnLocationCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLocationCreate.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLocationCreate.ForeColor = System.Drawing.Color.Teal;
-            this.btnLocationCreate.Location = new System.Drawing.Point(144, 359);
+            this.btnLocationCreate.Location = new System.Drawing.Point(144, 365);
             this.btnLocationCreate.Name = "btnLocationCreate";
             this.btnLocationCreate.Size = new System.Drawing.Size(113, 35);
             this.btnLocationCreate.TabIndex = 35;
@@ -243,7 +243,7 @@
             this.btnClientModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClientModify.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClientModify.ForeColor = System.Drawing.Color.Teal;
-            this.btnClientModify.Location = new System.Drawing.Point(267, 124);
+            this.btnClientModify.Location = new System.Drawing.Point(267, 137);
             this.btnClientModify.Name = "btnClientModify";
             this.btnClientModify.Size = new System.Drawing.Size(113, 35);
             this.btnClientModify.TabIndex = 22;
@@ -258,7 +258,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(17, 180);
+            this.label1.Location = new System.Drawing.Point(17, 200);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 25);
             this.label1.TabIndex = 30;
@@ -271,7 +271,7 @@
             this.btnCarCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCarCreate.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCarCreate.ForeColor = System.Drawing.Color.Teal;
-            this.btnCarCreate.Location = new System.Drawing.Point(144, 234);
+            this.btnCarCreate.Location = new System.Drawing.Point(144, 252);
             this.btnCarCreate.Name = "btnCarCreate";
             this.btnCarCreate.Size = new System.Drawing.Size(113, 35);
             this.btnCarCreate.TabIndex = 26;
@@ -286,7 +286,7 @@
             this.btnEmployeModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployeModify.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmployeModify.ForeColor = System.Drawing.Color.Teal;
-            this.btnEmployeModify.Location = new System.Drawing.Point(267, 176);
+            this.btnEmployeModify.Location = new System.Drawing.Point(267, 195);
             this.btnEmployeModify.Name = "btnEmployeModify";
             this.btnEmployeModify.Size = new System.Drawing.Size(113, 35);
             this.btnEmployeModify.TabIndex = 31;
@@ -301,7 +301,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Gray;
-            this.label8.Location = new System.Drawing.Point(17, 128);
+            this.label8.Location = new System.Drawing.Point(17, 142);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(63, 25);
             this.label8.TabIndex = 21;
@@ -312,7 +312,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Gray;
-            this.label13.Location = new System.Drawing.Point(17, 288);
+            this.label13.Location = new System.Drawing.Point(17, 313);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(106, 25);
             this.label13.TabIndex = 27;
@@ -325,7 +325,7 @@
             this.btnEmployeCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployeCreate.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmployeCreate.ForeColor = System.Drawing.Color.Teal;
-            this.btnEmployeCreate.Location = new System.Drawing.Point(144, 176);
+            this.btnEmployeCreate.Location = new System.Drawing.Point(144, 195);
             this.btnEmployeCreate.Name = "btnEmployeCreate";
             this.btnEmployeCreate.Size = new System.Drawing.Size(113, 35);
             this.btnEmployeCreate.TabIndex = 32;
@@ -342,7 +342,7 @@
             this.btnReservationCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReservationCreate.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReservationCreate.ForeColor = System.Drawing.Color.Teal;
-            this.btnReservationCreate.Location = new System.Drawing.Point(144, 69);
+            this.btnReservationCreate.Location = new System.Drawing.Point(144, 76);
             this.btnReservationCreate.Name = "btnReservationCreate";
             this.btnReservationCreate.Size = new System.Drawing.Size(113, 35);
             this.btnReservationCreate.TabIndex = 20;
@@ -357,7 +357,7 @@
             this.lblReservation.AutoSize = true;
             this.lblReservation.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReservation.ForeColor = System.Drawing.Color.Gray;
-            this.lblReservation.Location = new System.Drawing.Point(17, 73);
+            this.lblReservation.Location = new System.Drawing.Point(17, 80);
             this.lblReservation.Name = "lblReservation";
             this.lblReservation.Size = new System.Drawing.Size(117, 25);
             this.lblReservation.TabIndex = 18;
@@ -370,7 +370,7 @@
             this.btnSuccursaleModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuccursaleModify.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuccursaleModify.ForeColor = System.Drawing.Color.Teal;
-            this.btnSuccursaleModify.Location = new System.Drawing.Point(267, 284);
+            this.btnSuccursaleModify.Location = new System.Drawing.Point(267, 308);
             this.btnSuccursaleModify.Name = "btnSuccursaleModify";
             this.btnSuccursaleModify.Size = new System.Drawing.Size(113, 35);
             this.btnSuccursaleModify.TabIndex = 28;
@@ -384,7 +384,7 @@
             this.btnSuccursaleCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuccursaleCreate.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuccursaleCreate.ForeColor = System.Drawing.Color.Teal;
-            this.btnSuccursaleCreate.Location = new System.Drawing.Point(144, 284);
+            this.btnSuccursaleCreate.Location = new System.Drawing.Point(144, 308);
             this.btnSuccursaleCreate.Name = "btnSuccursaleCreate";
             this.btnSuccursaleCreate.Size = new System.Drawing.Size(113, 35);
             this.btnSuccursaleCreate.TabIndex = 29;
@@ -398,7 +398,7 @@
             this.btnReservationModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReservationModify.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReservationModify.ForeColor = System.Drawing.Color.Teal;
-            this.btnReservationModify.Location = new System.Drawing.Point(267, 69);
+            this.btnReservationModify.Location = new System.Drawing.Point(267, 76);
             this.btnReservationModify.Name = "btnReservationModify";
             this.btnReservationModify.Size = new System.Drawing.Size(113, 35);
             this.btnReservationModify.TabIndex = 19;

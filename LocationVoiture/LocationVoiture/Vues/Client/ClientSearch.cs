@@ -38,7 +38,6 @@ namespace LocationVoiture.Vues
 
         private int RightTimeOut = 0;
 
-
         // Constructeur
 
         public ClientSearch()
@@ -49,6 +48,7 @@ namespace LocationVoiture.Vues
 
             btnClientSearch_select.Enabled = false;
             panel_message.Hide();
+            lblLoading.Hide();
 
             // FadeIn FadeOut pour l'affichage des messages
             animationTimer.Tick += animationTimer_tick;
@@ -68,6 +68,7 @@ namespace LocationVoiture.Vues
         /// </summary>
         private void btnClientSearch_find_Click(object sender, EventArgs e)
         {
+            Animations.Animate(lblLoading, Animations.Effect.Slide, 50, 360);
             String searchValue = txtClientSearch_value.Text;
             String comboChoice = comboClientSearch_FindBy.SelectedItem.ToString();
             List<client> clientFound = new List<client>();
@@ -90,6 +91,8 @@ namespace LocationVoiture.Vues
                     clientFound = locationController.ClientsServices.FindBy(searchValue, findByParameter.telephone.ToString());
                     break;
             }
+
+            Animations.Animate(lblLoading, Animations.Effect.Slide, 50, 360);
 
             // Si un ou des client o
             if (clientFound.Count > 0)

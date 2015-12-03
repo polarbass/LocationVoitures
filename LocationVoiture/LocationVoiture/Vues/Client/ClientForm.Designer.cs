@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCANCEL = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
             this.btnClientCreate_Delete = new System.Windows.Forms.Button();
             this.lblClientCreate_clientId = new System.Windows.Forms.Label();
             this.panelClientCreate_clientId = new System.Windows.Forms.Panel();
@@ -56,10 +59,9 @@
             this.lblClientCreate_nom = new System.Windows.Forms.Label();
             this.txtClientCreate_cancel = new System.Windows.Forms.Button();
             this.btnClientCreate_add = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnCANCEL = new System.Windows.Forms.Button();
-            this.btnOK = new System.Windows.Forms.Button();
+            this.lblLoading = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panelClientCreate_clientId.SuspendLayout();
             this.panelClientForm_id.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -67,12 +69,12 @@
             this.panel11.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.lblLoading);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnClientCreate_Delete);
             this.panel1.Controls.Add(this.lblClientCreate_clientId);
@@ -99,6 +101,50 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(460, 534);
             this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Maroon;
+            this.panel2.Controls.Add(this.btnCANCEL);
+            this.panel2.Controls.Add(this.btnOK);
+            this.panel2.Location = new System.Drawing.Point(319, 112);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(112, 93);
+            this.panel2.TabIndex = 106;
+            // 
+            // btnCANCEL
+            // 
+            this.btnCANCEL.BackColor = System.Drawing.Color.Black;
+            this.btnCANCEL.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnCANCEL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCANCEL.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCANCEL.ForeColor = System.Drawing.Color.Maroon;
+            this.btnCANCEL.Location = new System.Drawing.Point(11, 51);
+            this.btnCANCEL.Name = "btnCANCEL";
+            this.btnCANCEL.Size = new System.Drawing.Size(91, 35);
+            this.btnCANCEL.TabIndex = 107;
+            this.btnCANCEL.Text = "CANCEL";
+            this.btnCANCEL.UseVisualStyleBackColor = false;
+            this.btnCANCEL.Click += new System.EventHandler(this.btnCANCEL_Click);
+            this.btnCANCEL.MouseEnter += new System.EventHandler(this.mouseEnterEventHandlerRed);
+            this.btnCANCEL.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandlerRed);
+            // 
+            // btnOK
+            // 
+            this.btnOK.BackColor = System.Drawing.Color.Black;
+            this.btnOK.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOK.ForeColor = System.Drawing.Color.Maroon;
+            this.btnOK.Location = new System.Drawing.Point(11, 7);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(91, 35);
+            this.btnOK.TabIndex = 106;
+            this.btnOK.Text = "OK";
+            this.btnOK.UseVisualStyleBackColor = false;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            this.btnOK.MouseEnter += new System.EventHandler(this.mouseEnterEventHandlerRed);
+            this.btnOK.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandlerRed);
             // 
             // btnClientCreate_Delete
             // 
@@ -420,49 +466,16 @@
             this.btnClientCreate_add.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
             this.btnClientCreate_add.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
             // 
-            // panel2
+            // lblLoading
             // 
-            this.panel2.BackColor = System.Drawing.Color.Maroon;
-            this.panel2.Controls.Add(this.btnCANCEL);
-            this.panel2.Controls.Add(this.btnOK);
-            this.panel2.Location = new System.Drawing.Point(319, 112);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(112, 93);
-            this.panel2.TabIndex = 106;
-            // 
-            // btnCANCEL
-            // 
-            this.btnCANCEL.BackColor = System.Drawing.Color.Black;
-            this.btnCANCEL.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnCANCEL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCANCEL.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCANCEL.ForeColor = System.Drawing.Color.Maroon;
-            this.btnCANCEL.Location = new System.Drawing.Point(11, 51);
-            this.btnCANCEL.Name = "btnCANCEL";
-            this.btnCANCEL.Size = new System.Drawing.Size(91, 35);
-            this.btnCANCEL.TabIndex = 107;
-            this.btnCANCEL.Text = "CANCEL";
-            this.btnCANCEL.UseVisualStyleBackColor = false;
-            this.btnCANCEL.Click += new System.EventHandler(this.btnCANCEL_Click);
-            this.btnCANCEL.MouseEnter += new System.EventHandler(this.mouseEnterEventHandlerRed);
-            this.btnCANCEL.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandlerRed);
-            // 
-            // btnOK
-            // 
-            this.btnOK.BackColor = System.Drawing.Color.Black;
-            this.btnOK.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.ForeColor = System.Drawing.Color.Maroon;
-            this.btnOK.Location = new System.Drawing.Point(11, 7);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(91, 35);
-            this.btnOK.TabIndex = 106;
-            this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = false;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
-            this.btnOK.MouseEnter += new System.EventHandler(this.mouseEnterEventHandlerRed);
-            this.btnOK.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandlerRed);
+            this.lblLoading.AutoSize = true;
+            this.lblLoading.BackColor = System.Drawing.Color.Teal;
+            this.lblLoading.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoading.Location = new System.Drawing.Point(144, 100);
+            this.lblLoading.Name = "lblLoading";
+            this.lblLoading.Size = new System.Drawing.Size(135, 17);
+            this.lblLoading.TabIndex = 107;
+            this.lblLoading.Text = "Recherche en cours ...";
             // 
             // ClientForm
             // 
@@ -478,6 +491,7 @@
             this.Text = "Form3";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.panelClientCreate_clientId.ResumeLayout(false);
             this.panelClientCreate_clientId.PerformLayout();
             this.panelClientForm_id.ResumeLayout(false);
@@ -492,7 +506,6 @@
             this.panel9.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -531,5 +544,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCANCEL;
+        private System.Windows.Forms.Label lblLoading;
     }
 }

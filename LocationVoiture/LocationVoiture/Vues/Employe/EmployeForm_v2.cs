@@ -45,6 +45,7 @@ namespace LocationVoiture.Vues
 
             lblClientCreate_operation.Text = operation;
             panel2.Hide();
+            lblLoading.Hide();
 
             // Selection de l'affichage
             if (operation.Equals(EmployeForm_v2.OPERATION_EMPLOYE_CREATION))
@@ -195,9 +196,13 @@ namespace LocationVoiture.Vues
                 this.Opacity = 1;
             }
             else
-            {                
+            {
+                Animations.Animate(lblLoading, Animations.Effect.Slide, 50, 360);
+
                 // le id est lu directement dans le champ
                 searchValue = txtEmploye_idSearch.Text;
+
+                Animations.Animate(lblLoading, Animations.Effect.Slide, 50, 360);
             }
 
             employe employeFound = locationController.EmployesService.Find(searchValue);

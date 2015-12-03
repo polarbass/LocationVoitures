@@ -129,6 +129,7 @@
     <Compile Include="Services\LoginServices.cs" />
     <Compile Include="Services\ClientsServices.cs" />
     <Compile Include="Utils\Animations.cs" />
+    <Compile Include="Utils\ComboboxItem.cs" />
     <Compile Include="Utils\EnumDescriptor.cs" />
     <Compile Include="Vues\Employe\EmployeSearch_v2.cs">
       <SubType>Form</SubType>
@@ -262,6 +263,8 @@
       <DependentUpon>LocationVoitures.edmx</DependentUpon>
       <LastGenOutput>LocationVoitures.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\image_928802.gif" />
+    <None Include="Resources\image_928801.gif" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -41,6 +41,7 @@ namespace LocationVoiture.Vues
 
             lblClientCreate_operation.Text = operation;
             panel2.Hide();
+            lblLoading.Hide();
 
             // Selection de l'affichage
             if (operation.Equals(OPERATION_CLIENT_CREATION))
@@ -148,7 +149,7 @@ namespace LocationVoiture.Vues
         private void btnClientForm_Find_Click(object sender, EventArgs e)
         {
             String searchValue = "";
-
+            
             if (txtClientCreate_idSearch.Text == "")
             {
                 ClientSearch searchForm = new ClientSearch();
@@ -159,9 +160,12 @@ namespace LocationVoiture.Vues
                 searchValue = searchForm.clientSearchID;
             }
             else
-            {                
+            {
+                Animations.Animate(lblLoading, Animations.Effect.Slide, 50, 360);
                 // le id est lu directement dans le champ
                 searchValue = txtClientCreate_idSearch.Text;
+
+                Animations.Animate(lblLoading, Animations.Effect.Slide, 50, 360);
             }
 
             client clientToUpdate = locationController.ClientsServices.Find(searchValue);
@@ -185,7 +189,8 @@ namespace LocationVoiture.Vues
             {
                 btnClientCreate_Delete.Visible = false;
                 emptyClientFormFields();
-            }
+            }            
+       
         }
 
         /// <summary>

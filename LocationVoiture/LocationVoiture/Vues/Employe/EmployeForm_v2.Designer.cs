@@ -66,6 +66,7 @@
             this.lblClientCreate_nom = new System.Windows.Forms.Label();
             this.btnEmploye_cancel = new System.Windows.Forms.Button();
             this.btnEmploye_add = new System.Windows.Forms.Button();
+            this.lblLoading = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -81,6 +82,7 @@
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.lblLoading);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.cbEmploye_succursale);
             this.panel1.Controls.Add(this.label2);
@@ -559,6 +561,17 @@
             this.btnEmploye_add.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
             this.btnEmploye_add.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
             // 
+            // lblLoading
+            // 
+            this.lblLoading.AutoSize = true;
+            this.lblLoading.BackColor = System.Drawing.Color.Teal;
+            this.lblLoading.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoading.Location = new System.Drawing.Point(144, 100);
+            this.lblLoading.Name = "lblLoading";
+            this.lblLoading.Size = new System.Drawing.Size(135, 17);
+            this.lblLoading.TabIndex = 124;
+            this.lblLoading.Text = "Recherche en cours ...";
+            // 
             // EmployeForm_v2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -635,5 +648,6 @@
         private System.Windows.Forms.TextBox txtEmploye_password;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbEmploye_succursale;
+        private System.Windows.Forms.Label lblLoading;
     }
 }

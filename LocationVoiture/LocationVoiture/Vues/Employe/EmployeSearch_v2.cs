@@ -52,6 +52,7 @@ namespace LocationVoiture.Vues
             btnEmployeSearch_select.Enabled = false;
             panel_message.Hide();
             cbEmployeSearch.Hide();
+            lblLoading.Hide();
 
             // FadeIn FadeOut pour l'affichage des messages
             animationTimer.Tick += animationTimer_tick;
@@ -71,7 +72,9 @@ namespace LocationVoiture.Vues
         /// </summary>
         private void btnEmployeSearch_find_Click(object sender, EventArgs e)
         {
+
             String searchValue;
+            Animations.Animate(lblLoading, Animations.Effect.Slide, 50, 360);
 
             if (txtEmployeSearch_value.Text != "")
             {
@@ -106,6 +109,8 @@ namespace LocationVoiture.Vues
                     employeFound = locationController.EmployesService.FindBy(searchValue, findByParameter.telephone.ToString());
                     break;
             }
+
+            Animations.Animate(lblLoading, Animations.Effect.Slide, 50, 360);
 
             // Si un ou des employés sont trouvés
             if (employeFound.Count > 0)
@@ -183,6 +188,7 @@ namespace LocationVoiture.Vues
 
         private void comboEmployeSearch_FindBy_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             if (comboEmployeSearch_FindBy.SelectedItem.ToString().Equals(findByParameter.succursale.ToString()))
             {
                 cbEmployeSearch.Items.Clear();
@@ -190,8 +196,13 @@ namespace LocationVoiture.Vues
                 List<succursale> succursales = locationController.SuccursalesServices.getAllSuccursale();
                 foreach (succursale succ in succursales)
                 {
-                    cbEmployeSearch.Items.Add(succ.nom);
+                    ComboboxItem item = new ComboboxItem();
+                    item.Text = succ.nom;
+                    item.Value = succ.succursaleID;
+
+                    cbEmployeSearch.Items.Add(item);
                 }
+                
                 cbEmployeSearch.SelectedIndex = 0;
                 cbEmployeSearch.Show();
             }
@@ -212,6 +223,9 @@ namespace LocationVoiture.Vues
                 cbEmployeSearch.Hide();
             }
 
+            //MessageBox.Show((cbEmployeSearch.SelectedItem as ComboboxItem).Value.ToString());
+
         }
+
     }
 }

@@ -22,7 +22,6 @@ namespace LocationVoiture.Services
         /// <returns>True si l'employé a été ajouté ; False sinon</returns>
         public Boolean AddEmploye(employe employe)
         {
-
             bool isAdded = false;
             employe.date_embauche = DateTime.Now;
 
@@ -34,7 +33,8 @@ namespace LocationVoiture.Services
             }
             catch
             {
-                Console.WriteLine("Erreur : Cannot add employe (Méthode AddEmploye)");
+                Console.WriteLine("Erreur AddEmploye");
+                isAdded = false; 
             }
 
             return isAdded;
@@ -95,7 +95,7 @@ namespace LocationVoiture.Services
                     }
 
                     // SEARCH BY EMPLOYE NOM
-                    else if (searchBy.Equals("nom"))
+                    else if (searchBy.Equals("nom") || searchBy.Equals("prenom"))
                     {
                         employeFinder = EmployeEntitie.employes.Where(emp => emp.nom.ToLower().Contains(searchValue.ToLower())).ToList();
                     }
@@ -139,10 +139,18 @@ namespace LocationVoiture.Services
         /// <summary>
         /// Enregistre les modification fait à la table employé
         /// </summary>
-        public void Save()
+        public bool Save()
         {
-            EmployeEntitie.SaveChanges();
-            EmployeEntitie.Dispose();
+            try
+            {
+                EmployeEntitie.SaveChanges();
+                EmployeEntitie.Dispose();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

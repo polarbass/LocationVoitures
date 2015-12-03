@@ -130,6 +130,18 @@
     <Compile Include="Services\ClientsServices.cs" />
     <Compile Include="Utils\Animations.cs" />
     <Compile Include="Utils\EnumDescriptor.cs" />
+    <Compile Include="Vues\Employe\EmployeSearch_v2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vues\Employe\EmployeSearch_v2.Designer.cs">
+      <DependentUpon>EmployeSearch_v2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vues\Employe\EmployeForm_v2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vues\Employe\EmployeForm_v2.Designer.cs">
+      <DependentUpon>EmployeForm_v2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vues\Employe\EmployeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +200,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Vues\Employe\EmployeSearch_v2.resx">
+      <DependentUpon>EmployeSearch_v2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vues\Employe\EmployeForm_v2.resx">
+      <DependentUpon>EmployeForm_v2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vues\Employe\EmployeForm.resx">
       <DependentUpon>EmployeForm.cs</DependentUpon>
     </EmbeddedResource>

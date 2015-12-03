@@ -149,6 +149,43 @@
         #endregion CLIENT
 
         /*******************************************************************
+                            EMPLOYEE
+        *******************************************************************/
+
+        #region CLIENT
+
+        // Création d'un employé
+        private void btnEmployeCreate_Click(object sender, EventArgs e)
+        {
+            EmployeForm_v2 employeForm = new EmployeForm_v2(MainForm.OPERATION_CLIENT_CREATION);
+            employeForm.Owner = this;
+
+            panelSelector(false);
+
+            DialogResult dialogResult = employeForm.ShowDialog();
+
+            String messageToSend = employeForm.messageToSend;
+            toggleMessage(dialogResult, messageToSend);
+
+        }
+
+        // Modification d'un employé
+        private void btnEmployeModify_Click(object sender, EventArgs e)
+        {
+            EmployeForm_v2 employeForm = new EmployeForm_v2(MainForm.OPERATION_CLIENT_MODIFICATION);
+            employeForm.Owner = this;
+
+            panelSelector(false);
+
+            DialogResult dialogResult = employeForm.ShowDialog();
+
+            String messageToSend = employeForm.messageToSend;
+            toggleMessage(dialogResult, messageToSend);
+        }
+
+        #endregion CLIENT
+
+        /*******************************************************************
                                     VEHICULES
         *******************************************************************/
 

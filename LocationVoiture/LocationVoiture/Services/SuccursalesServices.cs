@@ -54,6 +54,30 @@ namespace LocationVoiture.Services
             return succursaleToFind;
         }
 
+        public List<succursale> FindBy(String searchValue, String searchBy)
+        {
+            List<succursale> succursaleFinder = new List<succursale>();
+
+            if (searchValue != "")
+            {
+                try
+                {
+                    // SEARCH BY SUCCURSALE NAME
+                    if (searchBy.Equals("nom"))
+                    {
+                        succursaleFinder = succursaleEntitie.succursales.Where(succ => succ.nom.Contains(searchValue)).ToList();
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Erreur dans le findBy Reservation");
+                }
+
+            }
+
+            return succursaleFinder;
+        }
+
         /// <summary>
         /// Retourne une liste qui contient toute les succursales qui se trouvent dans la table
         /// </summary>

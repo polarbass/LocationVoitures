@@ -1,6 +1,7 @@
 ﻿using LocationVoiture.Controller;
 using LocationVoiture.Model;
 using LocationVoiture.Services;
+using LocationVoiture.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,42 +14,40 @@ using System.Windows.Forms;
 
 namespace LocationVoiture.Vues
 {
-    public partial class EmployeForm_v2 : Form
+    public partial class VoitureForm : Form
     {
 
         // Attributs
 
-        private const string OPERATION_EMPLOYE_CREATION     = "Création";
-        private const string OPERATION_EMPLOYE_UPDATE       = "Updater";
-        private const string MESSAGE_EMPLOYE_ADD            = "L'employé a été ajouté";
-        private const string MESSAGE_EMPLOYE_ADD_ERROR      = "Une erreur est survenue lors de la creation de l'employé";
-        private const string MESSAGE_EMPLOYE_UPDATE         = "L'employé a été modifé";
-        private const string MESSAGE_EMPLOYE_DELETE         = "L'employé a été effacé";        
-
-        private enum employeFunctions { Caissier, Commis, Soutient, Administration, Administrateur }
+        private const string OPERATION_VOITURE_CREATION     = "Création";
+        private const string OPERATION_VOITURE_UPDATE = "Updater";
+        private const string MESSAGE_VOITURE_ADD = "Le véhicule a été ajouté";
+        private const string MESSAGE_VOITURE_ADD_ERROR = "Une erreur est survenue lors de la creation du véhicule";
+        private const string MESSAGE_VOITURE_UPDATE = "Le véhicule a été modifé";
+        private const string MESSAGE_VOITURE_DELETE = "Le véhicule a été effacé";        
 
         // Propriétés
 
         private LocationController locationController { get; set; }
         
-        public client clientAdded { get; private set; }
+        public client voitureAdded { get; private set; }
         public string messageToSend { get; private set; }
 
         // Constructeur
 
-        public EmployeForm_v2(String operation)
+        public VoitureForm(String operation)
         {
             InitializeComponent();
             locationController = new LocationController();
 
             fillFunctionCombo();
 
-            lblClientCreate_operation.Text = operation;
+            lblVoiture_operation.Text = operation;
             panel2.Hide();
             lblLoading.Hide();
 
             // Selection de l'affichage
-            if (operation.Equals(EmployeForm_v2.OPERATION_EMPLOYE_CREATION))
+            if (operation.Equals(VoitureForm.OPERATION_VOITURE_CREATION))
             {
                 // Création
                 setFieldsVisibility(false);
@@ -58,26 +57,34 @@ namespace LocationVoiture.Vues
                 // Update
                 setFieldsVisibility(true);
                 setFieldStatus(false);
-                btnEmploye_add.Text = EmployeForm_v2.OPERATION_EMPLOYE_UPDATE;
+                btnVoiture_add.Text = VoitureForm.OPERATION_VOITURE_UPDATE;
             }            
         }
 
         private void fillFunctionCombo()
         {
-            // Paramètre de recherche disponible
-            foreach (employeFunctions fonction in Enum.GetValues(typeof(employeFunctions)))
+            List<fabriquant> fabriquants = locationController.FabricantsService.GetAllFabriquants();
+            foreach(fabriquant fab in fabriquants)
             {
-                cbEmploye_fonction.Items.Add(fonction);
+                ComboboxItem item = new ComboboxItem();
+                item.Text = fab.nom_fabriquant;
+                item.Value = fab.fabriquantID;
+                cbVoiture_Fabriquant.Items.Add(item);
             }
+
+            cbVoiture_Fabriquant.SelectedIndex = 0;
 
             List<succursale> succursales = locationController.SuccursalesServices.getAllSuccursale();
             foreach(succursale succ in succursales)
             {
-                cbEmploye_succursale.Items.Add(succ.nom);
+                ComboboxItem item = new ComboboxItem();
+                item.Text = succ.nom;
+                item.Value = succ.succursaleID;
+                cbVoiture_succursale.Items.Add(item);
             }
 
-            cbEmploye_fonction.SelectedIndex = 0;
-            cbEmploye_succursale.SelectedIndex = 0;
+            cbVoiture_succursale.SelectedIndex = 0;
+
         }
 
         // Méthodes
@@ -90,44 +97,36 @@ namespace LocationVoiture.Vues
         private void btnEmploye_add_Click(object sender, EventArgs e)
         {
 
-            String nom          = txtEmploye_nom.Text;
-            String tauxHoraire  = txtEmploye_tauxHoraire.Text;
-            String telephone    = txtEmploye_phone.Text;
-            String adresse      = txtEmploye_adresse.Text;
-            String username     = txtEmploye_username.Text;
-            String password     = txtEmploye_password.Text;
-            String fonction     = cbEmploye_fonction.SelectedItem.ToString();
-            String succursaleString = cbEmploye_succursale.SelectedItem.ToString();
-            int succursaleID = locationController.SuccursalesServices.FindBy(succursaleString, "nom").First().succursaleID;
+            int modeleID        = (int)(cbVoiture_Modele.SelectedItem as ComboboxItem).Value;
+            int fabricantId     = (int)(cbVoiture_Fabriquant.SelectedItem as ComboboxItem).Value;
+            int succursaleID    = (int)(cbVoiture_succursale.SelectedItem as ComboboxItem).Value;
 
-            if (!nom.Equals("") && !telephone.Equals("") && !adresse.Equals("") && !username.Equals("") && !password.Equals(""))
+            string plaqueNumber = txtVoiture_noPlaque.Text;
+
+            if (!plaqueNumber.Equals("") )
             {
 
                 // Fonction ADD 
-                if (!btnEmploye_add.Text.Equals(EmployeForm_v2.OPERATION_EMPLOYE_UPDATE))
+                if (!btnVoiture_add.Text.Equals(VoitureForm.OPERATION_VOITURE_UPDATE))
                 {
-                    employe addEmploye = new employe();
+                    vehicule addVehicule = new vehicule();
 
-                    addEmploye.nom = nom;
-                    addEmploye.telephone = telephone;
-                    addEmploye.adresse            = adresse;
-                    addEmploye.fonction = fonction;
-                    addEmploye.salaire_horaire = float.Parse(tauxHoraire);
-                    addEmploye.username = username;
-                    addEmploye.password = password;
-                    addEmploye.succursaleID = succursaleID;
+                    addVehicule.modeleID = modeleID;
+                    addVehicule.fabriquantID = fabricantId;
+                    addVehicule.succursaleID = succursaleID;
+                    addVehicule.plaque_num = plaqueNumber;
 
-                    if (locationController.EmployesService.AddEmploye(addEmploye))
+                    if (locationController.VehiculeServices.AddVehicule(addVehicule))
                     {
-                        emptyEmployeFormFields();
+                        emptyVehiculeFormFields();
                         this.DialogResult = DialogResult.OK;
-                        messageToSend = "L'employé a été ajouté";
+                        messageToSend = "Le véhicule a été ajouté";
                         this.Close();
                     }
                     else
                     {
                         this.DialogResult = DialogResult.No;
-                        messageToSend = "Une erreur est survenue lors de la creation de l'employé";
+                        messageToSend = "Une erreur est survenue lors de la creation du véhicule";
                         this.Close();
                     }
                 }
@@ -135,19 +134,19 @@ namespace LocationVoiture.Vues
                 // Fonction UPDATE
                 else
                 {
-                    string idToUpdate = txtEmploye_empID.Text;
+                    string idToUpdate = txtVoiture_vehiculeID.Text;
 
                     employe employeToUpdate = locationController.EmployesService.Find(idToUpdate);
 
                     if (employeToUpdate != null)
                     {
-                        employeToUpdate.nom = nom;
-                        employeToUpdate.telephone        = telephone;
-                        employeToUpdate.adresse   = adresse;
-                        employeToUpdate.fonction = fonction;
-                        employeToUpdate.salaire_horaire = float.Parse(tauxHoraire);
-                        employeToUpdate.username = username;
-                        employeToUpdate.password = password;
+                        //employeToUpdate.nom = nom;
+                        //employeToUpdate.telephone        = telephone;
+                        //employeToUpdate.adresse   = adresse;
+                        //employeToUpdate.fonction = fonction;
+                        //employeToUpdate.salaire_horaire = float.Parse(tauxHoraire);
+                        //employeToUpdate.username = username;
+                        //employeToUpdate.password = password;
                         employeToUpdate.succursaleID = succursaleID;
 
                     }                   
@@ -182,11 +181,11 @@ namespace LocationVoiture.Vues
         {
             String searchValue = "";
 
-            if (txtEmploye_idSearch.Text == "")
+            if (txtVoiture_idSearch.Text == "")
             {
                 this.Opacity = 0.1;
 
-                EmployeSearch_v2 searchForm = new EmployeSearch_v2();
+                EmployeSearch searchForm = new EmployeSearch();
                 searchForm.Owner = this;
                 searchForm.ShowDialog();
 
@@ -200,7 +199,7 @@ namespace LocationVoiture.Vues
                 Animations.Animate(lblLoading, Animations.Effect.Slide, 50, 360);
 
                 // le id est lu directement dans le champ
-                searchValue = txtEmploye_idSearch.Text;
+                searchValue = txtVoiture_idSearch.Text;
 
                 Animations.Animate(lblLoading, Animations.Effect.Slide, 50, 360);
             }
@@ -213,22 +212,22 @@ namespace LocationVoiture.Vues
 
                 btnEmploye_Delete.Visible = true;
                 setFieldStatus(true);
-                txtEmploye_empID.Enabled = false;
+                txtVoiture_vehiculeID.Enabled = false;
 
-                txtEmploye_empID.Text       = employeFound.employeID.ToString();
-                txtEmploye_nom.Text         = employeFound.nom;
-                txtEmploye_tauxHoraire.Text = employeFound.salaire_horaire.ToString();
-                txtEmploye_phone.Text       = employeFound.telephone;
-                txtEmploye_adresse.Text     = employeFound.adresse;
-                txtEmploye_username.Text    = employeFound.username;
-                txtEmploye_password.Text    = employeFound.password;
-                cbEmploye_fonction.SelectedIndex = cbEmploye_fonction.FindStringExact(employeFound.fonction);
-                cbEmploye_succursale.SelectedIndex = cbEmploye_succursale.FindStringExact(employeFound.succursale.nom);
+                txtVoiture_vehiculeID.Text       = employeFound.employeID.ToString();
+                txtVoiture_noPlaque.Text         = employeFound.nom;
+                //txtVoiture_tauxHoraire.Text = employeFound.salaire_horaire.ToString();
+                //txtVoiture_phone.Text       = employeFound.telephone;
+                //txtVoiture_adresse.Text     = employeFound.adresse;
+                //txtVoiture_username.Text    = employeFound.username;
+                //txtVoiture_password.Text    = employeFound.password;
+                cbVoiture_Fabriquant.SelectedIndex = cbVoiture_Fabriquant.FindStringExact(employeFound.fonction);
+                cbVoiture_succursale.SelectedIndex = cbVoiture_succursale.FindStringExact(employeFound.succursale.nom);
             }
             else
             {
                 btnEmploye_Delete.Visible = false;
-                emptyEmployeFormFields();
+                emptyVehiculeFormFields();
                 setFieldStatus(false);
             }
         }
@@ -239,7 +238,7 @@ namespace LocationVoiture.Vues
         /// </summary>        
         private void btnEmploye_Delete_Click(object sender, EventArgs e)
         {
-            String searchValue = txtEmploye_empID.Text;
+            String searchValue = txtVoiture_vehiculeID.Text;
             employe employeToDelete = locationController.EmployesService.Find(searchValue);
 
             if (employeToDelete != null)
@@ -254,7 +253,7 @@ namespace LocationVoiture.Vues
         /// </summary>        
         private void btnOK_Click(object sender, EventArgs e)
         {
-            String searchValue = txtEmploye_empID.Text;
+            String searchValue = txtVoiture_vehiculeID.Text;
             employe employeToDelete = locationController.EmployesService.Find(searchValue);
 
             if (employeToDelete != null)
@@ -265,7 +264,7 @@ namespace LocationVoiture.Vues
                 this.DialogResult = DialogResult.OK;
 
                 // DELETE RÉUSSI
-                messageToSend = EmployeForm_v2.MESSAGE_EMPLOYE_DELETE;
+                messageToSend = VoitureForm.MESSAGE_VOITURE_DELETE;
                 this.Close();
             }
         }
@@ -291,43 +290,34 @@ namespace LocationVoiture.Vues
 
         #region UTILITAIRES
 
-        private void emptyEmployeFormFields()
+        private void emptyVehiculeFormFields()
         {
-            txtEmploye_empID.Text           = "";
-            txtEmploye_idSearch.Text        = "";
-            txtEmploye_nom.Text             = "";
-            txtEmploye_phone.Text           = "";
-            txtEmploye_adresse.Text         = "";
-            txtEmploye_tauxHoraire.Text     = "";
-            txtEmploye_password.Text        = "";
-            txtEmploye_username.Text        = "";            
-            cbEmploye_fonction.SelectedIndex    = 0;
-            cbEmploye_succursale.SelectedIndex  = 0;
+            txtVoiture_vehiculeID.Text              = "";
+            txtVoiture_idSearch.Text                = "";
+            txtVoiture_noPlaque.Text                = "";       
+            cbVoiture_Fabriquant.SelectedIndex      = 0;
+            cbVoiture_succursale.SelectedIndex      = 0;
+            cbVoiture_Modele.SelectedIndex          = -1;
         }
 
         private void setFieldsVisibility(bool visibilityChoice)
         {
             panelClientCreate_clientId.Visible  = visibilityChoice;
             lblClientCreate_clientId.Visible    = visibilityChoice;   
-            btnEmploye_Find.Visible             = visibilityChoice;
+            btnVoiture_Find.Visible             = visibilityChoice;
             btnEmploye_Delete.Visible           = visibilityChoice;
-            txtEmploye_idSearch.Visible         = visibilityChoice;
-            txtEmploye_empID.Visible            = visibilityChoice;
+            txtVoiture_idSearch.Visible         = visibilityChoice;
+            txtVoiture_vehiculeID.Visible       = visibilityChoice;
             lblClientCreate_id.Visible          = visibilityChoice;
             panelClientForm_id.Visible          = visibilityChoice;
         }
 
         private void setFieldStatus(bool enabledStatus)
         {
-            txtEmploye_empID.Enabled        = enabledStatus;
-            txtEmploye_nom.Enabled          = enabledStatus;
-            txtEmploye_phone.Enabled        = enabledStatus;
-            txtEmploye_adresse.Enabled      = enabledStatus;
-            txtEmploye_tauxHoraire.Enabled  = enabledStatus;
-            txtEmploye_password.Enabled     = enabledStatus;
-            txtEmploye_username.Enabled     = enabledStatus;
-            cbEmploye_fonction.Enabled      = enabledStatus;
-            cbEmploye_succursale.Enabled    = enabledStatus;
+            txtVoiture_vehiculeID.Enabled        = enabledStatus;
+            txtVoiture_noPlaque.Enabled          = enabledStatus;
+            cbVoiture_Fabriquant.Enabled        = enabledStatus;
+            cbVoiture_succursale.Enabled        = enabledStatus;
         }
 
         private void mouseEnterEventHandler(object sender, EventArgs e)
@@ -359,5 +349,30 @@ namespace LocationVoiture.Vues
         }
 
         #endregion UTILITAIRES
+
+        private void cbVoiture_Fabriquant_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbVoiture_Modele.Items.Clear();
+
+                string fabricantID = (cbVoiture_Fabriquant.SelectedItem as ComboboxItem).Value.ToString();
+
+                List<modele> modeles = locationController.ModelesServices.findBy(fabricantID, "fabricantID");
+                foreach (modele mod in modeles)
+                {
+                    ComboboxItem item = new ComboboxItem();
+                    item.Text = mod.nom_modele;
+                    item.Value = mod.modeleID;
+                    cbVoiture_Modele.Items.Add(item);
+                }
+
+                if (cbVoiture_Modele.Items.Count == 0)
+                {
+                    cbVoiture_Modele.SelectedIndex = -1;
+                }
+                else
+                {
+                    cbVoiture_Modele.SelectedIndex = 0;
+                } 
+        }
     }
 }

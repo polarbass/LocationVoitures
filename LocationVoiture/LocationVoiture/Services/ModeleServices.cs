@@ -57,6 +57,57 @@ namespace LocationVoiture.Services
         }
 
         /// <summary>
+        /// Retourne une liste de tout les modeles de la table modele
+        /// </summary>
+        /// <returns>La liste des modèles ; liste vide sinon</returns>
+        public List<modele> GetAll()
+        {
+            List<modele> listeModeles = new List<modele>();
+            try
+            {
+                listeModeles = modeleEntitie.modeles.ToList();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Erreur : Cannot retreive the modele list");
+            }
+
+            return listeModeles;
+        }
+
+        public List<modele> findBy(String searchValue, String searchBy)
+        {
+            List<modele> modeleFinder = new List<modele>();
+
+            if (searchValue != "")
+            {
+                try
+                {
+                    int searchValueInt;
+
+                    // SEARCH BY FABRICANT ID
+                    if (searchBy.Equals("fabricantID"))
+                    {
+                        searchValueInt = int.Parse(searchValue);
+
+                        var query = (from vehi in modeleEntitie.vehicules
+                                     where vehi.fabriquantID == searchValueInt
+                                     select vehi.modele).Distinct();
+
+                        modeleFinder = query.ToList();
+                    }
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Erreur dans le findby modele");
+                }
+         
+            }
+            return modeleFinder;
+        }
+            
+
+        /// <summary>
         /// Une liste des modèle selon une succursale et un fabriquant
         /// </summary>
         /// <param name="succursaleID">La succursale</param>

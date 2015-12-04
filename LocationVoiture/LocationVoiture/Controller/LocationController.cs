@@ -15,6 +15,7 @@ namespace LocationVoiture.Controller
         public VehiculeServices     VehiculeServices { get; set; }
         public FabricantsServices   FabricantsService { get; set; }
         public EmployeServices      EmployesService { get; set; }
+        public TypesServices        TypesService { get; set; } 
 
         public LocationController()
         {
@@ -26,6 +27,7 @@ namespace LocationVoiture.Controller
             ModelesServices         = new ModeleServices();
             ReservationsServices    = new ReservationsServices();
             EmployesService         = new EmployeServices();
+            TypesService            = new TypesServices();
         }
 
 

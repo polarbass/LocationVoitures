@@ -125,35 +125,24 @@
     <Compile Include="Services\ModeleServices.cs" />
     <Compile Include="Services\ReservationsServices.cs" />
     <Compile Include="Services\SuccursalesServices.cs" />
+    <Compile Include="Services\TypesServices.cs" />
     <Compile Include="Services\VehiculeServices.cs" />
     <Compile Include="Services\LoginServices.cs" />
     <Compile Include="Services\ClientsServices.cs" />
     <Compile Include="Utils\Animations.cs" />
     <Compile Include="Utils\ComboboxItem.cs" />
     <Compile Include="Utils\EnumDescriptor.cs" />
-    <Compile Include="Vues\Employe\EmployeSearch_v2.cs">
+    <Compile Include="Vues\Employe\EmployeSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vues\Employe\EmployeSearch_v2.Designer.cs">
-      <DependentUpon>EmployeSearch_v2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Vues\Employe\EmployeForm_v2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vues\Employe\EmployeForm_v2.Designer.cs">
-      <DependentUpon>EmployeForm_v2.cs</DependentUpon>
+    <Compile Include="Vues\Employe\EmployeSearch.Designer.cs">
+      <DependentUpon>EmployeSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Vues\Employe\EmployeForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vues\Employe\EmployeForm.Designer.cs">
       <DependentUpon>EmployeForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Vues\Employe\EmployeSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vues\Employe\EmployeSearch.Designer.cs">
-      <DependentUpon>EmployeSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Vues\Reservation\ReservationForm.cs">
       <SubType>Form</SubType>
@@ -191,6 +180,12 @@
     <Compile Include="Vues\Reservation\ReservationSearch.Designer.cs">
       <DependentUpon>ReservationSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vues\Voiture\VoitureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vues\Voiture\VoitureForm.Designer.cs">
+      <DependentUpon>VoitureForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -201,17 +196,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Vues\Employe\EmployeSearch_v2.resx">
-      <DependentUpon>EmployeSearch_v2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vues\Employe\EmployeForm_v2.resx">
-      <DependentUpon>EmployeForm_v2.cs</DependentUpon>
+    <EmbeddedResource Include="Vues\Employe\EmployeSearch.resx">
+      <DependentUpon>EmployeSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vues\Employe\EmployeForm.resx">
       <DependentUpon>EmployeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vues\Employe\EmployeSearch.resx">
-      <DependentUpon>EmployeSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vues\Reservation\ReservationForm.resx">
       <DependentUpon>ReservationForm.cs</DependentUpon>
@@ -230,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vues\Reservation\ReservationSearch.resx">
       <DependentUpon>ReservationSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vues\Voiture\VoitureForm.resx">
+      <DependentUpon>VoitureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model\LocationVoitures.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

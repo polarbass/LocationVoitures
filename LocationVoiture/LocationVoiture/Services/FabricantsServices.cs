@@ -69,7 +69,7 @@ namespace LocationVoiture.Services
             {
                 listeFabriquants = fabricantsEntitie.fabriquants.ToList();
             }
-            catch (System.Data.Entity.Core.EntityException)
+            catch (Exception)
             {
                 Console.WriteLine("Erreur : Cannot retreive the fabriquants list");
             }

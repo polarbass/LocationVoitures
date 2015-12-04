@@ -1,4 +1,6 @@
-﻿namespace LocationVoiture.Vues
+﻿using System.Windows.Forms;
+
+namespace LocationVoiture.Vues
 {
     partial class EmployeSearch
     {
@@ -28,185 +30,249 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnClientSearch_select = new System.Windows.Forms.Button();
+            this.lblLoading = new System.Windows.Forms.Label();
+            this.panel_message = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnEmployeSearch_select = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.txtClientSearch_value = new System.Windows.Forms.TextBox();
-            this.btnClientSearch_find = new System.Windows.Forms.Button();
+            this.cbEmployeSearch = new System.Windows.Forms.ComboBox();
+            this.txtEmployeSearch_value = new System.Windows.Forms.TextBox();
+            this.btnEmployeSearch_find = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboClientSearch_FindBy = new System.Windows.Forms.ComboBox();
-            this.btnClientSearch_cancel = new System.Windows.Forms.Button();
+            this.comboEmployeSearch_FindBy = new System.Windows.Forms.ComboBox();
+            this.btnEmployeSearch_cancel = new System.Windows.Forms.Button();
+            this.animationTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
+            this.panel_message.SuspendLayout();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.btnClientSearch_select);
+            this.panel1.Controls.Add(this.lblLoading);
+            this.panel1.Controls.Add(this.panel_message);
+            this.panel1.Controls.Add(this.btnEmployeSearch_select);
             this.panel1.Controls.Add(this.panel11);
-            this.panel1.Controls.Add(this.btnClientSearch_find);
+            this.panel1.Controls.Add(this.btnEmployeSearch_find);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.comboClientSearch_FindBy);
-            this.panel1.Controls.Add(this.btnClientSearch_cancel);
-            this.panel1.Location = new System.Drawing.Point(194, 12);
+            this.panel1.Controls.Add(this.comboEmployeSearch_FindBy);
+            this.panel1.Controls.Add(this.btnEmployeSearch_cancel);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(941, 489);
+            this.panel1.Size = new System.Drawing.Size(1147, 525);
             this.panel1.TabIndex = 0;
             // 
-            // btnClientSearch_select
+            // lblLoading
             // 
-            this.btnClientSearch_select.BackColor = System.Drawing.Color.Teal;
-            this.btnClientSearch_select.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClientSearch_select.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientSearch_select.ForeColor = System.Drawing.Color.Black;
-            this.btnClientSearch_select.Location = new System.Drawing.Point(18, 415);
-            this.btnClientSearch_select.Name = "btnClientSearch_select";
-            this.btnClientSearch_select.Size = new System.Drawing.Size(214, 30);
-            this.btnClientSearch_select.TabIndex = 16;
-            this.btnClientSearch_select.Text = "Selectionner";
-            this.btnClientSearch_select.UseVisualStyleBackColor = false;
-            this.btnClientSearch_select.Click += new System.EventHandler(this.btnClientSearch_select_Click);
+            this.lblLoading.AutoSize = true;
+            this.lblLoading.BackColor = System.Drawing.Color.Teal;
+            this.lblLoading.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoading.Location = new System.Drawing.Point(632, 70);
+            this.lblLoading.Name = "lblLoading";
+            this.lblLoading.Size = new System.Drawing.Size(135, 17);
+            this.lblLoading.TabIndex = 125;
+            this.lblLoading.Text = "Recherche en cours ...";
+            // 
+            // panel_message
+            // 
+            this.panel_message.BackColor = System.Drawing.Color.Teal;
+            this.panel_message.Controls.Add(this.label3);
+            this.panel_message.Location = new System.Drawing.Point(296, 59);
+            this.panel_message.Name = "panel_message";
+            this.panel_message.Size = new System.Drawing.Size(314, 28);
+            this.panel_message.TabIndex = 17;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Teal;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label3.Location = new System.Drawing.Point(77, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(167, 21);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Aucun employé trouvé";
+            // 
+            // btnEmployeSearch_select
+            // 
+            this.btnEmployeSearch_select.BackColor = System.Drawing.Color.Teal;
+            this.btnEmployeSearch_select.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEmployeSearch_select.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmployeSearch_select.ForeColor = System.Drawing.Color.Black;
+            this.btnEmployeSearch_select.Location = new System.Drawing.Point(15, 422);
+            this.btnEmployeSearch_select.Name = "btnEmployeSearch_select";
+            this.btnEmployeSearch_select.Size = new System.Drawing.Size(214, 32);
+            this.btnEmployeSearch_select.TabIndex = 16;
+            this.btnEmployeSearch_select.Text = "Selectionner";
+            this.btnEmployeSearch_select.UseVisualStyleBackColor = false;
+            this.btnEmployeSearch_select.Click += new System.EventHandler(this.btnEmployeSearch_select_Click);
             // 
             // panel11
             // 
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel11.Controls.Add(this.txtClientSearch_value);
-            this.panel11.Location = new System.Drawing.Point(257, 88);
+            this.panel11.Controls.Add(this.cbEmployeSearch);
+            this.panel11.Controls.Add(this.txtEmployeSearch_value);
+            this.panel11.Location = new System.Drawing.Point(296, 93);
             this.panel11.Name = "panel11";
             this.panel11.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.panel11.Size = new System.Drawing.Size(314, 29);
+            this.panel11.Size = new System.Drawing.Size(314, 32);
             this.panel11.TabIndex = 15;
             // 
-            // txtClientSearch_value
+            // cbEmployeSearch
             // 
-            this.txtClientSearch_value.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtClientSearch_value.BackColor = System.Drawing.Color.Black;
-            this.txtClientSearch_value.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtClientSearch_value.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClientSearch_value.ForeColor = System.Drawing.Color.Silver;
-            this.txtClientSearch_value.Location = new System.Drawing.Point(13, 3);
-            this.txtClientSearch_value.Name = "txtClientSearch_value";
-            this.txtClientSearch_value.Size = new System.Drawing.Size(286, 22);
-            this.txtClientSearch_value.TabIndex = 1;
+            this.cbEmployeSearch.BackColor = System.Drawing.Color.Teal;
+            this.cbEmployeSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEmployeSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbEmployeSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEmployeSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.cbEmployeSearch.FormattingEnabled = true;
+            this.cbEmployeSearch.Location = new System.Drawing.Point(0, 0);
+            this.cbEmployeSearch.Name = "cbEmployeSearch";
+            this.cbEmployeSearch.Size = new System.Drawing.Size(314, 29);
+            this.cbEmployeSearch.TabIndex = 117;
             // 
-            // btnClientSearch_find
+            // txtEmployeSearch_value
             // 
-            this.btnClientSearch_find.BackColor = System.Drawing.Color.Teal;
-            this.btnClientSearch_find.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClientSearch_find.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientSearch_find.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnClientSearch_find.Location = new System.Drawing.Point(579, 87);
-            this.btnClientSearch_find.Name = "btnClientSearch_find";
-            this.btnClientSearch_find.Size = new System.Drawing.Size(107, 30);
-            this.btnClientSearch_find.TabIndex = 6;
-            this.btnClientSearch_find.Text = "Rechercher";
-            this.btnClientSearch_find.UseVisualStyleBackColor = false;
-            this.btnClientSearch_find.Click += new System.EventHandler(this.btnClientSearch_find_Click);
+            this.txtEmployeSearch_value.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtEmployeSearch_value.BackColor = System.Drawing.Color.Black;
+            this.txtEmployeSearch_value.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEmployeSearch_value.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmployeSearch_value.ForeColor = System.Drawing.Color.Silver;
+            this.txtEmployeSearch_value.Location = new System.Drawing.Point(13, 3);
+            this.txtEmployeSearch_value.Name = "txtEmployeSearch_value";
+            this.txtEmployeSearch_value.Size = new System.Drawing.Size(286, 25);
+            this.txtEmployeSearch_value.TabIndex = 1;
+            // 
+            // btnEmployeSearch_find
+            // 
+            this.btnEmployeSearch_find.BackColor = System.Drawing.Color.Teal;
+            this.btnEmployeSearch_find.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEmployeSearch_find.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmployeSearch_find.ForeColor = System.Drawing.Color.Black;
+            this.btnEmployeSearch_find.Location = new System.Drawing.Point(631, 93);
+            this.btnEmployeSearch_find.Name = "btnEmployeSearch_find";
+            this.btnEmployeSearch_find.Size = new System.Drawing.Size(151, 32);
+            this.btnEmployeSearch_find.TabIndex = 6;
+            this.btnEmployeSearch_find.Text = "Rechercher";
+            this.btnEmployeSearch_find.UseVisualStyleBackColor = false;
+            this.btnEmployeSearch_find.Click += new System.EventHandler(this.btnEmployeSearch_find_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(20, 60);
+            this.label2.Location = new System.Drawing.Point(15, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(132, 21);
+            this.label2.Size = new System.Drawing.Size(161, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "Champ recherché";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Teal;
-            this.label1.Location = new System.Drawing.Point(21, 17);
+            this.label1.Location = new System.Drawing.Point(15, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 25);
+            this.label1.Size = new System.Drawing.Size(245, 32);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Trouver un client";
+            this.label1.Text = "Trouver un employé";
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Black;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.MenuText;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.NullValue = "-------------";
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle4.NullValue = "-------------";
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.GridColor = System.Drawing.Color.Teal;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 124);
+            this.dataGridView1.Location = new System.Drawing.Point(18, 136);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.Size = new System.Drawing.Size(920, 285);
+            this.dataGridView1.RowTemplate.Height = 36;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1117, 276);
             this.dataGridView1.TabIndex = 3;
             // 
-            // comboClientSearch_FindBy
+            // comboEmployeSearch_FindBy
             // 
-            this.comboClientSearch_FindBy.BackColor = System.Drawing.SystemColors.MenuText;
-            this.comboClientSearch_FindBy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboClientSearch_FindBy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboClientSearch_FindBy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.comboClientSearch_FindBy.FormattingEnabled = true;
-            this.comboClientSearch_FindBy.ItemHeight = 21;
-            this.comboClientSearch_FindBy.Location = new System.Drawing.Point(18, 88);
-            this.comboClientSearch_FindBy.Name = "comboClientSearch_FindBy";
-            this.comboClientSearch_FindBy.Size = new System.Drawing.Size(214, 29);
-            this.comboClientSearch_FindBy.TabIndex = 1;
+            this.comboEmployeSearch_FindBy.BackColor = System.Drawing.SystemColors.MenuText;
+            this.comboEmployeSearch_FindBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboEmployeSearch_FindBy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboEmployeSearch_FindBy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboEmployeSearch_FindBy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.comboEmployeSearch_FindBy.FormattingEnabled = true;
+            this.comboEmployeSearch_FindBy.ItemHeight = 21;
+            this.comboEmployeSearch_FindBy.Location = new System.Drawing.Point(15, 95);
+            this.comboEmployeSearch_FindBy.Name = "comboEmployeSearch_FindBy";
+            this.comboEmployeSearch_FindBy.Size = new System.Drawing.Size(254, 29);
+            this.comboEmployeSearch_FindBy.TabIndex = 1;
+            this.comboEmployeSearch_FindBy.SelectedIndexChanged += new System.EventHandler(this.comboEmployeSearch_FindBy_SelectedIndexChanged);
             // 
-            // btnClientSearch_cancel
+            // btnEmployeSearch_cancel
             // 
-            this.btnClientSearch_cancel.BackColor = System.Drawing.Color.Black;
-            this.btnClientSearch_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientSearch_cancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientSearch_cancel.ForeColor = System.Drawing.Color.Teal;
-            this.btnClientSearch_cancel.Location = new System.Drawing.Point(18, 451);
-            this.btnClientSearch_cancel.Name = "btnClientSearch_cancel";
-            this.btnClientSearch_cancel.Size = new System.Drawing.Size(214, 28);
-            this.btnClientSearch_cancel.TabIndex = 0;
-            this.btnClientSearch_cancel.Text = "Annuler";
-            this.btnClientSearch_cancel.UseVisualStyleBackColor = false;
-            this.btnClientSearch_cancel.Click += new System.EventHandler(this.btnClientSearch_cancel_Click);
+            this.btnEmployeSearch_cancel.BackColor = System.Drawing.Color.Black;
+            this.btnEmployeSearch_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmployeSearch_cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmployeSearch_cancel.ForeColor = System.Drawing.Color.Teal;
+            this.btnEmployeSearch_cancel.Location = new System.Drawing.Point(15, 464);
+            this.btnEmployeSearch_cancel.Name = "btnEmployeSearch_cancel";
+            this.btnEmployeSearch_cancel.Size = new System.Drawing.Size(214, 32);
+            this.btnEmployeSearch_cancel.TabIndex = 0;
+            this.btnEmployeSearch_cancel.Text = "Annuler";
+            this.btnEmployeSearch_cancel.UseVisualStyleBackColor = false;
+            this.btnEmployeSearch_cancel.Click += new System.EventHandler(this.btnClientSearch_cancel_Click);
             // 
-            // ClientSearch
+            // animationTimer
+            // 
+            this.animationTimer.Interval = 1000;
+            // 
+            // EmployeSearch_v2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1147, 513);
+            this.ClientSize = new System.Drawing.Size(1147, 525);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ClientSearch";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Name = "EmployeSearch_v2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form3";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel_message.ResumeLayout(false);
+            this.panel_message.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -217,14 +283,19 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnClientSearch_cancel;
+        private System.Windows.Forms.Button btnEmployeSearch_cancel;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboClientSearch_FindBy;
+        private System.Windows.Forms.ComboBox comboEmployeSearch_FindBy;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnClientSearch_find;
+        private System.Windows.Forms.Button btnEmployeSearch_find;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.TextBox txtClientSearch_value;
-        private System.Windows.Forms.Button btnClientSearch_select;
+        private System.Windows.Forms.TextBox txtEmployeSearch_value;
+        private System.Windows.Forms.Button btnEmployeSearch_select;
+        private Panel panel_message;
+        private Label label3;
+        private Timer animationTimer;
+        private ComboBox cbEmployeSearch;
+        private Label lblLoading;
     }
 }

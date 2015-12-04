@@ -24,17 +24,25 @@ namespace LocationVoiture.Services
         /// Ajouter une vehicule à la table Vehicule
         /// </summary>
         /// <param name="vehicule">Le véhicule à ajouter</param>
-        public void AddVehicule(vehicule vehicule)
+        public bool AddVehicule(vehicule vehicule)
         {
+            bool isAdded = false;
             try
             {
+                vehicule.loc_state = "LIBRE";
+                vehicule.kilometrage = 0;
+
+
                 vehiculeEntitie.vehicules.Add(vehicule);
                 Save();
+                isAdded = true;
             }
-            catch (System.Data.Entity.Core.EntityException)
+            catch (Exception e)
             {
                 Console.WriteLine("Erreur : Cannot Add Vehicule (Méthode AddVehicule)");
+                Console.WriteLine(e.ToString());
             }
+            return isAdded;
         }
 
         /// <summary>

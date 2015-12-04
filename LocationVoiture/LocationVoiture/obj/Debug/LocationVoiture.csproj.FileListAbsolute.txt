@@ -121,5 +121,4 @@ C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\Loc
 C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\obj\Debug\LocationVoiture.Vues.MainForm.resources
 C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\obj\Debug\LocationVoiture.Vues.ReservationSearch.resources
 C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\obj\Debug\LocationVoiture.csproj.GenerateResource.Cache
-C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\obj\Debug\LocationVoiture.Vues.EmployeForm_v2.resources
-C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\obj\Debug\LocationVoiture.Vues.EmployeSearch_v2.resources
+C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\obj\Debug\LocationVoiture.Vues.VoitureForm.resources

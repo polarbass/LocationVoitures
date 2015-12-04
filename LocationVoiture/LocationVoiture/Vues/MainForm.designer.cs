@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel_Messages = new System.Windows.Forms.Panel();
             this.lblMainForm_Messages = new System.Windows.Forms.Label();
             this.panel_LeftRow = new System.Windows.Forms.Panel();
@@ -67,6 +69,7 @@
             this.timerMainForm_clock = new System.Windows.Forms.Timer(this.components);
             this.timerMainForm_MessagesAnimations = new System.Windows.Forms.Timer(this.components);
             this.mainPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel_Messages.SuspendLayout();
             this.panel_LeftRow.SuspendLayout();
             this.panel_operation.SuspendLayout();
@@ -77,6 +80,7 @@
             // 
             // mainPanel
             // 
+            this.mainPanel.Controls.Add(this.panel1);
             this.mainPanel.Controls.Add(this.panel_Messages);
             this.mainPanel.Controls.Add(this.panel_LeftRow);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -85,6 +89,26 @@
             this.mainPanel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.mainPanel.Size = new System.Drawing.Size(1441, 765);
             this.mainPanel.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(401, 727);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1040, 38);
+            this.panel1.TabIndex = 15;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.Location = new System.Drawing.Point(844, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(196, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Copyright © BouryBoisvertLavigne 2015";
             // 
             // panel_Messages
             // 
@@ -278,6 +302,8 @@
             this.btnCarCreate.Text = "Créer";
             this.btnCarCreate.UseVisualStyleBackColor = false;
             this.btnCarCreate.Click += new System.EventHandler(this.btnCarCreate_Click);
+            this.btnCarCreate.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
+            this.btnCarCreate.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
             // 
             // btnEmployeModify
             // 
@@ -563,6 +589,8 @@
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.mainPanel.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel_Messages.ResumeLayout(false);
             this.panel_Messages.PerformLayout();
             this.panel_LeftRow.ResumeLayout(false);
@@ -617,6 +645,8 @@
         private System.Windows.Forms.Panel panel_footer;
         private System.Windows.Forms.Panel panel_header;
         private System.Windows.Forms.Panel panel_operation;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label3;
     }
 }
 

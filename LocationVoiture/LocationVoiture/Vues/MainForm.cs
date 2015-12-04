@@ -20,8 +20,8 @@
         // push test
         int RightTimeOut = 0; 
 
-        private static string OPERATION_CLIENT_CREATION = "Création";
-        private static string OPERATION_CLIENT_MODIFICATION = "Modification";
+        private static string OPERATION_CREATION = "Création";
+        private static string OPERATION_MODIFICATION = "Modification";
 
         public MainForm()
         {
@@ -144,7 +144,7 @@
         // Création d'un client
         private void btnClientCreate_Click(object sender, EventArgs e)
         {
-            ClientForm clientForm = new ClientForm(MainForm.OPERATION_CLIENT_CREATION);
+            ClientForm clientForm = new ClientForm(MainForm.OPERATION_CREATION);
             clientForm.Owner = this;
 
             panelSelector(false);
@@ -159,7 +159,7 @@
         // Modification d'un client
         private void btnClientModify_Click(object sender, EventArgs e)
         {
-            ClientForm clientForm = new ClientForm(MainForm.OPERATION_CLIENT_MODIFICATION);
+            ClientForm clientForm = new ClientForm(MainForm.OPERATION_MODIFICATION);
             clientForm.Owner = this;
 
             panelSelector(false);
@@ -181,7 +181,7 @@
         // Création d'un employé
         private void btnEmployeCreate_Click(object sender, EventArgs e)
         {
-            EmployeForm_v2 employeForm = new EmployeForm_v2(MainForm.OPERATION_CLIENT_CREATION);
+            EmployeForm employeForm = new EmployeForm(MainForm.OPERATION_CREATION);
             employeForm.Owner = this;
 
             panelSelector(false);
@@ -196,7 +196,7 @@
         // Modification d'un employé
         private void btnEmployeModify_Click(object sender, EventArgs e)
         {
-            EmployeForm_v2 employeForm = new EmployeForm_v2(MainForm.OPERATION_CLIENT_MODIFICATION);
+            EmployeForm employeForm = new EmployeForm(MainForm.OPERATION_MODIFICATION);
             employeForm.Owner = this;
 
             panelSelector(false);
@@ -217,6 +217,15 @@
 
         private void btnCarCreate_Click(object sender, EventArgs e)
         {
+            VoitureForm voitureForm = new VoitureForm(MainForm.OPERATION_CREATION);
+            voitureForm.Owner = this;
+
+            panelSelector(false);
+
+            DialogResult dialogResult = voitureForm.ShowDialog();
+
+            String messageToSend = voitureForm.messageToSend;
+            toggleMessage(dialogResult, messageToSend);
         }
 
         private void btnCarModify_Click(object sender, EventArgs e)

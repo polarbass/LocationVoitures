@@ -30,11 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblLoginForm_date = new System.Windows.Forms.Label();
+            this.lblLoginForm_time = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtLogin_password = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtLogin_username = new System.Windows.Forms.TextBox();
-            this.lblLoginForm_time = new System.Windows.Forms.Label();
             this.btnLogin_cancel = new System.Windows.Forms.Button();
             this.btnLogin_login = new System.Windows.Forms.Button();
             this.lblLogin_vosInfos = new System.Windows.Forms.Label();
@@ -42,20 +44,21 @@
             this.lblLogin_username = new System.Windows.Forms.Label();
             this.lblLogin_message2 = new System.Windows.Forms.Label();
             this.lblLogin_message1 = new System.Windows.Forms.Label();
-            this.lblLoginForm_date = new System.Windows.Forms.Label();
             this.lblLogin_bonjour = new System.Windows.Forms.Label();
             this.lblLogin_compagnieName = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.timerLoginForm_clock = new System.Windows.Forms.Timer(this.components);
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblLoading = new System.Windows.Forms.Label();
+            this.animationTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblLoading);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
@@ -73,6 +76,36 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(401, 736);
             this.panel1.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.lblLoginForm_date);
+            this.panel4.Controls.Add(this.lblLoginForm_time);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 676);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(401, 60);
+            this.panel4.TabIndex = 16;
+            // 
+            // lblLoginForm_date
+            // 
+            this.lblLoginForm_date.AutoSize = true;
+            this.lblLoginForm_date.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoginForm_date.ForeColor = System.Drawing.Color.Silver;
+            this.lblLoginForm_date.Location = new System.Drawing.Point(17, 8);
+            this.lblLoginForm_date.Name = "lblLoginForm_date";
+            this.lblLoginForm_date.Size = new System.Drawing.Size(0, 21);
+            this.lblLoginForm_date.TabIndex = 3;
+            // 
+            // lblLoginForm_time
+            // 
+            this.lblLoginForm_time.AutoSize = true;
+            this.lblLoginForm_time.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoginForm_time.ForeColor = System.Drawing.Color.Silver;
+            this.lblLoginForm_time.Location = new System.Drawing.Point(17, 30);
+            this.lblLoginForm_time.Name = "lblLoginForm_time";
+            this.lblLoginForm_time.Size = new System.Drawing.Size(0, 21);
+            this.lblLoginForm_time.TabIndex = 13;
             // 
             // panel3
             // 
@@ -118,16 +151,6 @@
             this.txtLogin_username.Name = "txtLogin_username";
             this.txtLogin_username.Size = new System.Drawing.Size(259, 22);
             this.txtLogin_username.TabIndex = 8;
-            // 
-            // lblLoginForm_time
-            // 
-            this.lblLoginForm_time.AutoSize = true;
-            this.lblLoginForm_time.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoginForm_time.ForeColor = System.Drawing.Color.Silver;
-            this.lblLoginForm_time.Location = new System.Drawing.Point(17, 30);
-            this.lblLoginForm_time.Name = "lblLoginForm_time";
-            this.lblLoginForm_time.Size = new System.Drawing.Size(0, 21);
-            this.lblLoginForm_time.TabIndex = 13;
             // 
             // btnLogin_cancel
             // 
@@ -178,7 +201,7 @@
             this.lblLogin_password.AutoSize = true;
             this.lblLogin_password.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogin_password.ForeColor = System.Drawing.Color.Silver;
-            this.lblLogin_password.Location = new System.Drawing.Point(39, 453);
+            this.lblLogin_password.Location = new System.Drawing.Point(39, 455);
             this.lblLogin_password.Name = "lblLogin_password";
             this.lblLogin_password.Size = new System.Drawing.Size(129, 25);
             this.lblLogin_password.TabIndex = 7;
@@ -218,16 +241,6 @@
             this.lblLogin_message1.TabIndex = 4;
             this.lblLogin_message1.Text = "Veuillez vous identifier avec votre nom d\'usager et mot de passe";
             // 
-            // lblLoginForm_date
-            // 
-            this.lblLoginForm_date.AutoSize = true;
-            this.lblLoginForm_date.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoginForm_date.ForeColor = System.Drawing.Color.Silver;
-            this.lblLoginForm_date.Location = new System.Drawing.Point(17, 8);
-            this.lblLoginForm_date.Name = "lblLoginForm_date";
-            this.lblLoginForm_date.Size = new System.Drawing.Size(0, 21);
-            this.lblLoginForm_date.TabIndex = 3;
-            // 
             // lblLogin_bonjour
             // 
             this.lblLogin_bonjour.AutoSize = true;
@@ -266,15 +279,21 @@
             // 
             this.timerLoginForm_clock.Interval = 1000;
             // 
-            // panel4
+            // lblLoading
             // 
-            this.panel4.Controls.Add(this.lblLoginForm_date);
-            this.panel4.Controls.Add(this.lblLoginForm_time);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 676);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(401, 60);
-            this.panel4.TabIndex = 16;
+            this.lblLoading.BackColor = System.Drawing.Color.Maroon;
+            this.lblLoading.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblLoading.Location = new System.Drawing.Point(174, 457);
+            this.lblLoading.Name = "lblLoading";
+            this.lblLoading.Size = new System.Drawing.Size(150, 24);
+            this.lblLoading.TabIndex = 126;
+            this.lblLoading.Text = "refuser";
+            this.lblLoading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // animationTimer
+            // 
+            this.animationTimer.Interval = 1000;
             // 
             // LoginForm
             // 
@@ -293,12 +312,12 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -325,6 +344,8 @@
         private System.Windows.Forms.TextBox txtLogin_password;
         private System.Windows.Forms.Timer timerLoginForm_clock;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lblLoading;
+        private System.Windows.Forms.Timer animationTimer;
     }
 }
 

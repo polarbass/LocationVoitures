@@ -21,17 +21,24 @@ namespace LocationVoiture.Vues
         public String username { get; private set; }
         private LocationController locationController { get; set; }
 
+        private int RightTimeOut = 0;
+
         // Constructeur
 
         public LoginForm()
         {
             InitializeComponent();
 
+            lblLoading.Hide();
+
             locationController = new LocationController();
 
             showDate();
             timerLoginForm_clock.Tick += new EventHandler(tmr_Tick);
             timerLoginForm_clock.Start();
+
+            // FadeIn FadeOut pour l'affichage des messages
+            animationTimer.Tick += animationTimer_tick;
         }
 
         #region BOUTONS
@@ -44,15 +51,17 @@ namespace LocationVoiture.Vues
             username = txtLogin_username.Text;
             String password = txtLogin_password.Text;
 
-            //if(loginServices.loginAccepted(username, password))
-            //{
+            if (password.Equals("123456"))
+            {
             this.DialogResult = DialogResult.OK;
                 this.Close();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Connection refusée");
-            //}
+            }
+            else
+            {
+                Animations.Animate(lblLoading, Animations.Effect.Slide, 50, 360);
+                animationTimer.Start();
+                txtLogin_password.Text = "";                
+            }
             
         }
 
@@ -87,6 +96,21 @@ namespace LocationVoiture.Vues
         private void tmr_Tick(object sender, EventArgs e)
         {
             lblLoginForm_time.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void animationTimer_tick(object sender, EventArgs e)
+        {
+            if (RightTimeOut < 1)
+            {
+                RightTimeOut++;
+            }
+
+            if (RightTimeOut == 1)
+            {
+                Animations.Animate(lblLoading, Animations.Effect.Roll, 100, 180);
+                RightTimeOut = 0;
+                animationTimer.Stop();
+            }
         }
 
         private void mouseEnterEventHandler(object sender, EventArgs e)

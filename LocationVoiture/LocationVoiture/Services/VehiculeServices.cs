@@ -56,12 +56,64 @@ namespace LocationVoiture.Services
             try
             {
                 int vehiculeID = int.Parse(searchValue);
-                vehiculeFinder = vehiculeEntitie.vehicules.Where(veh => veh.vehiculeID == vehiculeID).Single();
+                vehiculeFinder = vehiculeEntitie.vehicules.Where(veh => veh.vehiculeID == vehiculeID).SingleOrDefault();
             }
-            catch (System.Data.Entity.Core.EntityException)
+            catch
             {
                 Console.WriteLine("Erreur : Cannot Find Vehicule (Méthode FindVehicule)");
             }
+            return vehiculeFinder;
+        }
+
+        public List<vehicule> FindBy(String searchValue, String searchBy)
+        {
+            List<vehicule> vehiculeFinder = new List<vehicule>();
+
+            if (searchValue != "")
+            {
+                try
+                {
+                    int searchValueInt = int.Parse(searchValue);
+
+                    // SEARCH BY EMPLOYE ID
+                    if (searchBy.Equals("vehiculeID"))
+                    { 
+                        vehiculeFinder = vehiculeEntitie.vehicules.Where(veh => veh.vehiculeID == searchValueInt).ToList();
+                    }
+
+                    // SEARCH BY EMPLOYE NOM
+                    else if (searchBy.Equals("fabriquant"))
+                    {
+                        vehiculeFinder = vehiculeEntitie.vehicules.Where(veh => veh.fabriquantID == searchValueInt).ToList();
+                    }
+
+                    // SEARCH BY EMPLOYE USERNAME
+                    else if (searchBy.Equals("modele"))
+                    {
+                        vehiculeFinder = vehiculeEntitie.vehicules.Where(veh => veh.modeleID == searchValueInt).ToList();
+                    }
+
+                    // SEARCH BY EMPLOYE TELEPHONE
+                    else if (searchBy.Equals("plateNum"))
+                    {
+                        vehiculeFinder = vehiculeEntitie.vehicules.Where(veh => veh.plaque_num.ToLower().Contains(searchValue)).ToList();
+                    }
+
+
+                    // SEARCH BY vehicules SUCCURSALE
+                    else if (searchBy.Equals("succursale"))
+                    {
+                        vehiculeFinder = vehiculeEntitie.vehicules.Where(veh => veh.succursaleID == searchValueInt).ToList();
+                    }
+
+                }
+                catch
+                {
+                    Console.WriteLine("Erreur dans le findBy vehicule");
+                }
+
+            }
+
             return vehiculeFinder;
         }
 
@@ -101,13 +153,39 @@ namespace LocationVoiture.Services
             return vehiculeFinder;
         }
 
+        /// <summary>
+        /// Retire un véhicule de la table véhicule
+        /// </summary>
+        /// <param name="vehiculeToDelete">Le véhicule à effacer</param>
+        public void Delete(vehicule vehiculeToDelete)
+        {
+            try
+            {
+                vehiculeEntitie.vehicules.Remove(vehiculeToDelete);
+                Save();
+            }
+            catch
+            {
+                Console.WriteLine("erreur Delete véhicule");
+            }
+        }
+
 
         /// <summary>
         /// Enregistre les modification fait à la table client
         /// </summary>
-        public void Save()
+        public bool Save()
         {
-            vehiculeEntitie.SaveChanges();
+            try
+            {
+                vehiculeEntitie.SaveChanges();
+                vehiculeEntitie.Dispose();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

@@ -61,6 +61,11 @@ namespace LocationVoiture.Vues
             }            
         }
 
+        #region COMBOBOX
+
+        /// <summary>
+        /// Rempli la liste des combobox avec les nom des fabriquants et des succursales
+        /// </summary>
         private void fillFunctionCombo()
         {
             List<fabriquant> fabriquants = locationController.FabricantsService.GetAllFabriquants();
@@ -87,12 +92,42 @@ namespace LocationVoiture.Vues
 
         }
 
+        /// <summary>
+        /// Affichage du modele selon le choix de fabriquant
+        /// </summary>        
+        private void cbVoiture_Fabriquant_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbVoiture_Modele.Items.Clear();
+
+            string fabricantID = (cbVoiture_Fabriquant.SelectedItem as ComboboxItem).Value.ToString();
+
+            List<modele> modeles = locationController.ModelesServices.findBy(fabricantID, "fabricantID");
+            foreach (modele mod in modeles)
+            {
+                ComboboxItem item = new ComboboxItem();
+                item.Text = mod.nom_modele;
+                item.Value = mod.modeleID;
+                cbVoiture_Modele.Items.Add(item);
+            }
+
+            if (cbVoiture_Modele.Items.Count == 0)
+            {
+                cbVoiture_Modele.SelectedIndex = -1;
+            }
+            else
+            {
+                cbVoiture_Modele.SelectedIndex = 0;
+            }
+        }
+
+        #endregion COMBOBOX
+
         // Méthodes
 
         #region BOUTONS
 
         /// <summary>
-        /// Création d'un nouvel employé à l'aide des informations inscrites dans les champs
+        /// Création d'un nouveau véhicule à l'aide des informations inscrites dans les champs
         /// </summary>        
         private void btnEmploye_add_Click(object sender, EventArgs e)
         {
@@ -136,31 +171,23 @@ namespace LocationVoiture.Vues
                 {
                     string idToUpdate = txtVoiture_vehiculeID.Text;
 
-                    employe employeToUpdate = locationController.EmployesService.Find(idToUpdate);
+                    vehicule vehiculeToUpdate = locationController.VehiculeServices.FindVehicule(idToUpdate);
 
-                    if (employeToUpdate != null)
+                    if (vehiculeToUpdate != null)
                     {
-                        //employeToUpdate.nom = nom;
-                        //employeToUpdate.telephone        = telephone;
-                        //employeToUpdate.adresse   = adresse;
-                        //employeToUpdate.fonction = fonction;
-                        //employeToUpdate.salaire_horaire = float.Parse(tauxHoraire);
-                        //employeToUpdate.username = username;
-                        //employeToUpdate.password = password;
-                        employeToUpdate.succursaleID = succursaleID;
-
+                        vehiculeToUpdate.succursaleID = succursaleID;
                     }                   
 
-                    if (locationController.EmployesService.Save())
+                    if (locationController.VehiculeServices.Save())
                     {
                         this.DialogResult = DialogResult.OK;
-                        messageToSend = "L'employé a été modifé";
+                        messageToSend = "Le véhicule a été modifé";
                         this.Close();
                     }
                     else
                     {
                         this.DialogResult = DialogResult.No;
-                        messageToSend = "Une erreur est survenu lors de la modification de l'employée";
+                        messageToSend = "Une erreur est survenu lors de la modification du véhicule";
                         this.Close();
                     }
 
@@ -173,11 +200,11 @@ namespace LocationVoiture.Vues
         }
 
         /// <summary>
-        /// Recherche d'un employé afin de modifier ses informations.
+        /// Recherche d'un véhicule afin de modifier ses informations.
         /// Si le champ est vide, un nouveau formulaire de recherche est lancé afin de permettre la recherche à l'aide de plus de champs
-        /// Sinon, la recherche est effectuée à l'aide de l'id de l'employé.
+        /// Sinon, la recherche est effectuée à l'aide de l'id du véhicule.
         /// </summary>        
-        private void btnEmploye_Find_Click(object sender, EventArgs e)
+        private void btnVoiture_Find_Click(object sender, EventArgs e)
         {
             String searchValue = "";
 
@@ -185,12 +212,12 @@ namespace LocationVoiture.Vues
             {
                 this.Opacity = 0.1;
 
-                EmployeSearch searchForm = new EmployeSearch();
+                VoitureSearch searchForm = new VoitureSearch();
                 searchForm.Owner = this;
                 searchForm.ShowDialog();
 
                 // récupération du ID sélectionner dans le searchForm
-                searchValue = searchForm.employeSearchID;
+                searchValue = searchForm.vehiculeSearchID;
 
                 this.Opacity = 1;
             }
@@ -204,44 +231,59 @@ namespace LocationVoiture.Vues
                 Animations.Animate(lblLoading, Animations.Effect.Slide, 50, 360);
             }
 
-            employe employeFound = locationController.EmployesService.Find(searchValue);
+            vehicule vehiculeFound = locationController.VehiculeServices.FindVehicule(searchValue);
 
-            // Affichage de l'employé
-            if (employeFound != null)
+            // Affichage de la voiture
+            if (vehiculeFound != null)
             {
 
                 btnEmploye_Delete.Visible = true;
                 setFieldStatus(true);
                 txtVoiture_vehiculeID.Enabled = false;
 
-                txtVoiture_vehiculeID.Text       = employeFound.employeID.ToString();
-                txtVoiture_noPlaque.Text         = employeFound.nom;
-                //txtVoiture_tauxHoraire.Text = employeFound.salaire_horaire.ToString();
-                //txtVoiture_phone.Text       = employeFound.telephone;
-                //txtVoiture_adresse.Text     = employeFound.adresse;
-                //txtVoiture_username.Text    = employeFound.username;
-                //txtVoiture_password.Text    = employeFound.password;
-                cbVoiture_Fabriquant.SelectedIndex = cbVoiture_Fabriquant.FindStringExact(employeFound.fonction);
-                cbVoiture_succursale.SelectedIndex = cbVoiture_succursale.FindStringExact(employeFound.succursale.nom);
+                cbVoiture_Fabriquant.Items.Clear();
+                cbVoiture_Modele.Items.Clear();
+
+                txtVoiture_vehiculeID.Text  = vehiculeFound.vehiculeID.ToString();
+                txtVoiture_noPlaque.Text    = vehiculeFound.plaque_num.ToString();
+
+                ComboboxItem fabricant      = new ComboboxItem();
+                fabricant.Text              = vehiculeFound.fabriquant.nom_fabriquant;
+                fabricant.Value             = vehiculeFound.fabriquant.fabriquantID;
+
+                ComboboxItem modele         = new ComboboxItem();
+                modele.Text                 = vehiculeFound.modele.nom_modele;
+                modele.Value                = vehiculeFound.modele.modeleID;
+
+                string succursale           = vehiculeFound.succursale.nom;
+
+                cbVoiture_Fabriquant.Items.Add(fabricant);
+                cbVoiture_Modele.Items.Add(modele);
+                cbVoiture_succursale.SelectedIndex = cbVoiture_succursale.FindStringExact(succursale);
+
+                cbVoiture_Fabriquant.SelectedIndex  = 0;
+                cbVoiture_Modele.SelectedIndex      = 0;
+
+                restrictFieldsUpdate(false);
             }
             else
             {
                 btnEmploye_Delete.Visible = false;
                 emptyVehiculeFormFields();
-                setFieldStatus(false);
+                setFieldStatus(false);                
             }
         }
 
         /// <summary>
-        /// Efface un employé
-        /// Si un employé est trouvé, un panneau de confirmation est ouvert afin de confirmer l'action
+        /// Efface un véhicule
+        /// Si un véhicule est trouvé, un panneau de confirmation est ouvert afin de confirmer l'action
         /// </summary>        
         private void btnEmploye_Delete_Click(object sender, EventArgs e)
         {
             String searchValue = txtVoiture_vehiculeID.Text;
-            employe employeToDelete = locationController.EmployesService.Find(searchValue);
+            vehicule vehiculeToDelete = locationController.VehiculeServices.FindVehicule(searchValue);
 
-            if (employeToDelete != null)
+            if (vehiculeToDelete != null)
             {
                 btnEmploye_Delete.Hide();
                 Animations.Animate(panel2, Animations.Effect.Slide, 300, 360);   
@@ -254,13 +296,13 @@ namespace LocationVoiture.Vues
         private void btnOK_Click(object sender, EventArgs e)
         {
             String searchValue = txtVoiture_vehiculeID.Text;
-            employe employeToDelete = locationController.EmployesService.Find(searchValue);
+            vehicule vehiculeToDelete = locationController.VehiculeServices.FindVehicule(searchValue);
 
-            if (employeToDelete != null)
+            if (vehiculeToDelete != null)
             {
                 Animations.Animate(panel2, Animations.Effect.Slide, 300, 360);
                 btnEmploye_Delete.Show();
-                locationController.EmployesService.DeleteEmploye(employeToDelete);
+                locationController.VehiculeServices.Delete(vehiculeToDelete);
                 this.DialogResult = DialogResult.OK;
 
                 // DELETE RÉUSSI
@@ -297,7 +339,7 @@ namespace LocationVoiture.Vues
             txtVoiture_noPlaque.Text                = "";       
             cbVoiture_Fabriquant.SelectedIndex      = 0;
             cbVoiture_succursale.SelectedIndex      = 0;
-            cbVoiture_Modele.SelectedIndex          = -1;
+            //cbVoiture_Modele.SelectedIndex          = 0;
         }
 
         private void setFieldsVisibility(bool visibilityChoice)
@@ -314,65 +356,48 @@ namespace LocationVoiture.Vues
 
         private void setFieldStatus(bool enabledStatus)
         {
-            txtVoiture_vehiculeID.Enabled        = enabledStatus;
-            txtVoiture_noPlaque.Enabled          = enabledStatus;
+            txtVoiture_vehiculeID.Enabled       = enabledStatus;
+            txtVoiture_noPlaque.Enabled         = enabledStatus;
             cbVoiture_Fabriquant.Enabled        = enabledStatus;
+            cbVoiture_Modele.Enabled            = enabledStatus;
             cbVoiture_succursale.Enabled        = enabledStatus;
+        }
+
+        private void restrictFieldsUpdate(bool restriction)
+        {
+            cbVoiture_Fabriquant.Enabled    = restriction;
+            cbVoiture_Modele.Enabled        = restriction;
+            txtVoiture_noPlaque.Enabled     = restriction;
         }
 
         private void mouseEnterEventHandler(object sender, EventArgs e)
         {
-            var button          = (Button)sender;
-            button.BackColor    = Color.Teal;
-            button.ForeColor    = Color.Black;
+            var button = (Button)sender;
+            button.BackColor = Color.White;
+            button.ForeColor = Color.Teal;
         }
 
         private void mouseLeaveEventHandler(object sender, EventArgs e)
         {
-            var button          = (Button)sender;
-            button.BackColor    = Color.Black;
-            button.ForeColor    = Color.Teal;
+            var button = (Button)sender;
+            button.BackColor = Color.Teal;
+            button.ForeColor = Color.WhiteSmoke;
         }
 
         private void mouseEnterEventHandlerRed(object sender, EventArgs e)
         {
-            var button          = (Button)sender;
-            button.BackColor    = Color.Maroon;
-            button.ForeColor    = Color.Black;
+            var button = (Button)sender;
+            button.BackColor = Color.White;
+            button.ForeColor = Color.Maroon;
         }
 
         private void mouseLeaveEventHandlerRed(object sender, EventArgs e)
         {
-            var button          = (Button)sender;
-            button.BackColor    = Color.Black;
-            button.ForeColor    = Color.Maroon;
+            var button = (Button)sender;
+            button.BackColor = Color.Maroon;
+            button.ForeColor = Color.White;
         }
 
         #endregion UTILITAIRES
-
-        private void cbVoiture_Fabriquant_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cbVoiture_Modele.Items.Clear();
-
-                string fabricantID = (cbVoiture_Fabriquant.SelectedItem as ComboboxItem).Value.ToString();
-
-                List<modele> modeles = locationController.ModelesServices.findBy(fabricantID, "fabricantID");
-                foreach (modele mod in modeles)
-                {
-                    ComboboxItem item = new ComboboxItem();
-                    item.Text = mod.nom_modele;
-                    item.Value = mod.modeleID;
-                    cbVoiture_Modele.Items.Add(item);
-                }
-
-                if (cbVoiture_Modele.Items.Count == 0)
-                {
-                    cbVoiture_Modele.SelectedIndex = -1;
-                }
-                else
-                {
-                    cbVoiture_Modele.SelectedIndex = 0;
-                } 
-        }
     }
 }

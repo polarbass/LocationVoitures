@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblLoading = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblLoginForm_date = new System.Windows.Forms.Label();
             this.lblLoginForm_time = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.lblLogin_compagnieName = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.timerLoginForm_clock = new System.Windows.Forms.Timer(this.components);
-            this.lblLoading = new System.Windows.Forms.Label();
             this.animationTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -76,6 +76,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(401, 736);
             this.panel1.TabIndex = 0;
+            // 
+            // lblLoading
+            // 
+            this.lblLoading.BackColor = System.Drawing.Color.Maroon;
+            this.lblLoading.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblLoading.Location = new System.Drawing.Point(174, 457);
+            this.lblLoading.Name = "lblLoading";
+            this.lblLoading.Size = new System.Drawing.Size(150, 24);
+            this.lblLoading.TabIndex = 126;
+            this.lblLoading.Text = "refuser";
+            this.lblLoading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
             // 
@@ -120,10 +132,10 @@
             // txtLogin_password
             // 
             this.txtLogin_password.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtLogin_password.BackColor = System.Drawing.Color.Black;
+            this.txtLogin_password.BackColor = System.Drawing.Color.White;
             this.txtLogin_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLogin_password.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLogin_password.ForeColor = System.Drawing.Color.Silver;
+            this.txtLogin_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtLogin_password.Location = new System.Drawing.Point(13, 5);
             this.txtLogin_password.Name = "txtLogin_password";
             this.txtLogin_password.PasswordChar = '*';
@@ -143,21 +155,22 @@
             // txtLogin_username
             // 
             this.txtLogin_username.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtLogin_username.BackColor = System.Drawing.Color.Black;
+            this.txtLogin_username.BackColor = System.Drawing.Color.White;
             this.txtLogin_username.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLogin_username.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLogin_username.ForeColor = System.Drawing.Color.Silver;
+            this.txtLogin_username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtLogin_username.Location = new System.Drawing.Point(13, 6);
             this.txtLogin_username.Name = "txtLogin_username";
             this.txtLogin_username.Size = new System.Drawing.Size(259, 22);
             this.txtLogin_username.TabIndex = 8;
+            this.txtLogin_username.TextChanged += new System.EventHandler(this.txtLogin_username_TextChanged);
             // 
             // btnLogin_cancel
             // 
-            this.btnLogin_cancel.BackColor = System.Drawing.Color.Black;
+            this.btnLogin_cancel.BackColor = System.Drawing.Color.Teal;
             this.btnLogin_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin_cancel.ForeColor = System.Drawing.Color.Teal;
+            this.btnLogin_cancel.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnLogin_cancel.Location = new System.Drawing.Point(152, 564);
             this.btnLogin_cancel.Name = "btnLogin_cancel";
             this.btnLogin_cancel.Size = new System.Drawing.Size(106, 48);
@@ -170,11 +183,11 @@
             // 
             // btnLogin_login
             // 
-            this.btnLogin_login.BackColor = System.Drawing.Color.Black;
+            this.btnLogin_login.BackColor = System.Drawing.Color.Teal;
             this.btnLogin_login.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnLogin_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin_login.ForeColor = System.Drawing.Color.Teal;
+            this.btnLogin_login.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnLogin_login.Location = new System.Drawing.Point(39, 564);
             this.btnLogin_login.Name = "btnLogin_login";
             this.btnLogin_login.Size = new System.Drawing.Size(106, 48);
@@ -200,7 +213,7 @@
             // 
             this.lblLogin_password.AutoSize = true;
             this.lblLogin_password.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin_password.ForeColor = System.Drawing.Color.Silver;
+            this.lblLogin_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblLogin_password.Location = new System.Drawing.Point(39, 455);
             this.lblLogin_password.Name = "lblLogin_password";
             this.lblLogin_password.Size = new System.Drawing.Size(129, 25);
@@ -211,7 +224,7 @@
             // 
             this.lblLogin_username.AutoSize = true;
             this.lblLogin_username.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin_username.ForeColor = System.Drawing.Color.Silver;
+            this.lblLogin_username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblLogin_username.Location = new System.Drawing.Point(39, 354);
             this.lblLogin_username.Name = "lblLogin_username";
             this.lblLogin_username.Size = new System.Drawing.Size(131, 25);
@@ -222,7 +235,7 @@
             // 
             this.lblLogin_message2.AutoSize = true;
             this.lblLogin_message2.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin_message2.ForeColor = System.Drawing.Color.Silver;
+            this.lblLogin_message2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblLogin_message2.Location = new System.Drawing.Point(39, 244);
             this.lblLogin_message2.Name = "lblLogin_message2";
             this.lblLogin_message2.Size = new System.Drawing.Size(139, 25);
@@ -233,7 +246,7 @@
             // 
             this.lblLogin_message1.AutoSize = true;
             this.lblLogin_message1.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin_message1.ForeColor = System.Drawing.Color.Silver;
+            this.lblLogin_message1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblLogin_message1.Location = new System.Drawing.Point(39, 176);
             this.lblLogin_message1.MaximumSize = new System.Drawing.Size(350, 0);
             this.lblLogin_message1.Name = "lblLogin_message1";
@@ -245,7 +258,7 @@
             // 
             this.lblLogin_bonjour.AutoSize = true;
             this.lblLogin_bonjour.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin_bonjour.ForeColor = System.Drawing.Color.Silver;
+            this.lblLogin_bonjour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblLogin_bonjour.Location = new System.Drawing.Point(25, 136);
             this.lblLogin_bonjour.Name = "lblLogin_bonjour";
             this.lblLogin_bonjour.Size = new System.Drawing.Size(93, 32);
@@ -279,18 +292,6 @@
             // 
             this.timerLoginForm_clock.Interval = 1000;
             // 
-            // lblLoading
-            // 
-            this.lblLoading.BackColor = System.Drawing.Color.Maroon;
-            this.lblLoading.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblLoading.Location = new System.Drawing.Point(174, 457);
-            this.lblLoading.Name = "lblLoading";
-            this.lblLoading.Size = new System.Drawing.Size(150, 24);
-            this.lblLoading.TabIndex = 126;
-            this.lblLoading.Text = "refuser";
-            this.lblLoading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // animationTimer
             // 
             this.animationTimer.Interval = 1000;
@@ -300,7 +301,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1140, 736);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.panel1);

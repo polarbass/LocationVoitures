@@ -116,17 +116,22 @@ namespace LocationVoiture.Vues
         private void mouseEnterEventHandler(object sender, EventArgs e)
         {
             var button = (Button)sender;
-            button.BackColor = Color.Teal;
-            button.ForeColor = Color.Black;
+            button.BackColor = Color.White;
+            button.ForeColor = Color.Teal;
         }
 
         private void mouseLeaveEventHandler(object sender, EventArgs e)
         {
             var button = (Button)sender;
-            button.BackColor = Color.Black;
-            button.ForeColor = Color.Teal;
+            button.BackColor = Color.Teal;
+            button.ForeColor = Color.WhiteSmoke;
         }
 
         #endregion UTILITAIRES
+
+        private void txtLogin_username_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblLoading = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCANCEL = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
@@ -59,7 +60,6 @@
             this.lblClientCreate_nom = new System.Windows.Forms.Label();
             this.txtClientCreate_cancel = new System.Windows.Forms.Button();
             this.btnClientCreate_add = new System.Windows.Forms.Button();
-            this.lblLoading = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelClientCreate_clientId.SuspendLayout();
@@ -74,6 +74,7 @@
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.lblLoading);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnClientCreate_Delete);
@@ -102,23 +103,35 @@
             this.panel1.Size = new System.Drawing.Size(460, 534);
             this.panel1.TabIndex = 0;
             // 
+            // lblLoading
+            // 
+            this.lblLoading.AutoSize = true;
+            this.lblLoading.BackColor = System.Drawing.Color.Teal;
+            this.lblLoading.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblLoading.Location = new System.Drawing.Point(144, 100);
+            this.lblLoading.Name = "lblLoading";
+            this.lblLoading.Size = new System.Drawing.Size(135, 17);
+            this.lblLoading.TabIndex = 107;
+            this.lblLoading.Text = "Recherche en cours ...";
+            // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Maroon;
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.btnCANCEL);
             this.panel2.Controls.Add(this.btnOK);
-            this.panel2.Location = new System.Drawing.Point(319, 112);
+            this.panel2.Location = new System.Drawing.Point(319, 111);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(112, 93);
             this.panel2.TabIndex = 106;
             // 
             // btnCANCEL
             // 
-            this.btnCANCEL.BackColor = System.Drawing.Color.Black;
+            this.btnCANCEL.BackColor = System.Drawing.Color.Maroon;
             this.btnCANCEL.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnCANCEL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCANCEL.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCANCEL.ForeColor = System.Drawing.Color.Maroon;
+            this.btnCANCEL.ForeColor = System.Drawing.Color.White;
             this.btnCANCEL.Location = new System.Drawing.Point(11, 51);
             this.btnCANCEL.Name = "btnCANCEL";
             this.btnCANCEL.Size = new System.Drawing.Size(91, 35);
@@ -131,11 +144,11 @@
             // 
             // btnOK
             // 
-            this.btnOK.BackColor = System.Drawing.Color.Black;
+            this.btnOK.BackColor = System.Drawing.Color.Maroon;
             this.btnOK.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.ForeColor = System.Drawing.Color.Maroon;
+            this.btnOK.ForeColor = System.Drawing.Color.White;
             this.btnOK.Location = new System.Drawing.Point(11, 7);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(91, 35);
@@ -148,11 +161,11 @@
             // 
             // btnClientCreate_Delete
             // 
-            this.btnClientCreate_Delete.BackColor = System.Drawing.Color.Black;
+            this.btnClientCreate_Delete.BackColor = System.Drawing.Color.Maroon;
             this.btnClientCreate_Delete.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnClientCreate_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClientCreate_Delete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientCreate_Delete.ForeColor = System.Drawing.Color.Maroon;
+            this.btnClientCreate_Delete.ForeColor = System.Drawing.Color.White;
             this.btnClientCreate_Delete.Location = new System.Drawing.Point(321, 172);
             this.btnClientCreate_Delete.Name = "btnClientCreate_Delete";
             this.btnClientCreate_Delete.Size = new System.Drawing.Size(110, 32);
@@ -167,7 +180,7 @@
             // 
             this.lblClientCreate_clientId.AutoSize = true;
             this.lblClientCreate_clientId.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientCreate_clientId.ForeColor = System.Drawing.Color.Silver;
+            this.lblClientCreate_clientId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblClientCreate_clientId.Location = new System.Drawing.Point(72, 176);
             this.lblClientCreate_clientId.Name = "lblClientCreate_clientId";
             this.lblClientCreate_clientId.Size = new System.Drawing.Size(36, 25);
@@ -187,10 +200,10 @@
             // txtClientCreate_clientId
             // 
             this.txtClientCreate_clientId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtClientCreate_clientId.BackColor = System.Drawing.Color.Black;
+            this.txtClientCreate_clientId.BackColor = System.Drawing.Color.White;
             this.txtClientCreate_clientId.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtClientCreate_clientId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClientCreate_clientId.ForeColor = System.Drawing.Color.Silver;
+            this.txtClientCreate_clientId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtClientCreate_clientId.Location = new System.Drawing.Point(13, 4);
             this.txtClientCreate_clientId.Name = "txtClientCreate_clientId";
             this.txtClientCreate_clientId.Size = new System.Drawing.Size(142, 22);
@@ -202,7 +215,7 @@
             this.btnClientForm_Find.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnClientForm_Find.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClientForm_Find.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientForm_Find.ForeColor = System.Drawing.Color.Black;
+            this.btnClientForm_Find.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnClientForm_Find.Location = new System.Drawing.Point(318, 63);
             this.btnClientForm_Find.Margin = new System.Windows.Forms.Padding(0);
             this.btnClientForm_Find.Name = "btnClientForm_Find";
@@ -216,7 +229,7 @@
             // 
             this.lblClientCreate_id.AutoSize = true;
             this.lblClientCreate_id.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientCreate_id.ForeColor = System.Drawing.Color.Silver;
+            this.lblClientCreate_id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblClientCreate_id.Location = new System.Drawing.Point(72, 67);
             this.lblClientCreate_id.Name = "lblClientCreate_id";
             this.lblClientCreate_id.Size = new System.Drawing.Size(36, 25);
@@ -236,10 +249,10 @@
             // txtClientCreate_idSearch
             // 
             this.txtClientCreate_idSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtClientCreate_idSearch.BackColor = System.Drawing.Color.Black;
+            this.txtClientCreate_idSearch.BackColor = System.Drawing.Color.White;
             this.txtClientCreate_idSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtClientCreate_idSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClientCreate_idSearch.ForeColor = System.Drawing.Color.Silver;
+            this.txtClientCreate_idSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtClientCreate_idSearch.Location = new System.Drawing.Point(9, 4);
             this.txtClientCreate_idSearch.Name = "txtClientCreate_idSearch";
             this.txtClientCreate_idSearch.Size = new System.Drawing.Size(146, 22);
@@ -260,7 +273,7 @@
             // 
             this.lblClientCreate_phone.AutoSize = true;
             this.lblClientCreate_phone.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientCreate_phone.ForeColor = System.Drawing.Color.Silver;
+            this.lblClientCreate_phone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblClientCreate_phone.Location = new System.Drawing.Point(5, 313);
             this.lblClientCreate_phone.Name = "lblClientCreate_phone";
             this.lblClientCreate_phone.Size = new System.Drawing.Size(103, 25);
@@ -280,10 +293,10 @@
             // txtClientCreate_phone
             // 
             this.txtClientCreate_phone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtClientCreate_phone.BackColor = System.Drawing.Color.Black;
+            this.txtClientCreate_phone.BackColor = System.Drawing.Color.White;
             this.txtClientCreate_phone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtClientCreate_phone.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClientCreate_phone.ForeColor = System.Drawing.Color.Silver;
+            this.txtClientCreate_phone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtClientCreate_phone.Location = new System.Drawing.Point(13, 3);
             this.txtClientCreate_phone.Name = "txtClientCreate_phone";
             this.txtClientCreate_phone.Size = new System.Drawing.Size(259, 22);
@@ -293,7 +306,7 @@
             // 
             this.lblClientCreate_adresse.AutoSize = true;
             this.lblClientCreate_adresse.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientCreate_adresse.ForeColor = System.Drawing.Color.Silver;
+            this.lblClientCreate_adresse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblClientCreate_adresse.Location = new System.Drawing.Point(27, 411);
             this.lblClientCreate_adresse.Name = "lblClientCreate_adresse";
             this.lblClientCreate_adresse.Size = new System.Drawing.Size(81, 25);
@@ -313,10 +326,10 @@
             // txtClientCreate_adresse
             // 
             this.txtClientCreate_adresse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtClientCreate_adresse.BackColor = System.Drawing.Color.Black;
+            this.txtClientCreate_adresse.BackColor = System.Drawing.Color.White;
             this.txtClientCreate_adresse.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtClientCreate_adresse.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClientCreate_adresse.ForeColor = System.Drawing.Color.Silver;
+            this.txtClientCreate_adresse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtClientCreate_adresse.Location = new System.Drawing.Point(13, 3);
             this.txtClientCreate_adresse.Name = "txtClientCreate_adresse";
             this.txtClientCreate_adresse.Size = new System.Drawing.Size(259, 22);
@@ -326,7 +339,7 @@
             // 
             this.lblClientCreate_prenom.AutoSize = true;
             this.lblClientCreate_prenom.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientCreate_prenom.ForeColor = System.Drawing.Color.Silver;
+            this.lblClientCreate_prenom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblClientCreate_prenom.Location = new System.Drawing.Point(23, 221);
             this.lblClientCreate_prenom.Name = "lblClientCreate_prenom";
             this.lblClientCreate_prenom.Size = new System.Drawing.Size(85, 25);
@@ -337,7 +350,7 @@
             // 
             this.lblClientCreate_email.AutoSize = true;
             this.lblClientCreate_email.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientCreate_email.ForeColor = System.Drawing.Color.Silver;
+            this.lblClientCreate_email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblClientCreate_email.Location = new System.Drawing.Point(28, 362);
             this.lblClientCreate_email.Name = "lblClientCreate_email";
             this.lblClientCreate_email.Size = new System.Drawing.Size(80, 25);
@@ -357,10 +370,10 @@
             // txtClientCreate_prenom
             // 
             this.txtClientCreate_prenom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtClientCreate_prenom.BackColor = System.Drawing.Color.Black;
+            this.txtClientCreate_prenom.BackColor = System.Drawing.Color.White;
             this.txtClientCreate_prenom.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtClientCreate_prenom.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClientCreate_prenom.ForeColor = System.Drawing.Color.Silver;
+            this.txtClientCreate_prenom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtClientCreate_prenom.Location = new System.Drawing.Point(13, 4);
             this.txtClientCreate_prenom.Name = "txtClientCreate_prenom";
             this.txtClientCreate_prenom.Size = new System.Drawing.Size(259, 22);
@@ -379,10 +392,10 @@
             // txtClientCreate_email
             // 
             this.txtClientCreate_email.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtClientCreate_email.BackColor = System.Drawing.Color.Black;
+            this.txtClientCreate_email.BackColor = System.Drawing.Color.White;
             this.txtClientCreate_email.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtClientCreate_email.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClientCreate_email.ForeColor = System.Drawing.Color.Silver;
+            this.txtClientCreate_email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtClientCreate_email.Location = new System.Drawing.Point(13, 3);
             this.txtClientCreate_email.Name = "txtClientCreate_email";
             this.txtClientCreate_email.Size = new System.Drawing.Size(259, 22);
@@ -401,10 +414,10 @@
             // txtClientCreate_nom
             // 
             this.txtClientCreate_nom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtClientCreate_nom.BackColor = System.Drawing.Color.Black;
+            this.txtClientCreate_nom.BackColor = System.Drawing.Color.White;
             this.txtClientCreate_nom.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtClientCreate_nom.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClientCreate_nom.ForeColor = System.Drawing.Color.Silver;
+            this.txtClientCreate_nom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtClientCreate_nom.Location = new System.Drawing.Point(13, 3);
             this.txtClientCreate_nom.Name = "txtClientCreate_nom";
             this.txtClientCreate_nom.Size = new System.Drawing.Size(259, 22);
@@ -414,7 +427,7 @@
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.Color.Gray;
+            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label32.Location = new System.Drawing.Point(143, 133);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(63, 25);
@@ -425,7 +438,7 @@
             // 
             this.lblClientCreate_nom.AutoSize = true;
             this.lblClientCreate_nom.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientCreate_nom.ForeColor = System.Drawing.Color.Silver;
+            this.lblClientCreate_nom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblClientCreate_nom.Location = new System.Drawing.Point(50, 266);
             this.lblClientCreate_nom.Name = "lblClientCreate_nom";
             this.lblClientCreate_nom.Size = new System.Drawing.Size(58, 25);
@@ -434,11 +447,11 @@
             // 
             // txtClientCreate_cancel
             // 
-            this.txtClientCreate_cancel.BackColor = System.Drawing.Color.Black;
+            this.txtClientCreate_cancel.BackColor = System.Drawing.Color.Teal;
             this.txtClientCreate_cancel.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtClientCreate_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.txtClientCreate_cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClientCreate_cancel.ForeColor = System.Drawing.Color.Teal;
+            this.txtClientCreate_cancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtClientCreate_cancel.Location = new System.Drawing.Point(318, 461);
             this.txtClientCreate_cancel.Name = "txtClientCreate_cancel";
             this.txtClientCreate_cancel.Size = new System.Drawing.Size(113, 35);
@@ -451,11 +464,11 @@
             // 
             // btnClientCreate_add
             // 
-            this.btnClientCreate_add.BackColor = System.Drawing.Color.Black;
+            this.btnClientCreate_add.BackColor = System.Drawing.Color.Teal;
             this.btnClientCreate_add.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnClientCreate_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClientCreate_add.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientCreate_add.ForeColor = System.Drawing.Color.Teal;
+            this.btnClientCreate_add.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnClientCreate_add.Location = new System.Drawing.Point(194, 461);
             this.btnClientCreate_add.Name = "btnClientCreate_add";
             this.btnClientCreate_add.Size = new System.Drawing.Size(113, 35);
@@ -465,17 +478,6 @@
             this.btnClientCreate_add.Click += new System.EventHandler(this.btnClientCreate_add_Click);
             this.btnClientCreate_add.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
             this.btnClientCreate_add.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
-            // 
-            // lblLoading
-            // 
-            this.lblLoading.AutoSize = true;
-            this.lblLoading.BackColor = System.Drawing.Color.Teal;
-            this.lblLoading.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoading.Location = new System.Drawing.Point(144, 100);
-            this.lblLoading.Name = "lblLoading";
-            this.lblLoading.Size = new System.Drawing.Size(135, 17);
-            this.lblLoading.TabIndex = 107;
-            this.lblLoading.Text = "Recherche en cours ...";
             // 
             // ClientForm
             // 

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblLoading = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cbEmploye_succursale = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -66,7 +67,6 @@
             this.lblClientCreate_nom = new System.Windows.Forms.Label();
             this.btnEmploye_cancel = new System.Windows.Forms.Button();
             this.btnEmploye_add = new System.Windows.Forms.Button();
-            this.lblLoading = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -82,6 +82,7 @@
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.lblLoading);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.cbEmploye_succursale);
@@ -116,11 +117,23 @@
             this.panel1.Size = new System.Drawing.Size(460, 643);
             this.panel1.TabIndex = 0;
             // 
+            // lblLoading
+            // 
+            this.lblLoading.AutoSize = true;
+            this.lblLoading.BackColor = System.Drawing.Color.Teal;
+            this.lblLoading.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoading.ForeColor = System.Drawing.Color.White;
+            this.lblLoading.Location = new System.Drawing.Point(144, 100);
+            this.lblLoading.Name = "lblLoading";
+            this.lblLoading.Size = new System.Drawing.Size(135, 17);
+            this.lblLoading.TabIndex = 124;
+            this.lblLoading.Text = "Recherche en cours ...";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Silver;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label4.Location = new System.Drawing.Point(18, 553);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 25);
@@ -129,11 +142,11 @@
             // 
             // cbEmploye_succursale
             // 
-            this.cbEmploye_succursale.BackColor = System.Drawing.Color.Teal;
+            this.cbEmploye_succursale.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cbEmploye_succursale.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEmploye_succursale.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbEmploye_succursale.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEmploye_succursale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.cbEmploye_succursale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cbEmploye_succursale.FormattingEnabled = true;
             this.cbEmploye_succursale.Location = new System.Drawing.Point(144, 552);
             this.cbEmploye_succursale.Name = "cbEmploye_succursale";
@@ -144,7 +157,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Silver;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label2.Location = new System.Drawing.Point(19, 463);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 25);
@@ -164,10 +177,10 @@
             // txtEmploye_username
             // 
             this.txtEmploye_username.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtEmploye_username.BackColor = System.Drawing.Color.Black;
+            this.txtEmploye_username.BackColor = System.Drawing.Color.White;
             this.txtEmploye_username.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmploye_username.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmploye_username.ForeColor = System.Drawing.Color.Silver;
+            this.txtEmploye_username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtEmploye_username.Location = new System.Drawing.Point(13, 3);
             this.txtEmploye_username.Name = "txtEmploye_username";
             this.txtEmploye_username.Size = new System.Drawing.Size(259, 22);
@@ -177,7 +190,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Silver;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label3.Location = new System.Drawing.Point(22, 507);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 25);
@@ -197,10 +210,10 @@
             // txtEmploye_password
             // 
             this.txtEmploye_password.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtEmploye_password.BackColor = System.Drawing.Color.Black;
+            this.txtEmploye_password.BackColor = System.Drawing.Color.White;
             this.txtEmploye_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmploye_password.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmploye_password.ForeColor = System.Drawing.Color.Silver;
+            this.txtEmploye_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtEmploye_password.Location = new System.Drawing.Point(13, 3);
             this.txtEmploye_password.Name = "txtEmploye_password";
             this.txtEmploye_password.Size = new System.Drawing.Size(259, 22);
@@ -210,7 +223,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Silver;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label1.Location = new System.Drawing.Point(32, 269);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 25);
@@ -219,11 +232,11 @@
             // 
             // cbEmploye_fonction
             // 
-            this.cbEmploye_fonction.BackColor = System.Drawing.Color.Teal;
+            this.cbEmploye_fonction.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cbEmploye_fonction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEmploye_fonction.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbEmploye_fonction.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEmploye_fonction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.cbEmploye_fonction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cbEmploye_fonction.FormattingEnabled = true;
             this.cbEmploye_fonction.Location = new System.Drawing.Point(143, 268);
             this.cbEmploye_fonction.Name = "cbEmploye_fonction";
@@ -232,7 +245,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Maroon;
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.btnCANCEL);
             this.panel2.Controls.Add(this.btnOK);
             this.panel2.Location = new System.Drawing.Point(318, 111);
@@ -242,11 +255,11 @@
             // 
             // btnCANCEL
             // 
-            this.btnCANCEL.BackColor = System.Drawing.Color.Black;
+            this.btnCANCEL.BackColor = System.Drawing.Color.Maroon;
             this.btnCANCEL.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnCANCEL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCANCEL.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCANCEL.ForeColor = System.Drawing.Color.Maroon;
+            this.btnCANCEL.ForeColor = System.Drawing.Color.White;
             this.btnCANCEL.Location = new System.Drawing.Point(11, 51);
             this.btnCANCEL.Name = "btnCANCEL";
             this.btnCANCEL.Size = new System.Drawing.Size(91, 35);
@@ -259,11 +272,11 @@
             // 
             // btnOK
             // 
-            this.btnOK.BackColor = System.Drawing.Color.Black;
+            this.btnOK.BackColor = System.Drawing.Color.Maroon;
             this.btnOK.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.ForeColor = System.Drawing.Color.Maroon;
+            this.btnOK.ForeColor = System.Drawing.Color.White;
             this.btnOK.Location = new System.Drawing.Point(11, 7);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(91, 35);
@@ -276,11 +289,11 @@
             // 
             // btnEmploye_Delete
             // 
-            this.btnEmploye_Delete.BackColor = System.Drawing.Color.Black;
+            this.btnEmploye_Delete.BackColor = System.Drawing.Color.Maroon;
             this.btnEmploye_Delete.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnEmploye_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmploye_Delete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmploye_Delete.ForeColor = System.Drawing.Color.Maroon;
+            this.btnEmploye_Delete.ForeColor = System.Drawing.Color.White;
             this.btnEmploye_Delete.Location = new System.Drawing.Point(321, 172);
             this.btnEmploye_Delete.Name = "btnEmploye_Delete";
             this.btnEmploye_Delete.Size = new System.Drawing.Size(110, 32);
@@ -295,7 +308,7 @@
             // 
             this.lblClientCreate_clientId.AutoSize = true;
             this.lblClientCreate_clientId.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientCreate_clientId.ForeColor = System.Drawing.Color.Silver;
+            this.lblClientCreate_clientId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblClientCreate_clientId.Location = new System.Drawing.Point(82, 176);
             this.lblClientCreate_clientId.Name = "lblClientCreate_clientId";
             this.lblClientCreate_clientId.Size = new System.Drawing.Size(36, 25);
@@ -315,10 +328,10 @@
             // txtEmploye_empID
             // 
             this.txtEmploye_empID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtEmploye_empID.BackColor = System.Drawing.Color.Black;
+            this.txtEmploye_empID.BackColor = System.Drawing.Color.White;
             this.txtEmploye_empID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmploye_empID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmploye_empID.ForeColor = System.Drawing.Color.Silver;
+            this.txtEmploye_empID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtEmploye_empID.Location = new System.Drawing.Point(13, 4);
             this.txtEmploye_empID.Name = "txtEmploye_empID";
             this.txtEmploye_empID.Size = new System.Drawing.Size(142, 22);
@@ -330,7 +343,7 @@
             this.btnEmploye_Find.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnEmploye_Find.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmploye_Find.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmploye_Find.ForeColor = System.Drawing.Color.Black;
+            this.btnEmploye_Find.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnEmploye_Find.Location = new System.Drawing.Point(318, 63);
             this.btnEmploye_Find.Margin = new System.Windows.Forms.Padding(0);
             this.btnEmploye_Find.Name = "btnEmploye_Find";
@@ -344,7 +357,7 @@
             // 
             this.lblClientCreate_id.AutoSize = true;
             this.lblClientCreate_id.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientCreate_id.ForeColor = System.Drawing.Color.Silver;
+            this.lblClientCreate_id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblClientCreate_id.Location = new System.Drawing.Point(82, 67);
             this.lblClientCreate_id.Name = "lblClientCreate_id";
             this.lblClientCreate_id.Size = new System.Drawing.Size(36, 25);
@@ -364,10 +377,10 @@
             // txtEmploye_idSearch
             // 
             this.txtEmploye_idSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtEmploye_idSearch.BackColor = System.Drawing.Color.Black;
+            this.txtEmploye_idSearch.BackColor = System.Drawing.Color.White;
             this.txtEmploye_idSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmploye_idSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmploye_idSearch.ForeColor = System.Drawing.Color.Silver;
+            this.txtEmploye_idSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtEmploye_idSearch.Location = new System.Drawing.Point(9, 4);
             this.txtEmploye_idSearch.Name = "txtEmploye_idSearch";
             this.txtEmploye_idSearch.Size = new System.Drawing.Size(146, 22);
@@ -388,7 +401,7 @@
             // 
             this.lblClientCreate_phone.AutoSize = true;
             this.lblClientCreate_phone.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientCreate_phone.ForeColor = System.Drawing.Color.Silver;
+            this.lblClientCreate_phone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblClientCreate_phone.Location = new System.Drawing.Point(15, 370);
             this.lblClientCreate_phone.Name = "lblClientCreate_phone";
             this.lblClientCreate_phone.Size = new System.Drawing.Size(103, 25);
@@ -408,10 +421,10 @@
             // txtEmploye_phone
             // 
             this.txtEmploye_phone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtEmploye_phone.BackColor = System.Drawing.Color.Black;
+            this.txtEmploye_phone.BackColor = System.Drawing.Color.White;
             this.txtEmploye_phone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmploye_phone.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmploye_phone.ForeColor = System.Drawing.Color.Silver;
+            this.txtEmploye_phone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtEmploye_phone.Location = new System.Drawing.Point(13, 4);
             this.txtEmploye_phone.Name = "txtEmploye_phone";
             this.txtEmploye_phone.Size = new System.Drawing.Size(259, 22);
@@ -421,7 +434,7 @@
             // 
             this.lblClientCreate_adresse.AutoSize = true;
             this.lblClientCreate_adresse.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientCreate_adresse.ForeColor = System.Drawing.Color.Silver;
+            this.lblClientCreate_adresse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblClientCreate_adresse.Location = new System.Drawing.Point(37, 414);
             this.lblClientCreate_adresse.Name = "lblClientCreate_adresse";
             this.lblClientCreate_adresse.Size = new System.Drawing.Size(81, 25);
@@ -441,10 +454,10 @@
             // txtEmploye_adresse
             // 
             this.txtEmploye_adresse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtEmploye_adresse.BackColor = System.Drawing.Color.Black;
+            this.txtEmploye_adresse.BackColor = System.Drawing.Color.White;
             this.txtEmploye_adresse.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmploye_adresse.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmploye_adresse.ForeColor = System.Drawing.Color.Silver;
+            this.txtEmploye_adresse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtEmploye_adresse.Location = new System.Drawing.Point(13, 4);
             this.txtEmploye_adresse.Name = "txtEmploye_adresse";
             this.txtEmploye_adresse.Size = new System.Drawing.Size(259, 22);
@@ -454,7 +467,7 @@
             // 
             this.lblClientCreate_email.AutoSize = true;
             this.lblClientCreate_email.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientCreate_email.ForeColor = System.Drawing.Color.Silver;
+            this.lblClientCreate_email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblClientCreate_email.Location = new System.Drawing.Point(3, 319);
             this.lblClientCreate_email.Name = "lblClientCreate_email";
             this.lblClientCreate_email.Size = new System.Drawing.Size(115, 25);
@@ -474,10 +487,10 @@
             // txtEmploye_tauxHoraire
             // 
             this.txtEmploye_tauxHoraire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtEmploye_tauxHoraire.BackColor = System.Drawing.Color.Black;
+            this.txtEmploye_tauxHoraire.BackColor = System.Drawing.Color.White;
             this.txtEmploye_tauxHoraire.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmploye_tauxHoraire.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmploye_tauxHoraire.ForeColor = System.Drawing.Color.Silver;
+            this.txtEmploye_tauxHoraire.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtEmploye_tauxHoraire.Location = new System.Drawing.Point(13, 4);
             this.txtEmploye_tauxHoraire.Name = "txtEmploye_tauxHoraire";
             this.txtEmploye_tauxHoraire.Size = new System.Drawing.Size(259, 22);
@@ -496,10 +509,10 @@
             // txtEmploye_nom
             // 
             this.txtEmploye_nom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtEmploye_nom.BackColor = System.Drawing.Color.Black;
+            this.txtEmploye_nom.BackColor = System.Drawing.Color.White;
             this.txtEmploye_nom.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmploye_nom.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmploye_nom.ForeColor = System.Drawing.Color.Silver;
+            this.txtEmploye_nom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtEmploye_nom.Location = new System.Drawing.Point(13, 4);
             this.txtEmploye_nom.Name = "txtEmploye_nom";
             this.txtEmploye_nom.Size = new System.Drawing.Size(259, 22);
@@ -509,7 +522,7 @@
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.Color.Gray;
+            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label32.Location = new System.Drawing.Point(143, 133);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(88, 25);
@@ -520,7 +533,7 @@
             // 
             this.lblClientCreate_nom.AutoSize = true;
             this.lblClientCreate_nom.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientCreate_nom.ForeColor = System.Drawing.Color.Silver;
+            this.lblClientCreate_nom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblClientCreate_nom.Location = new System.Drawing.Point(60, 224);
             this.lblClientCreate_nom.Name = "lblClientCreate_nom";
             this.lblClientCreate_nom.Size = new System.Drawing.Size(58, 25);
@@ -529,11 +542,11 @@
             // 
             // btnEmploye_cancel
             // 
-            this.btnEmploye_cancel.BackColor = System.Drawing.Color.Black;
+            this.btnEmploye_cancel.BackColor = System.Drawing.Color.Teal;
             this.btnEmploye_cancel.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnEmploye_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmploye_cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmploye_cancel.ForeColor = System.Drawing.Color.Teal;
+            this.btnEmploye_cancel.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnEmploye_cancel.Location = new System.Drawing.Point(316, 597);
             this.btnEmploye_cancel.Name = "btnEmploye_cancel";
             this.btnEmploye_cancel.Size = new System.Drawing.Size(113, 35);
@@ -546,11 +559,11 @@
             // 
             // btnEmploye_add
             // 
-            this.btnEmploye_add.BackColor = System.Drawing.Color.Black;
+            this.btnEmploye_add.BackColor = System.Drawing.Color.Teal;
             this.btnEmploye_add.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnEmploye_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmploye_add.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmploye_add.ForeColor = System.Drawing.Color.Teal;
+            this.btnEmploye_add.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnEmploye_add.Location = new System.Drawing.Point(192, 597);
             this.btnEmploye_add.Name = "btnEmploye_add";
             this.btnEmploye_add.Size = new System.Drawing.Size(113, 35);
@@ -561,18 +574,7 @@
             this.btnEmploye_add.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
             this.btnEmploye_add.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
             // 
-            // lblLoading
-            // 
-            this.lblLoading.AutoSize = true;
-            this.lblLoading.BackColor = System.Drawing.Color.Teal;
-            this.lblLoading.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoading.Location = new System.Drawing.Point(144, 100);
-            this.lblLoading.Name = "lblLoading";
-            this.lblLoading.Size = new System.Drawing.Size(135, 17);
-            this.lblLoading.TabIndex = 124;
-            this.lblLoading.Text = "Recherche en cours ...";
-            // 
-            // EmployeForm_v2
+            // EmployeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -581,7 +583,7 @@
             this.ClientSize = new System.Drawing.Size(460, 643);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "EmployeForm_v2";
+            this.Name = "EmployeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form3";
             this.panel1.ResumeLayout(false);

@@ -2,7 +2,7 @@
 
 namespace LocationVoiture.Vues
 {
-    partial class EmployeSearch
+    partial class VoitureSearch
     {
         /// <summary>
         /// Required designer variable.
@@ -38,15 +38,15 @@ namespace LocationVoiture.Vues
             this.lblLoading = new System.Windows.Forms.Label();
             this.panel_message = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnEmployeSearch_select = new System.Windows.Forms.Button();
+            this.btnVehiculeSearch_select = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.cbEmployeSearch = new System.Windows.Forms.ComboBox();
-            this.txtEmployeSearch_value = new System.Windows.Forms.TextBox();
-            this.btnEmployeSearch_find = new System.Windows.Forms.Button();
+            this.cbVehiculeSearch = new System.Windows.Forms.ComboBox();
+            this.txtVehiculeSearch_value = new System.Windows.Forms.TextBox();
+            this.btnVehiculeSearch_find = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboEmployeSearch_FindBy = new System.Windows.Forms.ComboBox();
-            this.btnEmployeSearch_cancel = new System.Windows.Forms.Button();
+            this.comboVehiculeSearch_FindBy = new System.Windows.Forms.ComboBox();
+            this.btnVehiculeSearch_cancel = new System.Windows.Forms.Button();
             this.animationTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -60,13 +60,13 @@ namespace LocationVoiture.Vues
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.lblLoading);
             this.panel1.Controls.Add(this.panel_message);
-            this.panel1.Controls.Add(this.btnEmployeSearch_select);
+            this.panel1.Controls.Add(this.btnVehiculeSearch_select);
             this.panel1.Controls.Add(this.panel11);
-            this.panel1.Controls.Add(this.btnEmployeSearch_find);
+            this.panel1.Controls.Add(this.btnVehiculeSearch_find);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.comboEmployeSearch_FindBy);
-            this.panel1.Controls.Add(this.btnEmployeSearch_cancel);
+            this.panel1.Controls.Add(this.comboVehiculeSearch_FindBy);
+            this.panel1.Controls.Add(this.btnVehiculeSearch_cancel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -136,77 +136,77 @@ namespace LocationVoiture.Vues
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label3.Location = new System.Drawing.Point(77, 4);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(167, 21);
+            this.label3.Size = new System.Drawing.Size(164, 21);
             this.label3.TabIndex = 18;
-            this.label3.Text = "Aucun employé trouvé";
+            this.label3.Text = "Aucun véhicule trouvé";
             // 
-            // btnEmployeSearch_select
+            // btnVehiculeSearch_select
             // 
-            this.btnEmployeSearch_select.BackColor = System.Drawing.Color.Teal;
-            this.btnEmployeSearch_select.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmployeSearch_select.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmployeSearch_select.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnEmployeSearch_select.Location = new System.Drawing.Point(15, 422);
-            this.btnEmployeSearch_select.Name = "btnEmployeSearch_select";
-            this.btnEmployeSearch_select.Size = new System.Drawing.Size(214, 32);
-            this.btnEmployeSearch_select.TabIndex = 16;
-            this.btnEmployeSearch_select.Text = "Selectionner";
-            this.btnEmployeSearch_select.UseVisualStyleBackColor = false;
-            this.btnEmployeSearch_select.Click += new System.EventHandler(this.btnEmployeSearch_select_Click);
-            this.btnEmployeSearch_select.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
-            this.btnEmployeSearch_select.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
+            this.btnVehiculeSearch_select.BackColor = System.Drawing.Color.Teal;
+            this.btnVehiculeSearch_select.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVehiculeSearch_select.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVehiculeSearch_select.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnVehiculeSearch_select.Location = new System.Drawing.Point(15, 422);
+            this.btnVehiculeSearch_select.Name = "btnVehiculeSearch_select";
+            this.btnVehiculeSearch_select.Size = new System.Drawing.Size(214, 32);
+            this.btnVehiculeSearch_select.TabIndex = 16;
+            this.btnVehiculeSearch_select.Text = "Selectionner";
+            this.btnVehiculeSearch_select.UseVisualStyleBackColor = false;
+            this.btnVehiculeSearch_select.Click += new System.EventHandler(this.btnEmployeSearch_select_Click);
+            this.btnVehiculeSearch_select.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
+            this.btnVehiculeSearch_select.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
             // 
             // panel11
             // 
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel11.Controls.Add(this.cbEmployeSearch);
-            this.panel11.Controls.Add(this.txtEmployeSearch_value);
+            this.panel11.Controls.Add(this.cbVehiculeSearch);
+            this.panel11.Controls.Add(this.txtVehiculeSearch_value);
             this.panel11.Location = new System.Drawing.Point(296, 93);
             this.panel11.Name = "panel11";
             this.panel11.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.panel11.Size = new System.Drawing.Size(314, 32);
             this.panel11.TabIndex = 15;
             // 
-            // cbEmployeSearch
+            // cbVehiculeSearch
             // 
-            this.cbEmployeSearch.BackColor = System.Drawing.Color.White;
-            this.cbEmployeSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbEmployeSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbEmployeSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEmployeSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cbEmployeSearch.FormattingEnabled = true;
-            this.cbEmployeSearch.Location = new System.Drawing.Point(0, 0);
-            this.cbEmployeSearch.Name = "cbEmployeSearch";
-            this.cbEmployeSearch.Size = new System.Drawing.Size(314, 29);
-            this.cbEmployeSearch.TabIndex = 117;
+            this.cbVehiculeSearch.BackColor = System.Drawing.Color.White;
+            this.cbVehiculeSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbVehiculeSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbVehiculeSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbVehiculeSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cbVehiculeSearch.FormattingEnabled = true;
+            this.cbVehiculeSearch.Location = new System.Drawing.Point(0, 0);
+            this.cbVehiculeSearch.Name = "cbVehiculeSearch";
+            this.cbVehiculeSearch.Size = new System.Drawing.Size(314, 29);
+            this.cbVehiculeSearch.TabIndex = 117;
             // 
-            // txtEmployeSearch_value
+            // txtVehiculeSearch_value
             // 
-            this.txtEmployeSearch_value.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtEmployeSearch_value.BackColor = System.Drawing.Color.White;
-            this.txtEmployeSearch_value.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmployeSearch_value.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmployeSearch_value.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtEmployeSearch_value.Location = new System.Drawing.Point(13, 3);
-            this.txtEmployeSearch_value.Name = "txtEmployeSearch_value";
-            this.txtEmployeSearch_value.Size = new System.Drawing.Size(286, 25);
-            this.txtEmployeSearch_value.TabIndex = 1;
+            this.txtVehiculeSearch_value.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtVehiculeSearch_value.BackColor = System.Drawing.Color.White;
+            this.txtVehiculeSearch_value.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtVehiculeSearch_value.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVehiculeSearch_value.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtVehiculeSearch_value.Location = new System.Drawing.Point(13, 3);
+            this.txtVehiculeSearch_value.Name = "txtVehiculeSearch_value";
+            this.txtVehiculeSearch_value.Size = new System.Drawing.Size(286, 25);
+            this.txtVehiculeSearch_value.TabIndex = 1;
             // 
-            // btnEmployeSearch_find
+            // btnVehiculeSearch_find
             // 
-            this.btnEmployeSearch_find.BackColor = System.Drawing.Color.Teal;
-            this.btnEmployeSearch_find.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmployeSearch_find.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmployeSearch_find.ForeColor = System.Drawing.Color.White;
-            this.btnEmployeSearch_find.Location = new System.Drawing.Point(631, 93);
-            this.btnEmployeSearch_find.Name = "btnEmployeSearch_find";
-            this.btnEmployeSearch_find.Size = new System.Drawing.Size(151, 32);
-            this.btnEmployeSearch_find.TabIndex = 6;
-            this.btnEmployeSearch_find.Text = "Rechercher";
-            this.btnEmployeSearch_find.UseVisualStyleBackColor = false;
-            this.btnEmployeSearch_find.Click += new System.EventHandler(this.btnEmployeSearch_find_Click);
-            this.btnEmployeSearch_find.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
-            this.btnEmployeSearch_find.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
+            this.btnVehiculeSearch_find.BackColor = System.Drawing.Color.Teal;
+            this.btnVehiculeSearch_find.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVehiculeSearch_find.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVehiculeSearch_find.ForeColor = System.Drawing.Color.White;
+            this.btnVehiculeSearch_find.Location = new System.Drawing.Point(631, 93);
+            this.btnVehiculeSearch_find.Name = "btnVehiculeSearch_find";
+            this.btnVehiculeSearch_find.Size = new System.Drawing.Size(151, 32);
+            this.btnVehiculeSearch_find.TabIndex = 6;
+            this.btnVehiculeSearch_find.Text = "Rechercher";
+            this.btnVehiculeSearch_find.UseVisualStyleBackColor = false;
+            this.btnVehiculeSearch_find.Click += new System.EventHandler(this.btnEmployeSearch_find_Click);
+            this.btnVehiculeSearch_find.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
+            this.btnVehiculeSearch_find.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
             // 
             // label2
             // 
@@ -226,44 +226,44 @@ namespace LocationVoiture.Vues
             this.label1.ForeColor = System.Drawing.Color.Teal;
             this.label1.Location = new System.Drawing.Point(15, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(245, 32);
+            this.label1.Size = new System.Drawing.Size(241, 32);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Trouver un employé";
+            this.label1.Text = "Trouver un véhicule";
             // 
-            // comboEmployeSearch_FindBy
+            // comboVehiculeSearch_FindBy
             // 
-            this.comboEmployeSearch_FindBy.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.comboEmployeSearch_FindBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboEmployeSearch_FindBy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboEmployeSearch_FindBy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboEmployeSearch_FindBy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.comboEmployeSearch_FindBy.FormattingEnabled = true;
-            this.comboEmployeSearch_FindBy.ItemHeight = 21;
-            this.comboEmployeSearch_FindBy.Location = new System.Drawing.Point(15, 95);
-            this.comboEmployeSearch_FindBy.Name = "comboEmployeSearch_FindBy";
-            this.comboEmployeSearch_FindBy.Size = new System.Drawing.Size(254, 29);
-            this.comboEmployeSearch_FindBy.TabIndex = 1;
-            this.comboEmployeSearch_FindBy.SelectedIndexChanged += new System.EventHandler(this.comboEmployeSearch_FindBy_SelectedIndexChanged);
+            this.comboVehiculeSearch_FindBy.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.comboVehiculeSearch_FindBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboVehiculeSearch_FindBy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboVehiculeSearch_FindBy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboVehiculeSearch_FindBy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.comboVehiculeSearch_FindBy.FormattingEnabled = true;
+            this.comboVehiculeSearch_FindBy.ItemHeight = 21;
+            this.comboVehiculeSearch_FindBy.Location = new System.Drawing.Point(15, 95);
+            this.comboVehiculeSearch_FindBy.Name = "comboVehiculeSearch_FindBy";
+            this.comboVehiculeSearch_FindBy.Size = new System.Drawing.Size(254, 29);
+            this.comboVehiculeSearch_FindBy.TabIndex = 1;
+            this.comboVehiculeSearch_FindBy.SelectedIndexChanged += new System.EventHandler(this.comboEmployeSearch_FindBy_SelectedIndexChanged);
             // 
-            // btnEmployeSearch_cancel
+            // btnVehiculeSearch_cancel
             // 
-            this.btnEmployeSearch_cancel.BackColor = System.Drawing.Color.White;
-            this.btnEmployeSearch_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmployeSearch_cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmployeSearch_cancel.ForeColor = System.Drawing.Color.Teal;
-            this.btnEmployeSearch_cancel.Location = new System.Drawing.Point(15, 464);
-            this.btnEmployeSearch_cancel.Name = "btnEmployeSearch_cancel";
-            this.btnEmployeSearch_cancel.Size = new System.Drawing.Size(214, 32);
-            this.btnEmployeSearch_cancel.TabIndex = 0;
-            this.btnEmployeSearch_cancel.Text = "Annuler";
-            this.btnEmployeSearch_cancel.UseVisualStyleBackColor = false;
-            this.btnEmployeSearch_cancel.Click += new System.EventHandler(this.btnClientSearch_cancel_Click);
+            this.btnVehiculeSearch_cancel.BackColor = System.Drawing.Color.White;
+            this.btnVehiculeSearch_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVehiculeSearch_cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVehiculeSearch_cancel.ForeColor = System.Drawing.Color.Teal;
+            this.btnVehiculeSearch_cancel.Location = new System.Drawing.Point(15, 464);
+            this.btnVehiculeSearch_cancel.Name = "btnVehiculeSearch_cancel";
+            this.btnVehiculeSearch_cancel.Size = new System.Drawing.Size(214, 32);
+            this.btnVehiculeSearch_cancel.TabIndex = 0;
+            this.btnVehiculeSearch_cancel.Text = "Annuler";
+            this.btnVehiculeSearch_cancel.UseVisualStyleBackColor = false;
+            this.btnVehiculeSearch_cancel.Click += new System.EventHandler(this.btnClientSearch_cancel_Click);
             // 
             // animationTimer
             // 
             this.animationTimer.Interval = 1000;
             // 
-            // EmployeSearch
+            // VoitureSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -272,7 +272,7 @@ namespace LocationVoiture.Vues
             this.ClientSize = new System.Drawing.Size(1147, 525);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "EmployeSearch";
+            this.Name = "VoitureSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form3";
             this.panel1.ResumeLayout(false);
@@ -289,18 +289,18 @@ namespace LocationVoiture.Vues
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnEmployeSearch_cancel;
-        private System.Windows.Forms.ComboBox comboEmployeSearch_FindBy;
+        private System.Windows.Forms.Button btnVehiculeSearch_cancel;
+        private System.Windows.Forms.ComboBox comboVehiculeSearch_FindBy;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnEmployeSearch_find;
+        private System.Windows.Forms.Button btnVehiculeSearch_find;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.TextBox txtEmployeSearch_value;
-        private System.Windows.Forms.Button btnEmployeSearch_select;
+        private System.Windows.Forms.TextBox txtVehiculeSearch_value;
+        private System.Windows.Forms.Button btnVehiculeSearch_select;
         private Panel panel_message;
         private Label label3;
         private Timer animationTimer;
-        private ComboBox cbEmployeSearch;
+        private ComboBox cbVehiculeSearch;
         private Label lblLoading;
         private DataGridView dataGridView1;
     }

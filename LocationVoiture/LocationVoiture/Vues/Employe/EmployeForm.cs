@@ -315,6 +315,7 @@ namespace LocationVoiture.Vues
             txtEmploye_empID.Visible            = visibilityChoice;
             lblClientCreate_id.Visible          = visibilityChoice;
             panelClientForm_id.Visible          = visibilityChoice;
+            btnEmploye_Delete.Visible           = false;
         }
 
         private void setFieldStatus(bool enabledStatus)
@@ -332,30 +333,30 @@ namespace LocationVoiture.Vues
 
         private void mouseEnterEventHandler(object sender, EventArgs e)
         {
-            var button          = (Button)sender;
-            button.BackColor    = Color.Teal;
-            button.ForeColor    = Color.Black;
+            var button = (Button)sender;
+            button.BackColor = Color.White;
+            button.ForeColor = Color.Teal;
         }
 
         private void mouseLeaveEventHandler(object sender, EventArgs e)
         {
-            var button          = (Button)sender;
-            button.BackColor    = Color.Black;
-            button.ForeColor    = Color.Teal;
+            var button = (Button)sender;
+            button.BackColor = Color.Teal;
+            button.ForeColor = Color.WhiteSmoke;
         }
 
         private void mouseEnterEventHandlerRed(object sender, EventArgs e)
         {
-            var button          = (Button)sender;
-            button.BackColor    = Color.Maroon;
-            button.ForeColor    = Color.Black;
+            var button = (Button)sender;
+            button.BackColor = Color.White;
+            button.ForeColor = Color.Maroon;
         }
 
         private void mouseLeaveEventHandlerRed(object sender, EventArgs e)
         {
-            var button          = (Button)sender;
-            button.BackColor    = Color.Black;
-            button.ForeColor    = Color.Maroon;
+            var button = (Button)sender;
+            button.BackColor = Color.Maroon;
+            button.ForeColor = Color.White;
         }
 
         #endregion UTILITAIRES

@@ -164,12 +164,14 @@ namespace LocationVoiture.Vues
 
                 if (txtClientCreate_idSearch.Text == "")
                 {
+                    this.Opacity = 0.1;
                     ClientSearch searchForm = new ClientSearch();
                     searchForm.Owner = this;
                     searchForm.ShowDialog();
 
                     //récupération du ID sélectionner dans le searchForm
                     searchValue = searchForm.clientSearchID;
+                    this.Opacity = 1;
                 }
                 else
                 {
@@ -207,6 +209,7 @@ namespace LocationVoiture.Vues
 
                 if (txtClientCreate_idSearch.Text == "")
                 {
+                    this.Opacity = 0.1;
                     ReservationSearch searchForm = new ReservationSearch();
                     searchForm.Owner = this;
                     panel1.Hide();
@@ -214,6 +217,8 @@ namespace LocationVoiture.Vues
 
                     //récupération du ID sélectionner dans le searchForm
                     searchValue = searchForm.ReservationSearchID;
+
+                    this.Opacity = 1;
                 }
                 else
                 {
@@ -566,29 +571,15 @@ namespace LocationVoiture.Vues
         private void mouseEnterEventHandler(object sender, EventArgs e)
         {
             var button = (Button)sender;
-            button.BackColor = Color.Teal;
-            button.ForeColor = Color.Black;
+            button.BackColor = Color.White;
+            button.ForeColor = Color.Teal;
         }
 
         private void mouseLeaveEventHandler(object sender, EventArgs e)
         {
             var button = (Button)sender;
-            button.BackColor = Color.Black;
-            button.ForeColor = Color.Teal;
-        }
-
-        private void mouseEnterEventHandlerTeal(object sender, EventArgs e)
-        {
-            var button = (Button)sender;
-            button.BackColor = Color.Black;
-            button.ForeColor = Color.Teal;
-        }
-
-        private void mouseLeaveEventHandlerTeal(object sender, EventArgs e)
-        {
-            var button = (Button)sender;
             button.BackColor = Color.Teal;
-            button.ForeColor = Color.Black;
+            button.ForeColor = Color.WhiteSmoke;
         }
 
         #endregion UTILITAIRES

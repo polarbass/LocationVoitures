@@ -123,6 +123,7 @@ namespace LocationVoiture.Vues
                 Animations.Animate(panel_message, Animations.Effect.Roll, 300, 180);
                 animationTimer.Start();
                 dataGridView1.DataSource = null;
+                btnClientSearch_select.Enabled = false;
             }
 
         }
@@ -163,6 +164,20 @@ namespace LocationVoiture.Vues
                 RightTimeOut = 0;
                 animationTimer.Stop();
             }
+        }
+
+        private void mouseEnterEventHandler(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+            button.BackColor = Color.White;
+            button.ForeColor = Color.Teal;
+        }
+
+        private void mouseLeaveEventHandler(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+            button.BackColor = Color.Teal;
+            button.ForeColor = Color.WhiteSmoke;
         }
     }
 }

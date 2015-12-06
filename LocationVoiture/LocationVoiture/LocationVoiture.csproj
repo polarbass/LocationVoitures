@@ -180,6 +180,12 @@
     <Compile Include="Vues\Reservation\ReservationSearch.Designer.cs">
       <DependentUpon>ReservationSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vues\Voiture\VoitureSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vues\Voiture\VoitureSearch.Designer.cs">
+      <DependentUpon>VoitureSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vues\Voiture\VoitureForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vues\Reservation\ReservationSearch.resx">
       <DependentUpon>ReservationSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vues\Voiture\VoitureSearch.resx">
+      <DependentUpon>VoitureSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vues\Voiture\VoitureForm.resx">
       <DependentUpon>VoitureForm.cs</DependentUpon>

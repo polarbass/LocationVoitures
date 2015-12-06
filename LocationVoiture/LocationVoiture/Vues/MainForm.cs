@@ -230,6 +230,15 @@
 
         private void btnCarModify_Click(object sender, EventArgs e)
         {
+            VoitureForm voitureForm = new VoitureForm(MainForm.OPERATION_MODIFICATION);
+            voitureForm.Owner = this;
+
+            panelSelector(false);
+
+            DialogResult dialogResult = voitureForm.ShowDialog();
+
+            String messageToSend = voitureForm.messageToSend;
+            toggleMessage(dialogResult, messageToSend);
         }
 
         #endregion VEHICULE
@@ -310,15 +319,15 @@
         private void mouseEnterEventHandler(object sender, EventArgs e)
         {
             var button = (Button)sender;
-            button.BackColor = Color.Teal;
-            button.ForeColor = Color.Black;
+            button.BackColor = Color.White;
+            button.ForeColor = Color.Teal;
         }
 
         private void mouseLeaveEventHandler(object sender, EventArgs e)
         {
             var button = (Button)sender;
-            button.BackColor = Color.Black;
-            button.ForeColor = Color.Teal;
+            button.BackColor = Color.Teal;
+            button.ForeColor = Color.WhiteSmoke;
         }
 
         #endregion UTILITAIRES

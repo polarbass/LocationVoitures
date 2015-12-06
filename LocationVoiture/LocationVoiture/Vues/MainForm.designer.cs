@@ -80,6 +80,7 @@
             // 
             // mainPanel
             // 
+            this.mainPanel.BackColor = System.Drawing.Color.White;
             this.mainPanel.Controls.Add(this.panel1);
             this.mainPanel.Controls.Add(this.panel_Messages);
             this.mainPanel.Controls.Add(this.panel_LeftRow);
@@ -112,7 +113,7 @@
             // 
             // panel_Messages
             // 
-            this.panel_Messages.BackColor = System.Drawing.Color.Black;
+            this.panel_Messages.BackColor = System.Drawing.Color.White;
             this.panel_Messages.Controls.Add(this.lblMainForm_Messages);
             this.panel_Messages.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Messages.Location = new System.Drawing.Point(401, 0);
@@ -143,6 +144,7 @@
             // 
             // panel_operation
             // 
+            this.panel_operation.BackColor = System.Drawing.Color.White;
             this.panel_operation.Controls.Add(this.lblOperation);
             this.panel_operation.Controls.Add(this.label4);
             this.panel_operation.Controls.Add(this.label12);
@@ -162,17 +164,17 @@
             this.panel_operation.Controls.Add(this.btnSuccursaleModify);
             this.panel_operation.Controls.Add(this.btnSuccursaleCreate);
             this.panel_operation.Controls.Add(this.btnReservationModify);
-            this.panel_operation.Location = new System.Drawing.Point(3, 122);
+            this.panel_operation.Location = new System.Drawing.Point(3, 117);
             this.panel_operation.Name = "panel_operation";
-            this.panel_operation.Size = new System.Drawing.Size(395, 578);
+            this.panel_operation.Size = new System.Drawing.Size(400, 594);
             this.panel_operation.TabIndex = 36;
             // 
             // lblOperation
             // 
             this.lblOperation.AutoSize = true;
-            this.lblOperation.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOperation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOperation.ForeColor = System.Drawing.Color.Teal;
-            this.lblOperation.Location = new System.Drawing.Point(17, 14);
+            this.lblOperation.Location = new System.Drawing.Point(17, 21);
             this.lblOperation.Name = "lblOperation";
             this.lblOperation.Size = new System.Drawing.Size(205, 25);
             this.lblOperation.TabIndex = 10;
@@ -182,7 +184,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Gray;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label4.Location = new System.Drawing.Point(17, 370);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 25);
@@ -193,7 +195,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Gray;
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label12.Location = new System.Drawing.Point(17, 257);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(78, 25);
@@ -202,11 +204,11 @@
             // 
             // btnClientCreate
             // 
-            this.btnClientCreate.BackColor = System.Drawing.Color.Black;
+            this.btnClientCreate.BackColor = System.Drawing.Color.Teal;
             this.btnClientCreate.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnClientCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClientCreate.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientCreate.ForeColor = System.Drawing.Color.Teal;
+            this.btnClientCreate.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnClientCreate.Location = new System.Drawing.Point(144, 137);
             this.btnClientCreate.Name = "btnClientCreate";
             this.btnClientCreate.Size = new System.Drawing.Size(113, 35);
@@ -219,11 +221,11 @@
             // 
             // btnLocationModify
             // 
-            this.btnLocationModify.BackColor = System.Drawing.Color.Black;
+            this.btnLocationModify.BackColor = System.Drawing.Color.Teal;
             this.btnLocationModify.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnLocationModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLocationModify.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLocationModify.ForeColor = System.Drawing.Color.Teal;
+            this.btnLocationModify.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnLocationModify.Location = new System.Drawing.Point(267, 365);
             this.btnLocationModify.Name = "btnLocationModify";
             this.btnLocationModify.Size = new System.Drawing.Size(113, 35);
@@ -233,11 +235,11 @@
             // 
             // btnCarModify
             // 
-            this.btnCarModify.BackColor = System.Drawing.Color.Black;
+            this.btnCarModify.BackColor = System.Drawing.Color.Teal;
             this.btnCarModify.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnCarModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCarModify.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCarModify.ForeColor = System.Drawing.Color.Teal;
+            this.btnCarModify.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnCarModify.Location = new System.Drawing.Point(267, 252);
             this.btnCarModify.Name = "btnCarModify";
             this.btnCarModify.Size = new System.Drawing.Size(113, 35);
@@ -248,11 +250,11 @@
             // 
             // btnLocationCreate
             // 
-            this.btnLocationCreate.BackColor = System.Drawing.Color.Black;
+            this.btnLocationCreate.BackColor = System.Drawing.Color.Teal;
             this.btnLocationCreate.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnLocationCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLocationCreate.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLocationCreate.ForeColor = System.Drawing.Color.Teal;
+            this.btnLocationCreate.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnLocationCreate.Location = new System.Drawing.Point(144, 365);
             this.btnLocationCreate.Name = "btnLocationCreate";
             this.btnLocationCreate.Size = new System.Drawing.Size(113, 35);
@@ -262,11 +264,11 @@
             // 
             // btnClientModify
             // 
-            this.btnClientModify.BackColor = System.Drawing.Color.Black;
+            this.btnClientModify.BackColor = System.Drawing.Color.Teal;
             this.btnClientModify.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnClientModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClientModify.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientModify.ForeColor = System.Drawing.Color.Teal;
+            this.btnClientModify.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnClientModify.Location = new System.Drawing.Point(267, 137);
             this.btnClientModify.Name = "btnClientModify";
             this.btnClientModify.Size = new System.Drawing.Size(113, 35);
@@ -281,7 +283,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label1.Location = new System.Drawing.Point(17, 200);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 25);
@@ -290,11 +292,11 @@
             // 
             // btnCarCreate
             // 
-            this.btnCarCreate.BackColor = System.Drawing.Color.Black;
+            this.btnCarCreate.BackColor = System.Drawing.Color.Teal;
             this.btnCarCreate.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnCarCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCarCreate.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCarCreate.ForeColor = System.Drawing.Color.Teal;
+            this.btnCarCreate.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnCarCreate.Location = new System.Drawing.Point(144, 252);
             this.btnCarCreate.Name = "btnCarCreate";
             this.btnCarCreate.Size = new System.Drawing.Size(113, 35);
@@ -307,11 +309,11 @@
             // 
             // btnEmployeModify
             // 
-            this.btnEmployeModify.BackColor = System.Drawing.Color.Black;
+            this.btnEmployeModify.BackColor = System.Drawing.Color.Teal;
             this.btnEmployeModify.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnEmployeModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployeModify.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmployeModify.ForeColor = System.Drawing.Color.Teal;
+            this.btnEmployeModify.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnEmployeModify.Location = new System.Drawing.Point(267, 195);
             this.btnEmployeModify.Name = "btnEmployeModify";
             this.btnEmployeModify.Size = new System.Drawing.Size(113, 35);
@@ -326,7 +328,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Gray;
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label8.Location = new System.Drawing.Point(17, 142);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(63, 25);
@@ -337,7 +339,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Gray;
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label13.Location = new System.Drawing.Point(17, 313);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(106, 25);
@@ -346,11 +348,11 @@
             // 
             // btnEmployeCreate
             // 
-            this.btnEmployeCreate.BackColor = System.Drawing.Color.Black;
+            this.btnEmployeCreate.BackColor = System.Drawing.Color.Teal;
             this.btnEmployeCreate.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnEmployeCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployeCreate.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmployeCreate.ForeColor = System.Drawing.Color.Teal;
+            this.btnEmployeCreate.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnEmployeCreate.Location = new System.Drawing.Point(144, 195);
             this.btnEmployeCreate.Name = "btnEmployeCreate";
             this.btnEmployeCreate.Size = new System.Drawing.Size(113, 35);
@@ -363,11 +365,11 @@
             // 
             // btnReservationCreate
             // 
-            this.btnReservationCreate.BackColor = System.Drawing.Color.Black;
+            this.btnReservationCreate.BackColor = System.Drawing.Color.Teal;
             this.btnReservationCreate.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnReservationCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReservationCreate.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReservationCreate.ForeColor = System.Drawing.Color.Teal;
+            this.btnReservationCreate.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnReservationCreate.Location = new System.Drawing.Point(144, 76);
             this.btnReservationCreate.Name = "btnReservationCreate";
             this.btnReservationCreate.Size = new System.Drawing.Size(113, 35);
@@ -382,7 +384,7 @@
             // 
             this.lblReservation.AutoSize = true;
             this.lblReservation.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReservation.ForeColor = System.Drawing.Color.Gray;
+            this.lblReservation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblReservation.Location = new System.Drawing.Point(17, 80);
             this.lblReservation.Name = "lblReservation";
             this.lblReservation.Size = new System.Drawing.Size(117, 25);
@@ -391,11 +393,11 @@
             // 
             // btnSuccursaleModify
             // 
-            this.btnSuccursaleModify.BackColor = System.Drawing.Color.Black;
+            this.btnSuccursaleModify.BackColor = System.Drawing.Color.Teal;
             this.btnSuccursaleModify.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnSuccursaleModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuccursaleModify.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuccursaleModify.ForeColor = System.Drawing.Color.Teal;
+            this.btnSuccursaleModify.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnSuccursaleModify.Location = new System.Drawing.Point(267, 308);
             this.btnSuccursaleModify.Name = "btnSuccursaleModify";
             this.btnSuccursaleModify.Size = new System.Drawing.Size(113, 35);
@@ -405,11 +407,11 @@
             // 
             // btnSuccursaleCreate
             // 
-            this.btnSuccursaleCreate.BackColor = System.Drawing.Color.Black;
+            this.btnSuccursaleCreate.BackColor = System.Drawing.Color.Teal;
             this.btnSuccursaleCreate.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnSuccursaleCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuccursaleCreate.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuccursaleCreate.ForeColor = System.Drawing.Color.Teal;
+            this.btnSuccursaleCreate.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnSuccursaleCreate.Location = new System.Drawing.Point(144, 308);
             this.btnSuccursaleCreate.Name = "btnSuccursaleCreate";
             this.btnSuccursaleCreate.Size = new System.Drawing.Size(113, 35);
@@ -419,11 +421,11 @@
             // 
             // btnReservationModify
             // 
-            this.btnReservationModify.BackColor = System.Drawing.Color.Black;
+            this.btnReservationModify.BackColor = System.Drawing.Color.Teal;
             this.btnReservationModify.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnReservationModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReservationModify.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReservationModify.ForeColor = System.Drawing.Color.Teal;
+            this.btnReservationModify.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnReservationModify.Location = new System.Drawing.Point(267, 76);
             this.btnReservationModify.Name = "btnReservationModify";
             this.btnReservationModify.Size = new System.Drawing.Size(113, 35);
@@ -436,6 +438,7 @@
             // 
             // panel_header
             // 
+            this.panel_header.BackColor = System.Drawing.Color.White;
             this.panel_header.Controls.Add(this.label2);
             this.panel_header.Controls.Add(this.panel_DefaultOperations);
             this.panel_header.Controls.Add(this.lblMainForm_activeUser);
@@ -469,7 +472,7 @@
             // btnQuitter
             // 
             this.btnQuitter.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnQuitter.BackColor = System.Drawing.Color.Black;
+            this.btnQuitter.BackColor = System.Drawing.Color.White;
             this.btnQuitter.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnQuitter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuitter.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -491,7 +494,7 @@
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.Black;
+            this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLogin.Location = new System.Drawing.Point(2, 3);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(113, 38);
@@ -515,7 +518,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Gray;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label6.Location = new System.Drawing.Point(20, 54);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(143, 25);
@@ -524,6 +527,7 @@
             // 
             // panel_footer
             // 
+            this.panel_footer.BackColor = System.Drawing.Color.White;
             this.panel_footer.Controls.Add(this.lblMainForm_date);
             this.panel_footer.Controls.Add(this.lblMainForm_time);
             this.panel_footer.Dock = System.Windows.Forms.DockStyle.Bottom;

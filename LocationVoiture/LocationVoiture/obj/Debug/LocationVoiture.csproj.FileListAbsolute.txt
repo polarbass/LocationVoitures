@@ -123,3 +123,5 @@ C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\Loc
 C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\obj\Debug\LocationVoiture.csproj.GenerateResource.Cache
 C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\obj\Debug\LocationVoiture.Vues.VoitureForm.resources
 C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\obj\Debug\LocationVoiture.Vues.VoitureSearch.resources
+C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\obj\Debug\LocationVoiture.Vues.SuccursaleForm.resources
+C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\obj\Debug\LocationVoiture.Vues.SuccursaleSearch.resources

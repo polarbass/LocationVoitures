@@ -77,7 +77,7 @@ namespace LocationVoiture.Vues
             else
             {
                 searchValue = (cbVehiculeSearch.SelectedItem as ComboboxItem).Value.ToString();
-            }       
+            }
 
             String comboChoice = comboVehiculeSearch_FindBy.SelectedItem.ToString();
             List<vehicule> vehiculeFound = new List<vehicule>();
@@ -178,9 +178,9 @@ namespace LocationVoiture.Vues
 
         #endregion UTILITAIRES
 
-        private void comboEmployeSearch_FindBy_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboVehiculeSearch_FindBy_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            // Succursales
             if (comboVehiculeSearch_FindBy.SelectedItem.ToString().Equals(findByParameter.succursale.ToString()))
             {
                 cbVehiculeSearch.Items.Clear();
@@ -195,6 +195,44 @@ namespace LocationVoiture.Vues
                     cbVehiculeSearch.Items.Add(item);
                 }
                 
+                cbVehiculeSearch.SelectedIndex = 0;
+                cbVehiculeSearch.Show();
+            }
+
+            // Fabriquant
+            else if (comboVehiculeSearch_FindBy.SelectedItem.ToString().Equals(findByParameter.fabricant.ToString()))
+            {
+                cbVehiculeSearch.Items.Clear();
+                txtVehiculeSearch_value.Text = "";
+                List<fabriquant> fabricants= locationController.FabricantsService.GetAllFabriquants();
+                foreach (fabriquant fab in fabricants)
+                {
+                    ComboboxItem item = new ComboboxItem();
+                    item.Text = fab.nom_fabriquant;
+                    item.Value = fab.fabriquantID;
+
+                    cbVehiculeSearch.Items.Add(item);
+                }
+
+                cbVehiculeSearch.SelectedIndex = 0;
+                cbVehiculeSearch.Show();
+            }
+
+            // Modele
+            else if (comboVehiculeSearch_FindBy.SelectedItem.ToString().Equals(findByParameter.modele.ToString()))
+            {
+                cbVehiculeSearch.Items.Clear();
+                txtVehiculeSearch_value.Text = "";
+                List<modele> modeles = locationController.ModelesServices.GetAll();
+                foreach (modele mod in modeles)
+                {
+                    ComboboxItem item = new ComboboxItem();
+                    item.Text = mod.nom_modele;
+                    item.Value = mod.modeleID;
+
+                    cbVehiculeSearch.Items.Add(item);
+                }
+
                 cbVehiculeSearch.SelectedIndex = 0;
                 cbVehiculeSearch.Show();
             }

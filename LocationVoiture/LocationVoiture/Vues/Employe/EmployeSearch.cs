@@ -68,7 +68,7 @@ namespace LocationVoiture.Vues
         private void btnEmployeSearch_find_Click(object sender, EventArgs e)
         {
 
-            String searchValue;
+            String searchValue = "";
             Animations.Animate(lblLoading, Animations.Effect.Slide, 50, 360);
 
             if (txtEmployeSearch_value.Text != "")
@@ -77,7 +77,10 @@ namespace LocationVoiture.Vues
             }
             else
             {
-                searchValue = (cbEmployeSearch.SelectedItem as ComboboxItem).Value.ToString();
+                if(cbEmployeSearch.Items.Count > 0)
+                {
+                    searchValue = (cbEmployeSearch.SelectedItem as ComboboxItem).Value.ToString();
+                }                
             }       
 
             String comboChoice = comboEmployeSearch_FindBy.SelectedItem.ToString();

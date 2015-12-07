@@ -247,6 +247,8 @@
             this.btnCarModify.Text = "Modifier";
             this.btnCarModify.UseVisualStyleBackColor = false;
             this.btnCarModify.Click += new System.EventHandler(this.btnCarModify_Click);
+            this.btnCarModify.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
+            this.btnCarModify.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
             // 
             // btnLocationCreate
             // 
@@ -404,6 +406,9 @@
             this.btnSuccursaleModify.TabIndex = 28;
             this.btnSuccursaleModify.Text = "Modifier";
             this.btnSuccursaleModify.UseVisualStyleBackColor = false;
+            this.btnSuccursaleModify.Click += new System.EventHandler(this.btnSuccursaleModify_Click);
+            this.btnSuccursaleModify.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
+            this.btnSuccursaleModify.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
             // 
             // btnSuccursaleCreate
             // 
@@ -418,6 +423,9 @@
             this.btnSuccursaleCreate.TabIndex = 29;
             this.btnSuccursaleCreate.Text = "Créer";
             this.btnSuccursaleCreate.UseVisualStyleBackColor = false;
+            this.btnSuccursaleCreate.Click += new System.EventHandler(this.btnSuccursaleCreate_Click);
+            this.btnSuccursaleCreate.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
+            this.btnSuccursaleCreate.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
             // 
             // btnReservationModify
             // 
@@ -484,8 +492,6 @@
             this.btnQuitter.Text = "Quitter";
             this.btnQuitter.UseVisualStyleBackColor = false;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
-            this.btnQuitter.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
-            this.btnQuitter.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
             // 
             // btnLogin
             // 
@@ -502,6 +508,8 @@
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
+            this.btnLogin.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
             // 
             // lblMainForm_activeUser
             // 

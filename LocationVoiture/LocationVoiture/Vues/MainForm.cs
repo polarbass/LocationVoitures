@@ -244,6 +244,40 @@
         #endregion VEHICULE
 
         /*******************************************************************
+                                SUCCURSALES
+        *******************************************************************/
+
+        #region SUCCURSALES
+
+        private void btnSuccursaleCreate_Click(object sender, EventArgs e)
+        {
+            SuccursaleForm succursaleForm = new SuccursaleForm(MainForm.OPERATION_CREATION);
+            succursaleForm.Owner = this;
+
+            panelSelector(false);
+
+            DialogResult dialogResult = succursaleForm.ShowDialog();
+
+            String messageToSend = succursaleForm.messageToSend;
+            toggleMessage(dialogResult, messageToSend);
+        }
+
+        private void btnSuccursaleModify_Click(object sender, EventArgs e)
+        {
+            SuccursaleForm succursaleForm = new SuccursaleForm(MainForm.OPERATION_MODIFICATION);
+            succursaleForm.Owner = this;
+
+            panelSelector(false);
+
+            DialogResult dialogResult = succursaleForm.ShowDialog();
+
+            String messageToSend = succursaleForm.messageToSend;
+            toggleMessage(dialogResult, messageToSend);
+        }
+
+        #endregion SUCCURSALES
+
+        /*******************************************************************
                                     UTILITAIRES
         *******************************************************************/
 

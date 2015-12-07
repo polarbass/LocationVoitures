@@ -20,16 +20,18 @@ namespace LocationVoiture.Services
         /// Ajouter une succursale à la table Succursales de la BD
         /// </summary>
         /// <param name="succursale">La succursale qui doit être ajoutée</param>
-        public void AddSuccursale(succursale succursale)
+        public bool addSuccursale(succursale succursale)
         {
             try
             {
                 succursaleEntitie.succursales.Add(succursale);
                 Save();
+                return true;
             }
-            catch (System.Data.Entity.Core.EntityException)
+            catch
             {
                 Console.WriteLine("Erreur : Cannot Add Succursale (Méthode AddSuccursale)");
+                return false;
             }
             
         }
@@ -45,9 +47,9 @@ namespace LocationVoiture.Services
             try
             {
                 int succursaleID = int.Parse(searchValue);
-                succursaleToFind = succursaleEntitie.succursales.Where(succ => succ.succursaleID == succursaleID).Single();
+                succursaleToFind = succursaleEntitie.succursales.Where(succ => succ.succursaleID == succursaleID).SingleOrDefault();
             }
-            catch (System.Data.Entity.Core.EntityException)
+            catch
             {
                 Console.WriteLine("Erreur : Cannot retreive Succursale (Méthode SuccursaleFind)");
             }
@@ -62,17 +64,40 @@ namespace LocationVoiture.Services
             {
                 try
                 {
+                    // SEARCH BY SUCCURSALE ID
+                    if (searchBy.Equals("succursaleID"))
+                    {
+                        int searchByInt = int.Parse(searchValue);
+                        succursaleFinder = succursaleEntitie.succursales.Where(succ => succ.succursaleID == searchByInt).ToList();
+                    }
+
                     // SEARCH BY SUCCURSALE NAME
                     if (searchBy.Equals("nom"))
                     {
-                        succursaleFinder = succursaleEntitie.succursales.Where(succ => succ.nom.Contains(searchValue)).ToList();
+                        succursaleFinder = succursaleEntitie.succursales.Where(succ => succ.nom.ToLower().Contains(searchValue.ToLower())).ToList();
                     }
+
+                    // SEARCH BY SUCCURSALE ADDRESSE
+                    if (searchBy.Equals("addresse"))
+                    {
+                        succursaleFinder = succursaleEntitie.succursales.Where(succ => succ.addresse.ToLower().Contains(searchValue.ToLower())).ToList();
+                    }
+                    // SEARCH BY SUCCURSALE TELEPHONE
+                    if (searchBy.Equals("telephone"))
+                    {
+                        succursaleFinder = succursaleEntitie.succursales.Where(succ => succ.telephone.ToLower().Contains(searchValue.ToLower())).ToList();
+                    }
+                    // SEARCH BY SUCCURSALE COURRIEL
+                    if (searchBy.Equals("courriel"))
+                    {
+                        succursaleFinder = succursaleEntitie.succursales.Where(succ => succ.courriel.ToLower().Contains(searchValue.ToLower())).ToList();
+                    }
+
                 }
                 catch
                 {
                     Console.WriteLine("Erreur dans le findBy Reservation");
                 }
-
             }
 
             return succursaleFinder;
@@ -97,13 +122,36 @@ namespace LocationVoiture.Services
             return listSsuccursale;
         }
 
+        public void Delete(succursale succursaleToDelete)
+        {
+            try
+            {
+                succursaleEntitie.succursales.Remove(succursaleToDelete);
+                Save();
+            }
+            catch
+            {
+                Console.WriteLine("Error : Cannot delete succursale");
+            }            
+        }
+
         /// <summary>
         /// Enregistre les modification fait à la table Succursale
         /// </summary>
-        public void Save()
+        public bool Save()
         {
-            succursaleEntitie.SaveChanges();
-            succursaleEntitie.Dispose();
+            try
+            {
+                succursaleEntitie.SaveChanges();
+                succursaleEntitie.Dispose();
+                return true;
+            }
+            catch
+            {
+                Console.WriteLine("Cannot save");
+                return false;
+            }
+
         }
     }
 }

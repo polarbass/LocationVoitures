@@ -72,37 +72,39 @@ namespace LocationVoiture.Services
             if (searchValue != "")
             {
                 try
-                {
-                    int searchValueInt = int.Parse(searchValue);
+                {                    
 
-                    // SEARCH BY EMPLOYE ID
+                    // SEARCH BY VEHICULE ID
                     if (searchBy.Equals("vehiculeID"))
-                    { 
+                    {
+                        int searchValueInt = int.Parse(searchValue);
                         vehiculeFinder = vehiculeEntitie.vehicules.Where(veh => veh.vehiculeID == searchValueInt).ToList();
                     }
 
-                    // SEARCH BY EMPLOYE NOM
-                    else if (searchBy.Equals("fabriquant"))
+                    // SEARCH BY VEHICULE FABRIQUANT
+                    else if (searchBy.Equals("fabricant"))
                     {
+                        int searchValueInt = int.Parse(searchValue);
                         vehiculeFinder = vehiculeEntitie.vehicules.Where(veh => veh.fabriquantID == searchValueInt).ToList();
                     }
 
-                    // SEARCH BY EMPLOYE USERNAME
+                    // SEARCH BY VEHICULE MODELE
                     else if (searchBy.Equals("modele"))
                     {
+                        int searchValueInt = int.Parse(searchValue);
                         vehiculeFinder = vehiculeEntitie.vehicules.Where(veh => veh.modeleID == searchValueInt).ToList();
                     }
 
-                    // SEARCH BY EMPLOYE TELEPHONE
+                    // SEARCH BY VEHICULE PLATE NUMBER
                     else if (searchBy.Equals("plateNum"))
                     {
                         vehiculeFinder = vehiculeEntitie.vehicules.Where(veh => veh.plaque_num.ToLower().Contains(searchValue)).ToList();
                     }
 
-
                     // SEARCH BY vehicules SUCCURSALE
                     else if (searchBy.Equals("succursale"))
                     {
+                        int searchValueInt = int.Parse(searchValue);
                         vehiculeFinder = vehiculeEntitie.vehicules.Where(veh => veh.succursaleID == searchValueInt).ToList();
                     }
 

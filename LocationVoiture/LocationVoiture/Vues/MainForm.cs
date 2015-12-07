@@ -278,6 +278,40 @@
         #endregion SUCCURSALES
 
         /*******************************************************************
+                                LOCATIONS
+        *******************************************************************/
+
+        #region LOCATIONS
+
+        private void btnLocationCreate_Click(object sender, EventArgs e)
+        {
+            LocationForm locationForm = new LocationForm(MainForm.OPERATION_CREATION);
+            locationForm.Owner = this;
+
+            panelSelector(false);
+
+            DialogResult dialogResult = locationForm.ShowDialog();
+
+            String messageToSend = locationForm.messageToSend;
+            toggleMessage(dialogResult, messageToSend);
+        }
+
+        private void btnLocationModify_Click(object sender, EventArgs e)
+        {
+            LocationForm locationForm = new LocationForm(MainForm.OPERATION_MODIFICATION);
+            locationForm.Owner = this;
+
+            panelSelector(false);
+
+            DialogResult dialogResult = locationForm.ShowDialog();
+
+            String messageToSend = locationForm.messageToSend;
+            toggleMessage(dialogResult, messageToSend);
+        }
+
+        #endregion LOCATIONS
+
+        /*******************************************************************
                                     UTILITAIRES
         *******************************************************************/
 

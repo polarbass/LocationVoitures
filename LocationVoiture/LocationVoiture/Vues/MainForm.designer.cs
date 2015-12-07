@@ -232,6 +232,9 @@
             this.btnLocationModify.TabIndex = 34;
             this.btnLocationModify.Text = "Modifier";
             this.btnLocationModify.UseVisualStyleBackColor = false;
+            this.btnLocationModify.Click += new System.EventHandler(this.btnLocationModify_Click);
+            this.btnLocationModify.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
+            this.btnLocationModify.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
             // 
             // btnCarModify
             // 
@@ -263,6 +266,9 @@
             this.btnLocationCreate.TabIndex = 35;
             this.btnLocationCreate.Text = "Créer";
             this.btnLocationCreate.UseVisualStyleBackColor = false;
+            this.btnLocationCreate.Click += new System.EventHandler(this.btnLocationCreate_Click);
+            this.btnLocationCreate.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
+            this.btnLocationCreate.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
             // 
             // btnClientModify
             // 

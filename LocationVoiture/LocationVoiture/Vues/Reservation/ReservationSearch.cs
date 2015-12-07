@@ -18,7 +18,8 @@ namespace LocationVoiture.Vues
         public String ReservationSearchID { get; private set; }
 
         private enum findByParameter { reservationID, clientID, employeID, succursaleID, dateReservation };
-        public enum columnName
+
+        private enum columnName
         {
             [Description("Reservation ID")]
             reservationID,

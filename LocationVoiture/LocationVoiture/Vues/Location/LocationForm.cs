@@ -3,22 +3,34 @@ using LocationVoiture.Model;
 using LocationVoiture.Utils;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
 namespace LocationVoiture.Vues
 {
-    public partial class ReservationForm : Form
+    public partial class LocationForm : Form
     {
 
         // Attributs
 
-        private const string OPERATION_RESERVATION_CREATION = "Création";
-        private const string OPERATION_RESERVATION_UPDATE = "Updater";
+        private const string OPERATION_LOCATION_CREATION    = "Création";
+        private const string OPERATION_LOCATION_UPDATE      = "Updater";
 
         private static DateTime HEURE_OUVERTURE = DateTime.Parse("08:00:00");
         private static DateTime HEURE_FERMETURE = DateTime.Parse("21:00:00");
-        private static double INTERVALLE_TEMPS = 60;
+        private static double INTERVALLE_TEMPS  = 60;
+
+        public enum columnName
+        {
+            [Description("Reservation ID")]
+            reservationID,
+            Client,
+            Fabricant,
+            Modele,
+            Succursale
+        };
 
         // Propriétés
 
@@ -32,7 +44,7 @@ namespace LocationVoiture.Vues
 
         // Constructeur
 
-        public ReservationForm(String operation)
+        public LocationForm(String operation)
         {
             InitializeComponent();
 
@@ -40,6 +52,7 @@ namespace LocationVoiture.Vues
 
             fillTheComboBoxOpenHours();
             fillTheComboBoxSuccursale();
+            fillReservationOfTheDay();
             disableClientField();
             lblLoading.Hide();
             setCarFieldStatus(false);
@@ -47,11 +60,11 @@ namespace LocationVoiture.Vues
 
             // Selection de l'affichage
             // Création
-            if (operation.Equals(OPERATION_RESERVATION_CREATION))
+            if (operation.Equals(LocationForm.OPERATION_LOCATION_CREATION))
             {
                 setFieldsVisibility(true);
                 setCarFieldStatus(true);
-                btnClientCreate_add.Text = ReservationForm.OPERATION_RESERVATION_CREATION;
+                btnClientCreate_add.Text = LocationForm.OPERATION_LOCATION_CREATION;
             }
             // Modification
             else
@@ -59,10 +72,57 @@ namespace LocationVoiture.Vues
                 setFieldsVisibility(true);
                 lblClientCreate_id.Text = "réservation :";
                 btnReservationCreate_creerClient.Visible = false;
-                btnClientCreate_add.Text = ReservationForm.OPERATION_RESERVATION_UPDATE;
+                btnClientCreate_add.Text = LocationForm.OPERATION_LOCATION_UPDATE;
             }
 
         }
+
+        private void fillReservationOfTheDay()
+        {
+            dateTimePicker_today.Value = DateTime.Now;
+            String dateSearch = dateTimePicker_today.Value.ToShortDateString();
+            MessageBox.Show(dateSearch);
+            List<reservation> reservationFound = new List<reservation>();
+                    
+            reservationFound = locationController.ReservationsServices.FindBy(dateSearch, "dateReservation");
+
+            // Si une ou des réservations sont trouvées
+            if (reservationFound.Count > 0)
+            {
+
+                DataTable table = new DataTable();
+
+                foreach (columnName enumValue in Enum.GetValues(typeof(columnName)))
+                {
+                    table.Columns.Add(EnumDescriptor.GetEnumDescription(enumValue), typeof(string));
+                }
+
+                foreach (reservation res in reservationFound)
+                {
+                    table.Rows.Add(
+                        res.reservationID.ToString(),
+                        res.client.prenom + " " + res.client.nom,
+                        res.vehicule.fabriquant.nom_fabriquant,
+                        res.vehicule.modele.nom_modele,
+                        res.succursale.nom
+                        );
+                }
+
+                dataGridView1.DataSource = table;
+            }
+            else
+            {
+                DataTable table = new DataTable();
+                table.Columns.Add("Message", typeof(string));
+                table.Rows.Add(
+                        "Aucune réservation aujourd'hui"
+                    );
+                dataGridView1.DataSource = table;
+                dataGridView1.ClearSelection();                
+                dataGridView1.ReadOnly = true;
+            }
+
+            }
 
         // Méthodes
 
@@ -82,15 +142,15 @@ namespace LocationVoiture.Vues
             DateTime reservationIN = dateTimePicker_ReservationCreate_DateIN.Value.Date.Add(TimeSpan.Parse(timeIN));
 
             int clientID = int.Parse(txtClientCreate_clientId.Text);
-            int succursaleID = int.Parse((cbReservationCreate_Succursale.SelectedItem as ComboboxItem).Value.ToString());
-            int vehiculeID = int.Parse((cbReservationCreate_noPlaque.SelectedItem as ComboboxItem).Value.ToString());
+            int succursaleID = ((KeyValuePair<int, string>)cbReservationCreate_Succursale.SelectedItem).Key;
+            int vehiculeID = ((KeyValuePair<int, string>)cbReservationCreate_noPlaque.SelectedItem).Key;
 
             /* TODO : Valeur temporaire pour l'employé. Doit incorporer le ID de l'employée logger */
             int employeID = 1;
             /***************************************************************************************/
 
             // Création d'une réservation
-            if (!btnClientCreate_add.Text.Equals(ReservationForm.OPERATION_RESERVATION_UPDATE))
+            if (!btnClientCreate_add.Text.Equals(LocationForm.OPERATION_LOCATION_UPDATE))
             {
 
                 // Création de la réservation
@@ -157,7 +217,7 @@ namespace LocationVoiture.Vues
         /// </summary>        
         private void btnClientForm_Find_Click(object sender, EventArgs e)
         {
-            if (!btnClientCreate_add.Text.Equals(ReservationForm.OPERATION_RESERVATION_UPDATE))
+            if (!btnClientCreate_add.Text.Equals(LocationForm.OPERATION_LOCATION_UPDATE))
             {
                 List<client> listeClients = new List<client>();
                 String searchValue = "";
@@ -500,9 +560,9 @@ namespace LocationVoiture.Vues
         private void fillTheComboBoxOpenHours()
         {
 
-            TimeSpan interval = TimeSpan.FromMinutes(ReservationForm.INTERVALLE_TEMPS);
+            TimeSpan interval = TimeSpan.FromMinutes(LocationForm.INTERVALLE_TEMPS);
 
-            for (DateTime current = ReservationForm.HEURE_OUVERTURE; current <= ReservationForm.HEURE_FERMETURE; current += interval)
+            for (DateTime current = LocationForm.HEURE_OUVERTURE; current <= LocationForm.HEURE_FERMETURE; current += interval)
             {
                 String stringTime = current.TimeOfDay.ToString().Substring(0, 5);
                 cbReservationCreate_HeureIN.Items.Add(stringTime);

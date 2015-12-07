@@ -144,6 +144,12 @@
     <Compile Include="Vues\Employe\EmployeForm.Designer.cs">
       <DependentUpon>EmployeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vues\Location\LocationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vues\Location\LocationForm.Designer.cs">
+      <DependentUpon>LocationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vues\Reservation\ReservationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vues\Employe\EmployeForm.resx">
       <DependentUpon>EmployeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vues\Location\LocationForm.resx">
+      <DependentUpon>LocationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vues\Reservation\ReservationForm.resx">
       <DependentUpon>ReservationForm.cs</DependentUpon>

@@ -107,7 +107,7 @@
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(165, 32);
-            this.button1.TabIndex = 128;
+            this.button1.TabIndex = 7;
             this.button1.Text = "Enregistrer";
             this.button1.UseVisualStyleBackColor = false;
             // 
@@ -119,7 +119,7 @@
             this.label5.Location = new System.Drawing.Point(194, 412);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 25);
-            this.label5.TabIndex = 127;
+            this.label5.TabIndex = 21;
             this.label5.Text = "image :";
             // 
             // label2
@@ -130,7 +130,7 @@
             this.label2.Location = new System.Drawing.Point(34, 269);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 25);
-            this.label2.TabIndex = 126;
+            this.label2.TabIndex = 18;
             this.label2.Text = "Modèle :";
             // 
             // cbVoiture_Modele
@@ -144,7 +144,7 @@
             this.cbVoiture_Modele.Location = new System.Drawing.Point(141, 268);
             this.cbVoiture_Modele.Name = "cbVoiture_Modele";
             this.cbVoiture_Modele.Size = new System.Drawing.Size(287, 29);
-            this.cbVoiture_Modele.TabIndex = 125;
+            this.cbVoiture_Modele.TabIndex = 4;
             // 
             // lblLoading
             // 
@@ -155,7 +155,7 @@
             this.lblLoading.Location = new System.Drawing.Point(144, 100);
             this.lblLoading.Name = "lblLoading";
             this.lblLoading.Size = new System.Drawing.Size(135, 17);
-            this.lblLoading.TabIndex = 124;
+            this.lblLoading.TabIndex = 14;
             this.lblLoading.Text = "Recherche en cours ...";
             // 
             // label4
@@ -166,7 +166,7 @@
             this.label4.Location = new System.Drawing.Point(17, 359);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 25);
-            this.label4.TabIndex = 123;
+            this.label4.TabIndex = 20;
             this.label4.Text = "succursale :";
             // 
             // cbVoiture_succursale
@@ -180,7 +180,7 @@
             this.cbVoiture_succursale.Location = new System.Drawing.Point(141, 358);
             this.cbVoiture_succursale.Name = "cbVoiture_succursale";
             this.cbVoiture_succursale.Size = new System.Drawing.Size(287, 29);
-            this.cbVoiture_succursale.TabIndex = 122;
+            this.cbVoiture_succursale.TabIndex = 6;
             // 
             // label1
             // 
@@ -190,7 +190,7 @@
             this.label1.Location = new System.Drawing.Point(25, 226);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 25);
-            this.label1.TabIndex = 117;
+            this.label1.TabIndex = 17;
             this.label1.Text = "Fabricant :";
             // 
             // cbVoiture_Fabriquant
@@ -204,7 +204,7 @@
             this.cbVoiture_Fabriquant.Location = new System.Drawing.Point(141, 225);
             this.cbVoiture_Fabriquant.Name = "cbVoiture_Fabriquant";
             this.cbVoiture_Fabriquant.Size = new System.Drawing.Size(287, 29);
-            this.cbVoiture_Fabriquant.TabIndex = 116;
+            this.cbVoiture_Fabriquant.TabIndex = 3;
             this.cbVoiture_Fabriquant.SelectedIndexChanged += new System.EventHandler(this.cbVoiture_Fabriquant_SelectedIndexChanged);
             // 
             // panel2
@@ -212,10 +212,10 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.btnCANCEL);
             this.panel2.Controls.Add(this.btnOK);
-            this.panel2.Location = new System.Drawing.Point(320, 111);
+            this.panel2.Location = new System.Drawing.Point(331, 111);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(112, 93);
-            this.panel2.TabIndex = 106;
+            this.panel2.TabIndex = 10;
             // 
             // btnCANCEL
             // 
@@ -227,7 +227,7 @@
             this.btnCANCEL.Location = new System.Drawing.Point(11, 51);
             this.btnCANCEL.Name = "btnCANCEL";
             this.btnCANCEL.Size = new System.Drawing.Size(91, 35);
-            this.btnCANCEL.TabIndex = 107;
+            this.btnCANCEL.TabIndex = 1;
             this.btnCANCEL.Text = "CANCEL";
             this.btnCANCEL.UseVisualStyleBackColor = false;
             this.btnCANCEL.Click += new System.EventHandler(this.btnCANCEL_Click);
@@ -244,7 +244,7 @@
             this.btnOK.Location = new System.Drawing.Point(11, 7);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(91, 35);
-            this.btnOK.TabIndex = 106;
+            this.btnOK.TabIndex = 0;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -261,7 +261,7 @@
             this.btnEmploye_Delete.Location = new System.Drawing.Point(321, 172);
             this.btnEmploye_Delete.Name = "btnEmploye_Delete";
             this.btnEmploye_Delete.Size = new System.Drawing.Size(110, 32);
-            this.btnEmploye_Delete.TabIndex = 105;
+            this.btnEmploye_Delete.TabIndex = 11;
             this.btnEmploye_Delete.Text = "Effacer";
             this.btnEmploye_Delete.UseVisualStyleBackColor = false;
             this.btnEmploye_Delete.Click += new System.EventHandler(this.btnEmploye_Delete_Click);
@@ -276,7 +276,7 @@
             this.lblClientCreate_clientId.Location = new System.Drawing.Point(81, 176);
             this.lblClientCreate_clientId.Name = "lblClientCreate_clientId";
             this.lblClientCreate_clientId.Size = new System.Drawing.Size(36, 25);
-            this.lblClientCreate_clientId.TabIndex = 104;
+            this.lblClientCreate_clientId.TabIndex = 16;
             this.lblClientCreate_clientId.Text = "id :";
             // 
             // panelClientCreate_clientId
@@ -287,7 +287,7 @@
             this.panelClientCreate_clientId.Name = "panelClientCreate_clientId";
             this.panelClientCreate_clientId.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.panelClientCreate_clientId.Size = new System.Drawing.Size(170, 32);
-            this.panelClientCreate_clientId.TabIndex = 103;
+            this.panelClientCreate_clientId.TabIndex = 2;
             // 
             // txtVoiture_vehiculeID
             // 
@@ -299,7 +299,7 @@
             this.txtVoiture_vehiculeID.Location = new System.Drawing.Point(13, 4);
             this.txtVoiture_vehiculeID.Name = "txtVoiture_vehiculeID";
             this.txtVoiture_vehiculeID.Size = new System.Drawing.Size(142, 22);
-            this.txtVoiture_vehiculeID.TabIndex = 1;
+            this.txtVoiture_vehiculeID.TabIndex = 0;
             // 
             // btnVoiture_Find
             // 
@@ -312,7 +312,7 @@
             this.btnVoiture_Find.Margin = new System.Windows.Forms.Padding(0);
             this.btnVoiture_Find.Name = "btnVoiture_Find";
             this.btnVoiture_Find.Size = new System.Drawing.Size(113, 32);
-            this.btnVoiture_Find.TabIndex = 102;
+            this.btnVoiture_Find.TabIndex = 1;
             this.btnVoiture_Find.Text = "TROUVER";
             this.btnVoiture_Find.UseVisualStyleBackColor = false;
             this.btnVoiture_Find.Click += new System.EventHandler(this.btnVoiture_Find_Click);
@@ -325,7 +325,7 @@
             this.lblClientCreate_id.Location = new System.Drawing.Point(79, 67);
             this.lblClientCreate_id.Name = "lblClientCreate_id";
             this.lblClientCreate_id.Size = new System.Drawing.Size(36, 25);
-            this.lblClientCreate_id.TabIndex = 101;
+            this.lblClientCreate_id.TabIndex = 13;
             this.lblClientCreate_id.Text = "id :";
             // 
             // panelClientForm_id
@@ -336,7 +336,7 @@
             this.panelClientForm_id.Name = "panelClientForm_id";
             this.panelClientForm_id.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.panelClientForm_id.Size = new System.Drawing.Size(165, 32);
-            this.panelClientForm_id.TabIndex = 100;
+            this.panelClientForm_id.TabIndex = 0;
             // 
             // txtVoiture_idSearch
             // 
@@ -348,7 +348,7 @@
             this.txtVoiture_idSearch.Location = new System.Drawing.Point(9, 4);
             this.txtVoiture_idSearch.Name = "txtVoiture_idSearch";
             this.txtVoiture_idSearch.Size = new System.Drawing.Size(146, 22);
-            this.txtVoiture_idSearch.TabIndex = 1;
+            this.txtVoiture_idSearch.TabIndex = 0;
             // 
             // lblVoiture_operation
             // 
@@ -358,7 +358,7 @@
             this.lblVoiture_operation.Location = new System.Drawing.Point(143, 14);
             this.lblVoiture_operation.Name = "lblVoiture_operation";
             this.lblVoiture_operation.Size = new System.Drawing.Size(214, 32);
-            this.lblVoiture_operation.TabIndex = 4;
+            this.lblVoiture_operation.TabIndex = 12;
             this.lblVoiture_operation.Text = "Créer un véhicule";
             // 
             // panel10
@@ -369,7 +369,7 @@
             this.panel10.Name = "panel10";
             this.panel10.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.panel10.Size = new System.Drawing.Size(287, 32);
-            this.panel10.TabIndex = 16;
+            this.panel10.TabIndex = 5;
             // 
             // txtVoiture_noPlaque
             // 
@@ -381,7 +381,7 @@
             this.txtVoiture_noPlaque.Location = new System.Drawing.Point(13, 4);
             this.txtVoiture_noPlaque.Name = "txtVoiture_noPlaque";
             this.txtVoiture_noPlaque.Size = new System.Drawing.Size(259, 22);
-            this.txtVoiture_noPlaque.TabIndex = 2;
+            this.txtVoiture_noPlaque.TabIndex = 0;
             // 
             // label32
             // 
@@ -391,7 +391,7 @@
             this.label32.Location = new System.Drawing.Point(143, 133);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(86, 25);
-            this.label32.TabIndex = 31;
+            this.label32.TabIndex = 15;
             this.label32.Text = "Véhicule";
             // 
             // lblClientCreate_nom
@@ -402,7 +402,7 @@
             this.lblClientCreate_nom.Location = new System.Drawing.Point(9, 315);
             this.lblClientCreate_nom.Name = "lblClientCreate_nom";
             this.lblClientCreate_nom.Size = new System.Drawing.Size(108, 25);
-            this.lblClientCreate_nom.TabIndex = 99;
+            this.lblClientCreate_nom.TabIndex = 19;
             this.lblClientCreate_nom.Text = "No. Plaque :";
             // 
             // btnVoiture_cancel
@@ -415,7 +415,7 @@
             this.btnVoiture_cancel.Location = new System.Drawing.Point(316, 461);
             this.btnVoiture_cancel.Name = "btnVoiture_cancel";
             this.btnVoiture_cancel.Size = new System.Drawing.Size(113, 35);
-            this.btnVoiture_cancel.TabIndex = 8;
+            this.btnVoiture_cancel.TabIndex = 9;
             this.btnVoiture_cancel.Text = "Annuler";
             this.btnVoiture_cancel.UseVisualStyleBackColor = false;
             this.btnVoiture_cancel.Click += new System.EventHandler(this.txtClientCreate_cancel_Click);
@@ -432,7 +432,7 @@
             this.btnVoiture_add.Location = new System.Drawing.Point(192, 461);
             this.btnVoiture_add.Name = "btnVoiture_add";
             this.btnVoiture_add.Size = new System.Drawing.Size(113, 35);
-            this.btnVoiture_add.TabIndex = 7;
+            this.btnVoiture_add.TabIndex = 8;
             this.btnVoiture_add.Text = "Ajouter";
             this.btnVoiture_add.UseVisualStyleBackColor = false;
             this.btnVoiture_add.Click += new System.EventHandler(this.btnEmploye_add_Click);

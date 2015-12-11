@@ -98,7 +98,7 @@
             this.panel1.Location = new System.Drawing.Point(401, 727);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1040, 38);
-            this.panel1.TabIndex = 15;
+            this.panel1.TabIndex = 1;
             // 
             // label3
             // 
@@ -119,7 +119,7 @@
             this.panel_Messages.Location = new System.Drawing.Point(401, 0);
             this.panel_Messages.Name = "panel_Messages";
             this.panel_Messages.Size = new System.Drawing.Size(1040, 46);
-            this.panel_Messages.TabIndex = 30;
+            this.panel_Messages.TabIndex = 0;
             // 
             // lblMainForm_Messages
             // 
@@ -167,7 +167,7 @@
             this.panel_operation.Location = new System.Drawing.Point(3, 117);
             this.panel_operation.Name = "panel_operation";
             this.panel_operation.Size = new System.Drawing.Size(400, 594);
-            this.panel_operation.TabIndex = 36;
+            this.panel_operation.TabIndex = 0;
             // 
             // lblOperation
             // 
@@ -177,7 +177,7 @@
             this.lblOperation.Location = new System.Drawing.Point(17, 21);
             this.lblOperation.Name = "lblOperation";
             this.lblOperation.Size = new System.Drawing.Size(205, 25);
-            this.lblOperation.TabIndex = 10;
+            this.lblOperation.TabIndex = 12;
             this.lblOperation.Text = "Choisir une opération";
             // 
             // label4
@@ -188,7 +188,7 @@
             this.label4.Location = new System.Drawing.Point(17, 370);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 25);
-            this.label4.TabIndex = 33;
+            this.label4.TabIndex = 18;
             this.label4.Text = "Location";
             // 
             // label12
@@ -199,7 +199,7 @@
             this.label12.Location = new System.Drawing.Point(17, 257);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(78, 25);
-            this.label12.TabIndex = 24;
+            this.label12.TabIndex = 16;
             this.label12.Text = "Voiture";
             // 
             // btnClientCreate
@@ -212,7 +212,7 @@
             this.btnClientCreate.Location = new System.Drawing.Point(144, 137);
             this.btnClientCreate.Name = "btnClientCreate";
             this.btnClientCreate.Size = new System.Drawing.Size(113, 35);
-            this.btnClientCreate.TabIndex = 23;
+            this.btnClientCreate.TabIndex = 2;
             this.btnClientCreate.Text = "Créer";
             this.btnClientCreate.UseVisualStyleBackColor = false;
             this.btnClientCreate.Click += new System.EventHandler(this.btnClientCreate_Click);
@@ -229,7 +229,7 @@
             this.btnLocationModify.Location = new System.Drawing.Point(267, 365);
             this.btnLocationModify.Name = "btnLocationModify";
             this.btnLocationModify.Size = new System.Drawing.Size(113, 35);
-            this.btnLocationModify.TabIndex = 34;
+            this.btnLocationModify.TabIndex = 11;
             this.btnLocationModify.Text = "Modifier";
             this.btnLocationModify.UseVisualStyleBackColor = false;
             this.btnLocationModify.Click += new System.EventHandler(this.btnLocationModify_Click);
@@ -246,7 +246,7 @@
             this.btnCarModify.Location = new System.Drawing.Point(267, 252);
             this.btnCarModify.Name = "btnCarModify";
             this.btnCarModify.Size = new System.Drawing.Size(113, 35);
-            this.btnCarModify.TabIndex = 25;
+            this.btnCarModify.TabIndex = 7;
             this.btnCarModify.Text = "Modifier";
             this.btnCarModify.UseVisualStyleBackColor = false;
             this.btnCarModify.Click += new System.EventHandler(this.btnCarModify_Click);
@@ -263,7 +263,7 @@
             this.btnLocationCreate.Location = new System.Drawing.Point(144, 365);
             this.btnLocationCreate.Name = "btnLocationCreate";
             this.btnLocationCreate.Size = new System.Drawing.Size(113, 35);
-            this.btnLocationCreate.TabIndex = 35;
+            this.btnLocationCreate.TabIndex = 10;
             this.btnLocationCreate.Text = "Créer";
             this.btnLocationCreate.UseVisualStyleBackColor = false;
             this.btnLocationCreate.Click += new System.EventHandler(this.btnLocationCreate_Click);
@@ -280,7 +280,7 @@
             this.btnClientModify.Location = new System.Drawing.Point(267, 137);
             this.btnClientModify.Name = "btnClientModify";
             this.btnClientModify.Size = new System.Drawing.Size(113, 35);
-            this.btnClientModify.TabIndex = 22;
+            this.btnClientModify.TabIndex = 3;
             this.btnClientModify.Text = "Modifier";
             this.btnClientModify.UseVisualStyleBackColor = false;
             this.btnClientModify.Click += new System.EventHandler(this.btnClientModify_Click);
@@ -295,7 +295,7 @@
             this.label1.Location = new System.Drawing.Point(17, 200);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 25);
-            this.label1.TabIndex = 30;
+            this.label1.TabIndex = 15;
             this.label1.Text = "Employé";
             // 
             // btnCarCreate
@@ -308,7 +308,7 @@
             this.btnCarCreate.Location = new System.Drawing.Point(144, 252);
             this.btnCarCreate.Name = "btnCarCreate";
             this.btnCarCreate.Size = new System.Drawing.Size(113, 35);
-            this.btnCarCreate.TabIndex = 26;
+            this.btnCarCreate.TabIndex = 6;
             this.btnCarCreate.Text = "Créer";
             this.btnCarCreate.UseVisualStyleBackColor = false;
             this.btnCarCreate.Click += new System.EventHandler(this.btnCarCreate_Click);
@@ -325,7 +325,7 @@
             this.btnEmployeModify.Location = new System.Drawing.Point(267, 195);
             this.btnEmployeModify.Name = "btnEmployeModify";
             this.btnEmployeModify.Size = new System.Drawing.Size(113, 35);
-            this.btnEmployeModify.TabIndex = 31;
+            this.btnEmployeModify.TabIndex = 5;
             this.btnEmployeModify.Text = "Modifier";
             this.btnEmployeModify.UseVisualStyleBackColor = false;
             this.btnEmployeModify.Click += new System.EventHandler(this.btnEmployeModify_Click);
@@ -340,7 +340,7 @@
             this.label8.Location = new System.Drawing.Point(17, 142);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(63, 25);
-            this.label8.TabIndex = 21;
+            this.label8.TabIndex = 14;
             this.label8.Text = "Client";
             // 
             // label13
@@ -351,7 +351,7 @@
             this.label13.Location = new System.Drawing.Point(17, 313);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(106, 25);
-            this.label13.TabIndex = 27;
+            this.label13.TabIndex = 17;
             this.label13.Text = "Succursale";
             // 
             // btnEmployeCreate
@@ -364,7 +364,7 @@
             this.btnEmployeCreate.Location = new System.Drawing.Point(144, 195);
             this.btnEmployeCreate.Name = "btnEmployeCreate";
             this.btnEmployeCreate.Size = new System.Drawing.Size(113, 35);
-            this.btnEmployeCreate.TabIndex = 32;
+            this.btnEmployeCreate.TabIndex = 4;
             this.btnEmployeCreate.Text = "Créer";
             this.btnEmployeCreate.UseVisualStyleBackColor = false;
             this.btnEmployeCreate.Click += new System.EventHandler(this.btnEmployeCreate_Click);
@@ -381,7 +381,7 @@
             this.btnReservationCreate.Location = new System.Drawing.Point(144, 76);
             this.btnReservationCreate.Name = "btnReservationCreate";
             this.btnReservationCreate.Size = new System.Drawing.Size(113, 35);
-            this.btnReservationCreate.TabIndex = 20;
+            this.btnReservationCreate.TabIndex = 0;
             this.btnReservationCreate.Text = "Créer";
             this.btnReservationCreate.UseVisualStyleBackColor = false;
             this.btnReservationCreate.Click += new System.EventHandler(this.btnReservationCreate_Click);
@@ -396,7 +396,7 @@
             this.lblReservation.Location = new System.Drawing.Point(17, 80);
             this.lblReservation.Name = "lblReservation";
             this.lblReservation.Size = new System.Drawing.Size(117, 25);
-            this.lblReservation.TabIndex = 18;
+            this.lblReservation.TabIndex = 13;
             this.lblReservation.Text = "Réservation";
             // 
             // btnSuccursaleModify
@@ -409,7 +409,7 @@
             this.btnSuccursaleModify.Location = new System.Drawing.Point(267, 308);
             this.btnSuccursaleModify.Name = "btnSuccursaleModify";
             this.btnSuccursaleModify.Size = new System.Drawing.Size(113, 35);
-            this.btnSuccursaleModify.TabIndex = 28;
+            this.btnSuccursaleModify.TabIndex = 9;
             this.btnSuccursaleModify.Text = "Modifier";
             this.btnSuccursaleModify.UseVisualStyleBackColor = false;
             this.btnSuccursaleModify.Click += new System.EventHandler(this.btnSuccursaleModify_Click);
@@ -426,7 +426,7 @@
             this.btnSuccursaleCreate.Location = new System.Drawing.Point(144, 308);
             this.btnSuccursaleCreate.Name = "btnSuccursaleCreate";
             this.btnSuccursaleCreate.Size = new System.Drawing.Size(113, 35);
-            this.btnSuccursaleCreate.TabIndex = 29;
+            this.btnSuccursaleCreate.TabIndex = 8;
             this.btnSuccursaleCreate.Text = "Créer";
             this.btnSuccursaleCreate.UseVisualStyleBackColor = false;
             this.btnSuccursaleCreate.Click += new System.EventHandler(this.btnSuccursaleCreate_Click);
@@ -443,7 +443,7 @@
             this.btnReservationModify.Location = new System.Drawing.Point(267, 76);
             this.btnReservationModify.Name = "btnReservationModify";
             this.btnReservationModify.Size = new System.Drawing.Size(113, 35);
-            this.btnReservationModify.TabIndex = 19;
+            this.btnReservationModify.TabIndex = 1;
             this.btnReservationModify.Text = "Modifier";
             this.btnReservationModify.UseVisualStyleBackColor = false;
             this.btnReservationModify.Click += new System.EventHandler(this.btnReservationModify_Click);
@@ -461,7 +461,7 @@
             this.panel_header.Location = new System.Drawing.Point(0, 0);
             this.panel_header.Name = "panel_header";
             this.panel_header.Size = new System.Drawing.Size(401, 119);
-            this.panel_header.TabIndex = 32;
+            this.panel_header.TabIndex = 0;
             // 
             // label2
             // 
@@ -471,7 +471,7 @@
             this.label2.Location = new System.Drawing.Point(12, 7);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(246, 54);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Locomotion";
             // 
             // panel_DefaultOperations
@@ -494,7 +494,7 @@
             this.btnQuitter.Location = new System.Drawing.Point(2, 51);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(113, 38);
-            this.btnQuitter.TabIndex = 31;
+            this.btnQuitter.TabIndex = 1;
             this.btnQuitter.Text = "Quitter";
             this.btnQuitter.UseVisualStyleBackColor = false;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
@@ -510,7 +510,7 @@
             this.btnLogin.Location = new System.Drawing.Point(2, 3);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(113, 38);
-            this.btnLogin.TabIndex = 30;
+            this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -525,7 +525,7 @@
             this.lblMainForm_activeUser.Name = "lblMainForm_activeUser";
             this.lblMainForm_activeUser.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblMainForm_activeUser.Size = new System.Drawing.Size(221, 28);
-            this.lblMainForm_activeUser.TabIndex = 4;
+            this.lblMainForm_activeUser.TabIndex = 2;
             this.lblMainForm_activeUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label6
@@ -536,7 +536,7 @@
             this.label6.Location = new System.Drawing.Point(20, 54);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(143, 25);
-            this.label6.TabIndex = 16;
+            this.label6.TabIndex = 1;
             this.label6.Text = "administrateur";
             // 
             // panel_footer
@@ -548,7 +548,7 @@
             this.panel_footer.Location = new System.Drawing.Point(0, 705);
             this.panel_footer.Name = "panel_footer";
             this.panel_footer.Size = new System.Drawing.Size(401, 60);
-            this.panel_footer.TabIndex = 31;
+            this.panel_footer.TabIndex = 2;
             // 
             // lblMainForm_date
             // 
@@ -559,7 +559,7 @@
             this.lblMainForm_date.Location = new System.Drawing.Point(19, 9);
             this.lblMainForm_date.Name = "lblMainForm_date";
             this.lblMainForm_date.Size = new System.Drawing.Size(0, 21);
-            this.lblMainForm_date.TabIndex = 3;
+            this.lblMainForm_date.TabIndex = 0;
             // 
             // lblMainForm_time
             // 
@@ -570,7 +570,7 @@
             this.lblMainForm_time.Location = new System.Drawing.Point(19, 31);
             this.lblMainForm_time.Name = "lblMainForm_time";
             this.lblMainForm_time.Size = new System.Drawing.Size(0, 21);
-            this.lblMainForm_time.TabIndex = 13;
+            this.lblMainForm_time.TabIndex = 1;
             // 
             // label11
             // 

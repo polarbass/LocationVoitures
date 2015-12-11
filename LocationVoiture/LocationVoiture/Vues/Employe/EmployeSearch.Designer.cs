@@ -31,8 +31,8 @@ namespace LocationVoiture.Vues
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblLoading = new System.Windows.Forms.Label();
@@ -79,25 +79,25 @@ namespace LocationVoiture.Vues
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle2.NullValue = "-------------";
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle4.NullValue = "-------------";
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.GridColor = System.Drawing.Color.Teal;
             this.dataGridView1.Location = new System.Drawing.Point(17, 136);
             this.dataGridView1.MultiSelect = false;
@@ -105,7 +105,7 @@ namespace LocationVoiture.Vues
             this.dataGridView1.RowTemplate.Height = 36;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1117, 276);
-            this.dataGridView1.TabIndex = 126;
+            this.dataGridView1.TabIndex = 5;
             // 
             // lblLoading
             // 
@@ -116,7 +116,7 @@ namespace LocationVoiture.Vues
             this.lblLoading.Location = new System.Drawing.Point(632, 70);
             this.lblLoading.Name = "lblLoading";
             this.lblLoading.Size = new System.Drawing.Size(135, 17);
-            this.lblLoading.TabIndex = 125;
+            this.lblLoading.TabIndex = 9;
             this.lblLoading.Text = "Recherche en cours ...";
             // 
             // panel_message
@@ -126,7 +126,7 @@ namespace LocationVoiture.Vues
             this.panel_message.Location = new System.Drawing.Point(296, 59);
             this.panel_message.Name = "panel_message";
             this.panel_message.Size = new System.Drawing.Size(314, 28);
-            this.panel_message.TabIndex = 17;
+            this.panel_message.TabIndex = 8;
             // 
             // label3
             // 
@@ -137,7 +137,7 @@ namespace LocationVoiture.Vues
             this.label3.Location = new System.Drawing.Point(77, 4);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(167, 21);
-            this.label3.TabIndex = 18;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Aucun employé trouvé";
             // 
             // btnEmployeSearch_select
@@ -149,7 +149,7 @@ namespace LocationVoiture.Vues
             this.btnEmployeSearch_select.Location = new System.Drawing.Point(15, 422);
             this.btnEmployeSearch_select.Name = "btnEmployeSearch_select";
             this.btnEmployeSearch_select.Size = new System.Drawing.Size(214, 32);
-            this.btnEmployeSearch_select.TabIndex = 16;
+            this.btnEmployeSearch_select.TabIndex = 3;
             this.btnEmployeSearch_select.Text = "Selectionner";
             this.btnEmployeSearch_select.UseVisualStyleBackColor = false;
             this.btnEmployeSearch_select.Click += new System.EventHandler(this.btnEmployeSearch_select_Click);
@@ -165,7 +165,7 @@ namespace LocationVoiture.Vues
             this.panel11.Name = "panel11";
             this.panel11.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.panel11.Size = new System.Drawing.Size(314, 32);
-            this.panel11.TabIndex = 15;
+            this.panel11.TabIndex = 1;
             // 
             // cbEmployeSearch
             // 
@@ -178,7 +178,7 @@ namespace LocationVoiture.Vues
             this.cbEmployeSearch.Location = new System.Drawing.Point(0, 0);
             this.cbEmployeSearch.Name = "cbEmployeSearch";
             this.cbEmployeSearch.Size = new System.Drawing.Size(314, 29);
-            this.cbEmployeSearch.TabIndex = 117;
+            this.cbEmployeSearch.TabIndex = 1;
             // 
             // txtEmployeSearch_value
             // 
@@ -190,7 +190,7 @@ namespace LocationVoiture.Vues
             this.txtEmployeSearch_value.Location = new System.Drawing.Point(13, 3);
             this.txtEmployeSearch_value.Name = "txtEmployeSearch_value";
             this.txtEmployeSearch_value.Size = new System.Drawing.Size(286, 25);
-            this.txtEmployeSearch_value.TabIndex = 1;
+            this.txtEmployeSearch_value.TabIndex = 0;
             // 
             // btnEmployeSearch_find
             // 
@@ -201,7 +201,7 @@ namespace LocationVoiture.Vues
             this.btnEmployeSearch_find.Location = new System.Drawing.Point(631, 93);
             this.btnEmployeSearch_find.Name = "btnEmployeSearch_find";
             this.btnEmployeSearch_find.Size = new System.Drawing.Size(151, 32);
-            this.btnEmployeSearch_find.TabIndex = 6;
+            this.btnEmployeSearch_find.TabIndex = 2;
             this.btnEmployeSearch_find.Text = "Rechercher";
             this.btnEmployeSearch_find.UseVisualStyleBackColor = false;
             this.btnEmployeSearch_find.Click += new System.EventHandler(this.btnEmployeSearch_find_Click);
@@ -216,7 +216,7 @@ namespace LocationVoiture.Vues
             this.label2.Location = new System.Drawing.Point(15, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(161, 25);
-            this.label2.TabIndex = 5;
+            this.label2.TabIndex = 6;
             this.label2.Text = "Champ recherché";
             // 
             // label1
@@ -227,7 +227,7 @@ namespace LocationVoiture.Vues
             this.label1.Location = new System.Drawing.Point(15, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(245, 32);
-            this.label1.TabIndex = 4;
+            this.label1.TabIndex = 7;
             this.label1.Text = "Trouver un employé";
             // 
             // comboEmployeSearch_FindBy
@@ -242,7 +242,7 @@ namespace LocationVoiture.Vues
             this.comboEmployeSearch_FindBy.Location = new System.Drawing.Point(15, 95);
             this.comboEmployeSearch_FindBy.Name = "comboEmployeSearch_FindBy";
             this.comboEmployeSearch_FindBy.Size = new System.Drawing.Size(254, 29);
-            this.comboEmployeSearch_FindBy.TabIndex = 1;
+            this.comboEmployeSearch_FindBy.TabIndex = 0;
             this.comboEmployeSearch_FindBy.SelectedIndexChanged += new System.EventHandler(this.comboEmployeSearch_FindBy_SelectedIndexChanged);
             // 
             // btnEmployeSearch_cancel
@@ -254,7 +254,7 @@ namespace LocationVoiture.Vues
             this.btnEmployeSearch_cancel.Location = new System.Drawing.Point(15, 464);
             this.btnEmployeSearch_cancel.Name = "btnEmployeSearch_cancel";
             this.btnEmployeSearch_cancel.Size = new System.Drawing.Size(214, 32);
-            this.btnEmployeSearch_cancel.TabIndex = 0;
+            this.btnEmployeSearch_cancel.TabIndex = 4;
             this.btnEmployeSearch_cancel.Text = "Annuler";
             this.btnEmployeSearch_cancel.UseVisualStyleBackColor = false;
             this.btnEmployeSearch_cancel.Click += new System.EventHandler(this.btnClientSearch_cancel_Click);

@@ -81,7 +81,7 @@ namespace LocationVoiture.Vues
             this.lblLoading.Location = new System.Drawing.Point(632, 70);
             this.lblLoading.Name = "lblLoading";
             this.lblLoading.Size = new System.Drawing.Size(135, 17);
-            this.lblLoading.TabIndex = 108;
+            this.lblLoading.TabIndex = 6;
             this.lblLoading.Text = "Recherche en cours ...";
             // 
             // panel_message
@@ -91,7 +91,7 @@ namespace LocationVoiture.Vues
             this.panel_message.Location = new System.Drawing.Point(296, 59);
             this.panel_message.Name = "panel_message";
             this.panel_message.Size = new System.Drawing.Size(314, 28);
-            this.panel_message.TabIndex = 17;
+            this.panel_message.TabIndex = 7;
             // 
             // label3
             // 
@@ -102,7 +102,7 @@ namespace LocationVoiture.Vues
             this.label3.Location = new System.Drawing.Point(90, 4);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(144, 21);
-            this.label3.TabIndex = 18;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Aucun client trouvé";
             // 
             // btnClientSearch_select
@@ -114,7 +114,7 @@ namespace LocationVoiture.Vues
             this.btnClientSearch_select.Location = new System.Drawing.Point(15, 422);
             this.btnClientSearch_select.Name = "btnClientSearch_select";
             this.btnClientSearch_select.Size = new System.Drawing.Size(214, 32);
-            this.btnClientSearch_select.TabIndex = 16;
+            this.btnClientSearch_select.TabIndex = 2;
             this.btnClientSearch_select.Text = "Selectionner";
             this.btnClientSearch_select.UseVisualStyleBackColor = false;
             this.btnClientSearch_select.Click += new System.EventHandler(this.btnClientSearch_select_Click);
@@ -129,7 +129,7 @@ namespace LocationVoiture.Vues
             this.panel11.Name = "panel11";
             this.panel11.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.panel11.Size = new System.Drawing.Size(314, 32);
-            this.panel11.TabIndex = 15;
+            this.panel11.TabIndex = 5;
             // 
             // txtClientSearch_value
             // 
@@ -141,7 +141,7 @@ namespace LocationVoiture.Vues
             this.txtClientSearch_value.Location = new System.Drawing.Point(13, 3);
             this.txtClientSearch_value.Name = "txtClientSearch_value";
             this.txtClientSearch_value.Size = new System.Drawing.Size(286, 25);
-            this.txtClientSearch_value.TabIndex = 1;
+            this.txtClientSearch_value.TabIndex = 0;
             // 
             // btnClientSearch_find
             // 
@@ -152,7 +152,7 @@ namespace LocationVoiture.Vues
             this.btnClientSearch_find.Location = new System.Drawing.Point(631, 93);
             this.btnClientSearch_find.Name = "btnClientSearch_find";
             this.btnClientSearch_find.Size = new System.Drawing.Size(151, 32);
-            this.btnClientSearch_find.TabIndex = 6;
+            this.btnClientSearch_find.TabIndex = 1;
             this.btnClientSearch_find.Text = "Rechercher";
             this.btnClientSearch_find.UseVisualStyleBackColor = false;
             this.btnClientSearch_find.Click += new System.EventHandler(this.btnClientSearch_find_Click);
@@ -167,7 +167,7 @@ namespace LocationVoiture.Vues
             this.label2.Location = new System.Drawing.Point(15, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(161, 25);
-            this.label2.TabIndex = 5;
+            this.label2.TabIndex = 8;
             this.label2.Text = "Champ recherché";
             // 
             // label1
@@ -178,7 +178,7 @@ namespace LocationVoiture.Vues
             this.label1.Location = new System.Drawing.Point(15, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(210, 32);
-            this.label1.TabIndex = 4;
+            this.label1.TabIndex = 9;
             this.label1.Text = "Trouver un client";
             // 
             // dataGridView1
@@ -213,7 +213,7 @@ namespace LocationVoiture.Vues
             this.dataGridView1.RowTemplate.Height = 36;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1117, 276);
-            this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.TabIndex = 4;
             // 
             // comboClientSearch_FindBy
             // 
@@ -227,7 +227,7 @@ namespace LocationVoiture.Vues
             this.comboClientSearch_FindBy.Location = new System.Drawing.Point(15, 95);
             this.comboClientSearch_FindBy.Name = "comboClientSearch_FindBy";
             this.comboClientSearch_FindBy.Size = new System.Drawing.Size(254, 29);
-            this.comboClientSearch_FindBy.TabIndex = 1;
+            this.comboClientSearch_FindBy.TabIndex = 0;
             // 
             // btnClientSearch_cancel
             // 
@@ -238,7 +238,7 @@ namespace LocationVoiture.Vues
             this.btnClientSearch_cancel.Location = new System.Drawing.Point(15, 464);
             this.btnClientSearch_cancel.Name = "btnClientSearch_cancel";
             this.btnClientSearch_cancel.Size = new System.Drawing.Size(214, 32);
-            this.btnClientSearch_cancel.TabIndex = 0;
+            this.btnClientSearch_cancel.TabIndex = 3;
             this.btnClientSearch_cancel.Text = "Annuler";
             this.btnClientSearch_cancel.UseVisualStyleBackColor = false;
             this.btnClientSearch_cancel.Click += new System.EventHandler(this.btnClientSearch_cancel_Click);

@@ -108,7 +108,7 @@ namespace LocationVoiture.Vues
                         );
                 }
 
-                dataGridView1.DataSource = table;
+                dataGridView_reservation.DataSource = table;
             }
             else
             {
@@ -117,9 +117,9 @@ namespace LocationVoiture.Vues
                 table.Rows.Add(
                         "Aucune réservation aujourd'hui"
                     );
-                dataGridView1.DataSource = table;
-                dataGridView1.ClearSelection();                
-                dataGridView1.ReadOnly = true;
+                dataGridView_reservation.DataSource = table;
+                dataGridView_reservation.ClearSelection();                
+                dataGridView_reservation.ReadOnly = true;
             }
 
             }
@@ -644,5 +644,55 @@ namespace LocationVoiture.Vues
 
         #endregion UTILITAIRES
 
+        /// <summary>
+        /// Selection de la réservation de la liste, et affichage des informations
+        /// </summary>
+        private void dataGridView_reservation_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int selectedRow = dataGridView_reservation.CurrentRow.Index;
+            object selectedRowID = dataGridView_reservation[0, selectedRow].Value;
+            String reservationID = selectedRowID.ToString();
+
+            reservation reservationToLocation = locationController.ReservationsServices.FindReservation(reservationID);
+
+            if(reservationToLocation != null)
+            {            
+                txtClientCreate_idSearch.Text = reservationToLocation.reservationID.ToString();
+
+                // CLIENT TXTFIELDS
+                txtClientCreate_clientId.Text   = reservationToLocation.clientID.ToString();
+                txtClientCreate_nom.Text        = reservationToLocation.client.nom;
+                txtClientCreate_prenom.Text     = reservationToLocation.client.prenom;
+                txtClientCreate_phone.Text      = reservationToLocation.client.telephone;
+                txtClientCreate_adresse.Text    = reservationToLocation.client.adresse_client;
+                txtClientCreate_email.Text      = reservationToLocation.client.courriel;
+
+                string succursaleName   = reservationToLocation.vehicule.succursale.nom;
+                string fabricantName    = reservationToLocation.vehicule.fabriquant.nom_fabriquant;
+                string modeleName       = reservationToLocation.vehicule.modele.nom_modele;
+                string nbPassager       = reservationToLocation.vehicule.modele.nb_place.ToString();
+                string plateNo          = reservationToLocation.vehicule.plaque_num;
+
+                // VEHICULE COMBOBOX
+                cbReservationCreate_Succursale.SelectedIndex    = cbReservationCreate_Succursale.FindStringExact(succursaleName);
+                cbReservationCreate_marque.SelectedIndex        = cbReservationCreate_marque.FindStringExact(fabricantName);
+                cbReservationCreate_model.SelectedIndex         = cbReservationCreate_model.FindStringExact(modeleName);
+                cbReservationCreate_nbPassager.SelectedIndex    = cbReservationCreate_nbPassager.FindStringExact(nbPassager);
+                cbReservationCreate_noPlaque.SelectedIndex      = cbReservationCreate_noPlaque.FindStringExact(plateNo);
+
+                // DATETIMEPICKER
+                dateTimePicker_ReservationCreate_DateOUT.Value = reservationToLocation.date_debut_reservation.Value.Date;
+                dateTimePicker_ReservationCreate_DateIN.Value  = reservationToLocation.date_fin_reservation.Value.Date;
+
+                String timeOut = reservationToLocation.date_debut_reservation.Value.TimeOfDay.ToString().Substring(0, 5);
+                String timeIn  = reservationToLocation.date_fin_reservation.Value.TimeOfDay.ToString().Substring(0, 5);
+
+                // TIME COMBOBOX
+                cbReservationCreate_HeureOUT.SelectedIndex = cbReservationCreate_HeureOUT.FindStringExact(timeOut);
+                cbReservationCreate_HeureIN.SelectedIndex  = cbReservationCreate_HeureIN.FindStringExact(timeIn);
+
+            }
+
+        }
     }
 }

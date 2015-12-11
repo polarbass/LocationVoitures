@@ -136,7 +136,7 @@ namespace LocationVoiture.Vues
             }
             else
             {
-                Animations.Animate(panel_message, Animations.Effect.Roll, 200, 180);
+                Animations.Animate(panel_message, Animations.Effect.Roll, 100, 180);
                 animationTimer.Start();
                 dataGridView1.DataSource = null;
                 btnEmployeSearch_select.Enabled = false;
@@ -177,7 +177,7 @@ namespace LocationVoiture.Vues
 
             if (RightTimeOut == 2)
             {
-                Animations.Animate(panel_message, Animations.Effect.Roll, 200, 180);
+                Animations.Animate(panel_message, Animations.Effect.Roll, 100, 180);
                 RightTimeOut = 0;
                 animationTimer.Stop();
             }

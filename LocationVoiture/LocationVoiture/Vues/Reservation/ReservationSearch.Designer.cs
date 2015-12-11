@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel_message = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.btnReservationSearch_select = new System.Windows.Forms.Button();
@@ -44,15 +45,16 @@
             this.comboReservationSearch_FindBy = new System.Windows.Forms.ComboBox();
             this.btnReservationSearch_cancel = new System.Windows.Forms.Button();
             this.animationTimer = new System.Windows.Forms.Timer(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblLoading = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel_message.SuspendLayout();
             this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblLoading);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.panel_message);
             this.panel1.Controls.Add(this.btnReservationSearch_select);
@@ -68,6 +70,40 @@
             this.panel1.Size = new System.Drawing.Size(1147, 525);
             this.panel1.TabIndex = 0;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle10.NullValue = "-------------";
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridView1.GridColor = System.Drawing.Color.Teal;
+            this.dataGridView1.Location = new System.Drawing.Point(17, 136);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 36;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1117, 276);
+            this.dataGridView1.TabIndex = 5;
+            // 
             // panel_message
             // 
             this.panel_message.BackColor = System.Drawing.Color.Teal;
@@ -75,7 +111,7 @@
             this.panel_message.Location = new System.Drawing.Point(296, 59);
             this.panel_message.Name = "panel_message";
             this.panel_message.Size = new System.Drawing.Size(314, 28);
-            this.panel_message.TabIndex = 18;
+            this.panel_message.TabIndex = 8;
             // 
             // label3
             // 
@@ -86,7 +122,7 @@
             this.label3.Location = new System.Drawing.Point(67, 4);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(201, 21);
-            this.label3.TabIndex = 18;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Aucune réservation trouvée";
             // 
             // btnReservationSearch_select
@@ -98,7 +134,7 @@
             this.btnReservationSearch_select.Location = new System.Drawing.Point(15, 422);
             this.btnReservationSearch_select.Name = "btnReservationSearch_select";
             this.btnReservationSearch_select.Size = new System.Drawing.Size(214, 32);
-            this.btnReservationSearch_select.TabIndex = 16;
+            this.btnReservationSearch_select.TabIndex = 3;
             this.btnReservationSearch_select.Text = "Selectionner";
             this.btnReservationSearch_select.UseVisualStyleBackColor = false;
             this.btnReservationSearch_select.Click += new System.EventHandler(this.btnClientSearch_select_Click);
@@ -114,7 +150,7 @@
             this.panel11.Name = "panel11";
             this.panel11.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.panel11.Size = new System.Drawing.Size(314, 32);
-            this.panel11.TabIndex = 15;
+            this.panel11.TabIndex = 1;
             // 
             // dateTimePicker
             // 
@@ -126,7 +162,7 @@
             this.dateTimePicker.MinDate = new System.DateTime(2015, 11, 17, 15, 9, 37, 0);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(286, 26);
-            this.dateTimePicker.TabIndex = 37;
+            this.dateTimePicker.TabIndex = 1;
             this.dateTimePicker.Value = new System.DateTime(2015, 11, 17, 15, 9, 37, 0);
             // 
             // txtReservationSearch_value
@@ -139,7 +175,7 @@
             this.txtReservationSearch_value.Location = new System.Drawing.Point(13, 3);
             this.txtReservationSearch_value.Name = "txtReservationSearch_value";
             this.txtReservationSearch_value.Size = new System.Drawing.Size(286, 25);
-            this.txtReservationSearch_value.TabIndex = 1;
+            this.txtReservationSearch_value.TabIndex = 0;
             // 
             // btnReservationSearch_find
             // 
@@ -150,7 +186,7 @@
             this.btnReservationSearch_find.Location = new System.Drawing.Point(631, 93);
             this.btnReservationSearch_find.Name = "btnReservationSearch_find";
             this.btnReservationSearch_find.Size = new System.Drawing.Size(151, 32);
-            this.btnReservationSearch_find.TabIndex = 6;
+            this.btnReservationSearch_find.TabIndex = 2;
             this.btnReservationSearch_find.Text = "Rechercher";
             this.btnReservationSearch_find.UseVisualStyleBackColor = false;
             this.btnReservationSearch_find.Click += new System.EventHandler(this.btnClientSearch_find_Click);
@@ -165,7 +201,7 @@
             this.label2.Location = new System.Drawing.Point(15, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(161, 25);
-            this.label2.TabIndex = 5;
+            this.label2.TabIndex = 7;
             this.label2.Text = "Champ recherché";
             // 
             // label1
@@ -176,7 +212,7 @@
             this.label1.Location = new System.Drawing.Point(15, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(290, 32);
-            this.label1.TabIndex = 4;
+            this.label1.TabIndex = 6;
             this.label1.Text = "Trouver une réservation";
             // 
             // comboReservationSearch_FindBy
@@ -191,7 +227,7 @@
             this.comboReservationSearch_FindBy.Location = new System.Drawing.Point(15, 95);
             this.comboReservationSearch_FindBy.Name = "comboReservationSearch_FindBy";
             this.comboReservationSearch_FindBy.Size = new System.Drawing.Size(254, 29);
-            this.comboReservationSearch_FindBy.TabIndex = 1;
+            this.comboReservationSearch_FindBy.TabIndex = 0;
             this.comboReservationSearch_FindBy.SelectedIndexChanged += new System.EventHandler(this.comboReservationSearch_FindBy_SelectedIndexChanged);
             // 
             // btnReservationSearch_cancel
@@ -203,7 +239,7 @@
             this.btnReservationSearch_cancel.Location = new System.Drawing.Point(15, 464);
             this.btnReservationSearch_cancel.Name = "btnReservationSearch_cancel";
             this.btnReservationSearch_cancel.Size = new System.Drawing.Size(214, 32);
-            this.btnReservationSearch_cancel.TabIndex = 0;
+            this.btnReservationSearch_cancel.TabIndex = 4;
             this.btnReservationSearch_cancel.Text = "Annuler";
             this.btnReservationSearch_cancel.UseVisualStyleBackColor = false;
             this.btnReservationSearch_cancel.Click += new System.EventHandler(this.btnClientSearch_cancel_Click);
@@ -212,39 +248,17 @@
             // 
             this.animationTimer.Interval = 1000;
             // 
-            // dataGridView1
+            // lblLoading
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle6.NullValue = "-------------";
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView1.GridColor = System.Drawing.Color.Teal;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 136);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 36;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1117, 276);
-            this.dataGridView1.TabIndex = 127;
+            this.lblLoading.AutoSize = true;
+            this.lblLoading.BackColor = System.Drawing.Color.Teal;
+            this.lblLoading.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoading.ForeColor = System.Drawing.Color.White;
+            this.lblLoading.Location = new System.Drawing.Point(632, 70);
+            this.lblLoading.Name = "lblLoading";
+            this.lblLoading.Size = new System.Drawing.Size(135, 17);
+            this.lblLoading.TabIndex = 10;
+            this.lblLoading.Text = "Recherche en cours ...";
             // 
             // ReservationSearch
             // 
@@ -262,11 +276,11 @@
             this.Text = "Form3";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel_message.ResumeLayout(false);
             this.panel_message.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -287,5 +301,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer animationTimer;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lblLoading;
     }
 }

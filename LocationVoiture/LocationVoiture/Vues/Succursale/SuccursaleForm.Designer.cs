@@ -106,7 +106,7 @@
             this.lblLoading.Location = new System.Drawing.Point(144, 100);
             this.lblLoading.Name = "lblLoading";
             this.lblLoading.Size = new System.Drawing.Size(135, 17);
-            this.lblLoading.TabIndex = 124;
+            this.lblLoading.TabIndex = 13;
             this.lblLoading.Text = "Recherche en cours ...";
             // 
             // label3
@@ -117,7 +117,7 @@
             this.label3.Location = new System.Drawing.Point(34, 353);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 25);
-            this.label3.TabIndex = 121;
+            this.label3.TabIndex = 19;
             this.label3.Text = "Courriel :";
             // 
             // panel4
@@ -128,7 +128,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.panel4.Size = new System.Drawing.Size(287, 32);
-            this.panel4.TabIndex = 118;
+            this.panel4.TabIndex = 6;
             // 
             // txtSuccursale_courriel
             // 
@@ -140,7 +140,7 @@
             this.txtSuccursale_courriel.Location = new System.Drawing.Point(13, 3);
             this.txtSuccursale_courriel.Name = "txtSuccursale_courriel";
             this.txtSuccursale_courriel.Size = new System.Drawing.Size(259, 22);
-            this.txtSuccursale_courriel.TabIndex = 5;
+            this.txtSuccursale_courriel.TabIndex = 0;
             // 
             // panel2
             // 
@@ -150,7 +150,7 @@
             this.panel2.Location = new System.Drawing.Point(318, 111);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(112, 93);
-            this.panel2.TabIndex = 106;
+            this.panel2.TabIndex = 10;
             // 
             // btnCANCEL
             // 
@@ -162,7 +162,7 @@
             this.btnCANCEL.Location = new System.Drawing.Point(11, 51);
             this.btnCANCEL.Name = "btnCANCEL";
             this.btnCANCEL.Size = new System.Drawing.Size(91, 35);
-            this.btnCANCEL.TabIndex = 107;
+            this.btnCANCEL.TabIndex = 1;
             this.btnCANCEL.Text = "CANCEL";
             this.btnCANCEL.UseVisualStyleBackColor = false;
             this.btnCANCEL.Click += new System.EventHandler(this.btnCANCEL_Click);
@@ -179,7 +179,7 @@
             this.btnOK.Location = new System.Drawing.Point(11, 7);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(91, 35);
-            this.btnOK.TabIndex = 106;
+            this.btnOK.TabIndex = 0;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -196,7 +196,7 @@
             this.btnSuccursale_Delete.Location = new System.Drawing.Point(321, 172);
             this.btnSuccursale_Delete.Name = "btnSuccursale_Delete";
             this.btnSuccursale_Delete.Size = new System.Drawing.Size(110, 32);
-            this.btnSuccursale_Delete.TabIndex = 105;
+            this.btnSuccursale_Delete.TabIndex = 9;
             this.btnSuccursale_Delete.Text = "Effacer";
             this.btnSuccursale_Delete.UseVisualStyleBackColor = false;
             this.btnSuccursale_Delete.Click += new System.EventHandler(this.btnEmploye_Delete_Click);
@@ -211,7 +211,7 @@
             this.lblClientCreate_clientId.Location = new System.Drawing.Point(82, 176);
             this.lblClientCreate_clientId.Name = "lblClientCreate_clientId";
             this.lblClientCreate_clientId.Size = new System.Drawing.Size(36, 25);
-            this.lblClientCreate_clientId.TabIndex = 104;
+            this.lblClientCreate_clientId.TabIndex = 15;
             this.lblClientCreate_clientId.Text = "id :";
             // 
             // panelClientCreate_clientId
@@ -222,7 +222,7 @@
             this.panelClientCreate_clientId.Name = "panelClientCreate_clientId";
             this.panelClientCreate_clientId.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.panelClientCreate_clientId.Size = new System.Drawing.Size(170, 32);
-            this.panelClientCreate_clientId.TabIndex = 103;
+            this.panelClientCreate_clientId.TabIndex = 2;
             // 
             // txtSuccursale_succursaleID
             // 
@@ -234,7 +234,7 @@
             this.txtSuccursale_succursaleID.Location = new System.Drawing.Point(13, 4);
             this.txtSuccursale_succursaleID.Name = "txtSuccursale_succursaleID";
             this.txtSuccursale_succursaleID.Size = new System.Drawing.Size(142, 22);
-            this.txtSuccursale_succursaleID.TabIndex = 1;
+            this.txtSuccursale_succursaleID.TabIndex = 0;
             // 
             // btnSuccursale_Find
             // 
@@ -247,7 +247,7 @@
             this.btnSuccursale_Find.Margin = new System.Windows.Forms.Padding(0);
             this.btnSuccursale_Find.Name = "btnSuccursale_Find";
             this.btnSuccursale_Find.Size = new System.Drawing.Size(113, 32);
-            this.btnSuccursale_Find.TabIndex = 102;
+            this.btnSuccursale_Find.TabIndex = 1;
             this.btnSuccursale_Find.Text = "TROUVER";
             this.btnSuccursale_Find.UseVisualStyleBackColor = false;
             this.btnSuccursale_Find.Click += new System.EventHandler(this.btnSuccursale_Find_Click);
@@ -260,7 +260,7 @@
             this.lblClientCreate_id.Location = new System.Drawing.Point(82, 67);
             this.lblClientCreate_id.Name = "lblClientCreate_id";
             this.lblClientCreate_id.Size = new System.Drawing.Size(36, 25);
-            this.lblClientCreate_id.TabIndex = 101;
+            this.lblClientCreate_id.TabIndex = 12;
             this.lblClientCreate_id.Text = "id :";
             // 
             // panelClientForm_id
@@ -271,7 +271,7 @@
             this.panelClientForm_id.Name = "panelClientForm_id";
             this.panelClientForm_id.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.panelClientForm_id.Size = new System.Drawing.Size(165, 32);
-            this.panelClientForm_id.TabIndex = 100;
+            this.panelClientForm_id.TabIndex = 0;
             // 
             // txtSuccursale_idSearch
             // 
@@ -283,7 +283,7 @@
             this.txtSuccursale_idSearch.Location = new System.Drawing.Point(9, 4);
             this.txtSuccursale_idSearch.Name = "txtSuccursale_idSearch";
             this.txtSuccursale_idSearch.Size = new System.Drawing.Size(146, 22);
-            this.txtSuccursale_idSearch.TabIndex = 1;
+            this.txtSuccursale_idSearch.TabIndex = 0;
             // 
             // lblSuccursale_operation
             // 
@@ -293,7 +293,7 @@
             this.lblSuccursale_operation.Location = new System.Drawing.Point(143, 14);
             this.lblSuccursale_operation.Name = "lblSuccursale_operation";
             this.lblSuccursale_operation.Size = new System.Drawing.Size(252, 32);
-            this.lblSuccursale_operation.TabIndex = 4;
+            this.lblSuccursale_operation.TabIndex = 11;
             this.lblSuccursale_operation.Text = "Créer une succursale";
             // 
             // lblClientCreate_phone
@@ -304,7 +304,7 @@
             this.lblClientCreate_phone.Location = new System.Drawing.Point(15, 311);
             this.lblClientCreate_phone.Name = "lblClientCreate_phone";
             this.lblClientCreate_phone.Size = new System.Drawing.Size(103, 25);
-            this.lblClientCreate_phone.TabIndex = 99;
+            this.lblClientCreate_phone.TabIndex = 18;
             this.lblClientCreate_phone.Text = "téléphone :";
             // 
             // panel13
@@ -315,7 +315,7 @@
             this.panel13.Name = "panel13";
             this.panel13.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.panel13.Size = new System.Drawing.Size(287, 32);
-            this.panel13.TabIndex = 45;
+            this.panel13.TabIndex = 5;
             // 
             // txtSuccursale_phone
             // 
@@ -327,7 +327,7 @@
             this.txtSuccursale_phone.Location = new System.Drawing.Point(13, 4);
             this.txtSuccursale_phone.Name = "txtSuccursale_phone";
             this.txtSuccursale_phone.Size = new System.Drawing.Size(259, 22);
-            this.txtSuccursale_phone.TabIndex = 3;
+            this.txtSuccursale_phone.TabIndex = 0;
             // 
             // lblClientCreate_adresse
             // 
@@ -337,7 +337,7 @@
             this.lblClientCreate_adresse.Location = new System.Drawing.Point(37, 268);
             this.lblClientCreate_adresse.Name = "lblClientCreate_adresse";
             this.lblClientCreate_adresse.Size = new System.Drawing.Size(81, 25);
-            this.lblClientCreate_adresse.TabIndex = 99;
+            this.lblClientCreate_adresse.TabIndex = 17;
             this.lblClientCreate_adresse.Text = "adresse :";
             // 
             // panel12
@@ -348,7 +348,7 @@
             this.panel12.Name = "panel12";
             this.panel12.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.panel12.Size = new System.Drawing.Size(287, 32);
-            this.panel12.TabIndex = 43;
+            this.panel12.TabIndex = 4;
             // 
             // txtSuccursale_adresse
             // 
@@ -360,7 +360,7 @@
             this.txtSuccursale_adresse.Location = new System.Drawing.Point(13, 4);
             this.txtSuccursale_adresse.Name = "txtSuccursale_adresse";
             this.txtSuccursale_adresse.Size = new System.Drawing.Size(259, 22);
-            this.txtSuccursale_adresse.TabIndex = 5;
+            this.txtSuccursale_adresse.TabIndex = 0;
             // 
             // panel10
             // 
@@ -370,7 +370,7 @@
             this.panel10.Name = "panel10";
             this.panel10.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.panel10.Size = new System.Drawing.Size(287, 32);
-            this.panel10.TabIndex = 16;
+            this.panel10.TabIndex = 3;
             // 
             // txtSuccursale_nom
             // 
@@ -382,7 +382,7 @@
             this.txtSuccursale_nom.Location = new System.Drawing.Point(13, 4);
             this.txtSuccursale_nom.Name = "txtSuccursale_nom";
             this.txtSuccursale_nom.Size = new System.Drawing.Size(259, 22);
-            this.txtSuccursale_nom.TabIndex = 2;
+            this.txtSuccursale_nom.TabIndex = 0;
             // 
             // label32
             // 
@@ -392,7 +392,7 @@
             this.label32.Location = new System.Drawing.Point(143, 133);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(106, 25);
-            this.label32.TabIndex = 31;
+            this.label32.TabIndex = 14;
             this.label32.Text = "Succursale";
             // 
             // lblClientCreate_nom
@@ -403,7 +403,7 @@
             this.lblClientCreate_nom.Location = new System.Drawing.Point(60, 224);
             this.lblClientCreate_nom.Name = "lblClientCreate_nom";
             this.lblClientCreate_nom.Size = new System.Drawing.Size(58, 25);
-            this.lblClientCreate_nom.TabIndex = 99;
+            this.lblClientCreate_nom.TabIndex = 16;
             this.lblClientCreate_nom.Text = "nom :";
             // 
             // btnSuccursale_cancel

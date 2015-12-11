@@ -104,7 +104,7 @@ namespace LocationVoiture.Vues
             this.dataGridView1.RowTemplate.Height = 36;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1117, 276);
-            this.dataGridView1.TabIndex = 126;
+            this.dataGridView1.TabIndex = 5;
             // 
             // lblLoading
             // 
@@ -115,7 +115,7 @@ namespace LocationVoiture.Vues
             this.lblLoading.Location = new System.Drawing.Point(632, 70);
             this.lblLoading.Name = "lblLoading";
             this.lblLoading.Size = new System.Drawing.Size(135, 17);
-            this.lblLoading.TabIndex = 125;
+            this.lblLoading.TabIndex = 9;
             this.lblLoading.Text = "Recherche en cours ...";
             // 
             // panel_message
@@ -125,7 +125,7 @@ namespace LocationVoiture.Vues
             this.panel_message.Location = new System.Drawing.Point(296, 59);
             this.panel_message.Name = "panel_message";
             this.panel_message.Size = new System.Drawing.Size(314, 28);
-            this.panel_message.TabIndex = 17;
+            this.panel_message.TabIndex = 8;
             // 
             // label3
             // 
@@ -136,7 +136,7 @@ namespace LocationVoiture.Vues
             this.label3.Location = new System.Drawing.Point(77, 4);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(195, 21);
-            this.label3.TabIndex = 18;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Aucune succursale trouvée";
             // 
             // btnSuccursaleSearch_select
@@ -148,7 +148,7 @@ namespace LocationVoiture.Vues
             this.btnSuccursaleSearch_select.Location = new System.Drawing.Point(15, 422);
             this.btnSuccursaleSearch_select.Name = "btnSuccursaleSearch_select";
             this.btnSuccursaleSearch_select.Size = new System.Drawing.Size(214, 32);
-            this.btnSuccursaleSearch_select.TabIndex = 16;
+            this.btnSuccursaleSearch_select.TabIndex = 3;
             this.btnSuccursaleSearch_select.Text = "Selectionner";
             this.btnSuccursaleSearch_select.UseVisualStyleBackColor = false;
             this.btnSuccursaleSearch_select.Click += new System.EventHandler(this.btnSuccursaleSearch_select_Click);
@@ -163,7 +163,7 @@ namespace LocationVoiture.Vues
             this.panel11.Name = "panel11";
             this.panel11.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.panel11.Size = new System.Drawing.Size(314, 32);
-            this.panel11.TabIndex = 15;
+            this.panel11.TabIndex = 1;
             // 
             // txtSuccursaleSearch_value
             // 
@@ -175,7 +175,7 @@ namespace LocationVoiture.Vues
             this.txtSuccursaleSearch_value.Location = new System.Drawing.Point(13, 3);
             this.txtSuccursaleSearch_value.Name = "txtSuccursaleSearch_value";
             this.txtSuccursaleSearch_value.Size = new System.Drawing.Size(286, 25);
-            this.txtSuccursaleSearch_value.TabIndex = 1;
+            this.txtSuccursaleSearch_value.TabIndex = 0;
             // 
             // btnSuccursaleSearch_find
             // 
@@ -186,7 +186,7 @@ namespace LocationVoiture.Vues
             this.btnSuccursaleSearch_find.Location = new System.Drawing.Point(631, 93);
             this.btnSuccursaleSearch_find.Name = "btnSuccursaleSearch_find";
             this.btnSuccursaleSearch_find.Size = new System.Drawing.Size(151, 32);
-            this.btnSuccursaleSearch_find.TabIndex = 6;
+            this.btnSuccursaleSearch_find.TabIndex = 2;
             this.btnSuccursaleSearch_find.Text = "Rechercher";
             this.btnSuccursaleSearch_find.UseVisualStyleBackColor = false;
             this.btnSuccursaleSearch_find.Click += new System.EventHandler(this.btnSuccursaleSearch_find_Click);
@@ -201,7 +201,7 @@ namespace LocationVoiture.Vues
             this.label2.Location = new System.Drawing.Point(15, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(161, 25);
-            this.label2.TabIndex = 5;
+            this.label2.TabIndex = 7;
             this.label2.Text = "Champ recherché";
             // 
             // label1
@@ -212,7 +212,7 @@ namespace LocationVoiture.Vues
             this.label1.Location = new System.Drawing.Point(15, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(279, 32);
-            this.label1.TabIndex = 4;
+            this.label1.TabIndex = 6;
             this.label1.Text = "Trouver une succursale";
             // 
             // comboSuccursaleSearch_FindBy
@@ -227,7 +227,7 @@ namespace LocationVoiture.Vues
             this.comboSuccursaleSearch_FindBy.Location = new System.Drawing.Point(15, 95);
             this.comboSuccursaleSearch_FindBy.Name = "comboSuccursaleSearch_FindBy";
             this.comboSuccursaleSearch_FindBy.Size = new System.Drawing.Size(254, 29);
-            this.comboSuccursaleSearch_FindBy.TabIndex = 1;
+            this.comboSuccursaleSearch_FindBy.TabIndex = 0;
             // 
             // btnSuccursaleSearch_cancel
             // 
@@ -238,7 +238,7 @@ namespace LocationVoiture.Vues
             this.btnSuccursaleSearch_cancel.Location = new System.Drawing.Point(15, 464);
             this.btnSuccursaleSearch_cancel.Name = "btnSuccursaleSearch_cancel";
             this.btnSuccursaleSearch_cancel.Size = new System.Drawing.Size(214, 32);
-            this.btnSuccursaleSearch_cancel.TabIndex = 0;
+            this.btnSuccursaleSearch_cancel.TabIndex = 4;
             this.btnSuccursaleSearch_cancel.Text = "Annuler";
             this.btnSuccursaleSearch_cancel.UseVisualStyleBackColor = false;
             this.btnSuccursaleSearch_cancel.Click += new System.EventHandler(this.btnClientSearch_cancel_Click);

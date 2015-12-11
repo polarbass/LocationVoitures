@@ -75,15 +75,15 @@ namespace LocationVoiture.Vues
         {
             // Compléter la string pour l'heure IN et OUT
             String timeOUT = cbReservationCreate_HeureOUT.SelectedItem.ToString() + ":00";
-            String timeIN = cbReservationCreate_HeureIN.SelectedItem.ToString() + ":00";
+            String timeIN  = cbReservationCreate_HeureIN.SelectedItem.ToString() + ":00";
 
             // Parse de la date et de l'heure en objet DateTime
             DateTime reservationOUT = dateTimePicker_ReservationCreate_DateOUT.Value.Date.Add(TimeSpan.Parse(timeOUT));
-            DateTime reservationIN = dateTimePicker_ReservationCreate_DateIN.Value.Date.Add(TimeSpan.Parse(timeIN));
+            DateTime reservationIN  = dateTimePicker_ReservationCreate_DateIN.Value.Date.Add(TimeSpan.Parse(timeIN));
 
-            int clientID = int.Parse(txtClientCreate_clientId.Text);
-            int succursaleID = int.Parse((cbReservationCreate_Succursale.SelectedItem as ComboboxItem).Value.ToString());
-            int vehiculeID = int.Parse((cbReservationCreate_noPlaque.SelectedItem as ComboboxItem).Value.ToString());
+            int clientID        = int.Parse(txtClientCreate_clientId.Text);
+            int succursaleID    = int.Parse((cbReservationCreate_Succursale.SelectedItem as ComboboxItem).Value.ToString());
+            int vehiculeID      = int.Parse((cbReservationCreate_noPlaque.SelectedItem as ComboboxItem).Value.ToString());
 
             /* TODO : Valeur temporaire pour l'employé. Doit incorporer le ID de l'employée logger */
             int employeID = 1;
@@ -96,13 +96,13 @@ namespace LocationVoiture.Vues
                 // Création de la réservation
                 reservation reservationToCreate = new reservation();
 
-                reservationToCreate.clientID = clientID;
-                reservationToCreate.succursaleID = succursaleID;
-                reservationToCreate.vehiculeID = vehiculeID;
-                reservationToCreate.date_debut_reservation = reservationOUT;
-                reservationToCreate.date_fin_reservation = reservationIN;
-                reservationToCreate.date_appel_reservation = DateTime.Now;
-                reservationToCreate.employeID = employeID;
+                reservationToCreate.clientID                = clientID;
+                reservationToCreate.succursaleID            = succursaleID;
+                reservationToCreate.vehiculeID              = vehiculeID;
+                reservationToCreate.date_debut_reservation  = reservationOUT;
+                reservationToCreate.date_fin_reservation    = reservationIN;
+                reservationToCreate.date_appel_reservation  = DateTime.Now;
+                reservationToCreate.employeID               = employeID;
 
                 if (locationController.ReservationsServices.AddReservation(reservationToCreate))
                 {
@@ -126,13 +126,11 @@ namespace LocationVoiture.Vues
                 reservation reservationToUpdate = locationController.ReservationsServices.FindReservation(reservationIdToUpdate);
                 if (reservationToUpdate != null)
                 {
-                    //reservationToUpdate.clientID                = clientID;
-                    reservationToUpdate.succursaleID = succursaleID;
-                    reservationToUpdate.vehiculeID = vehiculeID;
-                    reservationToUpdate.date_debut_reservation = reservationOUT;
-                    reservationToUpdate.date_fin_reservation = reservationIN;
-                    //reservationToUpdate.date_appel_reservation  = DateTime.Now;
-                    reservationToUpdate.employeID = employeID;
+                    reservationToUpdate.succursaleID            = succursaleID;
+                    reservationToUpdate.vehiculeID              = vehiculeID;
+                    reservationToUpdate.date_debut_reservation  = reservationOUT;
+                    reservationToUpdate.date_fin_reservation    = reservationIN;
+                    reservationToUpdate.employeID               = employeID;
                 }
 
                 if (locationController.ReservationsServices.Save())
@@ -155,7 +153,7 @@ namespace LocationVoiture.Vues
         /// Si le champ est vide, un nouveau formulaire de recherche est lancé afin de permettre la recherche à l'aide de plus de champs
         /// Sinon, la recherche est effectué à l'aide de l'id du client.
         /// </summary>        
-        private void btnClientForm_Find_Click(object sender, EventArgs e)
+        private void btnReservationForm_Find_Click(object sender, EventArgs e)
         {
             if (!btnClientCreate_add.Text.Equals(ReservationForm.OPERATION_RESERVATION_UPDATE))
             {
@@ -189,12 +187,12 @@ namespace LocationVoiture.Vues
                 {
                     txtClientCreate_clientId.Enabled = false;
 
-                    txtClientCreate_clientId.Text = reservationClient.clientID.ToString();
-                    txtClientCreate_nom.Text = reservationClient.nom;
-                    txtClientCreate_prenom.Text = reservationClient.prenom;
-                    txtClientCreate_phone.Text = reservationClient.telephone;
-                    txtClientCreate_adresse.Text = reservationClient.adresse_client;
-                    txtClientCreate_email.Text = reservationClient.courriel;
+                    txtClientCreate_clientId.Text   = reservationClient.clientID.ToString();
+                    txtClientCreate_nom.Text        = reservationClient.nom;
+                    txtClientCreate_prenom.Text     = reservationClient.prenom;
+                    txtClientCreate_phone.Text      = reservationClient.telephone;
+                    txtClientCreate_adresse.Text    = reservationClient.adresse_client;
+                    txtClientCreate_email.Text      = reservationClient.courriel;
                 }
                 else
                 {
@@ -236,36 +234,36 @@ namespace LocationVoiture.Vues
                     txtClientCreate_idSearch.Text = reservationToUpdate.reservationID.ToString();
 
                     // CLIENT TXTFIELDS
-                    txtClientCreate_clientId.Text = reservationToUpdate.clientID.ToString();
-                    txtClientCreate_nom.Text = reservationToUpdate.client.nom;
-                    txtClientCreate_prenom.Text = reservationToUpdate.client.prenom;
-                    txtClientCreate_phone.Text = reservationToUpdate.client.telephone;
-                    txtClientCreate_adresse.Text = reservationToUpdate.client.adresse_client;
-                    txtClientCreate_email.Text = reservationToUpdate.client.courriel;
+                    txtClientCreate_clientId.Text   = reservationToUpdate.clientID.ToString();
+                    txtClientCreate_nom.Text        = reservationToUpdate.client.nom;
+                    txtClientCreate_prenom.Text     = reservationToUpdate.client.prenom;
+                    txtClientCreate_phone.Text      = reservationToUpdate.client.telephone;
+                    txtClientCreate_adresse.Text    = reservationToUpdate.client.adresse_client;
+                    txtClientCreate_email.Text      = reservationToUpdate.client.courriel;
 
-                    string succursaleName = reservationToUpdate.vehicule.succursale.nom;
-                    string fabricantName = reservationToUpdate.vehicule.fabriquant.nom_fabriquant;
-                    string modeleName = reservationToUpdate.vehicule.modele.nom_modele;
-                    string nbPassager = reservationToUpdate.vehicule.modele.nb_place.ToString();
-                    string plateNo = reservationToUpdate.vehicule.plaque_num;
+                    string succursaleName   = reservationToUpdate.vehicule.succursale.nom;
+                    string fabricantName    = reservationToUpdate.vehicule.fabriquant.nom_fabriquant;
+                    string modeleName       = reservationToUpdate.vehicule.modele.nom_modele;
+                    string nbPassager       = reservationToUpdate.vehicule.modele.nb_place.ToString();
+                    string plateNo          = reservationToUpdate.vehicule.plaque_num;
 
                     // VEHICULE COMBOBOX
-                    cbReservationCreate_Succursale.SelectedIndex = cbReservationCreate_Succursale.FindStringExact(succursaleName);
-                    cbReservationCreate_marque.SelectedIndex = cbReservationCreate_marque.FindStringExact(fabricantName);
-                    cbReservationCreate_model.SelectedIndex = cbReservationCreate_model.FindStringExact(modeleName);
-                    cbReservationCreate_nbPassager.SelectedIndex = cbReservationCreate_nbPassager.FindStringExact(nbPassager);
-                    cbReservationCreate_noPlaque.SelectedIndex = cbReservationCreate_noPlaque.FindStringExact(plateNo);
+                    cbReservationCreate_Succursale.SelectedIndex    = cbReservationCreate_Succursale.FindStringExact(succursaleName);
+                    cbReservationCreate_marque.SelectedIndex        = cbReservationCreate_marque.FindStringExact(fabricantName);
+                    cbReservationCreate_model.SelectedIndex         = cbReservationCreate_model.FindStringExact(modeleName);
+                    cbReservationCreate_nbPassager.SelectedIndex    = cbReservationCreate_nbPassager.FindStringExact(nbPassager);
+                    cbReservationCreate_noPlaque.SelectedIndex      = cbReservationCreate_noPlaque.FindStringExact(plateNo);
 
                     // DATETIMEPICKER
-                    dateTimePicker_ReservationCreate_DateOUT.Value = reservationToUpdate.date_debut_reservation.Value.Date;
-                    dateTimePicker_ReservationCreate_DateIN.Value = reservationToUpdate.date_fin_reservation.Value.Date;
+                    dateTimePicker_ReservationCreate_DateOUT.Value  = reservationToUpdate.date_debut_reservation.Value.Date;
+                    dateTimePicker_ReservationCreate_DateIN.Value   = reservationToUpdate.date_fin_reservation.Value.Date;
 
                     String timeOut = reservationToUpdate.date_debut_reservation.Value.TimeOfDay.ToString().Substring(0, 5);
-                    String timeIn = reservationToUpdate.date_fin_reservation.Value.TimeOfDay.ToString().Substring(0, 5);
+                    String timeIn  = reservationToUpdate.date_fin_reservation.Value.TimeOfDay.ToString().Substring(0, 5);
 
                     // TIME COMBOBOX
                     cbReservationCreate_HeureOUT.SelectedIndex = cbReservationCreate_HeureOUT.FindStringExact(timeOut);
-                    cbReservationCreate_HeureIN.SelectedIndex = cbReservationCreate_HeureIN.FindStringExact(timeIn);
+                    cbReservationCreate_HeureIN.SelectedIndex  = cbReservationCreate_HeureIN.FindStringExact(timeIn);
 
                     setCarFieldStatus(true);
                 }
@@ -293,12 +291,12 @@ namespace LocationVoiture.Vues
 
                 txtClientCreate_clientId.Enabled = false;
 
-                txtClientCreate_clientId.Text = clientAdded.clientID.ToString();
-                txtClientCreate_nom.Text = clientAdded.nom;
-                txtClientCreate_prenom.Text = clientAdded.prenom;
-                txtClientCreate_phone.Text = clientAdded.telephone;
-                txtClientCreate_adresse.Text = clientAdded.adresse_client;
-                txtClientCreate_email.Text = clientAdded.courriel;
+                txtClientCreate_clientId.Text   = clientAdded.clientID.ToString();
+                txtClientCreate_nom.Text        = clientAdded.nom;
+                txtClientCreate_prenom.Text     = clientAdded.prenom;
+                txtClientCreate_phone.Text      = clientAdded.telephone;
+                txtClientCreate_adresse.Text    = clientAdded.adresse_client;
+                txtClientCreate_email.Text      = clientAdded.courriel;
             }
 
             this.Opacity = 1;
@@ -466,9 +464,9 @@ namespace LocationVoiture.Vues
             if (listeDesModeles.Count != 0 && listeVehicule.Count != 0)
             {
 
-                int modeleID = int.Parse((cbReservationCreate_model.SelectedItem as ComboboxItem).Value.ToString());
+                int modeleID    = int.Parse((cbReservationCreate_model.SelectedItem as ComboboxItem).Value.ToString());
                 int fabricantID = int.Parse((cbReservationCreate_marque.SelectedItem as ComboboxItem).Value.ToString());
-                int succID = int.Parse((cbReservationCreate_Succursale.SelectedItem as ComboboxItem).Value.ToString());
+                int succID      = int.Parse((cbReservationCreate_Succursale.SelectedItem as ComboboxItem).Value.ToString());
 
                 cbReservationCreate_noPlaque.DataSource = null;
 
@@ -519,53 +517,53 @@ namespace LocationVoiture.Vues
 
         private void disableClientField()
         {
-            txtClientCreate_clientId.Enabled = false;
-            txtClientCreate_nom.Enabled = false;
-            txtClientCreate_prenom.Enabled = false;
-            txtClientCreate_phone.Enabled = false;
-            txtClientCreate_adresse.Enabled = false;
-            txtClientCreate_email.Enabled = false;
+            txtClientCreate_clientId.Enabled    = false;
+            txtClientCreate_nom.Enabled         = false;
+            txtClientCreate_prenom.Enabled      = false;
+            txtClientCreate_phone.Enabled       = false;
+            txtClientCreate_adresse.Enabled     = false;
+            txtClientCreate_email.Enabled       = false;
         }
 
         private void setCarFieldStatus(bool status)
         {
-            cbReservationCreate_Succursale.Enabled = status;
-            cbReservationCreate_marque.Enabled = status;
-            cbReservationCreate_model.Enabled = status;
-            cbReservationCreate_nbPassager.Enabled = status;
-            cbReservationCreate_noPlaque.Enabled = status;
+            cbReservationCreate_Succursale.Enabled  = status;
+            cbReservationCreate_marque.Enabled      = status;
+            cbReservationCreate_model.Enabled       = status;
+            cbReservationCreate_nbPassager.Enabled  = status;
+            cbReservationCreate_noPlaque.Enabled    = status;
 
             dateTimePicker_ReservationCreate_DateOUT.Enabled = status;
-            dateTimePicker_ReservationCreate_DateIN.Enabled = status;
+            dateTimePicker_ReservationCreate_DateIN.Enabled  = status;
 
-            cbReservationCreate_HeureOUT.Enabled = status;
-            cbReservationCreate_HeureIN.Enabled = status;
+            cbReservationCreate_HeureOUT.Enabled    = status;
+            cbReservationCreate_HeureIN.Enabled     = status;
         }
 
         private void emptyClientFormFields()
         {
-            txtClientCreate_clientId.Text = "";
-            txtClientCreate_idSearch.Text = "";
-            txtClientCreate_nom.Text = "";
-            txtClientCreate_prenom.Text = "";
-            txtClientCreate_phone.Text = "";
-            txtClientCreate_adresse.Text = "";
-            txtClientCreate_email.Text = "";
+            txtClientCreate_clientId.Text   = "";
+            txtClientCreate_idSearch.Text   = "";
+            txtClientCreate_nom.Text        = "";
+            txtClientCreate_prenom.Text     = "";
+            txtClientCreate_phone.Text      = "";
+            txtClientCreate_adresse.Text    = "";
+            txtClientCreate_email.Text      = "";
 
             cbReservationCreate_HeureOUT.SelectedIndex = 0;
-            cbReservationCreate_HeureIN.SelectedIndex = 0;
+            cbReservationCreate_HeureIN.SelectedIndex  = 0;
 
             dateTimePicker_ReservationCreate_DateOUT.Value = DateTime.Now;
-            dateTimePicker_ReservationCreate_DateIN.Value = DateTime.Now;
+            dateTimePicker_ReservationCreate_DateIN.Value  = DateTime.Now;
         }
 
         private void setFieldsVisibility(bool visibilityChoice)
         {
-            btnClientForm_Find.Visible = visibilityChoice;
-            txtClientCreate_idSearch.Visible = visibilityChoice;
-            txtClientCreate_clientId.Visible = visibilityChoice;
-            lblClientCreate_id.Visible = visibilityChoice;
-            panelClientForm_id.Visible = visibilityChoice;
+            btnClientForm_Find.Visible          = visibilityChoice;
+            txtClientCreate_idSearch.Visible    = visibilityChoice;
+            txtClientCreate_clientId.Visible    = visibilityChoice;
+            lblClientCreate_id.Visible          = visibilityChoice;
+            panelClientForm_id.Visible          = visibilityChoice;
         }
 
         private void mouseEnterEventHandler(object sender, EventArgs e)

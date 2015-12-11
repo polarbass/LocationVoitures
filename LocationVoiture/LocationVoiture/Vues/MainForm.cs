@@ -147,9 +147,9 @@
             ClientForm clientForm = new ClientForm(MainForm.OPERATION_CREATION);
             clientForm.Owner = this;
 
-            panelSelector(false);
+            panelSelector(false);           
 
-            DialogResult dialogResult = clientForm.ShowDialog();
+            DialogResult dialogResult = clientForm.ShowDialog();            
 
             String messageToSend = clientForm.messageToSend;
             toggleMessage(dialogResult, messageToSend);
@@ -325,12 +325,12 @@
         private void tmr2_Tick(object sender, EventArgs e)
         {
 
-            if (RightTimeOut < 5)
+            if (RightTimeOut < 2)
             {
                 RightTimeOut++;
             }
 
-            if (RightTimeOut == 5)
+            if (RightTimeOut == 2)
             {
                 Animations.Animate(panel_Messages, Animations.Effect.Roll, 300, 180);
                 RightTimeOut = 0;
@@ -352,6 +352,7 @@
         public void toggleMessage(DialogResult dialogResult, String message)
         {
             panelSelector(true);
+            //Animations.Animate(panel_operation, Animations.Effect.Roll, 200, 180);
 
             if (dialogResult == DialogResult.OK)
             {
@@ -373,12 +374,14 @@
         {
             if (v)
             {
-                panel_operation.Show();
+                Animations.Animate(panel_operation, Animations.Effect.Roll, 80, 0);
+                //panel_operation.Show();
                 lblOperation.Show();
             }
             else
             {
-                panel_operation.Hide();
+                Animations.Animate(panel_operation, Animations.Effect.Roll, 80, 0);
+                //panel_operation.Hide();
                 lblOperation.Hide();
             }
 

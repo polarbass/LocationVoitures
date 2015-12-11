@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catégories>
+  <Catégorie Code="0" Nom="Informatique" url="Index.aspx?Cat=0"/>
+  <Catégorie Code="1" Nom="Sciences et techniques" url="Index.aspx?Cat=1" />
+  <Catégorie Code="2" Nom="Audiovisuel"  url="Index.aspx?Cat=2" />
+  <Catégorie Code="3" Nom="Bâtiments et travaux publics" url="Index.aspx?Cat=3" />
+  <Catégorie Code="4" Nom="Vie pratique" url="Index.aspx?Cat=4" />
+</Catégories>

@@ -105,7 +105,7 @@ namespace LocationVoiture.Vues
             this.dataGridView1.RowTemplate.Height = 36;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1117, 276);
-            this.dataGridView1.TabIndex = 126;
+            this.dataGridView1.TabIndex = 5;
             // 
             // lblLoading
             // 
@@ -116,7 +116,7 @@ namespace LocationVoiture.Vues
             this.lblLoading.Location = new System.Drawing.Point(632, 70);
             this.lblLoading.Name = "lblLoading";
             this.lblLoading.Size = new System.Drawing.Size(135, 17);
-            this.lblLoading.TabIndex = 125;
+            this.lblLoading.TabIndex = 9;
             this.lblLoading.Text = "Recherche en cours ...";
             // 
             // panel_message
@@ -126,7 +126,7 @@ namespace LocationVoiture.Vues
             this.panel_message.Location = new System.Drawing.Point(296, 59);
             this.panel_message.Name = "panel_message";
             this.panel_message.Size = new System.Drawing.Size(314, 28);
-            this.panel_message.TabIndex = 17;
+            this.panel_message.TabIndex = 8;
             // 
             // label3
             // 
@@ -137,7 +137,7 @@ namespace LocationVoiture.Vues
             this.label3.Location = new System.Drawing.Point(77, 4);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(164, 21);
-            this.label3.TabIndex = 18;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Aucun véhicule trouvé";
             // 
             // btnVehiculeSearch_select
@@ -149,7 +149,7 @@ namespace LocationVoiture.Vues
             this.btnVehiculeSearch_select.Location = new System.Drawing.Point(15, 422);
             this.btnVehiculeSearch_select.Name = "btnVehiculeSearch_select";
             this.btnVehiculeSearch_select.Size = new System.Drawing.Size(214, 32);
-            this.btnVehiculeSearch_select.TabIndex = 16;
+            this.btnVehiculeSearch_select.TabIndex = 3;
             this.btnVehiculeSearch_select.Text = "Selectionner";
             this.btnVehiculeSearch_select.UseVisualStyleBackColor = false;
             this.btnVehiculeSearch_select.Click += new System.EventHandler(this.btnEmployeSearch_select_Click);
@@ -165,7 +165,7 @@ namespace LocationVoiture.Vues
             this.panel11.Name = "panel11";
             this.panel11.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.panel11.Size = new System.Drawing.Size(314, 32);
-            this.panel11.TabIndex = 15;
+            this.panel11.TabIndex = 1;
             // 
             // cbVehiculeSearch
             // 
@@ -178,7 +178,7 @@ namespace LocationVoiture.Vues
             this.cbVehiculeSearch.Location = new System.Drawing.Point(0, 0);
             this.cbVehiculeSearch.Name = "cbVehiculeSearch";
             this.cbVehiculeSearch.Size = new System.Drawing.Size(314, 29);
-            this.cbVehiculeSearch.TabIndex = 117;
+            this.cbVehiculeSearch.TabIndex = 0;
             // 
             // txtVehiculeSearch_value
             // 
@@ -201,7 +201,7 @@ namespace LocationVoiture.Vues
             this.btnVehiculeSearch_find.Location = new System.Drawing.Point(631, 93);
             this.btnVehiculeSearch_find.Name = "btnVehiculeSearch_find";
             this.btnVehiculeSearch_find.Size = new System.Drawing.Size(151, 32);
-            this.btnVehiculeSearch_find.TabIndex = 6;
+            this.btnVehiculeSearch_find.TabIndex = 2;
             this.btnVehiculeSearch_find.Text = "Rechercher";
             this.btnVehiculeSearch_find.UseVisualStyleBackColor = false;
             this.btnVehiculeSearch_find.Click += new System.EventHandler(this.btnEmployeSearch_find_Click);
@@ -216,7 +216,7 @@ namespace LocationVoiture.Vues
             this.label2.Location = new System.Drawing.Point(15, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(161, 25);
-            this.label2.TabIndex = 5;
+            this.label2.TabIndex = 6;
             this.label2.Text = "Champ recherché";
             // 
             // label1
@@ -227,7 +227,7 @@ namespace LocationVoiture.Vues
             this.label1.Location = new System.Drawing.Point(15, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(241, 32);
-            this.label1.TabIndex = 4;
+            this.label1.TabIndex = 7;
             this.label1.Text = "Trouver un véhicule";
             // 
             // comboVehiculeSearch_FindBy
@@ -242,7 +242,7 @@ namespace LocationVoiture.Vues
             this.comboVehiculeSearch_FindBy.Location = new System.Drawing.Point(15, 95);
             this.comboVehiculeSearch_FindBy.Name = "comboVehiculeSearch_FindBy";
             this.comboVehiculeSearch_FindBy.Size = new System.Drawing.Size(254, 29);
-            this.comboVehiculeSearch_FindBy.TabIndex = 1;
+            this.comboVehiculeSearch_FindBy.TabIndex = 0;
             this.comboVehiculeSearch_FindBy.SelectedIndexChanged += new System.EventHandler(this.comboVehiculeSearch_FindBy_SelectedIndexChanged);
             // 
             // btnVehiculeSearch_cancel
@@ -254,7 +254,7 @@ namespace LocationVoiture.Vues
             this.btnVehiculeSearch_cancel.Location = new System.Drawing.Point(15, 464);
             this.btnVehiculeSearch_cancel.Name = "btnVehiculeSearch_cancel";
             this.btnVehiculeSearch_cancel.Size = new System.Drawing.Size(214, 32);
-            this.btnVehiculeSearch_cancel.TabIndex = 0;
+            this.btnVehiculeSearch_cancel.TabIndex = 4;
             this.btnVehiculeSearch_cancel.Text = "Annuler";
             this.btnVehiculeSearch_cancel.UseVisualStyleBackColor = false;
             this.btnVehiculeSearch_cancel.Click += new System.EventHandler(this.btnClientSearch_cancel_Click);

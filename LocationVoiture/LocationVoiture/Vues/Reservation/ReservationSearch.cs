@@ -45,6 +45,7 @@ namespace LocationVoiture.Vues
 
             btnReservationSearch_select.Enabled = false;
             panel_message.Hide();
+            lblLoading.Hide();
 
             // FadeIn FadeOut pour l'affichage des messages
             animationTimer.Tick += animationTimer_tick;
@@ -66,6 +67,7 @@ namespace LocationVoiture.Vues
         {
             String searchValue = txtReservationSearch_value.Text;
             String comboChoice = comboReservationSearch_FindBy.SelectedItem.ToString();
+            Animations.Animate(lblLoading, Animations.Effect.Slide, 50, 360);
             List<reservation> reservationFound = new List<reservation>();
 
             switch (comboChoice)
@@ -87,6 +89,8 @@ namespace LocationVoiture.Vues
                     reservationFound = locationController.ReservationsServices.FindBy(dateSearch, findByParameter.dateReservation.ToString());
                     break;
             }
+
+            Animations.Animate(lblLoading, Animations.Effect.Slide, 50, 360);
 
             // Si une ou des réservations sont trouvées
             if (reservationFound.Count > 0)
@@ -119,7 +123,7 @@ namespace LocationVoiture.Vues
             }
             else
             {
-                Animations.Animate(panel_message, Animations.Effect.Roll, 300, 180);
+                Animations.Animate(panel_message, Animations.Effect.Roll, 100, 180);
                 animationTimer.Start();
                 dataGridView1.DataSource = null;
                 btnReservationSearch_select.Enabled = false;
@@ -164,7 +168,6 @@ namespace LocationVoiture.Vues
             }
         }
 
-
         private void animationTimer_tick(object sender, EventArgs e)
         {
             if (RightTimeOut < 2)
@@ -174,12 +177,11 @@ namespace LocationVoiture.Vues
 
             if (RightTimeOut == 2)
             {
-                Animations.Animate(panel_message, Animations.Effect.Roll, 300, 180);
+                Animations.Animate(panel_message, Animations.Effect.Roll, 100, 180);
                 RightTimeOut = 0;
                 animationTimer.Stop();
             }
 
-            #endregion UTILITAIRES
         }
 
         private void mouseEnterEventHandler(object sender, EventArgs e)
@@ -195,6 +197,8 @@ namespace LocationVoiture.Vues
             button.BackColor = Color.Teal;
             button.ForeColor = Color.WhiteSmoke;
         }
+
+        #endregion UTILITAIRES
     }
-        
+
 }

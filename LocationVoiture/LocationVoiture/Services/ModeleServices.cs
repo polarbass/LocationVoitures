@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace LocationVoiture.Services
 {
-    class ModeleServices
+    public class ModeleServices
     {
 
         // Propriétés
-        public locationvoitureEntities modeleEntitie { get; private set; }
+        private ModelesDAO modelesDAO{ get; set; }
 
         // Constructeur
         public ModeleServices()
         {
-            modeleEntitie = new locationvoitureEntities();
+            modelesDAO = new ModelesDAO();
         }
 
         /// <summary>
@@ -27,8 +27,7 @@ namespace LocationVoiture.Services
         {
             try
             {
-                modeleEntitie.modeles.Add(modele);
-                Save();
+                modelesDAO.AddModele(modele);
             }
             catch 
             {
@@ -46,8 +45,7 @@ namespace LocationVoiture.Services
             modele modeleFinder = null;
             try
             {
-                int modeleID = int.Parse(searchValue);
-                modeleFinder = modeleEntitie.modeles.Where(mod => mod.modeleID == modeleID).Single();
+                modeleFinder = modelesDAO.FindModele(searchValue);
             }
             catch
             {
@@ -65,7 +63,7 @@ namespace LocationVoiture.Services
             List<modele> listeModeles = new List<modele>();
             try
             {
-                listeModeles = modeleEntitie.modeles.ToList();
+                listeModeles = modelesDAO.GetAll();
             }
             catch (Exception)
             {
@@ -75,6 +73,12 @@ namespace LocationVoiture.Services
             return listeModeles;
         }
 
+        /// <summary>
+        /// Recherche de modele qui répondent aux critères de recherche
+        /// </summary>
+        /// <param name="searchValue">La valeur qui est recherché</param>
+        /// <param name="searchBy">La colonne de recherche</param>
+        /// <returns>Une liste de modèle qui correspondes aux critères : Liste vide sinon</returns>
         public List<modele> findBy(String searchValue, String searchBy)
         {
             List<modele> modeleFinder = new List<modele>();
@@ -83,19 +87,7 @@ namespace LocationVoiture.Services
             {
                 try
                 {
-                    int searchValueInt;
-
-                    // SEARCH BY FABRICANT ID
-                    if (searchBy.Equals("fabricantID"))
-                    {
-                        searchValueInt = int.Parse(searchValue);
-
-                        var query = (from vehi in modeleEntitie.vehicules
-                                     where vehi.fabriquantID == searchValueInt
-                                     select vehi.modele).Distinct();
-
-                        modeleFinder = query.ToList();
-                    }
+                    modeleFinder = modelesDAO.findBy(searchValue, searchBy);                 
                 }
                 catch (Exception)
                 {
@@ -118,12 +110,7 @@ namespace LocationVoiture.Services
             List<modele> listeDistinctModels = new List<modele>();
             try
             {
-                var query = (from vehi in modeleEntitie.vehicules.Include("modele").Include("fabriquant")
-                             where vehi.succursaleID == succursaleID
-                             where vehi.fabriquantID == fabricantID
-                             select vehi.modele).Distinct();
-
-                listeDistinctModels = query.ToList();
+                listeDistinctModels = modelesDAO.DistinctModelBySuccursaleAndFabricant(succursaleID, fabricantID);
             }
             catch
             {
@@ -142,14 +129,12 @@ namespace LocationVoiture.Services
             int nbPassager = 0;
             try
             {
-                modele mod = modeleEntitie.modeles.Where(p => p.modeleID == modeleID).Single();
-                nbPassager = (int)mod.nb_place;
+                nbPassager = modelesDAO.getNbPassager(modeleID);
             }
             catch
             {
                 Console.WriteLine("Erreur : Cannot retreive nombre de passager (Méthode getNbPassager)");
             }
-
             return nbPassager;
         }
 
@@ -158,8 +143,7 @@ namespace LocationVoiture.Services
         /// </summary>
         public void Save()
         {
-            modeleEntitie.SaveChanges();
-            modeleEntitie.Dispose();
+            modelesDAO.Save();
         }
 
     }

@@ -8,11 +8,11 @@ namespace LocationVoiture.Services
     public class EmployeServices
     {
 
-        private locationvoitureEntities EmployeEntitie { get; set; }
+        private EmployesDAO employesDAO { get; set; }
 
         public EmployeServices()
         {
-            EmployeEntitie = new locationvoitureEntities();
+            employesDAO = new EmployesDAO();
         }
 
         /// <summary>
@@ -23,18 +23,18 @@ namespace LocationVoiture.Services
         public Boolean AddEmploye(employe employe)
         {
             bool isAdded = false;
-            employe.date_embauche = DateTime.Now;
 
             try
             {
-                EmployeEntitie.employes.Add(employe);
-                Save();
-                isAdded = true;
+                if (employesDAO.AddEmploye(employe))
+                {
+                    isAdded = true;
+                }
+                
             }
             catch
             {
                 Console.WriteLine("Erreur AddEmploye");
-                isAdded = false; 
             }
 
             return isAdded;
@@ -50,8 +50,7 @@ namespace LocationVoiture.Services
             employe employeFinder = null;
             try
             {
-                int empID = int.Parse(searchValue);
-                employeFinder = EmployeEntitie.employes.Where(emp => emp.employeID == empID).Single();
+                employeFinder = employesDAO.Find(searchValue);
             }
             catch
             {
@@ -68,8 +67,7 @@ namespace LocationVoiture.Services
         {
             try
             {
-                EmployeEntitie.employes.Remove(employeToDelete);
-                Save();
+                employesDAO.DeleteEmploye(employeToDelete);
             }
             catch
             {
@@ -85,46 +83,7 @@ namespace LocationVoiture.Services
             {
                 try
                 {
-
-                    // SEARCH BY EMPLOYE ID
-                    if (searchBy.Equals("employeID"))
-                    {
-                        int searchValueInt = int.Parse(searchValue);
-
-                        employeFinder = EmployeEntitie.employes.Where(emp => emp.employeID == searchValueInt).ToList();
-                    }
-
-                    // SEARCH BY EMPLOYE NOM
-                    else if (searchBy.Equals("nom") || searchBy.Equals("prenom"))
-                    {
-                        employeFinder = EmployeEntitie.employes.Where(emp => emp.nom.ToLower().Contains(searchValue.ToLower())).ToList();
-                    }
-
-                    // SEARCH BY EMPLOYE USERNAME
-                    else if (searchBy.Equals("username"))
-                    {
-                        employeFinder = EmployeEntitie.employes.Where(emp => emp.username.ToLower().Contains(searchValue.ToLower())).ToList();
-                    }
-
-                    // SEARCH BY EMPLOYE TELEPHONE
-                    else if (searchBy.Equals("telephone"))
-                    {
-                        employeFinder = EmployeEntitie.employes.Where(emp => emp.telephone == searchValue).ToList();
-                    }
-
-                    // SEARCH BY EMPLOYES FONCTIONS
-                    else if (searchBy.Equals("fonction"))
-                    {
-                        employeFinder = EmployeEntitie.employes.Where(emp => emp.fonction.ToLower().Contains(searchValue.ToLower())).ToList();
-                    }
-                    // SEARCH BY EMPLOYES SUCCURSALE
-                    else if (searchBy.Equals("succursale"))
-                    {
-                        int searchValueInt = int.Parse(searchValue);
-
-                        employeFinder = EmployeEntitie.employes.Where(emp => emp.succursaleID == searchValueInt).ToList();
-                    }
-
+                    employeFinder = employesDAO.FindBy(searchValue, searchBy);
                 }
                 catch
                 {
@@ -141,16 +100,7 @@ namespace LocationVoiture.Services
         /// </summary>
         public bool Save()
         {
-            try
-            {
-                EmployeEntitie.SaveChanges();
-                EmployeEntitie.Dispose();
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+            return employesDAO.Save();
         }
     }
 }

@@ -8,13 +8,13 @@ using System.Windows.Forms;
 
 namespace LocationVoiture.Services
 {
-    class LoginServices
+    public class LoginServices
     {
         public locationvoitureEntities LoginEntitie { get; private set; }
 
-        public LoginServices(locationvoitureEntities loginEntitie)
+        public LoginServices()
         {
-            LoginEntitie = loginEntitie;
+            LoginEntitie = new locationvoitureEntities();
         }
 
 

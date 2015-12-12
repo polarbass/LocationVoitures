@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace LocationVoiture.Services
 {
-    class FabricantsServices
+    public class FabricantsServices
     {
 
         // Propriétés
 
-        private locationvoitureEntities fabricantsEntitie { get; set; }
+        private FabricantsDAO fabricantsDAO{ get; set; }
 
         // Constructeur
 
         public FabricantsServices()
         {
-            fabricantsEntitie = new locationvoitureEntities();
+            fabricantsDAO = new FabricantsDAO();
         }
 
         /// <summary>
@@ -29,10 +29,9 @@ namespace LocationVoiture.Services
         {
             try
             {
-                fabricantsEntitie.fabriquants.Add(fabriquant);
-                Save();
+                fabricantsDAO.AddFabriquant(fabriquant);
             }
-            catch (System.Data.Entity.Core.EntityException)
+            catch
             {
                 Console.WriteLine("Erreur : Cannot Add Fabriquants (Méthode AddFabriquant)");
             }
@@ -48,10 +47,9 @@ namespace LocationVoiture.Services
             fabriquant fabriquantFinder = null;
             try
             {
-                int fabriquantID = int.Parse(searchValue);
-                fabriquantFinder = fabricantsEntitie.fabriquants.Where(fab => fab.fabriquantID == fabriquantID).Single();
+                fabriquantFinder = fabricantsDAO.FindFabriquant(searchValue);
             }
-            catch (System.Data.Entity.Core.EntityException)
+            catch
             {
                 Console.WriteLine("Erreur : Cannot Find Vehicule (Méthode FindVehicule)");
             }
@@ -67,7 +65,7 @@ namespace LocationVoiture.Services
             List<fabriquant> listeFabriquants = new List<fabriquant>();
             try
             {
-                listeFabriquants = fabricantsEntitie.fabriquants.ToList();
+                listeFabriquants = fabricantsDAO.GetAllFabriquants();
             }
             catch (Exception)
             {
@@ -87,17 +85,12 @@ namespace LocationVoiture.Services
             List<fabriquant> vehiculeFinder = new List<fabriquant>();
             try
             {
-                var query = (from vehi in fabricantsEntitie.vehicules.Include("modele").Include("fabriquant")
-                             where vehi.succursaleID == succuraleID
-                             select vehi.fabriquant).Distinct();
-
-                vehiculeFinder = query.ToList();
+                vehiculeFinder = fabricantsDAO.GetDistinctFabriquants(succuraleID);
             }
-            catch (System.Data.Entity.Core.EntityException)
+            catch
             {
                 Console.WriteLine("Erreur : Cannot retreive Distinct fabriquant (Méthode GetDistinctFabriquants)");
             }
-
             return vehiculeFinder;
         }
 
@@ -106,8 +99,7 @@ namespace LocationVoiture.Services
         /// </summary>
         public void Save()
         {
-            fabricantsEntitie.SaveChanges();
-            fabricantsEntitie.Dispose();
+            fabricantsDAO.Save();
         }
     }
 }

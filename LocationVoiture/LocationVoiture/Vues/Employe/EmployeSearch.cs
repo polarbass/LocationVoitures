@@ -52,7 +52,7 @@ namespace LocationVoiture.Vues
             // FadeIn FadeOut pour l'affichage des messages
             animationTimer.Tick += animationTimer_tick;
 
-            // Paramètre de recherche disponible
+            // Paramètres de recherche disponibles
             foreach (findByParameter parameter in Enum.GetValues(typeof(findByParameter)))
             {
                 comboEmployeSearch_FindBy.Items.Add(parameter);
@@ -61,6 +61,8 @@ namespace LocationVoiture.Vues
             comboEmployeSearch_FindBy.SelectedIndex = 0;
 
         }
+
+        #region BOUTONS
 
         /// <summary>
         /// SEARCH
@@ -166,32 +168,22 @@ namespace LocationVoiture.Vues
             this.Close();
         }
 
-        #region UTILITAIRES
+        #endregion BOUTONS
 
-        private void animationTimer_tick(object sender, EventArgs e)
-        {
-            if (RightTimeOut < 2)
-            {
-                RightTimeOut++;
-            }
+        #region COMBOBOX
 
-            if (RightTimeOut == 2)
-            {
-                Animations.Animate(panel_message, Animations.Effect.Roll, 100, 180);
-                RightTimeOut = 0;
-                animationTimer.Stop();
-            }
-        }
-
-        #endregion UTILITAIRES
-
+        /// <summary>
+        /// Permet d'afficher le combobox des succursales ou celui des fonctions des employés
+        /// </summary>        
         private void comboEmployeSearch_FindBy_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+            // Combo rempli avec toutes les succursales disponibles
             if (comboEmployeSearch_FindBy.SelectedItem.ToString().Equals(findByParameter.succursale.ToString()))
             {
                 cbEmployeSearch.Items.Clear();
                 txtEmployeSearch_value.Text = "";
+                txtEmployeSearch_value.Enabled = false;
                 List<succursale> succursales = locationController.SuccursalesServices.getAllSuccursale();
                 foreach (succursale succ in succursales)
                 {
@@ -201,11 +193,12 @@ namespace LocationVoiture.Vues
 
                     cbEmployeSearch.Items.Add(item);
                 }
-                
+
                 cbEmployeSearch.SelectedIndex = 0;
                 cbEmployeSearch.Show();
             }
 
+            // Combo rempli avec les fonctions disponibles chez Locomotion
             else if (comboEmployeSearch_FindBy.SelectedItem.ToString().Equals(findByParameter.fonction.ToString()))
             {
                 cbEmployeSearch.Items.Clear();
@@ -223,9 +216,36 @@ namespace LocationVoiture.Vues
             else
             {
                 cbEmployeSearch.Hide();
+                txtEmployeSearch_value.Enabled = true;
             }
 
         }
+
+        #endregion COMBOBOX
+
+        #region UTILITAIRES
+
+        /// <summary>
+        /// Durée des animations
+        /// </summary>
+        private void animationTimer_tick(object sender, EventArgs e)
+        {
+            if (RightTimeOut < 1)
+            {
+                RightTimeOut++;
+            }
+
+            if (RightTimeOut == 1)
+            {
+                Animations.Animate(panel_message, Animations.Effect.Roll, 100, 180);
+                RightTimeOut = 0;
+                animationTimer.Stop();
+            }
+        }
+
+        #endregion UTILITAIRES
+
+        #region EVENTS
 
         private void mouseEnterEventHandler(object sender, EventArgs e)
         {
@@ -240,6 +260,8 @@ namespace LocationVoiture.Vues
             button.BackColor = Color.Teal;
             button.ForeColor = Color.WhiteSmoke;
         }
+
+        #endregion EVENTS
 
     }
 }

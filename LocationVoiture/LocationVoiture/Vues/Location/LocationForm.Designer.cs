@@ -81,7 +81,7 @@
             this.lblClientCreate_nom = new System.Windows.Forms.Label();
             this.txtClientCreate_cancel = new System.Windows.Forms.Button();
             this.btnClientCreate_add = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblReservation_today = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_reservation)).BeginInit();
             this.panel2.SuspendLayout();
@@ -140,7 +140,7 @@
             this.panel1.Controls.Add(this.lblClientCreate_nom);
             this.panel1.Controls.Add(this.txtClientCreate_cancel);
             this.panel1.Controls.Add(this.btnClientCreate_add);
-            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.lblReservation_today);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -771,17 +771,17 @@
             this.btnClientCreate_add.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
             this.btnClientCreate_add.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
             // 
-            // label4
+            // lblReservation_today
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Silver;
-            this.label4.Location = new System.Drawing.Point(891, 42);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(186, 21);
-            this.label4.TabIndex = 42;
-            this.label4.Text = "Lundi 7 décembre 2015";
+            this.lblReservation_today.AutoSize = true;
+            this.lblReservation_today.BackColor = System.Drawing.Color.White;
+            this.lblReservation_today.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReservation_today.ForeColor = System.Drawing.Color.Silver;
+            this.lblReservation_today.Location = new System.Drawing.Point(891, 42);
+            this.lblReservation_today.Name = "lblReservation_today";
+            this.lblReservation_today.Size = new System.Drawing.Size(186, 21);
+            this.lblReservation_today.TabIndex = 42;
+            this.lblReservation_today.Text = "Lundi 7 décembre 2015";
             // 
             // LocationForm
             // 
@@ -870,7 +870,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker_ReservationCreate_DateIN;
         private System.Windows.Forms.Label lblLoading;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblReservation_today;
         private System.Windows.Forms.DataGridView dataGridView_reservation;
         private System.Windows.Forms.DateTimePicker dateTimePicker_today;
     }

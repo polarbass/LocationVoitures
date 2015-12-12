@@ -61,8 +61,10 @@ namespace LocationVoiture.Vues
 
         }
 
+        #region BOUTONS
+
         /// <summary>
-        /// SEARCH
+        /// Recherche employé(s)
         /// </summary>
         private void btnEmployeSearch_find_Click(object sender, EventArgs e)
         {
@@ -129,7 +131,7 @@ namespace LocationVoiture.Vues
             }
             else
             {
-                Animations.Animate(panel_message, Animations.Effect.Roll, 200, 180);
+                Animations.Animate(panel_message, Animations.Effect.Roll, 100, 180);
                 animationTimer.Start();
                 dataGridView1.DataSource = null;
                 btnVehiculeSearch_select.Enabled = false;
@@ -139,7 +141,7 @@ namespace LocationVoiture.Vues
         /// <summary>
         /// Fermer la recherche
         /// </summary>
-        private void btnClientSearch_cancel_Click(object sender, EventArgs e)
+        private void btnVehiculeSearch_cancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -147,7 +149,7 @@ namespace LocationVoiture.Vues
         /// <summary>
         /// Selection du client
         /// </summary>
-        private void btnEmployeSearch_select_Click(object sender, EventArgs e)
+        private void btnVehiculeSearch_select_Click(object sender, EventArgs e)
         {
             int selectedRow = dataGridView1.CurrentRow.Index;
             object selectedRowID = dataGridView1[0, selectedRow].Value;
@@ -159,25 +161,13 @@ namespace LocationVoiture.Vues
             this.Close();
         }
 
-        #region UTILITAIRES
+        #endregion BOUTONS
 
-        private void animationTimer_tick(object sender, EventArgs e)
-        {
-            if (RightTimeOut < 2)
-            {
-                RightTimeOut++;
-            }
+        #region COMBOBOX
 
-            if (RightTimeOut == 2)
-            {
-                Animations.Animate(panel_message, Animations.Effect.Roll, 200, 180);
-                RightTimeOut = 0;
-                animationTimer.Stop();
-            }
-        }
-
-        #endregion UTILITAIRES
-
+        /// <summary>
+        /// Affichange du combobox comboVehicleSearch_FindBy et remplissage selon le paramètre choisi
+        /// </summary>
         private void comboVehiculeSearch_FindBy_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Succursales
@@ -185,6 +175,7 @@ namespace LocationVoiture.Vues
             {
                 cbVehiculeSearch.Items.Clear();
                 txtVehiculeSearch_value.Text = "";
+                txtVehiculeSearch_value.Enabled = false;
                 List<succursale> succursales = locationController.SuccursalesServices.getAllSuccursale();
                 foreach (succursale succ in succursales)
                 {
@@ -194,7 +185,7 @@ namespace LocationVoiture.Vues
 
                     cbVehiculeSearch.Items.Add(item);
                 }
-                
+
                 cbVehiculeSearch.SelectedIndex = 0;
                 cbVehiculeSearch.Show();
             }
@@ -204,7 +195,8 @@ namespace LocationVoiture.Vues
             {
                 cbVehiculeSearch.Items.Clear();
                 txtVehiculeSearch_value.Text = "";
-                List<fabriquant> fabricants= locationController.FabricantsService.GetAllFabriquants();
+                txtVehiculeSearch_value.Enabled = false;
+                List<fabriquant> fabricants = locationController.FabricantsService.GetAllFabriquants();
                 foreach (fabriquant fab in fabricants)
                 {
                     ComboboxItem item = new ComboboxItem();
@@ -223,6 +215,7 @@ namespace LocationVoiture.Vues
             {
                 cbVehiculeSearch.Items.Clear();
                 txtVehiculeSearch_value.Text = "";
+                txtVehiculeSearch_value.Enabled = false;
                 List<modele> modeles = locationController.ModelesServices.GetAll();
                 foreach (modele mod in modeles)
                 {
@@ -240,11 +233,33 @@ namespace LocationVoiture.Vues
             else
             {
                 cbVehiculeSearch.Hide();
+                txtVehiculeSearch_value.Enabled = true;
             }
 
         }
 
+        #endregion COMBOBOX
+
         #region UTILITAIRES
+
+        private void animationTimer_tick(object sender, EventArgs e)
+        {
+            if (RightTimeOut < 1)
+            {
+                RightTimeOut++;
+            }
+
+            if (RightTimeOut == 1)
+            {
+                Animations.Animate(panel_message, Animations.Effect.Roll, 200, 180);
+                RightTimeOut = 0;
+                animationTimer.Stop();
+            }
+        }
+
+        #endregion UTILITAIRES
+
+        #region EVENTS
 
         private void mouseEnterEventHandler(object sender, EventArgs e)
         {
@@ -260,6 +275,6 @@ namespace LocationVoiture.Vues
             button.ForeColor = Color.WhiteSmoke;
         }
 
-        #endregion UTILITAIRES
+        #endregion EVENTS
     }
 }

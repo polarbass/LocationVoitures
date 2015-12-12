@@ -152,7 +152,7 @@ namespace LocationVoiture.Vues
             this.btnVehiculeSearch_select.TabIndex = 3;
             this.btnVehiculeSearch_select.Text = "Selectionner";
             this.btnVehiculeSearch_select.UseVisualStyleBackColor = false;
-            this.btnVehiculeSearch_select.Click += new System.EventHandler(this.btnEmployeSearch_select_Click);
+            this.btnVehiculeSearch_select.Click += new System.EventHandler(this.btnVehiculeSearch_select_Click);
             this.btnVehiculeSearch_select.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
             this.btnVehiculeSearch_select.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
             // 
@@ -257,7 +257,7 @@ namespace LocationVoiture.Vues
             this.btnVehiculeSearch_cancel.TabIndex = 4;
             this.btnVehiculeSearch_cancel.Text = "Annuler";
             this.btnVehiculeSearch_cancel.UseVisualStyleBackColor = false;
-            this.btnVehiculeSearch_cancel.Click += new System.EventHandler(this.btnClientSearch_cancel_Click);
+            this.btnVehiculeSearch_cancel.Click += new System.EventHandler(this.btnVehiculeSearch_cancel_Click);
             // 
             // animationTimer
             // 

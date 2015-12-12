@@ -49,7 +49,7 @@ namespace LocationVoiture.Vues
             // FadeIn FadeOut pour l'affichage des messages
             animationTimer.Tick += animationTimer_tick;
 
-            // Paramètre de recherche disponible
+            // Paramètres de recherches disponibles
             foreach (findByParameter parameter in Enum.GetValues(typeof(findByParameter)))
             {
                 comboSuccursaleSearch_FindBy.Items.Add(parameter);
@@ -58,6 +58,8 @@ namespace LocationVoiture.Vues
             comboSuccursaleSearch_FindBy.SelectedIndex = 0;
 
         }
+
+        #region BOUTONS
 
         /// <summary>
         /// SEARCH
@@ -123,7 +125,7 @@ namespace LocationVoiture.Vues
             }
             else
             {
-                Animations.Animate(panel_message, Animations.Effect.Roll, 200, 180);
+                Animations.Animate(panel_message, Animations.Effect.Roll, 100, 180);
                 animationTimer.Start();
                 dataGridView1.DataSource = null;
                 btnSuccursaleSearch_select.Enabled = false;
@@ -153,25 +155,29 @@ namespace LocationVoiture.Vues
             this.Close();
         }
 
+        #endregion BOUTONS
+
         #region UTILITAIRES
 
         private void animationTimer_tick(object sender, EventArgs e)
         {
-            if (RightTimeOut < 2)
+            if (RightTimeOut < 1)
             {
                 RightTimeOut++;
             }
 
-            if (RightTimeOut == 2)
+            if (RightTimeOut == 1)
             {
-                Animations.Animate(panel_message, Animations.Effect.Roll, 200, 180);
+                Animations.Animate(panel_message, Animations.Effect.Roll, 100, 180);
                 RightTimeOut = 0;
                 animationTimer.Stop();
             }
         }
 
         #endregion UTILITAIRES
-     
+
+        #region EVENTS
+
         private void mouseEnterEventHandler(object sender, EventArgs e)
         {
             var button = (Button)sender;
@@ -185,6 +191,8 @@ namespace LocationVoiture.Vues
             button.BackColor = Color.Teal;
             button.ForeColor = Color.WhiteSmoke;
         }
+
+        #endregion EVENTS
 
     }
 }

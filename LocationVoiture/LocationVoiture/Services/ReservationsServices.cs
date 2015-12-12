@@ -9,15 +9,15 @@ using System.Windows.Forms;
 
 namespace LocationVoiture.Services
 {
-    class ReservationsServices
+    public class ReservationsServices
     {
         // Propriétés
-        public locationvoitureEntities reservationEntitie { get; private set; }
+        private ReservationsDAO reservationsDAO{ get; set; }
 
         //Constructeur
         public ReservationsServices()
         {
-            reservationEntitie = new locationvoitureEntities();
+            reservationsDAO = new ReservationsDAO();
         }
 
         /// <summary>
@@ -27,18 +27,7 @@ namespace LocationVoiture.Services
         /// <returns>True si la réservation a été ajouté ; False sinon</returns>
         public Boolean AddReservation(reservation reservationToAdd)
         {
-            bool isAdded = false;        
-            try
-            {
-                reservationEntitie.reservations.Add(reservationToAdd);
-                Save();
-                isAdded = true;
-            }
-            catch
-            {
-                Console.WriteLine("Erreur : Cannot Add reservation (Méthode AddReservation)");
-            }
-            return isAdded;
+            return reservationsDAO.AddReservation(reservationToAdd);
         }
 
         /// <summary>
@@ -51,8 +40,7 @@ namespace LocationVoiture.Services
             reservation reservationFinder = null;
             try
             {
-                int reservationID = int.Parse(searchValue);
-                reservationFinder = reservationEntitie.reservations.Where(res => res.reservationID == reservationID).Single();
+                reservationFinder = reservationsDAO.FindReservation(searchValue);
             }
             catch
             {
@@ -69,60 +57,13 @@ namespace LocationVoiture.Services
             {
                 try
                 {
-
-                    int searchValueInt;                    
-
-                    // SEARCH BY EMPLOYE ID
-                    if (searchBy.Equals("reservationID"))
-                    {
-                        searchValueInt = int.Parse(searchValue);
-                        reservationFinder = reservationEntitie.reservations.Where(res => res.reservationID == searchValueInt).ToList();
-                    }
-
-                    // SEARCH BY EMPLOYE NOM
-                    else if (searchBy.Equals("clientID"))
-                    {
-                        searchValueInt = int.Parse(searchValue);
-                        reservationFinder = reservationEntitie.reservations.Where(res => res.clientID == searchValueInt).ToList();
-                    }
-
-                    // SEARCH BY EMPLOYE USERNAME
-                    else if (searchBy.Equals("employeID"))
-                    {
-                        searchValueInt = int.Parse(searchValue);
-                        reservationFinder = reservationEntitie.reservations.Where(res => res.employeID == searchValueInt).ToList();
-                    }
-
-                    // SEARCH BY EMPLOYE succursaleID
-                    else if (searchBy.Equals("succursaleID"))
-                    {
-                        searchValueInt = int.Parse(searchValue);
-                        reservationFinder = reservationEntitie.reservations.Where(res => res.succursaleID == searchValueInt).ToList();
-                    }
-
-                    // SEARCH BY reservation dateReservation
-                    else if (searchBy.Equals("dateReservation"))
-                    {
-                        //reservationFinder = reservationEntitie.reservations.Where(res => res.date_debut_reservation.Value.Date == dateReservation.Date).ToList();
-
-                        DateTime dateReservation = Convert.ToDateTime(searchValue);
-                        foreach (reservation res in reservationEntitie.reservations.ToList())
-                        {
-                            if(res.date_debut_reservation.Value.Date == dateReservation.Date)
-                            {
-                                reservationFinder.Add(res);
-                            }
-                        }
-                    }
-
+                    reservationFinder = reservationsDAO.FindBy(searchValue, searchBy);                   
                 }
                 catch
                 {
                     Console.WriteLine("Erreur dans le findBy Reservation");
                 }
-
             }
-
             return reservationFinder;
         }
 
@@ -131,17 +72,7 @@ namespace LocationVoiture.Services
         /// </summary>
         public Boolean Save()
         {
-            try
-            {
-                reservationEntitie.SaveChanges();
-                reservationEntitie.Dispose();
-                return true;
-            }
-            catch
-            {
-                Console.WriteLine("Erreur : Cannot Add reservation (Méthode AddReservation)");
-                return false;
-            }
+            return reservationsDAO.Save();
         }
     }
 }

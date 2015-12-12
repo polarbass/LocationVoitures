@@ -3,25 +3,23 @@ using LocationVoiture.Services;
 
 namespace LocationVoiture.Controller
 {
-    class LocationController
+    public class LocationController
     {
-        private locationvoitureEntities entitie { get; set; }
-
         public ClientsServices      ClientsServices { get; private set; }
-        public LoginServices        LoginServices { get; set; }
-        public ModeleServices       ModelesServices { get; set; }
-        public ReservationsServices ReservationsServices { get; set; }
-        public SuccursalesServices  SuccursalesServices { get; set; }
-        public VehiculeServices     VehiculeServices { get; set; }
-        public FabricantsServices   FabricantsService { get; set; }
-        public EmployeServices      EmployesService { get; set; }
-        public TypesServices        TypesService { get; set; } 
+        public LoginServices        LoginServices { get; private set; }
+        public ModeleServices       ModelesServices { get; private set; }
+        public ReservationsServices ReservationsServices { get; private set; }
+        public SuccursalesServices  SuccursalesServices { get; private set; }
+        public VehiculeServices     VehiculeServices { get; private set; }
+        public FabricantsServices   FabricantsService { get; private set; }
+        public EmployeServices      EmployesService { get; private set; }
+        public TypesServices        TypesService { get; private set; } 
 
         public LocationController()
         {
-            ClientsServices         = new ClientsServices(new locationvoitureEntities());
-            LoginServices           = new LoginServices(new locationvoitureEntities());
-            SuccursalesServices     = new SuccursalesServices(new locationvoitureEntities());
+            ClientsServices         = new ClientsServices();
+            LoginServices           = new LoginServices();
+            SuccursalesServices     = new SuccursalesServices();
             VehiculeServices        = new VehiculeServices();
             FabricantsService       = new FabricantsServices();
             ModelesServices         = new ModeleServices();

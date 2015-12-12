@@ -137,7 +137,7 @@
             this.btnReservationSearch_select.TabIndex = 3;
             this.btnReservationSearch_select.Text = "Selectionner";
             this.btnReservationSearch_select.UseVisualStyleBackColor = false;
-            this.btnReservationSearch_select.Click += new System.EventHandler(this.btnClientSearch_select_Click);
+            this.btnReservationSearch_select.Click += new System.EventHandler(this.btnReservationSearch_select_Click);
             this.btnReservationSearch_select.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
             this.btnReservationSearch_select.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
             // 
@@ -189,7 +189,7 @@
             this.btnReservationSearch_find.TabIndex = 2;
             this.btnReservationSearch_find.Text = "Rechercher";
             this.btnReservationSearch_find.UseVisualStyleBackColor = false;
-            this.btnReservationSearch_find.Click += new System.EventHandler(this.btnClientSearch_find_Click);
+            this.btnReservationSearch_find.Click += new System.EventHandler(this.btnReservationSearch_find_Click);
             this.btnReservationSearch_find.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
             this.btnReservationSearch_find.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
             // 

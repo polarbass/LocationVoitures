@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace LocationVoiture.Services
 {
-    class SuccursalesServices
+    public class SuccursalesServices
     {
-        private locationvoitureEntities succursaleEntitie { get; set; }
+        private SuccursalesDAO succursalesDAO { get; set; }
 
-        public SuccursalesServices(locationvoitureEntities succursaleEntities)
+        public SuccursalesServices()
         {
-            succursaleEntitie = succursaleEntities;
+            succursalesDAO = new SuccursalesDAO();
         }
 
         /// <summary>
@@ -22,18 +22,7 @@ namespace LocationVoiture.Services
         /// <param name="succursale">La succursale qui doit être ajoutée</param>
         public bool addSuccursale(succursale succursale)
         {
-            try
-            {
-                succursaleEntitie.succursales.Add(succursale);
-                Save();
-                return true;
-            }
-            catch
-            {
-                Console.WriteLine("Erreur : Cannot Add Succursale (Méthode AddSuccursale)");
-                return false;
-            }
-            
+            return succursalesDAO.addSuccursale(succursale);            
         }
 
         /// <summary>
@@ -46,8 +35,7 @@ namespace LocationVoiture.Services
             succursale succursaleToFind = null;
             try
             {
-                int succursaleID = int.Parse(searchValue);
-                succursaleToFind = succursaleEntitie.succursales.Where(succ => succ.succursaleID == succursaleID).SingleOrDefault();
+                succursaleToFind = succursalesDAO.Find(searchValue);
             }
             catch
             {
@@ -56,6 +44,12 @@ namespace LocationVoiture.Services
             return succursaleToFind;
         }
 
+        /// <summary>
+        /// Recherche les succursales selon certains critères
+        /// </summary>
+        /// <param name="searchValue">La valeur recherchée</param>
+        /// <param name="searchBy">Le paramètre de recherche</param>
+        /// <returns>Une liste contenant les succursales qui correspondes : Une liste vide sinon</returns>
         public List<succursale> FindBy(String searchValue, String searchBy)
         {
             List<succursale> succursaleFinder = new List<succursale>();
@@ -64,42 +58,13 @@ namespace LocationVoiture.Services
             {
                 try
                 {
-                    // SEARCH BY SUCCURSALE ID
-                    if (searchBy.Equals("succursaleID"))
-                    {
-                        int searchByInt = int.Parse(searchValue);
-                        succursaleFinder = succursaleEntitie.succursales.Where(succ => succ.succursaleID == searchByInt).ToList();
-                    }
-
-                    // SEARCH BY SUCCURSALE NAME
-                    if (searchBy.Equals("nom"))
-                    {
-                        succursaleFinder = succursaleEntitie.succursales.Where(succ => succ.nom.ToLower().Contains(searchValue.ToLower())).ToList();
-                    }
-
-                    // SEARCH BY SUCCURSALE ADDRESSE
-                    if (searchBy.Equals("addresse"))
-                    {
-                        succursaleFinder = succursaleEntitie.succursales.Where(succ => succ.addresse.ToLower().Contains(searchValue.ToLower())).ToList();
-                    }
-                    // SEARCH BY SUCCURSALE TELEPHONE
-                    if (searchBy.Equals("telephone"))
-                    {
-                        succursaleFinder = succursaleEntitie.succursales.Where(succ => succ.telephone.ToLower().Contains(searchValue.ToLower())).ToList();
-                    }
-                    // SEARCH BY SUCCURSALE COURRIEL
-                    if (searchBy.Equals("courriel"))
-                    {
-                        succursaleFinder = succursaleEntitie.succursales.Where(succ => succ.courriel.ToLower().Contains(searchValue.ToLower())).ToList();
-                    }
-
+                    succursaleFinder = succursalesDAO.FindBy(searchValue, searchBy);
                 }
                 catch
                 {
                     Console.WriteLine("Erreur dans le findBy Reservation");
                 }
             }
-
             return succursaleFinder;
         }
 
@@ -112,22 +77,24 @@ namespace LocationVoiture.Services
             List<succursale> listSsuccursale = new List<succursale>();
             try
             {
-                listSsuccursale = succursaleEntitie.succursales.ToList();
+                listSsuccursale = succursalesDAO.getAllSuccursale();
             }
-            catch (System.Data.Entity.Core.EntityException)
+            catch
             {
                 Console.WriteLine("Erreur : Cannot retreive the fabriquants list");
             }            
-
             return listSsuccursale;
         }
 
+        /// <summary>
+        /// Efface une succursale de la table Succursales
+        /// </summary>
+        /// <param name="succursaleToDelete">La succursales à effacer</param>
         public void Delete(succursale succursaleToDelete)
         {
             try
             {
-                succursaleEntitie.succursales.Remove(succursaleToDelete);
-                Save();
+                succursalesDAO.Delete(succursaleToDelete);
             }
             catch
             {
@@ -139,19 +106,8 @@ namespace LocationVoiture.Services
         /// Enregistre les modification fait à la table Succursale
         /// </summary>
         public bool Save()
-        {
-            try
-            {
-                succursaleEntitie.SaveChanges();
-                succursaleEntitie.Dispose();
-                return true;
-            }
-            catch
-            {
-                Console.WriteLine("Cannot save");
-                return false;
-            }
-
+        {            
+            return succursalesDAO.Save();         
         }
     }
 }

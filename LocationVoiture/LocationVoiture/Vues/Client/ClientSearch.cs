@@ -63,6 +63,8 @@ namespace LocationVoiture.Vues
 
         }
 
+        #region BOUTONS
+
         /// <summary>
         /// SEARCH
         /// </summary>
@@ -120,7 +122,7 @@ namespace LocationVoiture.Vues
             }
             else
             {
-                Animations.Animate(panel_message, Animations.Effect.Roll, 300, 180);
+                Animations.Animate(panel_message, Animations.Effect.Roll, 100, 180);
                 animationTimer.Start();
                 dataGridView1.DataSource = null;
                 btnClientSearch_select.Enabled = false;
@@ -151,20 +153,31 @@ namespace LocationVoiture.Vues
             this.Close();
         }
 
+        #endregion BOUTONS
+
+        #region UTILITAIRES
+
+        /// <summary>
+        /// Timer pour les animations
+        /// </summary>
         private void animationTimer_tick(object sender, EventArgs e)
         {
-            if (RightTimeOut < 2)
+            if (RightTimeOut < 1)
             {
                 RightTimeOut++;
             }
 
-            if (RightTimeOut == 2)
+            if (RightTimeOut == 1)
             {
-                Animations.Animate(panel_message, Animations.Effect.Roll, 300, 180);
+                Animations.Animate(panel_message, Animations.Effect.Roll, 100, 180);
                 RightTimeOut = 0;
                 animationTimer.Stop();
             }
         }
+
+        #endregion UTILITAIRES
+
+        #region EVENTS
 
         private void mouseEnterEventHandler(object sender, EventArgs e)
         {
@@ -179,5 +192,7 @@ namespace LocationVoiture.Vues
             button.BackColor = Color.Teal;
             button.ForeColor = Color.WhiteSmoke;
         }
+
+        #endregion EVENTS
     }
 }

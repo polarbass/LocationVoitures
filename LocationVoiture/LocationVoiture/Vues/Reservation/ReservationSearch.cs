@@ -60,10 +60,12 @@ namespace LocationVoiture.Vues
 
         }
 
+        #region BOUTONS
+
         /// <summary>
-        /// SEARCH
+        /// Recherche succursale(s)
         /// </summary>
-        private void btnClientSearch_find_Click(object sender, EventArgs e)
+        private void btnReservationSearch_find_Click(object sender, EventArgs e)
         {
             String searchValue = txtReservationSearch_value.Text;
             String comboChoice = comboReservationSearch_FindBy.SelectedItem.ToString();
@@ -140,9 +142,9 @@ namespace LocationVoiture.Vues
         }
 
         /// <summary>
-        /// Selection du client
+        /// Selection de la réservation
         /// </summary>
-        private void btnClientSearch_select_Click(object sender, EventArgs e)
+        private void btnReservationSearch_select_Click(object sender, EventArgs e)
         {
             int selectedRow = dataGridView1.CurrentRow.Index;
             object selectedRowID = dataGridView1[0, selectedRow].Value;
@@ -154,28 +156,43 @@ namespace LocationVoiture.Vues
             this.Close();
         }
 
-        #region UTILITAIRES
+        #endregion BOUTONS
 
+        #region COMBOBOX
+
+        /// <summary>
+        /// Affiche le datepicker si le choix du paramètre de recherche est par date de réservation
+        /// </summary>
         private void comboReservationSearch_FindBy_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboReservationSearch_FindBy.SelectedItem.Equals(findByParameter.dateReservation))
             {
+                txtReservationSearch_value.Text = "";
+                txtReservationSearch_value.Enabled = false;
                 dateTimePicker.Show();
             }
             else
             {
+                txtReservationSearch_value.Enabled = true;
                 dateTimePicker.Hide();
             }
         }
 
+        #endregion COMBOBOX
+
+        #region UTILITAIRES
+
+        /// <summary>
+        /// Durée des animations
+        /// </summary>
         private void animationTimer_tick(object sender, EventArgs e)
         {
-            if (RightTimeOut < 2)
+            if (RightTimeOut < 1)
             {
                 RightTimeOut++;
             }
 
-            if (RightTimeOut == 2)
+            if (RightTimeOut == 1)
             {
                 Animations.Animate(panel_message, Animations.Effect.Roll, 100, 180);
                 RightTimeOut = 0;
@@ -183,6 +200,10 @@ namespace LocationVoiture.Vues
             }
 
         }
+
+        #endregion UTILITAIRES
+
+        #region EVENTS
 
         private void mouseEnterEventHandler(object sender, EventArgs e)
         {
@@ -198,7 +219,8 @@ namespace LocationVoiture.Vues
             button.ForeColor = Color.WhiteSmoke;
         }
 
-        #endregion UTILITAIRES
+        #endregion EVENTS
+        
     }
 
 }

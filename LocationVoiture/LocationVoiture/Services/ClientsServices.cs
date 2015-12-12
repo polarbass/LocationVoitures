@@ -7,11 +7,11 @@ namespace LocationVoiture.Services
 {
     public class ClientsServices
     {
-        private locationvoitureEntities ClientsEntitie { get; set; }
+        private ClientsDAO clientDAO { get; set; }
 
-        public ClientsServices(locationvoitureEntities clientsEntitie)
+        public ClientsServices()
         {
-            ClientsEntitie = clientsEntitie;
+            clientDAO = new ClientsDAO();
         }
 
         /// <summary>
@@ -24,19 +24,12 @@ namespace LocationVoiture.Services
 
             bool isAdded = false;
 
-            // valeur par défaut
-            client.permis_conduire_num = "0000000000";
-            client.assurance = "0000000000";
-            client.date_enregistrement = DateTime.Now;
-
-            // mot de passe temporaire (prenom + nom + jour de l'inscription)
-            client.password = client.prenom.ToLower() + client.nom.ToLower() + DateTime.Now.Day;
-
             try
             {
-                ClientsEntitie.clients.Add(client);
-                Save();
-                isAdded = true;
+                if (clientDAO.AddClient(client))
+                {
+                    isAdded = true;
+                }                
             }
             catch
             {
@@ -56,8 +49,7 @@ namespace LocationVoiture.Services
             client clientFinder = null;
             try
             {
-                int clientID = int.Parse(searchValue);
-                clientFinder = ClientsEntitie.clients.Where(c => c.clientID == clientID).Single();
+                clientFinder = clientDAO.Find(searchValue);
             }
             catch
             {
@@ -80,59 +72,7 @@ namespace LocationVoiture.Services
             {
                 try
                 {
-                
-                // SEARCH BY CLIENT ID
-                if (searchBy.Equals("clientID"))
-                {
-                    int searchValueInt = int.Parse(searchValue);
-
-                    var query = from c in ClientsEntitie.clients
-                                where c.clientID == searchValueInt
-                                select c;
-
-                    clientFinder = query.ToList();
-                }
-
-                // SEARCH BY CLIENT NOM
-                else if (searchBy.Equals("nom"))
-                {
-                    var query = from c in ClientsEntitie.clients
-                                where c.nom.Equals(searchValue)
-                                select c;
-
-                    clientFinder = query.ToList();
-                }
-
-                // SEARCH BY CLIENT PRENOM
-                else if (searchBy.Equals("prenom"))
-                {
-                    var query = from c in ClientsEntitie.clients
-                                where c.prenom.Equals(searchValue)
-                                select c;
-
-                    clientFinder = query.ToList();
-                }
-
-                // SEARCH BY CLIENT PRENOM
-                else if (searchBy.Equals("courriel"))
-                {
-                    var query = from c in ClientsEntitie.clients
-                                where c.courriel.Equals(searchValue)
-                                select c;
-
-                    clientFinder = query.ToList();
-                }
-
-                // SEARCH BY CLIENT PRENOM
-                else if (searchBy.Equals("telephone"))
-                {
-                    var query = from c in ClientsEntitie.clients
-                                where c.telephone.Equals(searchValue)
-                                select c;
-
-                    clientFinder = query.ToList();
-                }
-
+                    clientFinder = clientDAO.FindBy(searchValue, searchBy);              
                 }
                 catch
                 {
@@ -150,8 +90,7 @@ namespace LocationVoiture.Services
         /// <param name="clientToDelete">Le client à effacer</param>
         public void DeleteClient(client clientToDelete)
         {
-            ClientsEntitie.clients.Remove(clientToDelete);
-            Save();
+            clientDAO.DeleteClient(clientToDelete);
         }
 
         /// <summary>
@@ -163,9 +102,9 @@ namespace LocationVoiture.Services
             List<client> listeClients = new List<client>();
             try
             {
-                listeClients = ClientsEntitie.clients.ToList();
+                listeClients = clientDAO.GetAllClients();
             }
-            catch (System.Data.Entity.Core.EntityException)
+            catch
             {
                 Console.WriteLine("Erreur : Cannot retreive the clients list");
             }          
@@ -177,8 +116,7 @@ namespace LocationVoiture.Services
         /// </summary>
         public void Save()
         {
-            ClientsEntitie.SaveChanges();
-            ClientsEntitie.Dispose();
+            clientDAO.Save();
         }
     }
 }

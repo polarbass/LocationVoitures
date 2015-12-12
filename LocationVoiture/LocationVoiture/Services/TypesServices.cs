@@ -9,21 +9,29 @@ namespace LocationVoiture.Services
 {
     public class TypesServices
     {
-        private locationvoitureEntities TypesEntitie { get; set; }
+        private TypesDAO typesDAO { get; set; }
 
         public TypesServices()
         {
-            TypesEntitie = new locationvoitureEntities();
+            typesDAO = new TypesDAO();
         }
 
+        /// <summary>
+        /// Retourne une liste de tout les types de voitures
+        /// </summary>
+        /// <returns>La liste de tout les types de voitures : Une liste vide sinon</returns>
         public List<type> getAll()
         {
-            List<type> types = new List<type>();
-            using(var context = TypesEntitie)
+            List<type> listeTypes = new List<type>();
+            try
             {
-                types = context.types.ToList();
+                listeTypes = typesDAO.getAll(); 
             }
-            return types;
+            catch
+            {
+                Console.WriteLine("Erreur dans le GetAll types");
+            }
+            return listeTypes;
         }
     }
 }

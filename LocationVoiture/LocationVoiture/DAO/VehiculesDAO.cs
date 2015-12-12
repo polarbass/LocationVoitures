@@ -32,14 +32,13 @@ namespace LocationVoiture.Services
                 vehicule.loc_state = "LIBRE";
                 vehicule.kilometrage = 0;
 
-
                 vehiculeEntitie.vehicules.Add(vehicule);
                 Save();
                 isAdded = true;
             }
             catch (Exception e)
             {
-                Console.WriteLine("Erreur : Cannot Add Vehicule (Méthode AddVehicule)");
+                Console.WriteLine("Erreur :: Cannot Add Vehicule (Méthode AddVehicule)");
                 Console.WriteLine(e.ToString());
             }
             return isAdded;

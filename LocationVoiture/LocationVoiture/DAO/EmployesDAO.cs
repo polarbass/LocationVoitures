@@ -50,7 +50,7 @@ namespace LocationVoiture.Services
             try
             {
                 int empID = int.Parse(searchValue);
-                employeFinder = EmployeEntitie.employes.Where(emp => emp.employeID == empID).Single();
+                employeFinder = EmployeEntitie.employes.Where(emp => emp.employeID == empID).SingleOrDefault();
             }
             catch
             {

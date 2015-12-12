@@ -52,7 +52,7 @@ namespace LocationVoiture.Services
             try
             {
                 int reservationID = int.Parse(searchValue);
-                reservationFinder = reservationEntitie.reservations.Where(res => res.reservationID == reservationID).Single();
+                reservationFinder = reservationEntitie.reservations.Where(res => res.reservationID == reservationID).SingleOrDefault();
             }
             catch
             {

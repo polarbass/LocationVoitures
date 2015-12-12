@@ -49,7 +49,7 @@ namespace LocationVoiture.Services
             try
             {
                 int fabriquantID = int.Parse(searchValue);
-                fabriquantFinder = fabricantsEntitie.fabriquants.Where(fab => fab.fabriquantID == fabriquantID).Single();
+                fabriquantFinder = fabricantsEntitie.fabriquants.Where(fab => fab.fabriquantID == fabriquantID).SingleOrDefault();
             }
             catch (System.Data.Entity.Core.EntityException)
             {

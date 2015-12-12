@@ -56,7 +56,7 @@ namespace LocationVoiture.Services
             try
             {
                 int clientID = int.Parse(searchValue);
-                clientFinder = ClientsEntitie.clients.Where(c => c.clientID == clientID).Single();
+                clientFinder = ClientsEntitie.clients.Where(c => c.clientID == clientID).SingleOrDefault();
             }
             catch
             {

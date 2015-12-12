@@ -47,7 +47,7 @@ namespace LocationVoiture.Services
             try
             {
                 int modeleID = int.Parse(searchValue);
-                modeleFinder = modeleEntitie.modeles.Where(mod => mod.modeleID == modeleID).Single();
+                modeleFinder = modeleEntitie.modeles.Where(mod => mod.modeleID == modeleID).SingleOrDefault();
             }
             catch
             {

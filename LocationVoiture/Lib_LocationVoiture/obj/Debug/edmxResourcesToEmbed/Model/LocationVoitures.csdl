@@ -80,6 +80,7 @@
     <Property Name="montant" Type="Single" Nullable="false" />
     <NavigationProperty Name="client" Relationship="Self.fk_facture_client" FromRole="factures" ToRole="clients" />
     <NavigationProperty Name="reservations" Relationship="Self.fk_reservation_facture" FromRole="factures" ToRole="reservations" />
+    <Property Name="statut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="location">
     <Key>
@@ -108,6 +109,7 @@
     <Property Name="transmission" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="type" Relationship="Self.FK_model_type" FromRole="modeles" ToRole="types" />
     <NavigationProperty Name="vehicules" Relationship="Self.FK_vehicule_model" FromRole="modeles" ToRole="vehicules" />
+    <Property Name="modelImageUrl" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="reservation">
     <Key>

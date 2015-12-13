@@ -67,16 +67,17 @@
     </Key>
     <Property Name="factureID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="clientID" Type="int" Nullable="false" />
-    <Property Name="date_facturation" Type="timestamp" Precision="0" Nullable="false" />
+    <Property Name="date_facturation" Type="timestamp" Precision="0" />
     <Property Name="montant" Type="float" Nullable="false" />
+    <Property Name="statut" Type="varchar" MaxLength="20" />
   </EntityType>
   <EntityType Name="locations">
     <Key>
       <PropertyRef Name="locationID" />
     </Key>
     <Property Name="locationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="date_debut" Type="timestamp" Precision="0" Nullable="false" />
-    <Property Name="date_fin" Type="timestamp" Precision="0" Nullable="false" />
+    <Property Name="date_debut" Type="timestamp" Precision="0" />
+    <Property Name="date_fin" Type="timestamp" Precision="0" />
     <Property Name="reservationID" Type="int" />
     <Property Name="vehiculeID" Type="int" Nullable="false" />
     <Property Name="employeID" Type="int" Nullable="false" />
@@ -91,6 +92,7 @@
     <Property Name="nb_place" Type="int" />
     <Property Name="consommation_carburant" Type="float" />
     <Property Name="transmission" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="modelImageUrl" Type="varchar" MaxLength="25" />
   </EntityType>
   <EntityType Name="reservations">
     <Key>
@@ -103,7 +105,7 @@
     <Property Name="succursaleID" Type="int" Nullable="false" />
     <Property Name="factureID" Type="int" />
     <Property Name="locationID" Type="int" />
-    <Property Name="date_appel_reservation" Type="timestamp" Precision="0" Nullable="false" />
+    <Property Name="date_appel_reservation" Type="timestamp" Precision="0" />
     <Property Name="date_debut_reservation" Type="timestamp" Precision="0" />
     <Property Name="date_fin_reservation" Type="timestamp" Precision="0" />
   </EntityType>

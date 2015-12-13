@@ -212,7 +212,7 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.btnCANCEL);
             this.panel2.Controls.Add(this.btnOK);
-            this.panel2.Location = new System.Drawing.Point(331, 111);
+            this.panel2.Location = new System.Drawing.Point(319, 111);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(112, 93);
             this.panel2.TabIndex = 10;

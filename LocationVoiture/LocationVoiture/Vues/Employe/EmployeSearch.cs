@@ -1,12 +1,12 @@
-﻿using LocationVoiture.Controller;
-using LocationVoiture.Model;
-using LocationVoiture.Utils;
+﻿using LocationVoiture.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using Lib_LocationVoiture.Model;
+using Lib_LocationVoiture.Controller;
 
 namespace LocationVoiture.Vues
 {

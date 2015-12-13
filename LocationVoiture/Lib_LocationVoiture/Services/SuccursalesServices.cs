@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace LocationVoiture.Services
+namespace Lib_LocationVoiture.Services
 {
     public class SuccursalesServices
     {

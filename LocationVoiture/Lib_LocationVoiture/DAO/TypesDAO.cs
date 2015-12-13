@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LocationVoiture.Services
+namespace Lib_LocationVoiture.Services
 {
     class TypesDAO
     {

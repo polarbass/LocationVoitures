@@ -99,15 +99,6 @@ C:\Users\bruno\Documents\Visual Studio 2015\Projects\Location Voiture\gestionPro
 C:\Users\bruno\Documents\Visual Studio 2015\Projects\Location Voiture\gestionProject-v4\LocationVoiture\LocationVoiture\obj\Debug\LocationVoiture.Vues.MainForm.resources
 C:\Users\bruno\Documents\Visual Studio 2015\Projects\Location Voiture\gestionProject-v4\LocationVoiture\LocationVoiture\obj\Debug\LocationVoiture.Vues.ReservationSearch.resources
 C:\Users\bruno\Documents\Visual Studio 2015\Projects\Location Voiture\gestionProject-v4\LocationVoiture\LocationVoiture\obj\Debug\LocationVoiture.csproj.GenerateResource.Cache
-C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\bin\Debug\LocationVoiture.exe.config
-C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\bin\Debug\LocationVoiture.exe
-C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\bin\Debug\LocationVoiture.pdb
-C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\bin\Debug\EntityFramework.dll
-C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\bin\Debug\MySql.Data.dll
-C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\bin\Debug\MySql.Data.Entity.EF6.dll
-C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\bin\Debug\EntityFramework.xml
-C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\obj\Debug\LocationVoiture.Properties.Resources.resources
 C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\obj\Debug\LocationVoiture.Vues.EmployeSearch.resources
 C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\obj\Debug\LocationVoiture.Vues.EmployeForm.resources
@@ -123,6 +114,17 @@ C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\Loc
 C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\obj\Debug\LocationVoiture.Vues.VoitureSearch.resources
 C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\obj\Debug\LocationVoiture.Vues.VoitureForm.resources
 C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\obj\Debug\LocationVoiture.csproj.GenerateResource.Cache
+C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\bin\Debug\LocationVoiture.exe.config
+C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\bin\Debug\LocationVoiture.exe
+C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\bin\Debug\LocationVoiture.pdb
+C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\bin\Debug\EntityFramework.dll
+C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\bin\Debug\Lib_LocationVoiture.dll
+C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\bin\Debug\MySql.Data.dll
+C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\bin\Debug\EntityFramework.xml
+C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\bin\Debug\Lib_LocationVoiture.pdb
+C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\obj\Debug\LocationVoiture.csprojResolveAssemblyReference.cache
 C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\obj\Debug\LocationVoiture.exe
 C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\obj\Debug\LocationVoiture.pdb
-C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\LocationVoiture\obj\Debug\LocationVoiture.csprojResolveAssemblyReference.cache

@@ -24,6 +24,7 @@ namespace Lib_LocationVoiture.Model
         public int clientID { get; set; }
         public System.DateTime date_facturation { get; set; }
         public float montant { get; set; }
+        public string statut { get; set; }
     
         public virtual client client { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

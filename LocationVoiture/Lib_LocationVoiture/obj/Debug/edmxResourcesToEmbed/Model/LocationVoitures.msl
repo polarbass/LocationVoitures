@@ -70,6 +70,7 @@
     <EntitySetMapping Name="factures">
       <EntityTypeMapping TypeName="locationvoitureEntities.facture">
         <MappingFragment StoreEntitySet="factures">
+          <ScalarProperty Name="statut" ColumnName="statut" />
           <ScalarProperty Name="factureID" ColumnName="factureID" />
           <ScalarProperty Name="clientID" ColumnName="clientID" />
           <ScalarProperty Name="date_facturation" ColumnName="date_facturation" />
@@ -92,6 +93,7 @@
     <EntitySetMapping Name="modeles">
       <EntityTypeMapping TypeName="locationvoitureEntities.modele">
         <MappingFragment StoreEntitySet="modeles">
+          <ScalarProperty Name="modelImageUrl" ColumnName="modelImageUrl" />
           <ScalarProperty Name="modeleID" ColumnName="modeleID" />
           <ScalarProperty Name="typeID" ColumnName="typeID" />
           <ScalarProperty Name="nom_modele" ColumnName="nom_modele" />

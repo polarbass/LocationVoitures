@@ -1,6 +1,6 @@
-﻿using LocationVoiture.Services;
+﻿using Lib_LocationVoiture.Services;
 
-namespace LocationVoiture.Controller
+namespace Lib_LocationVoiture.Controller
 {
     public class LocationController
     {

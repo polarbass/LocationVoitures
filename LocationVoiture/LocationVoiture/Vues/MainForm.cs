@@ -8,7 +8,6 @@ namespace LocationVoiture.Vues
     public partial class MainForm : Form
     {
 
-        // push test
         int RightTimeOut = 0; 
 
         private static string OPERATION_CREATION = "Création";

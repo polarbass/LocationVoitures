@@ -26,6 +26,7 @@ namespace Lib_LocationVoiture.Model
         public Nullable<int> nb_place { get; set; }
         public Nullable<float> consommation_carburant { get; set; }
         public string transmission { get; set; }
+        public string modelImageUrl { get; set; }
     
         public virtual type type { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

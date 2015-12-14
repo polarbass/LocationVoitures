@@ -7,5 +7,6 @@ C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\Lib
 C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\Lib_LocationVoiture\bin\Debug\mysql.data.entity.EF6.dll
 C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\Lib_LocationVoiture\bin\Debug\EntityFramework.xml
 C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\Lib_LocationVoiture\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\Lib_LocationVoiture\obj\Debug\Lib_LocationVoiture.csprojResolveAssemblyReference.cache
 C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\Lib_LocationVoiture\obj\Debug\Lib_LocationVoiture.dll
 C:\Users\bruno\Documents\GitHubVisualStudio\LocationVoitures\LocationVoiture\Lib_LocationVoiture\obj\Debug\Lib_LocationVoiture.pdb

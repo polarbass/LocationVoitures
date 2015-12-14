@@ -131,6 +131,23 @@ namespace Lib_LocationVoiture.Services
         }
 
 
+        public List<vehicule> AvailableCarsForReservation(DateTime dateStart, DateTime dateEnd, int succursaleID, int typeID)
+        {
+            List<vehicule> availableCars = new List<vehicule>();
+
+            try
+            {
+                availableCars = vehiculesDAO.GetAvailableCars(dateStart, dateEnd, succursaleID, typeID);
+            }
+            catch
+            {
+                Console.WriteLine("erreur Delete véhicule");
+            }
+
+            return availableCars;
+        }
+
+
         /// <summary>
         /// Enregistre les modification fait à la table client
         /// </summary>

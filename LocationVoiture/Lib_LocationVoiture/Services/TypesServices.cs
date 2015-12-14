@@ -30,5 +30,19 @@ namespace Lib_LocationVoiture.Services
             }
             return listeTypes;
         }
+
+        public List<type> getDistinctTypes(int succuraleID)
+        {
+            List<type> types = new List<type>();
+            try
+            {
+                types = typesDAO.getDistinctTypes(succuraleID);
+            }
+            catch
+            {
+                Console.WriteLine("Erreur dans le getDistinctTypes types");
+            }
+            return types;
+        }
     }
 }

@@ -150,6 +150,33 @@ namespace Lib_LocationVoiture.Services
             return vehiculeFinder;
         }
 
+
+        /// <summary>
+        /// Test de validation de voitures disponible selon une date donnée
+        /// </summary>
+        /// <param name="dateStart"></param>
+        /// <param name="dateEnd"></param>
+        /// <param name="succursaleID"></param>
+        /// <returns></returns>
+        public List<vehicule> GetAvailableCars(DateTime dateStart, DateTime dateEnd, int succursaleID, int typeID)
+        {
+            List<vehicule> availableCars = new List<vehicule>();
+
+            var query = from vehi in vehiculeEntitie.vehicules
+                        //join a in vehiculeEntitie.reservations
+                        //on vehi.vehiculeID equals a.vehiculeID
+
+                        where vehi.succursaleID == succursaleID
+                        where vehi.modele.typeID == typeID
+                        //where a.date_debut_reservation != dateStart
+
+                        select vehi;
+
+            availableCars = query.ToList();
+
+            return availableCars;
+        }
+
         /// <summary>
         /// Retire un véhicule de la table véhicule
         /// </summary>

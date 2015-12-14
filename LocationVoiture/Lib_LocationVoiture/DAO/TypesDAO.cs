@@ -20,10 +20,24 @@ namespace Lib_LocationVoiture.Services
         public List<type> getAll()
         {
             List<type> types = new List<type>();
-            using(var context = TypesEntitie)
-            {
-                types = context.types.ToList();
-            }
+
+            types = TypesEntitie.types.ToList();
+
+            return types;
+        }
+
+
+        public List<type> getDistinctTypes(int succuraleID)
+        {
+            List<type> types = new List<type>();
+
+            var query = (from vehi in TypesEntitie.vehicules.Include("modele")
+                            where vehi.succursaleID == succuraleID
+                            select vehi.modele.type).Distinct();
+
+            types = query.ToList();
+
+
             return types;
         }
     }

@@ -98,7 +98,7 @@ namespace LocationVoiture.Vues
         // Création d'une réservation
         private void btnReservationCreate_Click(object sender, EventArgs e)
         {
-            ReservationForm reservationForm = new ReservationForm("Création");
+            ReservationForm_version2 reservationForm = new ReservationForm_version2("Création");
             reservationForm.Owner = this;
 
             panelSelector(false);
@@ -111,7 +111,7 @@ namespace LocationVoiture.Vues
 
         private void btnReservationModify_Click(object sender, EventArgs e)
         {
-            ReservationForm reservationForm = new ReservationForm("Update");
+            ReservationForm_version2 reservationForm = new ReservationForm_version2("Update");
             reservationForm.Owner = this;
 
             panelSelector(false);

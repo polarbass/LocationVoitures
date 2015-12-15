@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnFacture_Completer = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblFacture = new System.Windows.Forms.Label();
             this.panel_Facture = new System.Windows.Forms.Panel();
@@ -51,7 +52,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblReservation_carChoice = new System.Windows.Forms.Label();
             this.txtFacture_nom = new System.Windows.Forms.TextBox();
-            this.btnFacture_Completer = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -80,6 +80,21 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(663, 50);
             this.panel3.TabIndex = 49;
+            // 
+            // btnFacture_Completer
+            // 
+            this.btnFacture_Completer.BackColor = System.Drawing.Color.Teal;
+            this.btnFacture_Completer.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnFacture_Completer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFacture_Completer.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFacture_Completer.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnFacture_Completer.Location = new System.Drawing.Point(283, 9);
+            this.btnFacture_Completer.Name = "btnFacture_Completer";
+            this.btnFacture_Completer.Size = new System.Drawing.Size(113, 35);
+            this.btnFacture_Completer.TabIndex = 65;
+            this.btnFacture_Completer.Text = "Compléter";
+            this.btnFacture_Completer.UseVisualStyleBackColor = false;
+            this.btnFacture_Completer.Click += new System.EventHandler(this.btnFacture_Completer_Click);
             // 
             // panel2
             // 
@@ -136,7 +151,7 @@
             this.txtFacture_total.Enabled = false;
             this.txtFacture_total.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFacture_total.ForeColor = System.Drawing.Color.Black;
-            this.txtFacture_total.Location = new System.Drawing.Point(219, 408);
+            this.txtFacture_total.Location = new System.Drawing.Point(219, 409);
             this.txtFacture_total.Name = "txtFacture_total";
             this.txtFacture_total.Size = new System.Drawing.Size(225, 22);
             this.txtFacture_total.TabIndex = 64;
@@ -160,7 +175,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(138, 407);
+            this.label5.Location = new System.Drawing.Point(138, 408);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 25);
             this.label5.TabIndex = 62;
@@ -355,21 +370,6 @@
             this.txtFacture_nom.Size = new System.Drawing.Size(225, 22);
             this.txtFacture_nom.TabIndex = 0;
             this.txtFacture_nom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnFacture_Completer
-            // 
-            this.btnFacture_Completer.BackColor = System.Drawing.Color.Teal;
-            this.btnFacture_Completer.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnFacture_Completer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFacture_Completer.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFacture_Completer.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnFacture_Completer.Location = new System.Drawing.Point(283, 9);
-            this.btnFacture_Completer.Name = "btnFacture_Completer";
-            this.btnFacture_Completer.Size = new System.Drawing.Size(113, 35);
-            this.btnFacture_Completer.TabIndex = 65;
-            this.btnFacture_Completer.Text = "Compléter";
-            this.btnFacture_Completer.UseVisualStyleBackColor = false;
-            this.btnFacture_Completer.Click += new System.EventHandler(this.btnFacture_Completer_Click);
             // 
             // LocationFacture
             // 

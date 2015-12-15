@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cbVoiture_Modele = new System.Windows.Forms.ComboBox();
             this.lblLoading = new System.Windows.Forms.Label();
@@ -56,20 +54,23 @@
             this.lblClientCreate_nom = new System.Windows.Forms.Label();
             this.btnVoiture_cancel = new System.Windows.Forms.Button();
             this.btnVoiture_add = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtVoiture_commission = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelClientCreate_clientId.SuspendLayout();
             this.panelClientForm_id.SuspendLayout();
             this.panel10.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cbVoiture_Modele);
             this.panel1.Controls.Add(this.lblLoading);
@@ -96,38 +97,12 @@
             this.panel1.Size = new System.Drawing.Size(460, 517);
             this.panel1.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Teal;
-            this.button1.Location = new System.Drawing.Point(263, 408);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 32);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Enregistrer";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(194, 412);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 25);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "image :";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(34, 269);
+            this.label2.Location = new System.Drawing.Point(39, 269);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 25);
             this.label2.TabIndex = 18;
@@ -163,7 +138,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(17, 359);
+            this.label4.Location = new System.Drawing.Point(22, 359);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 25);
             this.label4.TabIndex = 20;
@@ -187,7 +162,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(25, 226);
+            this.label1.Location = new System.Drawing.Point(30, 226);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 25);
             this.label1.TabIndex = 17;
@@ -273,7 +248,7 @@
             this.lblClientCreate_clientId.AutoSize = true;
             this.lblClientCreate_clientId.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClientCreate_clientId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblClientCreate_clientId.Location = new System.Drawing.Point(81, 176);
+            this.lblClientCreate_clientId.Location = new System.Drawing.Point(86, 176);
             this.lblClientCreate_clientId.Name = "lblClientCreate_clientId";
             this.lblClientCreate_clientId.Size = new System.Drawing.Size(36, 25);
             this.lblClientCreate_clientId.TabIndex = 16;
@@ -322,7 +297,7 @@
             this.lblClientCreate_id.AutoSize = true;
             this.lblClientCreate_id.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClientCreate_id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblClientCreate_id.Location = new System.Drawing.Point(79, 67);
+            this.lblClientCreate_id.Location = new System.Drawing.Point(86, 67);
             this.lblClientCreate_id.Name = "lblClientCreate_id";
             this.lblClientCreate_id.Size = new System.Drawing.Size(36, 25);
             this.lblClientCreate_id.TabIndex = 13;
@@ -399,7 +374,7 @@
             this.lblClientCreate_nom.AutoSize = true;
             this.lblClientCreate_nom.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClientCreate_nom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblClientCreate_nom.Location = new System.Drawing.Point(9, 315);
+            this.lblClientCreate_nom.Location = new System.Drawing.Point(14, 315);
             this.lblClientCreate_nom.Name = "lblClientCreate_nom";
             this.lblClientCreate_nom.Size = new System.Drawing.Size(108, 25);
             this.lblClientCreate_nom.TabIndex = 19;
@@ -439,9 +414,38 @@
             this.btnVoiture_add.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
             this.btnVoiture_add.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
             // 
-            // openFileDialog1
+            // panel3
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.txtVoiture_commission);
+            this.panel3.Location = new System.Drawing.Point(141, 401);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.panel3.Size = new System.Drawing.Size(287, 32);
+            this.panel3.TabIndex = 21;
+            // 
+            // txtVoiture_commission
+            // 
+            this.txtVoiture_commission.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtVoiture_commission.BackColor = System.Drawing.Color.White;
+            this.txtVoiture_commission.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtVoiture_commission.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVoiture_commission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtVoiture_commission.Location = new System.Drawing.Point(13, 4);
+            this.txtVoiture_commission.Name = "txtVoiture_commission";
+            this.txtVoiture_commission.Size = new System.Drawing.Size(259, 22);
+            this.txtVoiture_commission.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.Location = new System.Drawing.Point(3, 405);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(119, 25);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Commission :";
             // 
             // VoitureForm
             // 
@@ -464,6 +468,8 @@
             this.panelClientForm_id.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -497,8 +503,8 @@
         private System.Windows.Forms.Label lblLoading;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbVoiture_Modele;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox txtVoiture_commission;
+        private System.Windows.Forms.Label label3;
     }
 }

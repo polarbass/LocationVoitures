@@ -13,12 +13,12 @@ namespace LocationVoiture.Vues
 
         // Attributs
 
-        private const string OPERATION_VOITURE_CREATION     = "Création";
-        private const string OPERATION_VOITURE_UPDATE = "Updater";
-        private const string MESSAGE_VOITURE_ADD = "Le véhicule a été ajouté";
-        private const string MESSAGE_VOITURE_ADD_ERROR = "Une erreur est survenue lors de la creation du véhicule";
-        private const string MESSAGE_VOITURE_UPDATE = "Le véhicule a été modifé";
-        private const string MESSAGE_VOITURE_DELETE = "Le véhicule a été effacé";        
+        private const string OPERATION_VOITURE_CREATION = "Création";
+        private const string OPERATION_VOITURE_UPDATE   = "Updater";
+        private const string MESSAGE_VOITURE_ADD        = "Le véhicule a été ajouté";
+        private const string MESSAGE_VOITURE_ADD_ERROR  = "Une erreur est survenue lors de la creation du véhicule";
+        private const string MESSAGE_VOITURE_UPDATE     = "Le véhicule a été modifé";
+        private const string MESSAGE_VOITURE_DELETE     = "Le véhicule a été effacé";        
 
         // Propriétés
 
@@ -170,6 +170,7 @@ namespace LocationVoiture.Vues
                     if (vehiculeToUpdate != null)
                     {
                         vehiculeToUpdate.succursaleID = succursaleID;
+                        vehiculeToUpdate.modele.type.commission = int.Parse(txtVoiture_commission.Text.ToString());
                     }                   
 
                     if (locationController.VehiculeServices.Save())
@@ -330,10 +331,10 @@ namespace LocationVoiture.Vues
         {
             txtVoiture_vehiculeID.Text              = "";
             txtVoiture_idSearch.Text                = "";
-            txtVoiture_noPlaque.Text                = "";       
+            txtVoiture_noPlaque.Text                = "";
+            txtVoiture_commission.Text              = "";
             cbVoiture_Fabriquant.SelectedIndex      = 0;
             cbVoiture_succursale.SelectedIndex      = 0;
-            //cbVoiture_Modele.SelectedIndex          = 0;
         }
 
         private void setFieldsVisibility(bool visibilityChoice)
@@ -352,6 +353,7 @@ namespace LocationVoiture.Vues
         {
             txtVoiture_vehiculeID.Enabled       = enabledStatus;
             txtVoiture_noPlaque.Enabled         = enabledStatus;
+            txtVoiture_commission.Enabled       = enabledStatus;
             cbVoiture_Fabriquant.Enabled        = enabledStatus;
             cbVoiture_Modele.Enabled            = enabledStatus;
             cbVoiture_succursale.Enabled        = enabledStatus;

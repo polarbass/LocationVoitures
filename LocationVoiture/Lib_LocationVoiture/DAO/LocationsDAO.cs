@@ -1,6 +1,5 @@
 ﻿using Lib_LocationVoiture.Model;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace Lib_LocationVoiture.Services

@@ -1,12 +1,9 @@
 ﻿using Lib_LocationVoiture.Model;
 using Lib_LocationVoiture.Controller;
-using LocationVoiture.Utils;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace LocationVoiture.Vues
 {
@@ -33,31 +30,37 @@ namespace LocationVoiture.Vues
             fillTheTxtFields();
         }
 
+        /// <summary>
+        /// Affichage de la facture
+        /// </summary>
         private void fillTheTxtFields()
         {
+            // informations clients
             client clientFacture = locationController.ClientsServices.Find(clientID);
 
             txtFacture_nom.Text         = clientFacture.prenom + " " + clientFacture.nom;
             txtFacture_telephone.Text   = clientFacture.telephone;
             txtFacture_adresse.Text     = clientFacture.adresse_client;
 
+            // informations véhicule
             vehicule vehiculeFacture = locationController.VehiculeServices.FindVehicule(vehiculeID);
 
             txtFacture_car.Text         = vehiculeFacture.fabriquant.nom_fabriquant + " " + vehiculeFacture.modele.nom_modele;
             txtFacture_categorie.Text   = vehiculeFacture.modele.type.nom_type;
             txtFacture_plaqueNum.Text   = vehiculeFacture.plaque_num;
 
+            // informations générales
             txtFacture_succursale.Text  = vehiculeFacture.succursale.nom;
             txtFacture_date.Text        = DateTime.Now.ToShortDateString();
 
-            float commissionValue = vehiculeFacture.modele.type.commission;
-            double taxesValue = locationController.LocationsService.GetTaxesValue() * commissionValue;
+            // informations monétaires
+            double commissionValue      = vehiculeFacture.modele.type.commission;
+            double taxesValue           = locationController.LocationsService.GetTaxesValue() * commissionValue;
 
             txtFacture_comission.Text = commissionValue.ToString();
-            txtFacture_taxe.Text = (taxesValue * commissionValue) + " $";
-            txtFacture_total.Text = taxesValue + commissionValue + " $";
+            txtFacture_taxe.Text = (taxesValue * commissionValue).ToString("C", CultureInfo.CurrentCulture);
+            txtFacture_total.Text = (taxesValue + commissionValue).ToString("C", CultureInfo.CurrentCulture);
         }
-
 
         #region UTILITAIRES
 

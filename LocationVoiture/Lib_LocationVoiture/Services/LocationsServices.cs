@@ -9,7 +9,7 @@ namespace Lib_LocationVoiture.Services
         private LocationsDAO locationsDAO{ get; set; }
         private ReservationsDAO reservationsDAO { get; set; }
 
-        private const double TAXE_VALUE = 14.175;
+        private const double TAXE_VALUE = 0.14175;
 
         //Constructeur
         public LocationsServices()

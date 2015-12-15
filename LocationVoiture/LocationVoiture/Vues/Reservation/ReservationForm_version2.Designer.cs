@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtReservation_plateNum = new System.Windows.Forms.TextBox();
-            this.txtReservation_modele = new System.Windows.Forms.TextBox();
-            this.txtReservation_fabriquant = new System.Windows.Forms.TextBox();
-            this.txtReservation_carID = new System.Windows.Forms.TextBox();
+            this.panel_CarChoice = new System.Windows.Forms.Panel();
             this.lblReservation_carChoice = new System.Windows.Forms.Label();
+            this.txtReservation_plateNum = new System.Windows.Forms.TextBox();
+            this.txtReservation_fabriquant = new System.Windows.Forms.TextBox();
+            this.txtReservation_modele = new System.Windows.Forms.TextBox();
+            this.txtReservation_carID = new System.Windows.Forms.TextBox();
             this.dataGridView_AvailableCars = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.cbReservationCreate_Types = new System.Windows.Forms.ComboBox();
@@ -78,8 +79,8 @@
             this.lblClientCreate_nom = new System.Windows.Forms.Label();
             this.txtClientCreate_cancel = new System.Windows.Forms.Button();
             this.btnClientCreate_add = new System.Windows.Forms.Button();
-            this.panel_CarChoice = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel_CarChoice.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_AvailableCars)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelClientForm_id.SuspendLayout();
@@ -88,7 +89,6 @@
             this.panel11.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
-            this.panel_CarChoice.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -138,60 +138,17 @@
             this.panel1.Size = new System.Drawing.Size(903, 612);
             this.panel1.TabIndex = 0;
             // 
-            // txtReservation_plateNum
+            // panel_CarChoice
             // 
-            this.txtReservation_plateNum.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtReservation_plateNum.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtReservation_plateNum.Enabled = false;
-            this.txtReservation_plateNum.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReservation_plateNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtReservation_plateNum.Location = new System.Drawing.Point(337, 11);
-            this.txtReservation_plateNum.Name = "txtReservation_plateNum";
-            this.txtReservation_plateNum.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtReservation_plateNum.Size = new System.Drawing.Size(95, 22);
-            this.txtReservation_plateNum.TabIndex = 0;
-            this.txtReservation_plateNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtReservation_modele
-            // 
-            this.txtReservation_modele.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtReservation_modele.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtReservation_modele.Enabled = false;
-            this.txtReservation_modele.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReservation_modele.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtReservation_modele.Location = new System.Drawing.Point(246, 11);
-            this.txtReservation_modele.Name = "txtReservation_modele";
-            this.txtReservation_modele.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtReservation_modele.Size = new System.Drawing.Size(90, 22);
-            this.txtReservation_modele.TabIndex = 0;
-            this.txtReservation_modele.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtReservation_fabriquant
-            // 
-            this.txtReservation_fabriquant.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtReservation_fabriquant.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtReservation_fabriquant.Enabled = false;
-            this.txtReservation_fabriquant.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReservation_fabriquant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtReservation_fabriquant.Location = new System.Drawing.Point(154, 11);
-            this.txtReservation_fabriquant.Name = "txtReservation_fabriquant";
-            this.txtReservation_fabriquant.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtReservation_fabriquant.Size = new System.Drawing.Size(91, 22);
-            this.txtReservation_fabriquant.TabIndex = 0;
-            this.txtReservation_fabriquant.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtReservation_carID
-            // 
-            this.txtReservation_carID.BackColor = System.Drawing.Color.White;
-            this.txtReservation_carID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtReservation_carID.Enabled = false;
-            this.txtReservation_carID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReservation_carID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtReservation_carID.Location = new System.Drawing.Point(627, 553);
-            this.txtReservation_carID.Name = "txtReservation_carID";
-            this.txtReservation_carID.Size = new System.Drawing.Size(119, 22);
-            this.txtReservation_carID.TabIndex = 1;
-            this.txtReservation_carID.Visible = false;
+            this.panel_CarChoice.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel_CarChoice.Controls.Add(this.lblReservation_carChoice);
+            this.panel_CarChoice.Controls.Add(this.txtReservation_plateNum);
+            this.panel_CarChoice.Controls.Add(this.txtReservation_fabriquant);
+            this.panel_CarChoice.Controls.Add(this.txtReservation_modele);
+            this.panel_CarChoice.Location = new System.Drawing.Point(452, 549);
+            this.panel_CarChoice.Name = "panel_CarChoice";
+            this.panel_CarChoice.Size = new System.Drawing.Size(444, 43);
+            this.panel_CarChoice.TabIndex = 46;
             // 
             // lblReservation_carChoice
             // 
@@ -206,31 +163,87 @@
             this.lblReservation_carChoice.Text = "Véhicule choisi";
             this.lblReservation_carChoice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txtReservation_plateNum
+            // 
+            this.txtReservation_plateNum.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtReservation_plateNum.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtReservation_plateNum.Enabled = false;
+            this.txtReservation_plateNum.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReservation_plateNum.ForeColor = System.Drawing.Color.Black;
+            this.txtReservation_plateNum.Location = new System.Drawing.Point(337, 11);
+            this.txtReservation_plateNum.Name = "txtReservation_plateNum";
+            this.txtReservation_plateNum.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtReservation_plateNum.Size = new System.Drawing.Size(95, 22);
+            this.txtReservation_plateNum.TabIndex = 0;
+            this.txtReservation_plateNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtReservation_fabriquant
+            // 
+            this.txtReservation_fabriquant.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtReservation_fabriquant.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtReservation_fabriquant.Enabled = false;
+            this.txtReservation_fabriquant.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReservation_fabriquant.ForeColor = System.Drawing.Color.Black;
+            this.txtReservation_fabriquant.Location = new System.Drawing.Point(154, 11);
+            this.txtReservation_fabriquant.Name = "txtReservation_fabriquant";
+            this.txtReservation_fabriquant.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtReservation_fabriquant.Size = new System.Drawing.Size(91, 22);
+            this.txtReservation_fabriquant.TabIndex = 0;
+            this.txtReservation_fabriquant.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtReservation_modele
+            // 
+            this.txtReservation_modele.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtReservation_modele.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtReservation_modele.Enabled = false;
+            this.txtReservation_modele.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReservation_modele.ForeColor = System.Drawing.Color.Black;
+            this.txtReservation_modele.Location = new System.Drawing.Point(246, 11);
+            this.txtReservation_modele.Name = "txtReservation_modele";
+            this.txtReservation_modele.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtReservation_modele.Size = new System.Drawing.Size(90, 22);
+            this.txtReservation_modele.TabIndex = 0;
+            this.txtReservation_modele.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtReservation_carID
+            // 
+            this.txtReservation_carID.BackColor = System.Drawing.Color.White;
+            this.txtReservation_carID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtReservation_carID.Enabled = false;
+            this.txtReservation_carID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReservation_carID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtReservation_carID.Location = new System.Drawing.Point(627, 553);
+            this.txtReservation_carID.Name = "txtReservation_carID";
+            this.txtReservation_carID.Size = new System.Drawing.Size(119, 22);
+            this.txtReservation_carID.TabIndex = 1;
+            this.txtReservation_carID.Visible = false;
+            // 
             // dataGridView_AvailableCars
             // 
             this.dataGridView_AvailableCars.AllowUserToAddRows = false;
             this.dataGridView_AvailableCars.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_AvailableCars.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView_AvailableCars.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_AvailableCars.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_AvailableCars.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_AvailableCars.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_AvailableCars.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle8.NullValue = "-------------";
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_AvailableCars.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.NullValue = "-------------";
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_AvailableCars.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_AvailableCars.GridColor = System.Drawing.Color.Teal;
             this.dataGridView_AvailableCars.Location = new System.Drawing.Point(452, 331);
             this.dataGridView_AvailableCars.MultiSelect = false;
@@ -739,18 +752,6 @@
             this.btnClientCreate_add.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
             this.btnClientCreate_add.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
             // 
-            // panel_CarChoice
-            // 
-            this.panel_CarChoice.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel_CarChoice.Controls.Add(this.lblReservation_carChoice);
-            this.panel_CarChoice.Controls.Add(this.txtReservation_plateNum);
-            this.panel_CarChoice.Controls.Add(this.txtReservation_fabriquant);
-            this.panel_CarChoice.Controls.Add(this.txtReservation_modele);
-            this.panel_CarChoice.Location = new System.Drawing.Point(452, 549);
-            this.panel_CarChoice.Name = "panel_CarChoice";
-            this.panel_CarChoice.Size = new System.Drawing.Size(444, 43);
-            this.panel_CarChoice.TabIndex = 46;
-            // 
             // ReservationForm_version2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -767,6 +768,8 @@
             this.Text = "Form3";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel_CarChoice.ResumeLayout(false);
+            this.panel_CarChoice.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_AvailableCars)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -782,8 +785,6 @@
             this.panel9.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
-            this.panel_CarChoice.ResumeLayout(false);
-            this.panel_CarChoice.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

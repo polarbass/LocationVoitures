@@ -120,7 +120,7 @@ namespace LocationVoiture.Vues
 
                 if (locationController.ReservationsServices.AddReservation(reservationToCreate))
                 {
-                    messageToSend = "La réservation a été créer";
+                    messageToSend = "La réservation a été créée";
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }

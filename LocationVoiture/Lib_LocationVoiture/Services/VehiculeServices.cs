@@ -130,26 +130,76 @@ namespace Lib_LocationVoiture.Services
             }
         }
 
-
+        /// <summary>
+        /// Vérification des voitures disponibles selon la liste des paramètres suivant
+        /// </summary>
+        /// <param name="dateStart">La date du début de la réservation</param>
+        /// <param name="dateEnd">La date de la fin de la réservation</param>
+        /// <param name="succursaleID">La succursale où le véhicule doit être réservé</param>
+        /// <param name="typeID">Le type de véhicule désiré</param>
+        /// <returns>Une liste de voiture qu'il est possible de réserver</returns>
         public List<vehicule> AvailableCarsForReservation(DateTime dateStart, DateTime dateEnd, int succursaleID, int typeID)
         {
             List<vehicule> availableCars = new List<vehicule>();
+            List<vehicule> availableCarsForReservation = new List<vehicule>();
 
             try
             {
-                availableCars = vehiculesDAO.GetAvailableCars(dateStart, dateEnd, succursaleID, typeID);
+                // Tout les véhicules disponible à la succursale et selon le type choisi
+                availableCars = vehiculesDAO.GetAvailableCars(succursaleID, typeID);
+
+                foreach(vehicule veh in availableCars)
+                {
+                    if(veh.reservations.Count > 0)
+                    {
+                        // recherche des réservations en cours pour chaque véhicule de la liste
+                        foreach (reservation res in veh.reservations)
+                        {
+                            DateTime reservationDateDebut = res.date_debut_reservation.Value.Date;
+                            DateTime reservationDateFin = res.date_fin_reservation.Value.Date;
+
+                            if (!(reservationDateDebut == dateStart.Date ||
+                                reservationDateDebut == dateEnd.Date ||
+                                reservationDateFin == dateStart.Date ||
+                                reservationDateFin == dateEnd.Date ||
+                                (dateStart >= reservationDateDebut && dateStart <= reservationDateFin) ||
+                                (dateEnd >= reservationDateDebut && dateEnd <= reservationDateFin) ||
+                                (reservationDateDebut > dateStart.Date && reservationDateFin < dateEnd.Date))
+                                )
+                            {
+                                if (!availableCarsForReservation.Contains(veh))
+                                {
+                                    availableCarsForReservation.Add(veh);
+                                }
+                            }
+                            else
+                            {
+                                if (availableCarsForReservation.Contains(veh))
+                                {
+                                    availableCarsForReservation.Remove(veh);
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        availableCarsForReservation.Add(veh);
+                    }
+
+                }
+
             }
             catch
             {
-                Console.WriteLine("erreur Delete véhicule");
+                Console.WriteLine("erreur AvailableCarsForReservation véhicule");
             }
 
-            return availableCars;
+            return availableCarsForReservation;
         }
 
 
         /// <summary>
-        /// Enregistre les modification fait à la table client
+        /// Enregistre les modification fait à la table véhicule
         /// </summary>
         public bool Save()
         {

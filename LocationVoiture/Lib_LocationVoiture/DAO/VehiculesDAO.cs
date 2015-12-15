@@ -152,24 +152,18 @@ namespace Lib_LocationVoiture.Services
 
 
         /// <summary>
-        /// Test de validation de voitures disponible selon une date donnée
+        /// Recherches des voitures disponible à une succursale donnée et selon le type sélectionné
         /// </summary>
-        /// <param name="dateStart"></param>
-        /// <param name="dateEnd"></param>
-        /// <param name="succursaleID"></param>
-        /// <returns></returns>
-        public List<vehicule> GetAvailableCars(DateTime dateStart, DateTime dateEnd, int succursaleID, int typeID)
+        /// <param name="succursaleID">Le ID de la succursale voulu</param>
+        /// <param name="typeID">Le ID du type de voiture recherché</param>
+        /// <returns>Une liste de véhicule possible de louer : Liste vide sinon</returns>
+        public List<vehicule> GetAvailableCars(int succursaleID, int typeID)
         {
             List<vehicule> availableCars = new List<vehicule>();
 
             var query = from vehi in vehiculeEntitie.vehicules
-                        //join a in vehiculeEntitie.reservations
-                        //on vehi.vehiculeID equals a.vehiculeID
-
                         where vehi.succursaleID == succursaleID
-                        where vehi.modele.typeID == typeID
-                        //where a.date_debut_reservation != dateStart
-
+                        where vehi.modele.typeID == typeID                        
                         select vehi;
 
             availableCars = query.ToList();

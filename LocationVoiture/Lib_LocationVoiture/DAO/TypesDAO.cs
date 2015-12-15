@@ -31,7 +31,7 @@ namespace Lib_LocationVoiture.Services
         {
             List<type> types = new List<type>();
 
-            var query = (from vehi in TypesEntitie.vehicules.Include("modele")
+            var query = (from vehi in TypesEntitie.vehicules
                             where vehi.succursaleID == succuraleID
                             select vehi.modele.type).Distinct();
 

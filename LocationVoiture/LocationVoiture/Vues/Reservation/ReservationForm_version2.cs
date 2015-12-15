@@ -27,16 +27,16 @@ namespace LocationVoiture.Vues
             [Description("VehiculeID")]
             vehiculeID,
             Fabricant,
-            Modele
+            Modele,
+            [Description("No. Plaque")]
+            plate_num
         };
 
         // Propriétés
 
         private LocationController locationController { get; set; }
 
-        private List<vehicule> listeVehicule { get; set; }
-        private List<fabriquant> listeFabriquant { get; set; }
-        private List<modele> listeDesModeles { get; set; }
+
 
         public string messageToSend { get; private set; }
 
@@ -52,6 +52,7 @@ namespace LocationVoiture.Vues
             fillTheComboBoxSuccursale();
             disableClientField();
             lblLoading.Hide();
+            panel_CarChoice.Visible = false;
             setCarFieldStatus(false);
             lblClientCreate_operation.Text = operation;
 
@@ -79,7 +80,7 @@ namespace LocationVoiture.Vues
         #region BOUTONS
 
         /// <summary>
-        /// Création d'un nouveau client à l'aide des informations inscrites dans les champs
+        /// Création d'une réservation à l'aide des informations inscrites dans les champs
         /// </summary>        
         private void btnClientCreate_add_Click(object sender, EventArgs e)
         {
@@ -91,9 +92,12 @@ namespace LocationVoiture.Vues
             DateTime reservationOUT = dateTimePicker_ReservationCreate_DateOUT.Value.Date.Add(TimeSpan.Parse(timeOUT));
             DateTime reservationIN  = dateTimePicker_ReservationCreate_DateIN.Value.Date.Add(TimeSpan.Parse(timeIN));
 
+            if (panel_CarChoice.Visible)
+            {
+
             int clientID        = int.Parse(txtClientCreate_clientId.Text);
             int succursaleID    = int.Parse((cbReservationCreate_Succursale.SelectedItem as ComboboxItem).Value.ToString());
-            //int vehiculeID      = int.Parse((cbReservationCreate_noPlaque.SelectedItem as ComboboxItem).Value.ToString());
+            int vehiculeID      = int.Parse(txtReservation_carID.Text);
 
             /* TODO : Valeur temporaire pour l'employé. Doit incorporer le ID de l'employée logger */
             int employeID = 1;
@@ -108,7 +112,7 @@ namespace LocationVoiture.Vues
 
                 reservationToCreate.clientID                = clientID;
                 reservationToCreate.succursaleID            = succursaleID;
-                //reservationToCreate.vehiculeID              = vehiculeID;
+                reservationToCreate.vehiculeID              = vehiculeID;
                 reservationToCreate.date_debut_reservation  = reservationOUT;
                 reservationToCreate.date_fin_reservation    = reservationIN;
                 reservationToCreate.date_appel_reservation  = DateTime.Now;
@@ -137,7 +141,7 @@ namespace LocationVoiture.Vues
                 if (reservationToUpdate != null)
                 {
                     reservationToUpdate.succursaleID            = succursaleID;
-                    //reservationToUpdate.vehiculeID              = vehiculeID;
+                    reservationToUpdate.vehiculeID              = vehiculeID;
                     reservationToUpdate.date_debut_reservation  = reservationOUT;
                     reservationToUpdate.date_fin_reservation    = reservationIN;
                     reservationToUpdate.employeID               = employeID;
@@ -156,6 +160,13 @@ namespace LocationVoiture.Vues
                     this.Close();
                 }
             }
+
+            }
+            else
+            {
+                MessageBox.Show("Vous devez choisir un véhicule");
+            }
+
         }
 
         /// <summary>
@@ -165,6 +176,7 @@ namespace LocationVoiture.Vues
         /// </summary>        
         private void btnReservationForm_Find_Click(object sender, EventArgs e)
         {
+            // recherche de client
             if (!btnClientCreate_add.Text.Equals(ReservationForm_version2.OPERATION_RESERVATION_UPDATE))
             {
                 List<client> listeClients = new List<client>();
@@ -189,7 +201,6 @@ namespace LocationVoiture.Vues
                     Animations.Animate(lblLoading, Animations.Effect.Slide, 50, 360);
                 }
 
-
                 client reservationClient = locationController.ClientsServices.Find(searchValue);
 
                 // Affichage du client
@@ -210,6 +221,8 @@ namespace LocationVoiture.Vues
                     emptyClientFormFields();
                 }
             }
+
+            // recherche réservation
             else
             {
                 List<reservation> listeReservation = new List<reservation>();
@@ -256,9 +269,16 @@ namespace LocationVoiture.Vues
                     string modeleName       = reservationToUpdate.vehicule.modele.nom_modele;
                     string nbPassager       = reservationToUpdate.vehicule.modele.nb_place.ToString();
                     string plateNo          = reservationToUpdate.vehicule.plaque_num;
+                    string type             = reservationToUpdate.vehicule.modele.type.nom_type;
 
                     // VEHICULE COMBOBOX
                     cbReservationCreate_Succursale.SelectedIndex    = cbReservationCreate_Succursale.FindStringExact(succursaleName);
+                    cbReservationCreate_Types.SelectedIndex         = cbReservationCreate_Types.FindStringExact(type);
+                    panel_CarChoice.Visible = true;
+                    txtReservation_carID.Text       = reservationToUpdate.vehiculeID.ToString();
+                    txtReservation_fabriquant.Text  = fabricantName;
+                    txtReservation_modele.Text      = modeleName;
+                    txtReservation_plateNum.Text    = plateNo; 
 
                     // DATETIMEPICKER
                     dateTimePicker_ReservationCreate_DateOUT.Value  = reservationToUpdate.date_debut_reservation.Value.Date;
@@ -270,6 +290,7 @@ namespace LocationVoiture.Vues
                     // TIME COMBOBOX
                     cbReservationCreate_HeureOUT.SelectedIndex = cbReservationCreate_HeureOUT.FindStringExact(timeOut);
                     cbReservationCreate_HeureIN.SelectedIndex  = cbReservationCreate_HeureIN.FindStringExact(timeIn);
+                    
 
                     setCarFieldStatus(true);
                 }
@@ -306,7 +327,6 @@ namespace LocationVoiture.Vues
             }
 
             this.Opacity = 1;
-
         }
 
         /// <summary>
@@ -323,7 +343,7 @@ namespace LocationVoiture.Vues
 
         private void fillTheComboBoxSuccursale()
         {
-            listeVehicule = new List<vehicule>();
+            List<vehicule> listeVehicule = new List<vehicule>();
 
             List<succursale> listeSuccursales = new List<succursale>();
             listeSuccursales = locationController.SuccursalesServices.getAllSuccursale();
@@ -358,9 +378,93 @@ namespace LocationVoiture.Vues
             cbReservationCreate_HeureOUT.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// Lorsqu'on change l'index du comboBox des succursales
+        /// </summary>
+        private void cbReservationCreate_Succursale_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbReservationCreate_Types.Items.Clear();
+
+            int succursaleID = int.Parse((cbReservationCreate_Succursale.SelectedItem as ComboboxItem).Value.ToString());
+
+            List<type> types = locationController.TypesService.getDistinctTypes(succursaleID);
+
+            foreach (type t in types)
+            {
+                ComboboxItem item = new ComboboxItem();
+                item.Text = t.nom_type;
+                item.Value = t.typeID;
+                cbReservationCreate_Types.Items.Add(item);
+            }
+
+            if (types.Count == 0)
+            {
+                cbReservationCreate_Types.SelectedIndex = -1;
+                cbReservationCreate_Types.Enabled = false;
+                noReservationPossible();
+            }
+            else
+            {
+                cbReservationCreate_Types.SelectedIndex = 0;
+                cbReservationCreate_Types.Enabled = true;
+            }
+
+        }
+
+        /// <summary>
+        /// Losrqu'on change l'index du comboBox des types de voitures
+        /// </summary>
+        private void cbReservationCreate_Types_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            affichageAvailableCars();
+        }
+
         #endregion COMBOBOX
 
+        #region DATAGRIDVIEW
+
+        /// <summary>
+        /// Sélection de la voiture pour la réservation en double cliquant sur la DataGridView_AvailableCars
+        /// </summary>
+        private void dataGridView_AvailableCars_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!panel_CarChoice.Visible)
+            {
+                Animations.Animate(panel_CarChoice, Animations.Effect.Slide, 100, 360);
+            }
+            
+            int selectedRow = dataGridView_AvailableCars.CurrentRow.Index;
+
+            String vehiculeID = dataGridView_AvailableCars[0, selectedRow].Value.ToString();
+            String fabricant = dataGridView_AvailableCars[1, selectedRow].Value.ToString();
+            String modele = dataGridView_AvailableCars[2, selectedRow].Value.ToString();
+            String plateNum = dataGridView_AvailableCars[3, selectedRow].Value.ToString();
+
+            txtReservation_carID.Text = vehiculeID;
+            txtReservation_fabriquant.Text = fabricant;
+            txtReservation_modele.Text = modele;
+            txtReservation_plateNum.Text = plateNum;
+        }
+
+        #endregion DATAGRIDVIEW
+
         #region UTILITAIRES
+
+        /// <summary>
+        /// Affichage d'un message dans le DataGridView qu'il n'y a aucune voiture de disponible à cette succursale ou du type choisi
+        /// </summary>
+        private void noReservationPossible()
+        {
+            DataTable table = new DataTable();
+            table.Columns.Add("Message", typeof(string));
+            table.Rows.Add(
+                    "Aucun véhicule disponible"
+                );
+            dataGridView_AvailableCars.DataSource = table;
+            dataGridView_AvailableCars.ClearSelection();
+            dataGridView_AvailableCars.ReadOnly = true;
+            dataGridView_AvailableCars.Enabled = false;
+        }
 
         private void disableClientField()
         {
@@ -425,34 +529,10 @@ namespace LocationVoiture.Vues
 
         #endregion UTILITAIRES
 
-        private void cbReservationCreate_Succursale_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cbReservationCreate_Types.Items.Clear();
-
-            int succursaleID = int.Parse((cbReservationCreate_Succursale.SelectedItem as ComboboxItem).Value.ToString());
-
-            List<type> types = locationController.TypesService.getDistinctTypes(succursaleID);
-
-            foreach (type t in types)
-            {
-                ComboboxItem item = new ComboboxItem();
-                item.Text = t.nom_type;
-                item.Value = t.typeID;
-                cbReservationCreate_Types.Items.Add(item);             
-            }
-
-            if(types.Count == 0)
-            {
-                cbReservationCreate_Types.SelectedIndex = -1;
-            }
-            else
-            {
-                cbReservationCreate_Types.SelectedIndex = 0;
-            }
-
-        }
-
-        private void cbReservationCreate_Types_SelectedIndexChanged(object sender, EventArgs e)
+        /// <summary>
+        /// Affichage dans la DataGridView des véhicules disponibles pour une location
+        /// </summary>
+        private void affichageAvailableCars()
         {
 
             // Compléter la string pour l'heure IN et OUT
@@ -470,23 +550,38 @@ namespace LocationVoiture.Vues
 
             availableCars = locationController.VehiculeServices.AvailableCarsForReservation(reservationOUT, reservationIN, succursaleID, typeID);
 
-            DataTable table = new DataTable();
-
-            foreach (columnName enumValue in Enum.GetValues(typeof(columnName)))
+            if (availableCars.Count != 0)
             {
-                table.Columns.Add(EnumDescriptor.GetEnumDescription(enumValue), typeof(string));
-            }
+                DataTable table = new DataTable();
 
-            foreach (vehicule veh in availableCars)
+                foreach (columnName enumValue in Enum.GetValues(typeof(columnName)))
+                {
+                    table.Columns.Add(EnumDescriptor.GetEnumDescription(enumValue), typeof(string));
+                }
+
+                foreach (vehicule veh in availableCars)
+                {
+                    table.Rows.Add(
+                        veh.vehiculeID.ToString(),
+                        veh.fabriquant.nom_fabriquant,
+                        veh.modele.nom_modele,
+                        veh.plaque_num
+                        );
+                }
+
+                dataGridView_AvailableCars.DataSource = table;
+                dataGridView_AvailableCars.ReadOnly = false;
+                dataGridView_AvailableCars.Enabled = true;
+            }
+            else
             {
-                table.Rows.Add(
-                    veh.vehiculeID.ToString(),
-                    veh.fabriquant.nom_fabriquant,
-                    veh.modele.nom_modele
-                    );
+                noReservationPossible();
             }
+        }
 
-            dataGridView_AvailableCars.DataSource = table;
+        private void dateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            affichageAvailableCars();
         }
     }
 }

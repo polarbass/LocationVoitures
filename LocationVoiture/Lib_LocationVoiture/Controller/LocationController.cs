@@ -13,6 +13,7 @@ namespace Lib_LocationVoiture.Controller
         public FabricantsServices   FabricantsService { get; private set; }
         public EmployeServices      EmployesService { get; private set; }
         public TypesServices        TypesService { get; private set; } 
+        public LocationsServices    LocationsService { get; set; }
 
         public LocationController()
         {
@@ -25,6 +26,7 @@ namespace Lib_LocationVoiture.Controller
             ReservationsServices    = new ReservationsServices();
             EmployesService         = new EmployeServices();
             TypesService            = new TypesServices();
+            LocationsService        = new LocationsServices();
         }
 
     }

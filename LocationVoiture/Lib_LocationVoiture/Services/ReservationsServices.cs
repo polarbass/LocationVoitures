@@ -62,6 +62,34 @@ namespace Lib_LocationVoiture.Services
             return reservationFinder;
         }
 
+        public int getReservationNombreDeJours(reservation reservation)
+        {
+            int nbJour = 0;
+
+            DateTime dateOUT = reservation.date_debut_reservation.Value.Date;
+            DateTime dateIN = reservation.date_fin_reservation.Value.Date;
+
+            return nbJour = (dateIN - dateOUT).Days;
+        }
+
+        /// <summary>
+        /// Retire une réservation de la table réservation
+        /// </summary>
+        /// <param name="reservationToDelete">La réservation à effacer</param>
+        public void DeleteReservation(reservation reservationToDelete)
+        {
+            try
+            {
+                reservationsDAO.DeleteReservation(reservationToDelete);
+                Save();
+            }
+            catch
+            {
+                Console.WriteLine("Erreur : Cant delete reservation (methode DeleteReservation)");
+            }
+
+        }
+
         /// <summary>
         /// Enregistre les modification fait à la table reservation
         /// </summary>

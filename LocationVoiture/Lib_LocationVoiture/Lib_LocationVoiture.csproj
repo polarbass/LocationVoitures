@@ -65,6 +65,7 @@
     <Compile Include="DAO\EmployesDAO.cs" />
     <Compile Include="DAO\FabricantsDAO.cs" />
     <Compile Include="DAO\ModelesDAO.cs" />
+    <Compile Include="DAO\LocationsDAO.cs" />
     <Compile Include="DAO\ReservationsDAO.cs" />
     <Compile Include="DAO\SuccursalesDAO.cs" />
     <Compile Include="DAO\TypesDAO.cs" />
@@ -126,6 +127,7 @@
     <Compile Include="Services\FabricantsServices.cs" />
     <Compile Include="Services\LoginServices.cs" />
     <Compile Include="Services\ModeleServices.cs" />
+    <Compile Include="Services\LocationsServices.cs" />
     <Compile Include="Services\ReservationsServices.cs" />
     <Compile Include="Services\SuccursalesServices.cs" />
     <Compile Include="Services\TypesServices.cs" />

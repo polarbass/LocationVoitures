@@ -123,6 +123,16 @@ namespace Lib_LocationVoiture.Services
         }
 
         /// <summary>
+        /// Retire une réservation de la table réservation
+        /// </summary>
+        /// <param name="reservationToDelete">La réservation à effacer</param>
+        public void DeleteReservation(reservation reservationToDelete)
+        {
+            reservationEntitie.reservations.Remove(reservationToDelete);
+            Save();
+        }
+
+        /// <summary>
         /// Enregistre les modification fait à la table reservation
         /// </summary>
         public Boolean Save()

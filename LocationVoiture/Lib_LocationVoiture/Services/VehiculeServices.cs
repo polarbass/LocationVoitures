@@ -145,8 +145,16 @@ namespace Lib_LocationVoiture.Services
 
             try
             {
-                // Tout les véhicules disponible à la succursale et selon le type choisi
-                availableCars = vehiculesDAO.GetAvailableCars(succursaleID, typeID);
+                if(typeID != 0)
+                {
+                    // Tout les véhicules disponibles à la succursale et selon le type choisi
+                    availableCars = vehiculesDAO.GetAvailableCars(succursaleID, typeID);
+                }
+                else
+                {
+                    // Tout les véhicules disponibles à la succursale, peut importe le type
+                    availableCars = vehiculesDAO.GetVehiculesFromSuccursale(succursaleID);
+                }
 
                 foreach(vehicule veh in availableCars)
                 {
@@ -167,6 +175,7 @@ namespace Lib_LocationVoiture.Services
                                 (reservationDateDebut > dateStart.Date && reservationDateFin < dateEnd.Date))
                                 )
                             {
+                                // aucune réservation conflictuelle n'est trouvé, donc la voiture est ajouté à la liste (seulement si elle n'était pas dans la liste avant)
                                 if (!availableCarsForReservation.Contains(veh))
                                 {
                                     availableCarsForReservation.Add(veh);
@@ -174,6 +183,8 @@ namespace Lib_LocationVoiture.Services
                             }
                             else
                             {
+                                // conflit de réservation. Si la voiture était déjà dans la liste parce que pour d'autres cas de réservation n'était pas conflictuelle
+                                // elle est retiré de la liste des véhicules disponibles
                                 if (availableCarsForReservation.Contains(veh))
                                 {
                                     availableCarsForReservation.Remove(veh);
@@ -181,11 +192,11 @@ namespace Lib_LocationVoiture.Services
                             }
                         }
                     }
+                    // Aucune réservation pour cette voiture, elle est donc ajouté directement à la liste
                     else
                     {
                         availableCarsForReservation.Add(veh);
                     }
-
                 }
 
             }
@@ -196,7 +207,6 @@ namespace Lib_LocationVoiture.Services
 
             return availableCarsForReservation;
         }
-
 
         /// <summary>
         /// Enregistre les modification fait à la table véhicule

@@ -60,6 +60,12 @@ namespace Lib_LocationVoiture.Services
             return vehiculeFinder;
         }
 
+        /// <summary>
+        /// Recherche des véhicules dans la table véhicule qui corresponde aux critères de recherche
+        /// </summary>
+        /// <param name="searchValue">La valeur qui est recherchée</param>
+        /// <param name="searchBy">La colonne à utiliser dans la table</param>
+        /// <returns>Une liste des véhicules qui correspondes ; Une liste vide sinon</returns>
         public List<vehicule> FindBy(String searchValue, String searchBy)
         {
             List<vehicule> vehiculeFinder = new List<vehicule>();
@@ -102,13 +108,11 @@ namespace Lib_LocationVoiture.Services
                         int searchValueInt = int.Parse(searchValue);
                         vehiculeFinder = vehiculeEntitie.vehicules.Where(veh => veh.succursaleID == searchValueInt).ToList();
                     }
-
                 }
                 catch
                 {
                     Console.WriteLine("Erreur dans le findBy vehicule");
                 }
-
             }
 
             return vehiculeFinder;
@@ -129,14 +133,18 @@ namespace Lib_LocationVoiture.Services
                             select vehi;
                 vehiculeFinder = query.ToList();
             }
-            catch (System.Data.Entity.Core.EntityException)
+            catch
             {
                 Console.WriteLine("Erreur : Cannot retreive Vehicule from succursale (Méthode GetVehiculesFromSuccursale)");
             }
             return vehiculeFinder;
         }
 
-
+        /// <summary>
+        /// Recherche des tous les modèles qui sont disponible à une succursale, sans doublon
+        /// </summary>
+        /// <param name="succuraleID">Le ID de la succursale</param>
+        /// <returns>Une liste de modèle qui se retrouve à la succursale ; Une liste vide sinon</returns>
         public List<modele> getDistinctModele(int succuraleID)
         {
             List<modele> vehiculeFinder = new List<modele>();
@@ -149,7 +157,6 @@ namespace Lib_LocationVoiture.Services
 
             return vehiculeFinder;
         }
-
 
         /// <summary>
         /// Recherches des voitures disponible à une succursale donnée et selon le type sélectionné

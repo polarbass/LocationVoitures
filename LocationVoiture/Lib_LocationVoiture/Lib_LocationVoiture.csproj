@@ -59,7 +59,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Controller\LocationController.cs" />
     <Compile Include="DAO\ClientsDAO.cs" />
     <Compile Include="DAO\EmployesDAO.cs" />

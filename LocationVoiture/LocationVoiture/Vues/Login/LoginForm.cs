@@ -45,9 +45,9 @@ namespace LocationVoiture.Vues
             username = txtLogin_username.Text;
             String password = txtLogin_password.Text;
 
-            if (password.Equals("123456"))
+            if (locationController.LoginServices.loginAccepted(username, password))
             {
-            this.DialogResult = DialogResult.OK;
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             else

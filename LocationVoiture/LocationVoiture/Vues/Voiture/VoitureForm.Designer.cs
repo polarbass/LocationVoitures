@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtVoiture_commission = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cbVoiture_Modele = new System.Windows.Forms.ComboBox();
             this.lblLoading = new System.Windows.Forms.Label();
@@ -54,15 +57,12 @@
             this.lblClientCreate_nom = new System.Windows.Forms.Label();
             this.btnVoiture_cancel = new System.Windows.Forms.Button();
             this.btnVoiture_add = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.txtVoiture_commission = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelClientCreate_clientId.SuspendLayout();
             this.panelClientForm_id.SuspendLayout();
             this.panel10.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -96,6 +96,39 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(460, 517);
             this.panel1.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.txtVoiture_commission);
+            this.panel3.Location = new System.Drawing.Point(141, 401);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.panel3.Size = new System.Drawing.Size(287, 32);
+            this.panel3.TabIndex = 21;
+            // 
+            // txtVoiture_commission
+            // 
+            this.txtVoiture_commission.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtVoiture_commission.BackColor = System.Drawing.Color.White;
+            this.txtVoiture_commission.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtVoiture_commission.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVoiture_commission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtVoiture_commission.Location = new System.Drawing.Point(13, 4);
+            this.txtVoiture_commission.Name = "txtVoiture_commission";
+            this.txtVoiture_commission.Size = new System.Drawing.Size(259, 22);
+            this.txtVoiture_commission.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.Location = new System.Drawing.Point(3, 405);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(119, 25);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Commission :";
             // 
             // label2
             // 
@@ -414,39 +447,6 @@
             this.btnVoiture_add.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
             this.btnVoiture_add.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
             // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.txtVoiture_commission);
-            this.panel3.Location = new System.Drawing.Point(141, 401);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.panel3.Size = new System.Drawing.Size(287, 32);
-            this.panel3.TabIndex = 21;
-            // 
-            // txtVoiture_commission
-            // 
-            this.txtVoiture_commission.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtVoiture_commission.BackColor = System.Drawing.Color.White;
-            this.txtVoiture_commission.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtVoiture_commission.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVoiture_commission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtVoiture_commission.Location = new System.Drawing.Point(13, 4);
-            this.txtVoiture_commission.Name = "txtVoiture_commission";
-            this.txtVoiture_commission.Size = new System.Drawing.Size(259, 22);
-            this.txtVoiture_commission.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(3, 405);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 25);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Commission :";
-            // 
             // VoitureForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -457,10 +457,14 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "VoitureForm";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form3";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panelClientCreate_clientId.ResumeLayout(false);
             this.panelClientCreate_clientId.PerformLayout();
@@ -468,8 +472,6 @@
             this.panelClientForm_id.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

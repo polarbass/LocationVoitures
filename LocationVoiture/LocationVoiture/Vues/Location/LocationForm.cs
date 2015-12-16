@@ -65,7 +65,7 @@ namespace LocationVoiture.Vues
             {
                 setFieldsVisibility(true);
                 //setCarFieldStatus(true);
-                btnClientCreate_add.Text = LocationForm.OPERATION_LOCATION_CREATION;
+                btnLocation_LocationDone.Text = LocationForm.OPERATION_LOCATION_CREATION;
             }
             // Modification
             else
@@ -73,7 +73,7 @@ namespace LocationVoiture.Vues
                 setFieldsVisibility(true);
                 lblClientCreate_id.Text = "réservation :";
                 btnReservationCreate_creerClient.Visible = false;
-                btnClientCreate_add.Text = LocationForm.OPERATION_LOCATION_UPDATE;
+                btnLocation_LocationDone.Text = LocationForm.OPERATION_LOCATION_UPDATE;
             }
 
         }
@@ -83,7 +83,7 @@ namespace LocationVoiture.Vues
         /// <summary>
         /// Création d'un nouveau client à l'aide des informations inscrites dans les champs
         /// </summary>        
-        private void btnClientCreate_add_Click(object sender, EventArgs e)
+        private void btnLocation_LocationDone_click(object sender, EventArgs e)
         {
             // Compléter la string pour l'heure IN et OUT
             String timeOUT = cbReservationCreate_HeureOUT.SelectedItem.ToString() + ":00";
@@ -102,7 +102,7 @@ namespace LocationVoiture.Vues
             /***************************************************************************************/
 
             // Création d'une location
-            if (!btnClientCreate_add.Text.Equals(LocationForm.OPERATION_LOCATION_UPDATE))
+            if (!btnLocation_LocationDone.Text.Equals(LocationForm.OPERATION_LOCATION_UPDATE))
             {
 
                 // Création de la location
@@ -182,7 +182,7 @@ namespace LocationVoiture.Vues
         /// </summary>        
         private void btnClientForm_Find_Click(object sender, EventArgs e)
         {
-            if (!btnClientCreate_add.Text.Equals(LocationForm.OPERATION_LOCATION_UPDATE))
+            if (!btnLocation_LocationDone.Text.Equals(LocationForm.OPERATION_LOCATION_UPDATE))
             {
                 List<client> listeClients = new List<client>();
                 String searchValue = "";
@@ -571,13 +571,17 @@ namespace LocationVoiture.Vues
 
                 foreach (reservation res in reservationFound)
                 {
-                    table.Rows.Add(
-                        res.reservationID.ToString(),
-                        res.client.prenom + " " + res.client.nom,
-                        res.vehicule.fabriquant.nom_fabriquant,
-                        res.vehicule.modele.nom_modele,
-                        res.succursale.nom
-                        );
+                    if(res.locationID == null)
+                    {
+                        table.Rows.Add(
+                            res.reservationID.ToString(),
+                            res.client.prenom + " " + res.client.nom,
+                            res.vehicule.fabriquant.nom_fabriquant,
+                            res.vehicule.modele.nom_modele,
+                            res.succursale.nom
+                            );
+                    }
+
                 }
 
                 dataGridView_reservation.DataSource = table;
@@ -657,12 +661,16 @@ namespace LocationVoiture.Vues
                 // FACTURE
                 int nbJours = locationController.ReservationsServices.getReservationNombreDeJours(reservationToLocation);
 
+                if(nbJours == 0)
+                {
+                    nbJours = 1;
+                }
+
                 txtLocation_client.Text     = prenom + " " + nom;
                 txtLocation_voiture.Text    = fabricantName + " - " + modeleName; 
                 txtLocation_categorie.Text  = reservationToLocation.vehicule.modele.type.nom_type;
                 txtLocation_nbJours.Text    = nbJours.ToString();
                 txtLocation_total.Text      = nbJours * reservationToLocation.vehicule.modele.type.commission + " $";
-
             }
 
         }

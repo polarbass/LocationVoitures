@@ -31,6 +31,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtLocation_carID = new System.Windows.Forms.TextBox();
             this.panel_Facture = new System.Windows.Forms.Panel();
             this.txtLocation_total = new System.Windows.Forms.TextBox();
             this.txtLocation_nbJours = new System.Windows.Forms.TextBox();
@@ -42,6 +44,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblReservation_carChoice = new System.Windows.Forms.Label();
             this.txtLocation_client = new System.Windows.Forms.TextBox();
+            this.btnLocation_LocationDone = new System.Windows.Forms.Button();
             this.lblFacture = new System.Windows.Forms.Label();
             this.dateTimePicker_today = new System.Windows.Forms.DateTimePicker();
             this.dataGridView_reservation = new System.Windows.Forms.DataGridView();
@@ -92,9 +95,7 @@
             this.label32 = new System.Windows.Forms.Label();
             this.lblClientCreate_nom = new System.Windows.Forms.Label();
             this.txtClientCreate_cancel = new System.Windows.Forms.Button();
-            this.btnClientCreate_add = new System.Windows.Forms.Button();
             this.lblReservation_today = new System.Windows.Forms.Label();
-            this.txtLocation_carID = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel_Facture.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_reservation)).BeginInit();
@@ -111,6 +112,7 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtLocation_carID);
             this.panel1.Controls.Add(this.panel_Facture);
             this.panel1.Controls.Add(this.lblFacture);
@@ -160,8 +162,33 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1441, 562);
+            this.panel1.Size = new System.Drawing.Size(1387, 562);
             this.panel1.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Teal;
+            this.label4.Location = new System.Drawing.Point(873, 60);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(319, 21);
+            this.label4.TabIndex = 55;
+            this.label4.Text = "Double-click pour afficher la réservation";
+            // 
+            // txtLocation_carID
+            // 
+            this.txtLocation_carID.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtLocation_carID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLocation_carID.Enabled = false;
+            this.txtLocation_carID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLocation_carID.ForeColor = System.Drawing.Color.Black;
+            this.txtLocation_carID.Location = new System.Drawing.Point(293, 239);
+            this.txtLocation_carID.Name = "txtLocation_carID";
+            this.txtLocation_carID.Size = new System.Drawing.Size(114, 22);
+            this.txtLocation_carID.TabIndex = 54;
+            this.txtLocation_carID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel_Facture
             // 
@@ -176,10 +203,10 @@
             this.panel_Facture.Controls.Add(this.label7);
             this.panel_Facture.Controls.Add(this.lblReservation_carChoice);
             this.panel_Facture.Controls.Add(this.txtLocation_client);
-            this.panel_Facture.Controls.Add(this.btnClientCreate_add);
-            this.panel_Facture.Location = new System.Drawing.Point(895, 396);
+            this.panel_Facture.Controls.Add(this.btnLocation_LocationDone);
+            this.panel_Facture.Location = new System.Drawing.Point(878, 396);
             this.panel_Facture.Name = "panel_Facture";
-            this.panel_Facture.Size = new System.Drawing.Size(534, 156);
+            this.panel_Facture.Size = new System.Drawing.Size(499, 156);
             this.panel_Facture.TabIndex = 47;
             // 
             // txtLocation_total
@@ -191,7 +218,7 @@
             this.txtLocation_total.ForeColor = System.Drawing.Color.Black;
             this.txtLocation_total.Location = new System.Drawing.Point(156, 125);
             this.txtLocation_total.Name = "txtLocation_total";
-            this.txtLocation_total.Size = new System.Drawing.Size(225, 22);
+            this.txtLocation_total.Size = new System.Drawing.Size(211, 22);
             this.txtLocation_total.TabIndex = 53;
             this.txtLocation_total.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -204,7 +231,7 @@
             this.txtLocation_nbJours.ForeColor = System.Drawing.Color.Black;
             this.txtLocation_nbJours.Location = new System.Drawing.Point(156, 96);
             this.txtLocation_nbJours.Name = "txtLocation_nbJours";
-            this.txtLocation_nbJours.Size = new System.Drawing.Size(225, 22);
+            this.txtLocation_nbJours.Size = new System.Drawing.Size(211, 22);
             this.txtLocation_nbJours.TabIndex = 52;
             this.txtLocation_nbJours.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -217,7 +244,7 @@
             this.txtLocation_categorie.ForeColor = System.Drawing.Color.Black;
             this.txtLocation_categorie.Location = new System.Drawing.Point(156, 67);
             this.txtLocation_categorie.Name = "txtLocation_categorie";
-            this.txtLocation_categorie.Size = new System.Drawing.Size(225, 22);
+            this.txtLocation_categorie.Size = new System.Drawing.Size(211, 22);
             this.txtLocation_categorie.TabIndex = 51;
             this.txtLocation_categorie.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -266,7 +293,7 @@
             this.txtLocation_voiture.ForeColor = System.Drawing.Color.Black;
             this.txtLocation_voiture.Location = new System.Drawing.Point(156, 38);
             this.txtLocation_voiture.Name = "txtLocation_voiture";
-            this.txtLocation_voiture.Size = new System.Drawing.Size(225, 22);
+            this.txtLocation_voiture.Size = new System.Drawing.Size(211, 22);
             this.txtLocation_voiture.TabIndex = 47;
             this.txtLocation_voiture.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -303,9 +330,26 @@
             this.txtLocation_client.ForeColor = System.Drawing.Color.Black;
             this.txtLocation_client.Location = new System.Drawing.Point(156, 9);
             this.txtLocation_client.Name = "txtLocation_client";
-            this.txtLocation_client.Size = new System.Drawing.Size(225, 22);
+            this.txtLocation_client.Size = new System.Drawing.Size(211, 22);
             this.txtLocation_client.TabIndex = 0;
             this.txtLocation_client.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnLocation_LocationDone
+            // 
+            this.btnLocation_LocationDone.BackColor = System.Drawing.Color.Teal;
+            this.btnLocation_LocationDone.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnLocation_LocationDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLocation_LocationDone.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLocation_LocationDone.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLocation_LocationDone.Location = new System.Drawing.Point(380, 112);
+            this.btnLocation_LocationDone.Name = "btnLocation_LocationDone";
+            this.btnLocation_LocationDone.Size = new System.Drawing.Size(100, 35);
+            this.btnLocation_LocationDone.TabIndex = 17;
+            this.btnLocation_LocationDone.Text = "Créer";
+            this.btnLocation_LocationDone.UseVisualStyleBackColor = false;
+            this.btnLocation_LocationDone.Click += new System.EventHandler(this.btnLocation_LocationDone_click);
+            this.btnLocation_LocationDone.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
+            this.btnLocation_LocationDone.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
             // 
             // lblFacture
             // 
@@ -313,7 +357,7 @@
             this.lblFacture.BackColor = System.Drawing.Color.White;
             this.lblFacture.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFacture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblFacture.Location = new System.Drawing.Point(896, 363);
+            this.lblFacture.Location = new System.Drawing.Point(879, 363);
             this.lblFacture.Name = "lblFacture";
             this.lblFacture.Size = new System.Drawing.Size(92, 25);
             this.lblFacture.TabIndex = 44;
@@ -321,7 +365,7 @@
             // 
             // dateTimePicker_today
             // 
-            this.dateTimePicker_today.Location = new System.Drawing.Point(895, 3);
+            this.dateTimePicker_today.Location = new System.Drawing.Point(878, 3);
             this.dateTimePicker_today.Name = "dateTimePicker_today";
             this.dateTimePicker_today.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker_today.TabIndex = 43;
@@ -355,12 +399,12 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_reservation.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_reservation.GridColor = System.Drawing.Color.Teal;
-            this.dataGridView_reservation.Location = new System.Drawing.Point(895, 79);
+            this.dataGridView_reservation.Location = new System.Drawing.Point(878, 86);
             this.dataGridView_reservation.MultiSelect = false;
             this.dataGridView_reservation.Name = "dataGridView_reservation";
             this.dataGridView_reservation.RowTemplate.Height = 36;
             this.dataGridView_reservation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView_reservation.Size = new System.Drawing.Size(534, 272);
+            this.dataGridView_reservation.Size = new System.Drawing.Size(499, 272);
             this.dataGridView_reservation.TabIndex = 16;
             this.dataGridView_reservation.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_reservation_MouseDoubleClick);
             // 
@@ -370,7 +414,7 @@
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(890, 21);
+            this.label2.Location = new System.Drawing.Point(873, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(140, 25);
             this.label2.TabIndex = 41;
@@ -383,7 +427,7 @@
             this.dateTimePicker_ReservationCreate_DateIN.CalendarTitleBackColor = System.Drawing.Color.Black;
             this.dateTimePicker_ReservationCreate_DateIN.CalendarTrailingForeColor = System.Drawing.SystemColors.Desktop;
             this.dateTimePicker_ReservationCreate_DateIN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker_ReservationCreate_DateIN.Location = new System.Drawing.Point(571, 481);
+            this.dateTimePicker_ReservationCreate_DateIN.Location = new System.Drawing.Point(560, 481);
             this.dateTimePicker_ReservationCreate_DateIN.MinDate = new System.DateTime(2015, 10, 25, 0, 0, 0, 0);
             this.dateTimePicker_ReservationCreate_DateIN.Name = "dateTimePicker_ReservationCreate_DateIN";
             this.dateTimePicker_ReservationCreate_DateIN.Size = new System.Drawing.Size(286, 29);
@@ -395,7 +439,7 @@
             this.dateTimePicker_ReservationCreate_DateOUT.CalendarTitleBackColor = System.Drawing.Color.Black;
             this.dateTimePicker_ReservationCreate_DateOUT.CalendarTrailingForeColor = System.Drawing.SystemColors.Desktop;
             this.dateTimePicker_ReservationCreate_DateOUT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker_ReservationCreate_DateOUT.Location = new System.Drawing.Point(571, 366);
+            this.dateTimePicker_ReservationCreate_DateOUT.Location = new System.Drawing.Point(560, 366);
             this.dateTimePicker_ReservationCreate_DateOUT.MinDate = new System.DateTime(2015, 10, 25, 0, 0, 0, 0);
             this.dateTimePicker_ReservationCreate_DateOUT.Name = "dateTimePicker_ReservationCreate_DateOUT";
             this.dateTimePicker_ReservationCreate_DateOUT.Size = new System.Drawing.Size(286, 29);
@@ -419,7 +463,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Teal;
-            this.label6.Location = new System.Drawing.Point(484, 483);
+            this.label6.Location = new System.Drawing.Point(473, 483);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 25);
             this.label6.TabIndex = 39;
@@ -430,7 +474,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Teal;
-            this.label5.Location = new System.Drawing.Point(482, 368);
+            this.label5.Location = new System.Drawing.Point(471, 368);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 25);
             this.label5.TabIndex = 37;
@@ -441,7 +485,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(634, 523);
+            this.label3.Location = new System.Drawing.Point(623, 523);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 25);
             this.label3.TabIndex = 40;
@@ -455,7 +499,7 @@
             this.cbReservationCreate_HeureIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbReservationCreate_HeureIN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cbReservationCreate_HeureIN.FormattingEnabled = true;
-            this.cbReservationCreate_HeureIN.Location = new System.Drawing.Point(705, 521);
+            this.cbReservationCreate_HeureIN.Location = new System.Drawing.Point(694, 521);
             this.cbReservationCreate_HeureIN.Name = "cbReservationCreate_HeureIN";
             this.cbReservationCreate_HeureIN.Size = new System.Drawing.Size(154, 28);
             this.cbReservationCreate_HeureIN.TabIndex = 15;
@@ -468,7 +512,7 @@
             this.cbReservationCreate_Succursale.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbReservationCreate_Succursale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cbReservationCreate_Succursale.FormattingEnabled = true;
-            this.cbReservationCreate_Succursale.Location = new System.Drawing.Point(642, 48);
+            this.cbReservationCreate_Succursale.Location = new System.Drawing.Point(631, 48);
             this.cbReservationCreate_Succursale.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.cbReservationCreate_Succursale.Name = "cbReservationCreate_Succursale";
             this.cbReservationCreate_Succursale.Size = new System.Drawing.Size(222, 29);
@@ -480,7 +524,7 @@
             this.lblReservationCreate_succursale.AutoSize = true;
             this.lblReservationCreate_succursale.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.lblReservationCreate_succursale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblReservationCreate_succursale.Location = new System.Drawing.Point(638, 21);
+            this.lblReservationCreate_succursale.Location = new System.Drawing.Point(627, 21);
             this.lblReservationCreate_succursale.Name = "lblReservationCreate_succursale";
             this.lblReservationCreate_succursale.Size = new System.Drawing.Size(106, 25);
             this.lblReservationCreate_succursale.TabIndex = 31;
@@ -491,7 +535,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(632, 403);
+            this.label1.Location = new System.Drawing.Point(621, 403);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 25);
             this.label1.TabIndex = 38;
@@ -505,7 +549,7 @@
             this.cbReservationCreate_HeureOUT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbReservationCreate_HeureOUT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cbReservationCreate_HeureOUT.FormattingEnabled = true;
-            this.cbReservationCreate_HeureOUT.Location = new System.Drawing.Point(704, 402);
+            this.cbReservationCreate_HeureOUT.Location = new System.Drawing.Point(693, 402);
             this.cbReservationCreate_HeureOUT.Name = "cbReservationCreate_HeureOUT";
             this.cbReservationCreate_HeureOUT.Size = new System.Drawing.Size(154, 28);
             this.cbReservationCreate_HeureOUT.TabIndex = 13;
@@ -518,7 +562,7 @@
             this.cbReservationCreate_noPlaque.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbReservationCreate_noPlaque.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cbReservationCreate_noPlaque.FormattingEnabled = true;
-            this.cbReservationCreate_noPlaque.Location = new System.Drawing.Point(642, 258);
+            this.cbReservationCreate_noPlaque.Location = new System.Drawing.Point(631, 258);
             this.cbReservationCreate_noPlaque.Name = "cbReservationCreate_noPlaque";
             this.cbReservationCreate_noPlaque.Size = new System.Drawing.Size(222, 29);
             this.cbReservationCreate_noPlaque.TabIndex = 11;
@@ -531,7 +575,7 @@
             this.cbReservationCreate_nbPassager.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbReservationCreate_nbPassager.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cbReservationCreate_nbPassager.FormattingEnabled = true;
-            this.cbReservationCreate_nbPassager.Location = new System.Drawing.Point(642, 220);
+            this.cbReservationCreate_nbPassager.Location = new System.Drawing.Point(631, 220);
             this.cbReservationCreate_nbPassager.Name = "cbReservationCreate_nbPassager";
             this.cbReservationCreate_nbPassager.Size = new System.Drawing.Size(222, 29);
             this.cbReservationCreate_nbPassager.TabIndex = 10;
@@ -545,7 +589,7 @@
             this.cbReservationCreate_model.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbReservationCreate_model.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cbReservationCreate_model.FormattingEnabled = true;
-            this.cbReservationCreate_model.Location = new System.Drawing.Point(642, 182);
+            this.cbReservationCreate_model.Location = new System.Drawing.Point(631, 182);
             this.cbReservationCreate_model.Name = "cbReservationCreate_model";
             this.cbReservationCreate_model.Size = new System.Drawing.Size(222, 29);
             this.cbReservationCreate_model.TabIndex = 9;
@@ -559,7 +603,7 @@
             this.cbReservationCreate_marque.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbReservationCreate_marque.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cbReservationCreate_marque.FormattingEnabled = true;
-            this.cbReservationCreate_marque.Location = new System.Drawing.Point(642, 145);
+            this.cbReservationCreate_marque.Location = new System.Drawing.Point(631, 145);
             this.cbReservationCreate_marque.Name = "cbReservationCreate_marque";
             this.cbReservationCreate_marque.Size = new System.Drawing.Size(222, 29);
             this.cbReservationCreate_marque.TabIndex = 8;
@@ -570,7 +614,7 @@
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label25.Location = new System.Drawing.Point(437, 220);
+            this.label25.Location = new System.Drawing.Point(426, 220);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(189, 25);
             this.label25.TabIndex = 35;
@@ -581,7 +625,7 @@
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label24.Location = new System.Drawing.Point(453, 257);
+            this.label24.Location = new System.Drawing.Point(442, 257);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(173, 25);
             this.label24.TabIndex = 36;
@@ -592,7 +636,7 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label23.Location = new System.Drawing.Point(553, 183);
+            this.label23.Location = new System.Drawing.Point(542, 183);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(73, 25);
             this.label23.TabIndex = 34;
@@ -603,7 +647,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label17.Location = new System.Drawing.Point(543, 145);
+            this.label17.Location = new System.Drawing.Point(532, 145);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(83, 25);
             this.label17.TabIndex = 33;
@@ -614,7 +658,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label21.Location = new System.Drawing.Point(638, 109);
+            this.label21.Location = new System.Drawing.Point(627, 109);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(78, 25);
             this.label21.TabIndex = 32;
@@ -926,47 +970,17 @@
             this.txtClientCreate_cancel.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
             this.txtClientCreate_cancel.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
             // 
-            // btnClientCreate_add
-            // 
-            this.btnClientCreate_add.BackColor = System.Drawing.Color.Teal;
-            this.btnClientCreate_add.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnClientCreate_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientCreate_add.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientCreate_add.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnClientCreate_add.Location = new System.Drawing.Point(405, 112);
-            this.btnClientCreate_add.Name = "btnClientCreate_add";
-            this.btnClientCreate_add.Size = new System.Drawing.Size(113, 35);
-            this.btnClientCreate_add.TabIndex = 17;
-            this.btnClientCreate_add.Text = "Créer";
-            this.btnClientCreate_add.UseVisualStyleBackColor = false;
-            this.btnClientCreate_add.Click += new System.EventHandler(this.btnClientCreate_add_Click);
-            this.btnClientCreate_add.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
-            this.btnClientCreate_add.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
-            // 
             // lblReservation_today
             // 
             this.lblReservation_today.AutoSize = true;
             this.lblReservation_today.BackColor = System.Drawing.Color.White;
             this.lblReservation_today.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReservation_today.ForeColor = System.Drawing.Color.Silver;
-            this.lblReservation_today.Location = new System.Drawing.Point(891, 42);
+            this.lblReservation_today.Location = new System.Drawing.Point(874, 42);
             this.lblReservation_today.Name = "lblReservation_today";
             this.lblReservation_today.Size = new System.Drawing.Size(186, 21);
             this.lblReservation_today.TabIndex = 42;
             this.lblReservation_today.Text = "Lundi 7 décembre 2015";
-            // 
-            // txtLocation_carID
-            // 
-            this.txtLocation_carID.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtLocation_carID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLocation_carID.Enabled = false;
-            this.txtLocation_carID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLocation_carID.ForeColor = System.Drawing.Color.Black;
-            this.txtLocation_carID.Location = new System.Drawing.Point(293, 239);
-            this.txtLocation_carID.Name = "txtLocation_carID";
-            this.txtLocation_carID.Size = new System.Drawing.Size(114, 22);
-            this.txtLocation_carID.TabIndex = 54;
-            this.txtLocation_carID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // LocationForm
             // 
@@ -974,11 +988,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1441, 562);
+            this.ClientSize = new System.Drawing.Size(1387, 562);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(518, 228);
             this.Name = "LocationForm";
+            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form3";
@@ -1027,7 +1042,7 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label lblClientCreate_nom;
         private System.Windows.Forms.Button txtClientCreate_cancel;
-        private System.Windows.Forms.Button btnClientCreate_add;
+        private System.Windows.Forms.Button btnLocation_LocationDone;
         private System.Windows.Forms.Button btnClientForm_Find;
         private System.Windows.Forms.Label lblClientCreate_id;
         private System.Windows.Forms.Panel panelClientForm_id;
@@ -1073,5 +1088,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtLocation_voiture;
         private System.Windows.Forms.TextBox txtLocation_carID;
+        private System.Windows.Forms.Label label4;
     }
 }

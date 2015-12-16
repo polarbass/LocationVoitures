@@ -79,6 +79,7 @@
             this.lblClientCreate_nom = new System.Windows.Forms.Label();
             this.txtClientCreate_cancel = new System.Windows.Forms.Button();
             this.btnClientCreate_add = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel_CarChoice.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_AvailableCars)).BeginInit();
@@ -95,6 +96,7 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.panel_CarChoice);
             this.panel1.Controls.Add(this.txtReservation_carID);
             this.panel1.Controls.Add(this.dataGridView_AvailableCars);
@@ -245,12 +247,12 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_AvailableCars.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_AvailableCars.GridColor = System.Drawing.Color.Teal;
-            this.dataGridView_AvailableCars.Location = new System.Drawing.Point(452, 331);
+            this.dataGridView_AvailableCars.Location = new System.Drawing.Point(452, 348);
             this.dataGridView_AvailableCars.MultiSelect = false;
             this.dataGridView_AvailableCars.Name = "dataGridView_AvailableCars";
             this.dataGridView_AvailableCars.RowTemplate.Height = 36;
             this.dataGridView_AvailableCars.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView_AvailableCars.Size = new System.Drawing.Size(443, 212);
+            this.dataGridView_AvailableCars.Size = new System.Drawing.Size(443, 195);
             this.dataGridView_AvailableCars.TabIndex = 43;
             this.dataGridView_AvailableCars.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_AvailableCars_CellContentClick);
             // 
@@ -752,6 +754,18 @@
             this.btnClientCreate_add.MouseEnter += new System.EventHandler(this.mouseEnterEventHandler);
             this.btnClientCreate_add.MouseLeave += new System.EventHandler(this.mouseLeaveEventHandler);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Teal;
+            this.label7.Location = new System.Drawing.Point(565, 322);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(332, 21);
+            this.label7.TabIndex = 56;
+            this.label7.Text = "Double-click pour sélectionner le véhicule";
+            // 
             // ReservationForm_version2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -763,6 +777,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(518, 228);
             this.Name = "ReservationForm_version2";
+            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form3";
@@ -841,5 +856,6 @@
         private System.Windows.Forms.TextBox txtReservation_fabriquant;
         private System.Windows.Forms.Label lblReservation_carChoice;
         private System.Windows.Forms.Panel panel_CarChoice;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -13,12 +13,14 @@ namespace LocationVoiture.Vues
 
         // Attributs
 
-        private const string OPERATION_VOITURE_CREATION = "Création";
-        private const string OPERATION_VOITURE_UPDATE   = "Updater";
-        private const string MESSAGE_VOITURE_ADD        = "Le véhicule a été ajouté";
-        private const string MESSAGE_VOITURE_ADD_ERROR  = "Une erreur est survenue lors de la creation du véhicule";
-        private const string MESSAGE_VOITURE_UPDATE     = "Le véhicule a été modifé";
-        private const string MESSAGE_VOITURE_DELETE     = "Le véhicule a été effacé";        
+        private const string OPERATION_VOITURE_CREATION     = "Création";
+        private const string OPERATION_VOITURE_UPDATE       = "Updater";
+        private const string MESSAGE_VOITURE_ADD            = "Le véhicule a été ajouté";
+        private const string MESSAGE_VOITURE_ADD_ERROR      = "Une erreur est survenue lors de la creation du véhicule";
+        private const string MESSAGE_VOITURE_UPDATE         = "Le véhicule a été modifé";
+        private const string MESSAGE_VOITURE_UPDATE_ERROR   = "Une erreur est survenu lors de la mise à jour du véhicule";
+        private const string MESSAGE_VOITURE_DELETE         = "Le véhicule a été effacé";
+        private const string MESSAGE_VOITURE_DELETE_ERROR   = "Une erreur est survenu lors du delete du véhicule";
 
         // Propriétés
 
@@ -131,6 +133,7 @@ namespace LocationVoiture.Vues
             int succursaleID    = (int)(cbVoiture_succursale.SelectedItem as ComboboxItem).Value;
 
             string plaqueNumber = txtVoiture_noPlaque.Text;
+            float commission    = float.Parse(txtVoiture_commission.Text);
 
             if (!plaqueNumber.Equals("") )
             {
@@ -140,22 +143,23 @@ namespace LocationVoiture.Vues
                 {
                     vehicule addVehicule = new vehicule();
 
-                    addVehicule.modeleID = modeleID;
-                    addVehicule.fabriquantID = fabricantId;
-                    addVehicule.succursaleID = succursaleID;
-                    addVehicule.plaque_num = plaqueNumber;
+                    addVehicule.modeleID                = modeleID;
+                    addVehicule.fabriquantID            = fabricantId;
+                    addVehicule.succursaleID            = succursaleID;
+                    addVehicule.plaque_num              = plaqueNumber;
+                    addVehicule.modele.type.commission  = commission;
 
                     if (locationController.VehiculeServices.AddVehicule(addVehicule))
                     {
                         emptyVehiculeFormFields();
                         this.DialogResult = DialogResult.OK;
-                        messageToSend = "Le véhicule a été ajouté";
+                        messageToSend = VoitureForm.MESSAGE_VOITURE_ADD;
                         this.Close();
                     }
                     else
                     {
                         this.DialogResult = DialogResult.No;
-                        messageToSend = "Une erreur est survenue lors de la creation du véhicule";
+                        messageToSend = VoitureForm.MESSAGE_VOITURE_ADD_ERROR;
                         this.Close();
                     }
                 }
@@ -170,19 +174,19 @@ namespace LocationVoiture.Vues
                     if (vehiculeToUpdate != null)
                     {
                         vehiculeToUpdate.succursaleID = succursaleID;
-                        vehiculeToUpdate.modele.type.commission = int.Parse(txtVoiture_commission.Text.ToString());
+                        vehiculeToUpdate.modele.type.commission = float.Parse(txtVoiture_commission.Text.ToString());
                     }                   
 
                     if (locationController.VehiculeServices.Save())
                     {
                         this.DialogResult = DialogResult.OK;
-                        messageToSend = "Le véhicule a été modifé";
+                        messageToSend = VoitureForm.MESSAGE_VOITURE_UPDATE;
                         this.Close();
                     }
                     else
                     {
                         this.DialogResult = DialogResult.No;
-                        messageToSend = "Une erreur est survenu lors de la modification du véhicule";
+                        messageToSend = VoitureForm.MESSAGE_VOITURE_UPDATE_ERROR;
                         this.Close();
                     }
 
@@ -241,6 +245,7 @@ namespace LocationVoiture.Vues
 
                 txtVoiture_vehiculeID.Text  = vehiculeFound.vehiculeID.ToString();
                 txtVoiture_noPlaque.Text    = vehiculeFound.plaque_num.ToString();
+                txtVoiture_commission.Text  = vehiculeFound.modele.type.commission.ToString();
 
                 ComboboxItem fabricant      = new ComboboxItem();
                 fabricant.Text              = vehiculeFound.fabriquant.nom_fabriquant;
@@ -302,6 +307,12 @@ namespace LocationVoiture.Vues
 
                 // DELETE RÉUSSI
                 messageToSend = VoitureForm.MESSAGE_VOITURE_DELETE;
+                this.Close();
+            }
+            else
+            {
+                // ECHEC DELETE
+                messageToSend = VoitureForm.MESSAGE_VOITURE_DELETE_ERROR;
                 this.Close();
             }
         }
